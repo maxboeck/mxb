@@ -15,7 +15,7 @@ gulp.task('styles', function() {
         .pipe(
             sass({
                 precision: 10,
-                outputStyle: 'compressed'
+                outputStyle: 'expanded'
             }).on('error', sass.logError)
         )
         .pipe(autoprefixer())

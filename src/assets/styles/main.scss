@@ -1,1 +1,18 @@
-// Main Stylesheet Index
+// ---------------------------------
+// MASTER STYLESHEET INDEX
+// ---------------------------------
+
+//--------------------
+// UTILITIES
+//--------------------
+
+@import 'utils/functions';
+@import 'utils/variables';
+@import 'utils/mixins';
+
+//--------------------
+// BASE MODULES
+// partials with global scope
+//--------------------
+
+@import 'base/fonts';

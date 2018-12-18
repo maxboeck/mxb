@@ -1,0 +1,81 @@
+//--------------------
+// SCSS MIXINS
+//--------------------
+
+@mixin mq($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin mq-down($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (max-width: ($min - 1px)) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+
+@mixin hyphenate() {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+@mixin coverall() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin scrollable() {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin list-reset() {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin button-reset() {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
