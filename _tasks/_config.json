@@ -1,0 +1,6 @@
+{
+    "buildSrc": "src",
+    "buildDest": "dist",
+    "assetSrc": "src/assets",
+    "assetDest": "dist/assets"
+}

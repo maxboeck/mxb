@@ -1,18 +1,14 @@
-'use strict'
+const config = require('./config.json')
+const gulp = require('gulp')
+const svgSprite = require('gulp-svg-sprite')
 
-import gulp from 'gulp'
-import gutil from 'gulp-util'
-import svgSprite from 'gulp-svg-sprite'
-import plumber from 'gulp-plumber'
-
-const config = {
+const svgSpriteConfig = {
     mode: {
         inline: true,
         symbol: {
-            // symbol mode to build the SVG
-            dest: 'icons', // destination foldeer
-            sprite: 'sprite.svg', //sprite name
-            example: false // Build sample page
+            dest: 'icons',
+            sprite: 'icons.sprite.svg',
+            example: false
         }
     },
     svg: {
@@ -21,17 +17,9 @@ const config = {
     }
 }
 
-gulp.task('icons', () => {
+gulp.task('icons', function() {
     return gulp
-        .src('_assets/icons/*.svg')
-        .pipe(
-            plumber({
-                errorHandler: function(err) {
-                    gutil.log(gutil.colors.red(err))
-                    this.emit('end')
-                }
-            })
-        )
-        .pipe(svgSprite(config))
-        .pipe(gulp.dest('_site/assets'))
+        .src(config.assetSrc + '/icons/*.svg')
+        .pipe(svgSprite(svgSpriteConfig))
+        .pipe(gulp.dest(config.assetDest))
 })
