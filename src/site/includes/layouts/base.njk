@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!--!
+  Oh so you're an inspector?
+  View the source here: https://github.com/maxboeck/mxb
+-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ title or site.title }}</title>
+        
+        <link rel="preload" href="{{ '/assets/fonts/noe-display-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+
+        {% include "meta.njk" %}
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+        <div class="legacy-warning">
+            <div class="container">
+                Seems like your browser is quite outdated. Why not <a href="http://browsehappy.com/">
+                upgrade to a modern one</a> for free and improve your experience?
+            </div>
+        </div>
+        <![endif]-->
+
+        <a href="#main" class="sr-skip-link">skip to main content</a>
+
+        <div class="hfeed site" role="document">
+            {% include "header.njk" %}
+
+            <main class="main" role="main" id="main" tabindex="-1">
+                {{ content | safe }}
+            </main>
+
+            {# {% include "footer.njk" %} #}
+        </div>
+
+        {% block javascript %}
+            <script src="{{ '/assets/js/bundle.js' | url }}" defer></script>
+        {% endblock %}
+        <!--! LAST BUILD: {{ site.lastBuild }} -->
+    </body>
+</html>

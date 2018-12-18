@@ -1,0 +1,34 @@
+<footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+
+        <p class="footer__item">
+            <strong>&copy; {{ 'now' | date: '%Y' }}</strong><br />
+            <a class="h-card" rel="me" href="{{ site.url }}">Max B&ouml;ck</a>
+        </p>
+
+        <p class="footer__item">
+            <strong>Contact</strong><br />
+            <a href="mailto:{{ site.email | encode_email }}" title="Contact Email">h&#101;l&#108;&#111;&#64;m&#120;&#98;&#46;a&#116;</a>
+        </p>
+
+        <p class="footer__item">
+            <strong>Social</strong><br />
+            <a href="https://twitter.com/{{site.twitter.username}}" title="Twitter" rel="me">Twitter</a> /
+            <a href="https://github.com/{{site.github.username}}" title="Github" rel="me">Github</a>
+        </p>
+
+        <p class="footer__item">
+            <strong>Legal</strong><br />
+            <a href="/privacy/">Privacy Policy</a> /
+            <a href="/imprint/">Imprint</a>
+        </p>
+
+        <p class="footer__item footer__item--right">
+            <a href="{{ site.repo }}" class="footer__icon" title="View Source Code">{% include icon.html icon="github"
+                %}</a>
+            <a href="{{ "/feed.xml" | relative_url }}" class="footer__icon" title="Atom Feed">{% include icon.html
+                icon="feed" %}</a>
+        </p>
+
+    </div>
+</footer>

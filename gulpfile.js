@@ -7,7 +7,7 @@ require('require-dir')('./_tasks')
 gulp.task('generate', shell.task('eleventy'))
 
 // Run the asset pipeline
-gulp.task('assets', gulp.parallel('styles', 'scripts', 'images', 'icons'))
+gulp.task('assets', gulp.parallel('styles', 'scripts', /*'images',*/ 'icons'))
 
 // Main Build Process
 gulp.task('build', gulp.series('clean', 'generate', 'copy', 'assets'))
