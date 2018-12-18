@@ -3,7 +3,6 @@
   "version": "4.1.0",
   "description": "Personal Website of Max Böck",
   "scripts": {
-    "gen": "gulp generate",
     "start": "yarn run build && yarn run serve",
     "build": "gulp build",
     "serve": "gulp watch & gulp serve"
