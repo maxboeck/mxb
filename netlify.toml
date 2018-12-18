@@ -1,0 +1,29 @@
+[build]
+  command = "yarn run build"
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "8.9.4"
+
+# do a lighter build on the branches
+[context.branch-deploy]
+  command = "yarn run build"
+
+[context.to-11ty]
+  # environment = { NODE_ENV = "8.9.0" }
+  command = "npm run build"
+
+[[headers]]
+
+ for = "/*"
+ [headers.values]
+   X-Frame-Options = "DENY"
+   X-XSS-Protection = "1; mode=block"
+   X-Content-Type-Options = "nosniff"
+   Referrer-Policy= "no-referrer-when-downgrade"
+
+# 404s
+[[redirects]]
+  from = "*"
+  to = "/404"
+  status = 404

@@ -1,0 +1,14 @@
+{
+    "name": "Max Böck",
+    "email": "hello@mxb.at",
+    "social": {
+        "twitter": {
+            "name": "mxbck",
+            "url": "https://twitter.com/mxbck"
+        },
+        "github": {
+            "name": "maxboeck",
+            "url": "https://github.com/maxboeck"
+        }
+    }
+}
