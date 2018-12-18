@@ -1,5 +1,6 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const htmlmin = require('html-minifier')
 
 module.exports = function(config) {
     // Add a date formatter filter to Nunjucks
@@ -13,6 +14,17 @@ module.exports = function(config) {
     config.addLayoutAlias('base', 'layouts/base.njk')
     config.addLayoutAlias('page', 'layouts/page.njk')
     config.addLayoutAlias('post', 'layouts/post.njk')
+
+    config.addTransform('htmlmin', function(content, outputPath) {
+        if (outputPath.endsWith('.html')) {
+            return htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true
+            })
+        }
+        return content
+    })
 
     return {
         dir: {
