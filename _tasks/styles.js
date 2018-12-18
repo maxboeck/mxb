@@ -1,4 +1,4 @@
-const config = require('./config.json')
+const config = require('./_config.json')
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
