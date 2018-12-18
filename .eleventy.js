@@ -3,7 +3,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
 
 module.exports = function(config) {
-    // config.addFilter('dateDisplay', require('./_custom/filters/dates.js'))
+    config.addFilter('isoDate', require('./_custom/filters/isoDate.js'))
 
     config.addPlugin(pluginRss)
     config.addPlugin(pluginSyntaxHighlight)
@@ -29,7 +29,8 @@ module.exports = function(config) {
         dir: {
             input: 'src/site',
             output: 'dist',
-            includes: 'includes'
+            includes: 'includes',
+            data: 'data'
         },
         templateFormats: ['njk', 'md'],
         htmlTemplateEngine: 'njk',

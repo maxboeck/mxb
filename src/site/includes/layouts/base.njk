@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <!--!
   Oh so you're an inspector?
-  View the source here: https://github.com/maxboeck/mxb
+  View the source here: {{ site.repo }}
 -->
     <head>
         <meta charset="utf-8">
@@ -41,6 +41,6 @@
         {% block javascript %}
             <script src="{{ '/assets/js/bundle.js' | url }}" defer></script>
         {% endblock %}
-        <!--! LAST BUILD: {{ site.lastBuild }} -->
+        <!--! LAST BUILD: {{ build.timestamp | isoDate }} -->
     </body>
 </html>
