@@ -2,9 +2,14 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
 
+const filters = require('./_custom/filters.js')
+const shortcodes = require('./_custom/shortcodes.js')
+
 module.exports = function(config) {
-    config.addFilter('isoDate', require('./_custom/filters/isoDate.js'))
-    config.addNunjucksShortcode('icon', require('./_custom/shortcodes/icon.js'))
+    config.addFilter('isoDate', filters.isoDate)
+    config.addFilter('obfuscate', filters.obfuscate)
+
+    config.addNunjucksShortcode('icon', shortcodes.icon)
 
     config.addPlugin(pluginRss)
     config.addPlugin(pluginSyntaxHighlight)

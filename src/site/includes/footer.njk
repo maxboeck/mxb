@@ -2,19 +2,19 @@
     <div class="footer__inner container">
 
         <p class="footer__item">
-            <strong>&copy; {{ 'now' | date: '%Y' }}</strong><br />
+            <strong>&copy; {{ build.year }}</strong><br />
             <a class="h-card" rel="me" href="{{ site.url }}">Max B&ouml;ck</a>
         </p>
 
         <p class="footer__item">
             <strong>Contact</strong><br />
-            <a href="mailto:{{ site.email | encode_email }}" title="Contact Email">h&#101;l&#108;&#111;&#64;m&#120;&#98;&#46;a&#116;</a>
+            <a href="mailto:{{ author.email | obfuscate }}" title="Contact Email">{{ author.email | obfuscate }}</a>
         </p>
 
         <p class="footer__item">
             <strong>Social</strong><br />
-            <a href="https://twitter.com/{{site.twitter.username}}" title="Twitter" rel="me">Twitter</a> /
-            <a href="https://github.com/{{site.github.username}}" title="Github" rel="me">Github</a>
+            <a href="{{ author.social.twitter.name }}" title="Twitter" rel="me">Twitter</a> /
+            <a href="{{ author.social.github.name }}" title="Github" rel="me">Github</a>
         </p>
 
         <p class="footer__item">
@@ -24,10 +24,8 @@
         </p>
 
         <p class="footer__item footer__item--right">
-            <a href="{{ site.repo }}" class="footer__icon" title="View Source Code">{% include icon.html icon="github"
-                %}</a>
-            <a href="{{ "/feed.xml" | relative_url }}" class="footer__icon" title="Atom Feed">{% include icon.html
-                icon="feed" %}</a>
+            <a href="{{ site.repo }}" class="footer__icon" title="View Source Code">{% icon "github" %}</a>
+            <a href="{{ "/feed.xml" | url }}" class="footer__icon" title="Atom Feed">{% icon "feed" %}</a>
         </p>
 
     </div>

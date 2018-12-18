@@ -1,4 +1,7 @@
+const now = new Date()
+
 module.exports = {
-    timestamp: Date.now(),
-    env: process.env.ELEVENTY_ENV
+    env: process.env.ELEVENTY_ENV,
+    timestamp: now.getTime(),
+    year: now.getFullYear()
 }
