@@ -3,12 +3,14 @@
 
         <p class="footer__item">
             <strong>&copy; {{ build.year }}</strong><br />
-            <a class="h-card" rel="me" href="{{ site.url }}">Max B&ouml;ck</a>
+            <a class="h-card" rel="me" href="{{ site.url }}">{{ author.name }}</a>
         </p>
 
         <p class="footer__item">
             <strong>Contact</strong><br />
-            <a href="mailto:{{ author.email | obfuscate }}" title="Contact Email">{{ author.email | obfuscate }}</a>
+            <a href="mailto:{{ author.email | obfuscate | safe }}" title="Contact Email">
+                {{ author.email | obfuscate | safe }}
+            </a>
         </p>
 
         <p class="footer__item">

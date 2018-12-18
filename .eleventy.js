@@ -6,18 +6,30 @@ const filters = require('./_custom/filters.js')
 const shortcodes = require('./_custom/shortcodes.js')
 
 module.exports = function(config) {
+    // Filters
     config.addFilter('isoDate', filters.isoDate)
     config.addFilter('obfuscate', filters.obfuscate)
 
+    // Shortcodes
     config.addNunjucksShortcode('icon', shortcodes.icon)
 
+    // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginSyntaxHighlight)
 
+    // Layouts
     config.addLayoutAlias('base', 'layouts/base.njk')
     config.addLayoutAlias('page', 'layouts/page.njk')
     config.addLayoutAlias('post', 'layouts/post.njk')
 
+    // Collections: Navigation
+    config.addCollection('nav', function(collection) {
+        return collection.getFilteredByTag('nav').sort(function(a, b) {
+            return a.data.navorder - b.data.navorder
+        })
+    })
+
+    // Minify HTML Output
     config.addTransform('htmlmin', function(content, outputPath) {
         if (outputPath.endsWith('.html')) {
             return htmlmin.minify(content, {
@@ -29,6 +41,7 @@ module.exports = function(config) {
         return content
     })
 
+    // Base Config
     return {
         dir: {
             input: 'src/site',

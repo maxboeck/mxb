@@ -11,9 +11,15 @@ const svgSpriteConfig = {
             example: false
         }
     },
+    shape: {
+        transform: ['svgo'],
+        id: {
+            generator: 'icon-%s'
+        }
+    },
     svg: {
-        xmlDeclaration: false, // strip out the XML attribute
-        doctypeDeclaration: false // don't include the !DOCTYPE declaration
+        xmlDeclaration: false,
+        doctypeDeclaration: false
     }
 }
 

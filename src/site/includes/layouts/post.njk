@@ -2,59 +2,58 @@
 layout: base
 ---
 <article 
-    id="post-{{ page.slug }}" 
+    id="{{ title | slug }}" 
     class="post h-entry" 
     role="article" 
     itemscope 
     itemtype="http://schema.org/BlogPosting" 
-    aria-labelledby="{{ page.slug }}-title" 
-    data-cached
+    aria-labelledby="{{ title | slug }}-title" 
 >
     <header class="post__header container">
-        <h1 id="{{ page.slug }}-title" class="post__title p-name title" itemprop="headline">{{ page.title }}</h1>
+        <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
-            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{
-                page.date | date: "%B %-d, %Y" }}</time>
+            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ date | isoDate }}">{{ date }}</time>
 
-            {% if page.category %}
+            {# {% if page.category %}
             &sdot; <span class="post__category p-category">{{ page.category | capitalize }}</span>
-            {% endif %}
+            {% endif %} #}
 
-            {% if page.demo %}
-            <a href="{{ page.demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">View
-                Demo</a>
+            {% if demo %}
+            <a href="{{ demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">
+                ViewDemo
+            </a>
             {% endif %}
 
         </div>
     </header>
 
     <div class="post__content e-content content" itemprop="articleBody">
-        {{ content }}
+        {{ content | safe }}
     </div>
 
     <div class="post__footer container">
 
         <div class="post__reldata" hidden>
-            <a class="u-url" href="{{ page.url|prepend:site.url }}">{{ page.title }}</a>
+            <a class="u-url" href="{{ url }}">{{ title }}</a>
             <p class="h-card p-author">
-                <a class="p-name u-url" rel="author" href="{{ site.url }}">Max B&ouml;ck</a>
-                <img class="u-photo" src="{{ "/assets/images/max_boeck.jpg"|prepend:site.url }}" />
+                <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ author.name }}</a>
+                <img class="u-photo" src="{{ "/assets/images/max_boeck.jpg"|url }}" />
             </p>
         </div>
 
         <p>
-            <small>Published in [{{ page.category }}] &sdot; {{ page.date | date: "%d %b %Y" }}</small>
+            <small>Published in [{{ tags }}] &sdot; {{ date }}</small>
         </p>
 
         <a href="https://twitter.com/intent/follow?screen_name=mxbck" target="_blank" rel="noopener noreferrer" title="Follow Max Böck on Twitter"
             class="btn btn--twitter">
-            {% include icon.html icon="twitter" %} Follow @{{ site.twitter.username }}
+            {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
         </a>
     </div>
 </article>
 
-<section class="blogsection" id="webmentions">
+{# <section class="blogsection" id="webmentions">
     <h3 class="blogsection__title" id="wm-title">Webmentions</h3>
     {% include webmentions.html %}
 </section>
@@ -62,4 +61,4 @@ layout: base
 <section class="blogsection" id="related-posts">
     <h3 class="blogsection__title" id="relatedposts-title">Other things I've written</h3>
     {% include related-posts.html %}
-</section>
+</section> #}
