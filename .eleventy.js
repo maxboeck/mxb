@@ -8,6 +8,7 @@ const shortcodes = require('./_custom/shortcodes.js')
 module.exports = function(config) {
     // Filters
     config.addFilter('isoDate', filters.isoDate)
+    config.addFilter('readableDate', filters.readableDate)
     config.addFilter('obfuscate', filters.obfuscate)
 
     // Shortcodes
@@ -28,6 +29,13 @@ module.exports = function(config) {
             return a.data.navorder - b.data.navorder
         })
     })
+
+    // Collections: Post
+    // config.addCollection('posts', function(collection) {
+    //     return collection.getAllSorted().filter(function(item) {
+    //         return item.inputPath.match(/^\/posts\//) !== null
+    //     })
+    // })
 
     // Minify HTML Output
     config.addTransform('htmlmin', function(content, outputPath) {

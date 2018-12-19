@@ -1,8 +1,43 @@
 ---
-layout: base
+layout: page
 tags: nav
+title: Blog
 navtitle: Blog
 navorder: 2
 ---
 
-<h1>Blog</h1>
+<ol reversed class="postlist">
+{% for post in collections.post | reverse %}
+    <li class="postlist__item">
+
+        {# Post Preview #}
+        <a href="{{ post.url | url }}" class="postlist__link" rel="bookmark" aria-labelledby="{{ post.data.title | slug }}-title">
+            <h2 id="{{ post.data.title | slug }}-title" class="postlist__title p-name">{{ post.data.title }}</h2>
+
+            <div class="postlist__meta">
+                <time class="postlist__date dt-published" datetime="{{ post.date | isoDate }}">
+                    {{ post.date | readableDate }}
+                </time>
+
+                {% if post.data.category %}
+                    &sdot;
+                    <span class="postlist__category">
+                        {{ post.data.category }}
+                    </span>
+                {% endif %}
+
+                {% if post.data.is_draft %}
+                    &sdot;
+                    <span class="postlist__status">(Draft)</span>
+                {% endif %}
+            </div>
+
+            <p class="postlist__excerpt p-summary">
+                
+            </p>
+        </a>
+        {# /Post Preview #}
+
+    </li>
+{% endfor %}
+</ol>

@@ -13,11 +13,11 @@ layout: base
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
-            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ date | isoDate }}">{{ date }}</time>
+            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
 
-            {# {% if page.category %}
-            &sdot; <span class="post__category p-category">{{ page.category | capitalize }}</span>
-            {% endif %} #}
+            {% if category %}
+            &sdot; <span class="post__category p-category">{{ category | capitalize }}</span>
+            {% endif %}
 
             {% if demo %}
             <a href="{{ demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">
@@ -38,12 +38,12 @@ layout: base
             <a class="u-url" href="{{ url }}">{{ title }}</a>
             <p class="h-card p-author">
                 <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ author.name }}</a>
-                <img class="u-photo" src="{{ "/assets/images/max_boeck.jpg"|url }}" />
+                <img class="u-photo" src="{{ "/assets/images/max_boeck.jpg" | url }}" />
             </p>
         </div>
 
         <p>
-            <small>Published in [{{ tags }}] &sdot; {{ date }}</small>
+            <small>Published in [{{ category }}] &sdot; {{ date | readableDate }}</small>
         </p>
 
         <a href="https://twitter.com/intent/follow?screen_name=mxbck" target="_blank" rel="noopener noreferrer" title="Follow Max Böck on Twitter"

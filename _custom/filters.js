@@ -1,6 +1,14 @@
+const { DateTime } = require('luxon')
+
 module.exports = {
-    isoDate: function(timestamp) {
-        return new Date(timestamp).toISOString()
+    isoDate: function(date) {
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toISODate()
+    },
+
+    readableDate: function(date) {
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat(
+            'dd LLL yyyy'
+        )
     },
 
     obfuscate: function(str) {

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "NODE_ENV=dev gulp build:dev && yarn run serve",
     "build": "NODE_ENV=prod gulp build",
+    "debug": "DEBUG=Eleventy* yarn start",
     "serve": "gulp serve"
   },
   "repository": {
@@ -19,6 +20,7 @@
   ],
   "dependencies": {
     "lodash": "^4.17.10",
+    "luxon": "^1.8.2",
     "promise-polyfill": "^8.0.0",
     "svg4everybody": "^2.1.9"
   },
