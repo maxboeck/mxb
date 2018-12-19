@@ -1,0 +1,224 @@
+.nav {
+    &__content {
+        display: none;
+        position: fixed;
+        z-index: z('nav');
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__list {
+        opacity: 0;
+        transform: translateY(25px);
+
+        &--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @include mq(lg) {
+        float: right;
+
+        &__content {
+            display: block;
+            width: auto;
+            position: static;
+        }
+
+        &__list {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+// Appearance
+.nav {
+    &__content {
+        color: #fff;
+        padding: 10%;
+    }
+
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        position: relative;
+        font-size: 2.75rem;
+        font-weight: 200;
+        text-transform: lowercase;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: $gray-lighter;
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: -5px;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        &--active {
+            &::after {
+                background-color: $link-color;
+                transform: none;
+            }
+        }
+    }
+
+    &__item__num {
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 0.5em;
+        color: rgba(#fff, 0.2);
+    }
+
+    &__link {
+        color: currentColor;
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: color 0.2s linear;
+    }
+
+    // Desktop Nav
+
+    @include mq(lg) {
+        &__content {
+            color: $gray-light;
+            padding: 0;
+        }
+
+        &__item {
+            font-size: 1rem;
+            font-weight: 400;
+            display: inline-block;
+
+            @include hover-focus {
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+
+            &--active {
+                color: $gray-dark;
+            }
+        }
+
+        &__item__num {
+            color: currentColor !important;
+        }
+
+        &__link {
+            @include hover-focus {
+                color: $gray-dark;
+            }
+        }
+    }
+}
+
+// Nav BG Animation
+.menu-animation {
+    position: fixed;
+    z-index: z('nav') - 10;
+    top: 27px;
+    right: 5%;
+    height: 4px;
+    width: 4px;
+    transform: translateX(-22px) translateY(22px);
+    pointer-events: none;
+    visibility: hidden;
+
+    &__circle {
+        display: inline-block;
+
+        width: 300vmax;
+        height: 300vmax;
+        top: -150vmax;
+        left: -150vmax;
+
+        position: absolute;
+        border-radius: 50%;
+        backface-visibility: hidden;
+        background-color: darken($gray-dark, 5%);
+
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: transform 0.4s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        will-change: transform;
+    }
+
+    @include mq(md) {
+        top: 45px;
+    }
+    @include mq(lg) {
+        display: none;
+    }
+}
+
+// Toggle Button
+.nav__togglebtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    z-index: z('nav') + 10;
+    right: 5%;
+    top: 34px;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba($body-bg, 0.85);
+    color: $gray-dark;
+    transform: translate3d(0, 0, 0);
+
+    &:focus {
+        outline: 0;
+    }
+
+    @include mq(md) {
+        top: 52px;
+    }
+
+    @include mq(lg) {
+        display: none;
+    }
+}
+
+// OPEN STATE
+.menu-open {
+    .nav__content {
+        display: flex;
+    }
+
+    .nav__list {
+        transition: opacity 0.3s linear 0.5s, transform 1s ease-out;
+    }
+
+    .nav__togglebtn {
+        color: #fff;
+        background-color: transparent;
+    }
+
+    .menu-animation {
+        visibility: visible;
+    }
+
+    .menu-animation__circle {
+        transform: scale(1);
+    }
+}

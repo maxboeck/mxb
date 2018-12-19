@@ -16,3 +16,20 @@
 //--------------------
 
 @import 'base/fonts';
+@import 'base/normalize';
+@import 'base/reboot';
+@import 'base/layout';
+@import 'base/typography';
+@import 'base/utilities';
+@import 'base/animation';
+
+//--------------------
+// COMPONENTS
+// partials with local scope to a component
+//--------------------
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/nav';
+@import 'components/icon';
+@import 'components/post';

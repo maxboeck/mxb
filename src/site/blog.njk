@@ -9,10 +9,15 @@ navorder: 2
 <ol reversed class="postlist" start="{{ collections.post.length }}">
 {% for post in collections.post | reverse %}
     <li class="postlist__item">
-
-        {# Post Preview #}
-        <a href="{{ post.url | url }}" class="postlist__link" rel="bookmark" aria-labelledby="{{ post.data.title | slug }}-title">
-            <h2 id="{{ post.data.title | slug }}-title" class="postlist__title p-name">{{ post.data.title }}</h2>
+        <a
+            href="{{ post.url | url }}"
+            class="postlist__link"
+            rel="bookmark"
+            aria-labelledby="{{ post.data.title | slug }}-title"
+        >
+            <h2 id="{{ post.data.title | slug }}-title" class="postlist__title p-name">
+                {{ post.data.title }}
+            </h2>
 
             <div class="postlist__meta">
                 <time class="postlist__date dt-published" datetime="{{ post.date | isoDate }}">
@@ -36,8 +41,6 @@ navorder: 2
                 {% excerpt post %}
             </p>
         </a>
-        {# /Post Preview #}
-
     </li>
 {% endfor %}
 </ol>

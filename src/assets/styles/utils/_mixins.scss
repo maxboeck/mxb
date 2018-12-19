@@ -2,7 +2,7 @@
 // SCSS MIXINS
 //--------------------
 
-@mixin mq($name, $breakpoints: $grid-breakpoints) {
+@mixin mq($name) {
     $min: breakpoint-min($name, $breakpoints);
     @if $min {
         @media (min-width: $min) {
@@ -13,13 +13,20 @@
     }
 }
 
-@mixin mq-down($name, $breakpoints: $grid-breakpoints) {
+@mixin mq-down($name) {
     $min: breakpoint-min($name, $breakpoints);
     @if $min {
         @media (max-width: ($min - 1px)) {
             @content;
         }
     } @else {
+        @content;
+    }
+}
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
         @content;
     }
 }

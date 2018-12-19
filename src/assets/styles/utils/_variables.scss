@@ -7,19 +7,19 @@
 // Define the minimum and maximum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-$grid-breakpoints: (
-    md: 670px,
-    lg: 1200px
+$breakpoints: (
+    md: 640px,
+    lg: 922px
 );
+
+$container-max-width: 1200px;
 
 // Z-Index Stack
 //
 // Control the order of layers in the application
 $z-layers: (
     'modal': 999,
-    'messages': 100,
-    'header': 50,
-    'footer': 40,
+    'nav': 100,
     'content-overlay': 30
 );
 
@@ -28,16 +28,17 @@ $z-layers: (
 // Grayscale.
 
 $gray-darkest: #121212;
-$gray-darker: #323232;
-$gray-dark: #6f6f6e;
-$gray: #a0a0a0;
-$gray-light: #c5c6c6;
-$gray-lighter: #e6e6e6;
-$gray-lightest: #f7f7f7;
+$gray-darker: #2a2a2a;
+$gray-dark: #373a3c;
+$gray: #55595c;
+$gray-light: #818a91;
+$gray-lighter: #eceeef;
+$gray-lightest: #f7f7f9;
 
 // Brand Colors
 
-$brand-red: #d81e05; // austrian red
+$brand-red: #fc6767;
+$brand-cyan: #43a9a3;
 
 // State Colors
 
@@ -49,34 +50,35 @@ $state-error: #d81e05;
 //Color Mappings
 
 $brand-primary: $brand-red;
-$brand-primary-dark: darken($brand-red, 6%);
+$brand-primary-dark: darken($brand-primary, 6%);
+
+$brand-secondary: $brand-cyan;
 
 // Links
 //
 // Style anchor elements.
 
 $link-color: $brand-primary;
-$link-decoration: underline;
 $link-hover-color: $brand-primary-dark;
-$link-hover-decoration: none;
 
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg: #f7f7f7;
+$body-bg: #fff;
 $body-color: $gray-dark;
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$font-family-brand: 'Core Sans A';
-
-$font-family-base: $font-family-brand, $font-family-system;
+$font-family-serif: 'Noe Display', 'Times New Roman', Georgia, Times, serif;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Andale Mono', 'Courier New',
+    monospace;
+$font-family-base: $font-family-sans-serif;
 
 $font-size-root: 100%;
 $font-size-base: 1rem;

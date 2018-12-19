@@ -1,7 +1,9 @@
 ---
 layout: base
 ---
-<div class="page">
+<div class="page container">
     <h1 class="page__title">{{ title }}</h1>
-    {{ content | safe }}
+    <div class="page__content">
+        {{ content | safe }}
+    </div>
 </div>
