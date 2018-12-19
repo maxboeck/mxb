@@ -76,7 +76,7 @@ audio:not([controls]) {
 
 [hidden],
 template {
-    display: none;
+    display: none !important;
 }
 
 // Links
@@ -108,14 +108,6 @@ a {
 // ==========================================================================
 
 //
-// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
-//
-
-abbr[title] {
-    border-bottom: 1px dotted;
-}
-
-//
 // Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
 //
 
@@ -130,16 +122,6 @@ strong {
 
 dfn {
     font-style: italic;
-}
-
-//
-// Address variable `h1` font-size and margin within `section` and `article`
-// contexts in Firefox 4+, Safari, and Chrome.
-//
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
 }
 
 //
@@ -206,7 +188,7 @@ svg:not(:root) {
 //
 
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 //
@@ -372,26 +354,6 @@ input[type='search'] {
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
-}
-
-//
-// Define consistent border, margin, and padding.
-//
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-//
-// 1. Correct `color` not being inherited in IE 8/9/10/11.
-// 2. Remove padding so people aren't caught out if they zero out fieldsets.
-//
-
-legend {
-    border: 0; // 1
-    padding: 0; // 2
 }
 
 //

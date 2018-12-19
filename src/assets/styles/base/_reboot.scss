@@ -104,22 +104,6 @@ body {
 //
 // By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
 // margin for easier control within type scales as it avoids margin collapsing.
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-}
-
-// Reset margins on paragraphs
-//
-// Similarly, the top margin on `<p>`s get reset. However, we also reset the
-// bottom margin to use `rem` units instead of `em`.
-p {
-    margin: 0;
-}
 
 // Abbreviations and acronyms
 abbr[title],
@@ -134,19 +118,6 @@ dl {
     padding: 0;
     margin: 0;
     list-style-type: none;
-}
-
-//
-// Links
-//
-
-a {
-    color: $link-color;
-    text-decoration: none;
-
-    @include hover-focus {
-        color: $link-hover-color;
-    }
 }
 
 //
@@ -267,7 +238,7 @@ legend {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
     line-height: inherit;
-    //  border: 0;
+    border: 0;
 }
 
 input[type='search'] {
@@ -278,11 +249,6 @@ input[type='search'] {
     // be added to `.form-control` as it's not specific enough. For details, see
     // https://github.com/twbs/bootstrap/issues/11586.
     -webkit-appearance: none;
-}
-
-// Always hide an element with the `hidden` HTML attribute (from PureCSS).
-[hidden] {
-    display: none !important;
 }
 
 ::selection {
