@@ -6,7 +6,7 @@ navtitle: Blog
 navorder: 2
 ---
 
-<ol reversed class="postlist">
+<ol reversed class="postlist" start="{{ collections.post.length }}">
 {% for post in collections.post | reverse %}
     <li class="postlist__item">
 
@@ -33,7 +33,7 @@ navorder: 2
             </div>
 
             <p class="postlist__excerpt p-summary">
-                
+                {% excerpt post %}
             </p>
         </a>
         {# /Post Preview #}

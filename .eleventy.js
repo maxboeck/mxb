@@ -13,6 +13,7 @@ module.exports = function(config) {
 
     // Shortcodes
     config.addNunjucksShortcode('icon', shortcodes.icon)
+    config.addNunjucksShortcode('excerpt', shortcodes.excerpt)
 
     // Plugins
     config.addPlugin(pluginRss)
