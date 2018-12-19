@@ -2,7 +2,6 @@
 layout: post
 title: The Hurricane Web
 slug: hurricane-web
-date: 2018-01-01
 category: general
 ---
 
