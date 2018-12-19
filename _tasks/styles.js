@@ -3,7 +3,7 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
-// const cleanCSS = require('gulp-clean-css')
+const browserSync = require('browser-sync')
 
 /*
   Compile SCSS files to CSS

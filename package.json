@@ -3,9 +3,9 @@
   "version": "4.1.0",
   "description": "Personal Website of Max Böck",
   "scripts": {
-    "start": "yarn run build && yarn run serve",
-    "build": "gulp build",
-    "serve": "gulp watch & gulp serve"
+    "start": "NODE_ENV=dev gulp build:dev && yarn run serve",
+    "build": "NODE_ENV=prod gulp build",
+    "serve": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
+    "browser-sync": "^2.26.3",
     "critical": "^1.3.4",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
@@ -36,7 +37,6 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
-    "gulp-serve": "^1.4.0",
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",

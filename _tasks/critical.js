@@ -4,21 +4,20 @@ const critical = require('critical').stream
 
 const criticalConfig = {
     inline: true,
-    base: config.dest + '/',
+    base: config.buildDest + '/',
     minify: true,
     width: 1280,
     height: 800,
     ignore: ['@font-face']
 }
 
-const optimizedPages = [
-    config.dest + '/index.html',
-    config.dest + '/about/index.html'
-]
+const optimizedPages = ['/', '/blog/', '/about/', '/contact/'].map(
+    slug => config.buildDest + slug + 'index.html'
+)
 
 gulp.task('critical', function() {
     return gulp
         .src(optimizedPages)
         .pipe(critical(criticalConfig))
-        .pipe(gulp.dest(config.dest))
+        .pipe(gulp.dest(config.buildDest))
 })
