@@ -3,14 +3,18 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
-const browserSync = require('browser-sync')
+const rename = require('gulp-rename')
+const cleanCSS = require('gulp-clean-css')
+const browserslist = require('../package.json').browserslist
 
-/*
-  Compile SCSS files to CSS
-*/
-gulp.task('styles', function() {
+const styleConfig = {
+    src: config.assetSrc + '/styles/main.scss',
+    dest: config.assetDest + '/css'
+}
+
+function devStyles() {
     return gulp
-        .src(config.assetSrc + '/styles/main.scss')
+        .src(styleConfig.src)
         .pipe(sourcemaps.init())
         .pipe(
             sass({
@@ -18,7 +22,38 @@ gulp.task('styles', function() {
                 outputStyle: 'expanded'
             }).on('error', sass.logError)
         )
-        .pipe(autoprefixer())
+        .pipe(
+            autoprefixer({
+                browsers: browserslist
+            })
+        )
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(config.assetDest + '/css'))
+        .pipe(gulp.dest(styleConfig.dest))
+}
+
+function prodStyles() {
+    return gulp
+        .src(styleConfig.src)
+        .pipe(
+            sass({
+                precision: 10,
+                outputStyle: 'expanded'
+            }).on('error', sass.logError)
+        )
+        .pipe(
+            autoprefixer({
+                browsers: browserslist
+            })
+        )
+        .pipe(cleanCSS())
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest(styleConfig.dest))
+}
+
+gulp.task('styles', function() {
+    if (process.env.NODE_ENV === 'dev') {
+        return devStyles()
+    } else {
+        return prodStyles()
+    }
 })

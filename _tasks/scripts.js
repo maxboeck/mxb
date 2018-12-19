@@ -26,6 +26,6 @@ gulp.task('scripts', function() {
         .src(config.assetSrc + '/scripts/main.js')
         .pipe(webpack(webpackConfig))
         .pipe(uglify())
-        .pipe(rename('bundle.js'))
+        .pipe(rename('bundle.min.js'))
         .pipe(gulp.dest(config.assetDest + '/js'))
 })

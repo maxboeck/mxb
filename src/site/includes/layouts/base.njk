@@ -10,9 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ title or site.title }}</title>
-        
         <link rel="preload" href="{{ '/assets/fonts/noe-display-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+        
+        {% if build.env == 'dev' %}
+            <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | url }}">
+        {% endif %}
 
         {% include "meta.njk" %}
     </head>
@@ -39,7 +43,7 @@
         </div>
 
         {% block javascript %}
-            <script src="{{ '/assets/js/bundle.js' | url }}" defer></script>
+            <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
         {% endblock %}
         <!--! LAST BUILD: {{ build.timestamp | isoDate }} -->
     </body>
