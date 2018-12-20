@@ -45,6 +45,8 @@ export const createFocusTrap = (el, opt = {}) => {
     }
     const options = Object.assign({}, defaults, opt)
 
+    console.log(lastFocusableElement)
+
     const handleKeyPress = e => {
         if (!isActive || e.ctrlKey || e.metaKey || e.altKey) {
             return
@@ -76,7 +78,7 @@ export const createFocusTrap = (el, opt = {}) => {
 
     function activate() {
         isActive = true
-        el.addEventListener('keydown', handleKeyPress, { passive: true })
+        el.addEventListener('keydown', handleKeyPress)
     }
     function deactivate() {
         isActive = false
