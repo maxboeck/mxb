@@ -1,5 +1,6 @@
 .hero {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
     justify-content: center;
     padding: 2rem 0 4rem;
@@ -8,7 +9,7 @@
         line-height: 1.2;
 
         @include mq(md) {
-            font-size: 5rem;
+            font-size: 4.5rem;
         }
     }
     &__pretitle {
