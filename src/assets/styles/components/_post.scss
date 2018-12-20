@@ -1,0 +1,7 @@
+.post {
+    &__content {
+        @extend .markdown;
+        margin: 0 auto;
+        max-width: 41rem;
+    }
+}
