@@ -11,6 +11,7 @@
     @include sr-only-focusable();
 
     &:focus {
+        position: absolute;
         left: 50%;
         top: 0;
         font-size: 1rem;

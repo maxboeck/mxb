@@ -1,3 +1,5 @@
+import 'focus-visible'
+
 import Navigation from './inc/navigation'
 
 const nav = new Navigation()

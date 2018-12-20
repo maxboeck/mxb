@@ -4,6 +4,14 @@
     border-top: 1px solid $gray-lighter;
     color: $gray;
 
+    a {
+        color: $gray-light;
+        @include hover-focus {
+            color: $gray-dark;
+            text-decoration: underline;
+        }
+    }
+
     &__item {
         margin-bottom: 0.5rem;
 
@@ -11,10 +19,10 @@
             margin-bottom: 0;
         }
     }
+
     &__icon {
         display: inline-block;
         padding: 0.25rem 0.5rem;
-        color: $gray;
     }
 
     @include mq(md) {
