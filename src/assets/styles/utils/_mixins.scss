@@ -54,6 +54,15 @@
     }
 }
 
+@mixin body-text() {
+    font-size: 1.125rem;
+    line-height: 1.63;
+
+    @include mq(md) {
+        font-size: 1.375rem;
+    }
+}
+
 @mixin hyphenate() {
     word-wrap: break-word;
     overflow-wrap: break-word;

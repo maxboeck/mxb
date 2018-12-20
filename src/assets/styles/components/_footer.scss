@@ -12,23 +12,33 @@
         }
     }
 
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
     &__item {
+        flex-basis: 50%;
         margin-bottom: 0.5rem;
 
         &--right {
+            flex-basis: 100%;
             margin-bottom: 0;
         }
     }
 
     &__icon {
         display: inline-block;
-        padding: 0.25rem 0.5rem;
+
+        & + & {
+            margin-left: 1rem;
+        }
     }
 
     @include mq(md) {
         &__inner {
-            display: flex;
-            align-items: center;
+            flex-wrap: nowrap;
         }
         &__item {
             flex: 0 0 auto;

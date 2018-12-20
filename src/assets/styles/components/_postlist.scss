@@ -1,2 +1,39 @@
 .postlist {
+    &__item {
+        margin-bottom: 3rem;
+
+        @include mq(md) {
+            margin-bottom: 5rem;
+        }
+    }
+    &__link {
+        display: block;
+        color: $body-color;
+
+        @include hover-focus {
+            color: $body-color;
+        }
+    }
+    &__title {
+        margin-bottom: 0.25rem;
+        color: $link-color;
+    }
+    &__meta {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        color: $gray-light;
+    }
+    &__category {
+        font-family: $font-family-serif;
+        text-transform: uppercase;
+        font-size: 0.875em;
+        letter-spacing: 3px;
+    }
+    &__status {
+        font-weight: 700;
+        color: $brand-secondary;
+    }
+    &__excerpt {
+        @include body-text();
+    }
 }

@@ -9,7 +9,8 @@
         @extend .lead;
     }
     &__content {
-        //empty
+        margin: 0 auto;
+        max-width: 41rem;
     }
 
     @include mq(md) {
