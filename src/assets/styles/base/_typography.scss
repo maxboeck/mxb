@@ -19,6 +19,16 @@ p {
     margin: 0;
 }
 
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @include mq(md) {
+        font-size: 2rem;
+    }
+}
+
 a {
     color: $link-color;
     text-decoration: none;

@@ -1,9 +1,14 @@
 ---
 layout: base
 ---
-<div class="page container">
-    <h1 class="page__title">{{ title }}</h1>
+<article class="page container">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+        {% if subtitle %}
+            <p class="page__subtitle">{{ subtitle}}</p>
+        {% endif %}
+    </header>
     <div class="page__content">
         {{ content | safe }}
     </div>
-</div>
+</article>

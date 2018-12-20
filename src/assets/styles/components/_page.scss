@@ -1,0 +1,33 @@
+.page {
+    &__header {
+        padding: 2rem 0;
+    }
+    &__title {
+        //empty
+    }
+    &__subtitle {
+        @extend .lead;
+    }
+    &__content {
+        //empty
+    }
+
+    @include mq(md) {
+        &__header {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        &__title {
+            font-size: 5rem;
+        }
+    }
+
+    @include mq(lg) {
+        &__header {
+            padding: 5rem;
+        }
+        &__title {
+            font-size: 7rem;
+        }
+    }
+}
