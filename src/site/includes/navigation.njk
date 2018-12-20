@@ -1,7 +1,12 @@
-<nav id="nav" class="nav" role="navigation" aria-label="site" tabindex="-1">
+<nav class="nav js-nav" role="navigation" aria-label="site" tabindex="-1">
 
-    <button class="nav__togglebtn" id="menu-toggle" aria-expanded="false" aria-controls="menu">
-        <span class="sr-only">toggle menu</span>
+    {# Menu Toggle Button #}
+    <button
+        class="nav__togglebtn js-nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="toggle menu"
+    >
         <span class="menuicon">
             <span class="menuicon__bar"></span>
             <span class="menuicon__bar"></span>
@@ -10,18 +15,28 @@
         </span>
     </button>
 
+    {# Nav Links  #}
     <div class="nav__content">
-        <ul class="nav__list" id="menu">
+        <ul class="nav__menu js-nav-menu" id="nav-menu">
         {%- for nav in collections.nav -%}
             {%- set is_current = (nav.url == page.url) -%}
             {%- set nav_href = "#main" if is_current else nav.url|url -%}
-		    <li class="nav__item{% if is_current %} nav__item-active{% endif %}">
-                <a href="{{ nav_href }}" class="nav__link" {% if is_current %}aria-current="page"{% endif %}>
-                    <span class="nav__item__num" aria-hidden="true">0{{ loop.index }}</span>
+		    <li class="nav__item{% if is_current %} nav__item--active{% endif %}">
+                <a
+                    href="{{ nav_href }}"
+                    class="nav__link" {% if is_current %}aria-current="page"{% endif %}
+                >
+                    <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span>
                     {{ nav.data.navtitle }}
                 </a>
             </li>
         {%- endfor -%}
         </ul>
     </div>
+
+    {# Menu BG Animation #}
+    <div class="nav__bg">
+        <div class="nav__bg__circle"></div>
+    </div>
+
 </nav>

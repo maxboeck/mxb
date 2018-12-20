@@ -5,6 +5,14 @@ h4,
 h5,
 h6 {
     margin: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: $font-family-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
 }
 
 p {

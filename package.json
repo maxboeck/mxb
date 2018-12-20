@@ -15,7 +15,7 @@
   "author": "Max Böck",
   "license": "MIT",
   "browserslist": [
-    "> 0.2%",
+    "> 0.25%",
     "not dead"
   ],
   "dependencies": {

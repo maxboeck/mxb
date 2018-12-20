@@ -1,2 +1,42 @@
 .footer {
+    font-size: 0.875rem;
+    padding: 2rem 0;
+    border-top: 1px solid $gray-lighter;
+    color: $gray;
+
+    &__item {
+        margin-bottom: 0.5rem;
+
+        &--right {
+            margin-bottom: 0;
+        }
+    }
+    &__icon {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        color: $gray;
+    }
+
+    @include mq(md) {
+        &__inner {
+            display: flex;
+            align-items: center;
+        }
+        &__item {
+            flex: 0 0 auto;
+            padding-right: 2.5rem;
+            margin: 0;
+
+            &--right {
+                margin-left: auto;
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    @include mq(lg) {
+        &__item {
+            padding-right: 4rem;
+        }
+    }
 }

@@ -29,9 +29,6 @@ module.exports = {
         }
 
         if (!post.hasOwnProperty('templateContent')) {
-            console.warn(
-                'Failed to extract excerpt: Post has no property `templateContent`.'
-            )
             return
         }
 

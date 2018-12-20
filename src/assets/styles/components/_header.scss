@@ -1,2 +1,25 @@
 .header {
+    border-top: 4px solid $gray-dark;
+    padding: 2rem 0;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__brand {
+        position: relative;
+        width: 5rem;
+
+        svg {
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+    }
+
+    @include mq(md) {
+        padding: 3.125rem 0;
+    }
 }
