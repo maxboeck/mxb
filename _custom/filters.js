@@ -1,6 +1,10 @@
 const { DateTime } = require('luxon')
 
 module.exports = {
+    year: function(date) {
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat('yyyy')
+    },
+
     isoDate: function(date) {
         return DateTime.fromJSDate(date, { zone: 'utc' }).toISODate()
     },
