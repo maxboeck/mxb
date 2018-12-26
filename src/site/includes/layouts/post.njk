@@ -13,7 +13,7 @@ layout: base
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
-            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
 
             {% if category %}
             &sdot; <span class="post__category p-category">{{ category | capitalize }}</span>
@@ -43,7 +43,7 @@ layout: base
         </div>
 
         <p>
-            <small>Published in [{{ category }}] &sdot; {{ date | readableDate }}</small>
+            <small>Published in [{{ category }}] &sdot; {{ page.date | readableDate }}</small>
         </p>
 
         <a href="https://twitter.com/intent/follow?screen_name=mxbck" target="_blank" rel="noopener noreferrer" title="Follow Max Böck on Twitter"
@@ -53,12 +53,9 @@ layout: base
     </div>
 </article>
 
-{# <section class="blogsection" id="webmentions">
-    <h3 class="blogsection__title" id="wm-title">Webmentions</h3>
-    {% include webmentions.html %}
-</section>
+{% include 'webmentions.njk' %}
 
-<section class="blogsection" id="related-posts">
+{# <section class="blogsection" id="related-posts">
     <h3 class="blogsection__title" id="relatedposts-title">Other things I've written</h3>
     {% include related-posts.html %}
 </section> #}

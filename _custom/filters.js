@@ -21,5 +21,13 @@ module.exports = {
             chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
         }
         return chars.join('')
+    },
+
+    webmentionsForUrl: function(webmentions, url) {
+        return webmentions.children.filter(entry => entry['wm-target'] === url)
+    },
+
+    webmentionsForType: function(webmentions, ...types) {
+        return webmentions.filter(entry => types.includes(entry['wm-property']))
     }
 }

@@ -57,5 +57,6 @@ module.exports = async function() {
         return webmentions
     }
 
+    console.log(`${cache.children.length} webmentions loaded from cache`)
     return cache
 }
