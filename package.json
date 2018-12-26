@@ -46,6 +46,7 @@
     "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "html-minifier": "^3.5.20",
+    "node-fetch": "^2.3.0",
     "require-dir": "^1.2.0",
     "webpack-stream": "^4.0.3"
   }

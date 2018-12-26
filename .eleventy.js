@@ -7,6 +7,7 @@ const shortcodes = require('./_custom/shortcodes.js')
 
 module.exports = function(config) {
     // Filters
+    config.addFilter('year', filters.year)
     config.addFilter('isoDate', filters.isoDate)
     config.addFilter('readableDate', filters.readableDate)
     config.addFilter('obfuscate', filters.obfuscate)
