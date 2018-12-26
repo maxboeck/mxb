@@ -15,6 +15,10 @@ module.exports = {
         )
     },
 
+    fromIso: function(timestamp) {
+        return DateTime.fromISO(timestamp, { zone: 'utc' }).toJSDate()
+    },
+
     obfuscate: function(str) {
         const chars = []
         for (var i = str.length - 1; i >= 0; i--) {
@@ -23,11 +27,11 @@ module.exports = {
         return chars.join('')
     },
 
-    webmentionsForUrl: function(webmentions, url) {
-        return webmentions.children.filter(entry => entry['wm-target'] === url)
-    },
-
-    webmentionsForType: function(webmentions, ...types) {
-        return webmentions.filter(entry => types.includes(entry['wm-property']))
+    webmentionsByUrl: function(webmentions, url) {
+        const types = ['mention-of', 'in-reply-to']
+        return webmentions
+            .filter(entry => entry['wm-target'] === url)
+            .filter(entry => types.includes(entry['wm-property']))
+            .filter(entry => !!entry.content)
     }
 }

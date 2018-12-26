@@ -53,7 +53,26 @@ layout: base
     </div>
 </article>
 
-{% include 'webmentions.njk' %}
+{% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
+<section class="webmentions" id="webmentions">
+    <h3 class="webmentions__title">Webmentions</h3>
+    <a href="#webmentions" class="webmentions__toggle">
+        {% icon "message" %}
+        Show All ({{ mentions | length }})
+    </a>
+    <div class="webmentions__panel">
+        {% if mentions %}
+            <ol class="webmentions__list">
+            {% for webmention in mentions | reverse %}
+                {% include 'webmention.njk' %}
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>No mentions yet.</p>
+        {% endif %}
+    </div>
+</section>
 
 {# <section class="blogsection" id="related-posts">
     <h3 class="blogsection__title" id="relatedposts-title">Other things I've written</h3>

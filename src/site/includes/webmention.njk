@@ -1,0 +1,37 @@
+<li class="webmention {% if webmention.author.url == site.url %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
+    <div class="webmention__content p-content">
+        {{ webmention.content.value | safe }}
+    </div>
+    <div class="webmention__meta">
+        {% if webmention.author %}
+            {% if webmention.url %}
+                <a class="webmention__author h-card u-url" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+            {% else %}
+                <span class="webmention__author h-card">
+            {% endif %}
+
+                {% if webmention.author.photo %}
+                    <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}">
+                {% else %}
+                    <img class="webmention__author__photo" src="/assets/images/avatar-default.jpg" alt="">
+                {% endif %}
+                <strong class="p-name">{{ webmention.author.name }}</strong>
+
+            {% if webmention.url %}
+                </a>
+            {% else %}
+                </span>
+            {% endif %}
+        {% else %}
+            <span class="webmention__author">
+                <img class="webmention__author__photo" src="/assets/images/avatar-default.jpg" alt="">
+                <strong>Anonymous</strong>
+            </span>
+        {% endif %}
+
+        {% if webmention.published %}
+            <span class="webmention__meta__divider">&sdot;</span>
+            <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">{{ webmention.published | fromIso | readableDate }}</time>
+        {% endif %}
+    </div>
+</li>
