@@ -2,7 +2,7 @@
     <div class="footer__inner container">
 
         <p class="footer__item">
-            <strong>&copy; {{ build.year }}</strong><br />
+            <strong>&copy; {{ build.timestamp | year }}</strong><br />
             <a class="h-card" rel="me" href="{{ site.url }}">{{ author.name }}</a>
         </p>
 
