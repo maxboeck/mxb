@@ -26,8 +26,8 @@ module.exports = function(config) {
     config.addLayoutAlias('post', 'layouts/post.njk')
 
     // Pass-through files
-    config.addPassthroughCopy('/site.webmanifest')
-    config.addPassthroughCopy('/robots.txt')
+    config.addPassthroughCopy('site.webmanifest')
+    config.addPassthroughCopy('robots.txt')
 
     // Collections: Navigation
     config.addCollection('nav', function(collection) {
@@ -58,6 +58,7 @@ module.exports = function(config) {
         },
         templateFormats: ['njk', 'md'],
         htmlTemplateEngine: 'njk',
-        markdownTemplateEngine: 'njk'
+        markdownTemplateEngine: 'njk',
+        passthroughFileCopy: true
     }
 }
