@@ -1,4 +1,4 @@
-<li class="webmention {% if webmention.author.url == site.url %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
+<div class="webmention {% if webmention.author.url == site.url %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
     <div class="webmention__content p-content">
         {{ webmention.content.value | safe }}
     </div>
@@ -34,4 +34,4 @@
             <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">{{ webmention.published | fromIso | readableDate }}</time>
         {% endif %}
     </div>
-</li>
+</div>

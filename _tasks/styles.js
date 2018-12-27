@@ -7,6 +7,8 @@ const rename = require('gulp-rename')
 const cleanCSS = require('gulp-clean-css')
 const browserslist = require('../package.json').browserslist
 
+require('dotenv').config()
+
 const styleConfig = {
     src: config.assetSrc + '/styles/main.scss',
     dest: config.assetDest + '/css'
@@ -51,7 +53,7 @@ function prodStyles() {
 }
 
 gulp.task('styles', function() {
-    if (process.env.NODE_ENV === 'dev') {
+    if (process.env.ELEVENTY_ENV === 'dev') {
         return devStyles()
     } else {
         return prodStyles()

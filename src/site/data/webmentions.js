@@ -1,12 +1,14 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 const unionBy = require('lodash/unionBy')
+
+require('dotenv').config()
 const CACHE_FILE_PATH = '_cache/webmentions.json'
 
 async function fetchWebmentions(since) {
     const api = 'https://webmention.io/api'
     const domain = 'mxb.at'
-    const token = 'YeVnV9N0sG0W59gLboityA'
+    const token = process.env.WEBMENTION_IO_TOKEN
 
     let url = `${api}/mentions.jf2?domain=${domain}&token=${token}&per-page=100`
     if (since) {
