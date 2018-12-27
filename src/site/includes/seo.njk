@@ -6,7 +6,7 @@
 <meta property="og:description" content="{{ description or site.description }}">
 <link rel="canonical" href="{{ absolutePageUrl }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:image" content="{%- if image -%}{{ site.url }}{{ image }}{%- else -%}}{{ site.url }}/assets/images/logo.jpg{%- endif-%}">
+<meta property="og:image" content="{%- if image -%}{{ site.url }}{{ image }}{%- else -%}{{ site.url }}/assets/images/logo.jpg{%- endif -%}">
 
 {# Posts Only #}
 {% if '/posts/' in page.inputPath %}

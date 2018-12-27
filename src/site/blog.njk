@@ -7,7 +7,7 @@ navorder: 2
 ---
 
 <ol reversed class="postlist" start="{{ collections.post.length }}">
-{% for post in collections.post | reverse %}
+{% for post in collections.posts | reverse %}
     <li class="postlist__item">
         <a
             href="{{ post.url | url }}"
