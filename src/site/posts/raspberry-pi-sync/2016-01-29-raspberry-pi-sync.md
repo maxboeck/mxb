@@ -1,6 +1,6 @@
 ---
-title: "gitignore for Dropbox: a DIY approach"
-slug: build-your-own-cloud-storage-with-raspberry-pi-and-bittorrent-sync
+title: DIY Sync Server with Raspberry Pi
+slug: raspberry-pi-sync
 category: code
 ---
 

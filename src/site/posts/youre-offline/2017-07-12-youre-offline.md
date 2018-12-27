@@ -1,6 +1,7 @@
 ---
 title: You're Offline
 category: code
+slug: youre-offline
 image: /blog/youre-offline/cover.jpg
 description: "A truly responsive website should adapt to all kinds of situations. Besides different viewport sizes, there are other factors to consider. A change in connectivity is one of them."
 ---
