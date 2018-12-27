@@ -1,6 +1,11 @@
 import 'focus-visible'
 
 import Navigation from './inc/navigation'
+import registerServiceWorker from './inc/register-serviceworker'
 
-const nav = new Navigation()
-console.log(nav)
+function init() {
+    new Navigation()
+    registerServiceWorker()
+}
+
+init()

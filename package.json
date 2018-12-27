@@ -49,6 +49,7 @@
     "html-minifier": "^3.5.20",
     "node-fetch": "^2.3.0",
     "require-dir": "^1.2.0",
-    "webpack-stream": "^4.0.3"
+    "webpack-stream": "^4.0.3",
+    "workbox-build": "^3.6.3"
   }
 }

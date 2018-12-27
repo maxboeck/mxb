@@ -12,4 +12,7 @@ gulp.task(
 gulp.task('build:dev', gulp.series('clean', 'generate', 'assets'))
 
 // Production Build Process
-gulp.task('build', gulp.series('clean', 'generate', 'assets', 'critical'))
+gulp.task(
+    'build',
+    gulp.series('clean', 'generate', 'assets', 'critical', 'workbox')
+)
