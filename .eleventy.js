@@ -25,6 +25,10 @@ module.exports = function(config) {
     config.addLayoutAlias('page', 'layouts/page.njk')
     config.addLayoutAlias('post', 'layouts/post.njk')
 
+    // Pass-through files
+    config.addPassthroughCopy('site.webmanifest')
+    config.addPassthroughCopy('robots.txt')
+
     // Collections: Navigation
     config.addCollection('nav', function(collection) {
         return collection.getFilteredByTag('nav').sort(function(a, b) {

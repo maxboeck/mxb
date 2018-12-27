@@ -9,9 +9,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ title or site.title }}</title>
+        <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-        
+
         {% if build.env == 'dev' %}
             <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
         {% else %}
@@ -46,6 +46,7 @@
             {% if build.env == 'dev' %}<script>window.env = 'dev';</script>{% endif %}
             <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
         {% endblock %}
+
         <!--! LAST BUILD: {{ build.timestamp | isoDate }} -->
     </body>
 </html>

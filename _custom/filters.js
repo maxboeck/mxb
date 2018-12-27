@@ -6,7 +6,10 @@ module.exports = {
     },
 
     isoDate: function(date) {
-        return DateTime.fromJSDate(date, { zone: 'utc' }).toISODate()
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toISODate({
+            includeOffset: true,
+            suppressMilliseconds: true
+        })
     },
 
     readableDate: function(date) {

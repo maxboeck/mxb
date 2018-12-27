@@ -1,0 +1,23 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "Max Böck",
+    "short_name": "MXB",
+    "icons": [
+        {
+            "src": "/assets/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#1a1a1a",
+    "background_color": "#1a1a1a",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "natural"
+}

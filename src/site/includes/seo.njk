@@ -1,0 +1,44 @@
+{# Page-Specific #}
+{% set absolutePageUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+
+<meta property="og:title" content="{{ title or site.title }}">
+<meta name="description" content="{{ description or site.description }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ absolutePageUrl }}">
+<meta property="og:url" content="{{ absolutePageUrl }}">
+<meta property="og:image" content="{%- if image -%}{{ site.url }}{{ image }}{%- else -%}}{{ site.url }}/assets/images/logo.jpg{%- endif-%}">
+
+{# Posts Only #}
+{% if '/posts/' in page.inputPath %}
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{ page.date | isoDate }}">
+{% endif %}
+
+{# General #}
+<meta name="author" content="{{ author.name }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ author.social.twitter.name }}">
+<meta name="twitter:creator" content="@{{ author.name }}">
+<meta property="fb:app_id" content="127677017332959">
+<script type="application/ld+json">
+    {
+        "name":"{{ author.name }}",
+        "description":"{{ site.description }}",
+        "author": {
+            "@type":"Person",
+            "name":"{{ author.name }}"
+        },
+        "@type":"WebSite",
+        "url":"{{ site.url }}",
+        "image":"{{ site.url }}/assets/images/logo.jpg",
+        "headline":"{{ site.title }}",
+        "sameAs":[
+            "{{ author.social.twitter.url }}",
+            "{{ author.social.github.url }}",
+            "{{ author.social.keybase.url }}"
+        ],
+        "@context":"http://schema.org"
+    }
+</script>
