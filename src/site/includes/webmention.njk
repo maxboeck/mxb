@@ -4,27 +4,22 @@
     </div>
     <div class="webmention__meta">
         {% if webmention.author %}
-            {% if webmention.url %}
-                <a class="webmention__author h-card u-url" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
-            {% else %}
-                <span class="webmention__author h-card">
-            {% endif %}
-
+            <a 
+                class="webmention__author h-card u-url"
+                {% if webmention.url %}href="{{ webmention.url }}"{% endif %} 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
                 {% if webmention.author.photo %}
                     <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}">
                 {% else %}
-                    <img class="webmention__author__photo" src="/assets/images/avatar-default.jpg" alt="">
+                    <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.svg' | url }}" alt="">
                 {% endif %}
                 <strong class="p-name">{{ webmention.author.name }}</strong>
-
-            {% if webmention.url %}
-                </a>
-            {% else %}
-                </span>
-            {% endif %}
+            </a>
         {% else %}
             <span class="webmention__author">
-                <img class="webmention__author__photo" src="/assets/images/avatar-default.jpg" alt="">
+                <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.svg' | url }}" alt="">
                 <strong>Anonymous</strong>
             </span>
         {% endif %}

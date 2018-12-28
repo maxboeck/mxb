@@ -1,7 +1,43 @@
 .post {
+    &__header {
+        @extend .page__header;
+    }
+    &__title {
+        @extend .page__title;
+        @include mq(lg) {
+            font-size: 5.5rem !important;
+        }
+    }
+    &__meta {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $gray-light;
+
+        @include mq(md) {
+            font-size: 1.25rem;
+        }
+    }
+    &__category {
+        font-family: $font-family-serif;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
     &__content {
         @extend .markdown;
         margin: 0 auto;
         max-width: 41rem;
+    }
+}
+
+.postsection {
+    padding: 2rem 0;
+    border-top: 1px solid $gray-lighter;
+
+    &__title {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
     }
 }
