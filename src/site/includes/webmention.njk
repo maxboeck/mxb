@@ -1,7 +1,4 @@
 <div class="webmention {% if webmention.author.url == site.url %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
-    <div class="webmention__content p-content">
-        {{ webmention.content.value | safe }}
-    </div>
     <div class="webmention__meta">
         {% if webmention.author %}
             <a 
@@ -28,5 +25,8 @@
             <span class="webmention__meta__divider">&sdot;</span>
             <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">{{ webmention.published | fromIso | readableDate }}</time>
         {% endif %}
+    </div>
+    <div class="webmention__content p-content">
+        {{ webmention.content.value | safe }}
     </div>
 </div>
