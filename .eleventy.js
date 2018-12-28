@@ -26,8 +26,8 @@ module.exports = function(config) {
     config.addLayoutAlias('post', 'layouts/post.njk')
 
     // Pass-through files
-    config.addPassthroughCopy('site.webmanifest')
-    config.addPassthroughCopy('robots.txt')
+    config.addPassthroughCopy('src/site/site.webmanifest')
+    config.addPassthroughCopy('src/site/robots.txt')
 
     // Collections: Navigation
     config.addCollection('nav', function(collection) {
