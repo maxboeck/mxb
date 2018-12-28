@@ -1,0 +1,42 @@
+.otherposts {
+    &__item {
+        margin-bottom: 0.25rem;
+    }
+
+    &__link {
+        display: block;
+        padding: 0.25rem 0;
+        font-size: 1.125rem;
+        color: $body-color;
+
+        @include mq(md) {
+            display: flex;
+            align-items: center;
+            font-size: 1.375rem;
+
+            &:hover .otherposts__title {
+                transform: translateX(10px);
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        transform: translateX(0);
+        transition: all 0.25s ease;
+    }
+
+    &__date {
+        display: block;
+        color: $gray-light;
+        font-size: 0.75em;
+        white-space: nowrap;
+
+        @include mq(md) {
+            padding-right: 1rem;
+            width: 125px;
+            flex: 0 0 125px;
+            order: -1;
+        }
+    }
+}
