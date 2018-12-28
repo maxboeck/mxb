@@ -1,7 +1,21 @@
 ---
-layout: page
+layout: base
 tags: nav
 title: Say Hi
+subtitle: 
 navtitle: Contact
 navorder: 4
 ---
+<article class="page container">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+        <p class="page__subtitle">
+            <a href="mailto:{{ author.email | obfuscate | safe }}" title="Contact Email">
+                {{ author.email | obfuscate | safe }}
+            </a>
+        </p>
+    </header>
+    <div class="page__content">
+        ContactForm?
+    </div>
+</article>

@@ -5,18 +5,88 @@
     justify-content: center;
     padding: 2rem 0 4rem;
 
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__title {
-        line-height: 1.2;
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 0.33em;
 
         @include mq(md) {
-            font-size: 4.5rem;
+            font-size: 5.875rem; //94px
         }
     }
     &__pretitle {
+        order: -1;
         font-size: 0.875rem;
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.4;
+
+        @include mq(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__br {
+        display: none;
+
+        @include mq(lg) {
+            display: block;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: inherit;
+        position: relative;
+
+        @include hover-focus {
+            color: inherit;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            height: 0.5em;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        &::before {
+            background-color: $gray-lighter;
+        }
+
+        &::after {
+            background-color: $brand-primary;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+
+        &--simpleloop::after {
+            background-color: $simpleloop-brand-primary;
+        }
+        &--twitter::after {
+            background-color: $twitter-brand-primary;
+        }
     }
 }
