@@ -13,7 +13,7 @@ pre[class*='language-'] {
     color: #f9f8f5;
     font-family: $font-family-monospace;
     font-size: 1em;
-    line-height: 1.65;
+    line-height: 1.85;
     direction: ltr;
     text-align: left;
     word-spacing: normal;
@@ -25,19 +25,6 @@ pre[class*='language-'] {
     word-wrap: break-word;
     background: #272822;
     color: #f8f8f2;
-}
-
-/* Code blocks */
-pre[class*='language-'] {
-    padding: 1em;
-    margin: 0.5em 0;
-    overflow: auto;
-}
-
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-    padding: 0.1em;
-    border-radius: 0.3em;
 }
 
 .token.comment,
@@ -109,9 +96,4 @@ pre[class*='language-'] {
 
 .token.entity {
     cursor: help;
-}
-
-pre > code.highlight {
-    outline: 0.4em solid red;
-    outline-offset: 0.4em;
 }

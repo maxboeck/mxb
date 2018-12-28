@@ -5,6 +5,7 @@
         margin-bottom: 2rem;
     }
 
+    /* In-Text Links */
     p a {
         box-shadow: inset 0 -2px 0 0 $link-color;
         border-bottom: 1px solid $link-color;
@@ -16,12 +17,29 @@
         }
     }
 
+    /* Images */
     img {
         display: block;
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
+        color: $gray;
+        font-style: italic;
+        text-align: center;
     }
 
+    figure {
+        max-width: none;
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+    figcaption {
+        padding-top: 0.75rem;
+        font-style: italic;
+        font-size: 1rem;
+    }
+
+    /* Headings */
     h2,
     h3,
     h4 {
@@ -29,6 +47,41 @@
         margin-bottom: 0.75em;
     }
 
+    /* Lists */
+    ul,
+    ol {
+        margin-bottom: 2rem;
+        list-style-position: inside;
+    }
+    ul {
+        list-style-type: disc;
+    }
+    ol {
+        list-style-type: decimal;
+    }
+
+    /* Code blocks */
+    pre[class*='language-'] {
+        display: block;
+        font-size: 1rem;
+        padding: 2rem 0;
+        margin: 2rem calc(50% - 50vw);
+        overflow: auto;
+    }
+
+    /* Inline code */
+    :not(pre) > code {
+        display: inline-block;
+        font-family: $font-family-monospace;
+        background-color: $gray-lightest;
+        border: 1px solid $gray-lighter;
+        border-radius: $border-radius;
+        padding: 3px 4px;
+        margin: 0 2px;
+        font-size: 80%;
+    }
+
+    /* Embedded Tweets */
     .twitter-tweet-rendered {
         margin: 0 auto 2rem !important;
     }

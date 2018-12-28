@@ -28,11 +28,13 @@ layout: base
         </div>
     </header>
 
-    <div class="post__content e-content content" itemprop="articleBody">
-        {{ content | safe }}
+    <div class="post__content e-content" itemprop="articleBody">
+        <div class="markdown">
+            {{ content | safe }}
+        <div>
     </div>
 
-    <div class="post__footer container">
+    <div class="post__footer">
 
         <div class="post__reldata" hidden>
             <a class="u-url" href="{{ url }}">{{ title }}</a>

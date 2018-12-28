@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 1rem 0 0 60px;
+    padding: 1rem 0 1rem 60px;
 
     &--own {
         background-color: rgba($gray-light, 0.1);
@@ -42,7 +42,7 @@
         display: none;
     }
     &__item:not(:last-child) {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 }
 
