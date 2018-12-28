@@ -4,11 +4,7 @@ const workbox = require('workbox-build')
 
 const workboxConfig = {
     globDirectory: config.buildDest,
-    globPatterns: [
-        'index.html',
-        '{blog,about,contact,404}/*.html',
-        'assets/{css,js,fonts,icons}/*'
-    ],
+    globPatterns: ['**/*.html', 'assets/{css,js,fonts,icons}/*'],
     swDest: `${config.buildDest}/sw.js`,
     clientsClaim: true,
     skipWaiting: true

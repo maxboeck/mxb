@@ -42,11 +42,7 @@
             {% include "footer.njk" %}
         </div>
 
-        {% block javascript %}
-            {% if build.env == 'dev' %}<script>window.env = 'dev';</script>{% endif %}
-            <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
-        {% endblock %}
-
+        {% include "scripts.njk" %}
         <!--! LAST BUILD: {{ build.timestamp | isoDate }} -->
     </body>
 </html>

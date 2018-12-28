@@ -36,5 +36,11 @@ module.exports = {
             .filter(entry => entry['wm-target'] === url)
             .filter(entry => types.includes(entry['wm-property']))
             .filter(entry => !!entry.content)
+    },
+
+    otherPosts: function(posts, currentPostTitle) {
+        return posts
+            .filter(post => post.data.title !== currentPostTitle)
+            .slice(-10)
     }
 }

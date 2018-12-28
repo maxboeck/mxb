@@ -1,0 +1,7 @@
+{# Main Bundle #}
+<script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
+
+{# Include additional scripts on post pages #}
+{% if '/posts/' in page.inputPath %}
+    <script src="//platform.twitter.com/widgets.js" async defer></script>
+{% endif %}

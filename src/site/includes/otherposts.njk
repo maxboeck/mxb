@@ -1,0 +1,14 @@
+{% set otherposts = collections.posts | otherPosts(title) %}
+
+<ol class="otherposts">
+    {% for post in otherposts | reverse %}
+        <li class="otherposts__item">
+            <a href="{{ post.url | url }}" class="otherposts__link">
+                <span class="otherposts__title">{{ post.data.title }}</span>
+                <time class="otherposts__date" datetime="{{ post.date | isoDate }}" aria-label=", written {{ post.date | readableDate }}">
+                    {{ post.date | readableDate }}
+                </time>
+            </a>
+        </li>
+    {% endfor %}
+</ol>

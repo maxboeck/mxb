@@ -1,0 +1,22 @@
+{% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
+
+<div class="webmentions">
+    <a href="#webmentions" class="webmentions__toggle">
+        {% icon "message" %}
+        Show All ({{ mentions | length }})
+    </a>
+    <div class="webmentions__panel">
+        {% if mentions %}
+            <ol class="webmentions__list">
+            {% for webmention in mentions | reverse %}
+            <li class="webmentions__item">
+                {% include 'webmention.njk' %}
+            </li>
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>No mentions yet.</p>
+        {% endif %}
+    </div>
+</div>
