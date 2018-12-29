@@ -4,9 +4,13 @@ tags: nav
 title: Notes
 navtitle: Notes
 navorder: 3
+pagination:
+  data: collections.notes
+  size: 2
+  alias: notes
 ---
-<ol reversed class="notelist" start="{{ collections.notes.length }}">
-{% for note in collections.notes | reverse %}
+<ol class="notelist">
+{% for note in notes %}
     <li class="notelist__item">
 
         <div class="note h-entry">
@@ -31,3 +35,5 @@ navorder: 3
     </li>
 {% endfor %}
 </ol>
+
+{{ pagination.nextPageHref }}

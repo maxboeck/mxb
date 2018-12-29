@@ -18,6 +18,9 @@
         &__title {
             font-size: 5rem;
         }
+        &__content {
+            padding-bottom: 4rem;
+        }
     }
 
     @include mq(lg) {
