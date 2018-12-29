@@ -28,10 +28,8 @@ layout: base
         </div>
     </header>
 
-    <div class="post__content e-content" itemprop="articleBody">
-        <div class="markdown">
-            {{ content | safe }}
-        <div>
+    <div class="post__content e-content markdown" itemprop="articleBody">
+        {{ content | safe }}
     </div>
 
     <div class="post__footer">

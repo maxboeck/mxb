@@ -1,0 +1,34 @@
+---
+layout: page
+tags: nav
+title: Notes
+navtitle: Notes
+navorder: 3
+---
+<ol reversed class="notelist" start="{{ collections.notes.length }}">
+{% for note in collections.notes | reverse %}
+    <li class="notelist__item">
+
+        <div class="note h-entry">
+            <div class="note__meta">
+                <span class="note__author u-author">
+                    <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
+                    <strong class="note__author__name">{{ author.name }}</strong>
+                </span>
+                <span class="note__meta__divider">&sdot;</span>
+                <time class="note__date dt-published" datetime="{{ note.date | isoDate }}">
+                    {{ note.date | readableDate }}
+                </time>
+            </div>
+            <div class="note__content">
+                {% if note.data.title %}<h2 class="note__title p-name">{{ note.data.title }}</h2>{% endif %}
+                <div class="p-content markdown">
+                    {{ note.templateContent | safe }}
+                </div>
+            </div>
+            <a href="{{ note.url }}" class="note__link"></a>
+        </div>
+
+    </li>
+{% endfor %}
+</ol>

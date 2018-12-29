@@ -24,6 +24,7 @@ module.exports = function(config) {
     config.addLayoutAlias('base', 'layouts/base.njk')
     config.addLayoutAlias('page', 'layouts/page.njk')
     config.addLayoutAlias('post', 'layouts/post.njk')
+    config.addLayoutAlias('note', 'layouts/note.njk')
 
     // Pass-through files
     config.addPassthroughCopy('src/site/site.webmanifest')
