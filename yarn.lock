@@ -18,7 +18,46 @@
     "@11ty/eleventy" "^0.5.4"
     prismjs "^1.15.0"
 
-"@11ty/eleventy@0.5.4", "@11ty/eleventy@^0.5.4":
+"@11ty/eleventy@^0.3.1":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.3.6.tgz#0e060de0fd78f03d73a1ce818003fb28f923147d"
+  dependencies:
+    browser-sync "^2.24.4"
+    chalk "^2.3.2"
+    check-node-version "^3.2.0"
+    debug "^3.1.0"
+    ejs "^2.5.8"
+    fs-extra "^5.0.0"
+    glob-watcher "^5.0.1"
+    globby "^7.1.1"
+    gray-matter "^3.1.1"
+    hamljs "^0.6.2"
+    handlebars "^4.0.11"
+    liquidjs "^4.0.0"
+    lodash.chunk "^4.2.0"
+    lodash.clone "^4.5.0"
+    lodash.get "^4.4.2"
+    lodash.isobject "^3.0.2"
+    lodash.merge "^4.6.1"
+    lodash.set "^4.3.2"
+    lodash.uniq "^4.5.0"
+    luxon "^1.0.0"
+    markdown-it "^8.4.1"
+    minimist "^1.2.0"
+    multimatch "^2.1.0"
+    mustache "^2.3.0"
+    normalize-path "^2.1.1"
+    nunjucks "^3.1.2"
+    parse-filepath "^1.0.2"
+    pify "^3.0.0"
+    pretty "^2.0.0"
+    pug "^2.0.3"
+    semver "^5.5.0"
+    slugify "^1.2.9"
+    time-require "^0.1.2"
+    valid-url "^1.0.9"
+
+"@11ty/eleventy@^0.5.4":
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.5.4.tgz#6a57242fc82daaebc05e40b210d5a17dfff8358c"
   dependencies:
@@ -57,42 +96,38 @@
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
-"@11ty/eleventy@^0.3.1":
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.3.6.tgz#0e060de0fd78f03d73a1ce818003fb28f923147d"
+"@11ty/eleventy@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.6.0.tgz#cfc92beb058610fae988e739bb7d1463c118b8b5"
+  integrity sha512-IFac7cQQQEVwrbaTshCy2ibUUty154gyGIZ87gRkEDmsONgztvXBDVo6CTlUH27t+5xfwjiiSWTh5cC1WWOf8g==
   dependencies:
-    browser-sync "^2.24.4"
-    chalk "^2.3.2"
-    check-node-version "^3.2.0"
-    debug "^3.1.0"
-    ejs "^2.5.8"
-    fs-extra "^5.0.0"
+    browser-sync "^2.24.7"
+    chalk "^2.4.1"
+    debug "^4.0.1"
+    ejs "^2.6.1"
+    fast-glob "^2.2.2"
+    fs-extra "^7.0.0"
     glob-watcher "^5.0.1"
-    globby "^7.1.1"
-    gray-matter "^3.1.1"
+    gray-matter "^4.0.1"
     hamljs "^0.6.2"
-    handlebars "^4.0.11"
-    liquidjs "^4.0.0"
-    lodash.chunk "^4.2.0"
-    lodash.clone "^4.5.0"
-    lodash.get "^4.4.2"
-    lodash.isobject "^3.0.2"
-    lodash.merge "^4.6.1"
-    lodash.set "^4.3.2"
-    lodash.uniq "^4.5.0"
-    luxon "^1.0.0"
-    markdown-it "^8.4.1"
+    handlebars "^4.0.12"
+    javascript-stringify "^1.6.0"
+    liquidjs "^6.0.1"
+    lodash "^4.17.11"
+    luxon "^1.4.1"
+    markdown-it "^8.4.2"
     minimist "^1.2.0"
     multimatch "^2.1.0"
     mustache "^2.3.0"
-    normalize-path "^2.1.1"
-    nunjucks "^3.1.2"
+    normalize-path "^3.0.0"
+    nunjucks "^3.1.4"
     parse-filepath "^1.0.2"
-    pify "^3.0.0"
+    please-upgrade-node "^3.1.1"
     pretty "^2.0.0"
     pug "^2.0.3"
-    semver "^5.5.0"
-    slugify "^1.2.9"
+    recursive-copy "^2.0.9"
+    semver "^5.5.1"
+    slugify "^1.3.1"
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
@@ -1363,7 +1398,7 @@ browser-sync-ui@^2.26.2:
     socket.io-client "^2.0.4"
     stream-throttle "^0.1.3"
 
-browser-sync@^2.24.4, browser-sync@^2.26.3:
+browser-sync@^2.24.4, browser-sync@^2.24.7, browser-sync@^2.26.3:
   version "2.26.3"
   resolved "https://registry.yarnpkg.com/browser-sync/-/browser-sync-2.26.3.tgz#1b59bd5935938a5b0fa73b3d78ef1050bd2bf912"
   dependencies:
@@ -2323,6 +2358,13 @@ debug@3.1.0, debug@=3.1.0, debug@~3.1.0:
 debug@3.X, debug@^3.1.0:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  dependencies:
+    ms "^2.1.1"
+
+debug@^4.0.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
   dependencies:
     ms "^2.1.1"
 
@@ -3975,7 +4017,7 @@ hamljs@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/hamljs/-/hamljs-0.6.2.tgz#7b7116cf6dbe7278e42b3f6ef8725a33e177c8e3"
 
-handlebars@^4.0.11:
+handlebars@^4.0.11, handlebars@^4.0.12:
   version "4.0.12"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.12.tgz#2c15c8a96d46da5e266700518ba8cb8d919d5bc5"
   dependencies:
@@ -4748,6 +4790,11 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+javascript-stringify@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/javascript-stringify/-/javascript-stringify-1.6.0.tgz#142d111f3a6e3dae8f4a9afd77d45855b5a9cce3"
+  integrity sha1-FC0RHzpuPa6PSpr9d9RYVbWpzOM=
+
 joi@^11.1.1:
   version "11.4.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-11.4.0.tgz#f674897537b625e9ac3d0b7e1604c828ad913ccb"
@@ -5016,6 +5063,11 @@ liquidjs@^5.1.0:
   resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-5.2.0.tgz#fe219154cfc66dc5da580bd6b2ecd592d1d8c6b2"
   dependencies:
     resolve-url "^0.2.1"
+
+liquidjs@^6.0.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-6.1.1.tgz#81800c652b470251bc1980033370796519bfbbc6"
+  integrity sha512-FsPpyHy2lpqQF/BX/wqQxWXuf3TZc36VlOmK2ixCqBq5Yp71XFaIip2BPlZhlJMOzo+V6jByMN9UBMV83xesww==
 
 list-to-array@^1.1.0:
   version "1.1.0"
@@ -5391,6 +5443,11 @@ luxon@^1.0.0, luxon@^1.3.0, luxon@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.8.2.tgz#32ca2be3b3f0fcddd607dc5584ff106107fecade"
 
+luxon@^1.4.1:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.8.3.tgz#6c76b50319b3a91a357002ca2e96576bb3bfe26d"
+  integrity sha512-hICQcGmUl5e9VUnf5PtHAma+tpiwL/wMBV9/6/M/6iSpzWFHdEElK2Rj4IZx8kbk2/baJvYftgb+n/I2wJ7RXQ==
+
 make-dir@^1.0.0, make-dir@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -5441,7 +5498,7 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-it@^8.4.1:
+markdown-it@^8.4.1, markdown-it@^8.4.2:
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
   dependencies:
@@ -5995,7 +6052,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nunjucks@^3.1.2, nunjucks@^3.1.3:
+nunjucks@^3.1.2, nunjucks@^3.1.3, nunjucks@^3.1.4:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.1.6.tgz#6e3a3420c77ceae937ae323e9e2995383d6410fb"
   dependencies:
@@ -7463,7 +7520,7 @@ semver-truncate@^1.1.2:
   dependencies:
     semver "^5.3.0"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.6.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
 
@@ -7625,7 +7682,7 @@ slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
 
-slugify@^1.2.9, slugify@^1.3.0:
+slugify@^1.2.9, slugify@^1.3.0, slugify@^1.3.1:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.3.4.tgz#78d2792d7222b55cd9fc81fa018df99af779efeb"
 
