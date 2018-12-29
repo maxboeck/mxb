@@ -1,0 +1,94 @@
+.note {
+    @include container-narrow;
+    width: 100%;
+    position: relative;
+    min-height: 100px;
+    padding: 1rem;
+    border: 1px solid $gray-lighter;
+    border-radius: 6px;
+    background-color: #fff;
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        &__divider {
+            display: inline-block;
+            padding: 0 0.125rem;
+        }
+
+        @include mq(md) {
+            padding-left: 4rem;
+            margin-bottom: 0;
+        }
+    }
+    &__date {
+        color: $gray;
+    }
+    &__author {
+        display: flex;
+        align-items: center;
+
+        &__photo {
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+
+            @include mq(md) {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+            }
+        }
+
+        &__name {
+            color: $body-color;
+        }
+    }
+    &__content {
+        @include mq(md) {
+            padding-left: 4rem;
+        }
+
+        a {
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            margin: 0 !important;
+        }
+    }
+    &__link {
+        @include coverall;
+        border-radius: 6px;
+        box-shadow: none;
+        transition: box-shadow 0.2s ease;
+
+        &:hover {
+            box-shadow: $box-shadow-elevated;
+        }
+    }
+}
+
+.notelist {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        background-color: $gray-lighter;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2.5rem;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

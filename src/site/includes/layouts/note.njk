@@ -11,8 +11,7 @@ layout: base
         <time class="note__date dt-published" datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
     </div>
     <div class="note__content">
-        {% if title %}<h2 class="note__title p-name">{{ title }}</h2>{% endif %}
-        <div class="p-content markdown">
+        <div class="p-name p-content markdown">
             {{ content | safe }}
         </div>
     </div>

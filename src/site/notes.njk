@@ -21,8 +21,7 @@ navorder: 3
                 </time>
             </div>
             <div class="note__content">
-                {% if note.data.title %}<h2 class="note__title p-name">{{ note.data.title }}</h2>{% endif %}
-                <div class="p-content markdown">
+                <div class="p-name p-content markdown">
                     {{ note.templateContent | safe }}
                 </div>
             </div>

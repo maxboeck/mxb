@@ -2,15 +2,12 @@
     &__header {
         padding: 2rem 0;
     }
-    &__title {
-        //empty
-    }
     &__subtitle {
         @extend .lead;
     }
     &__content {
-        margin: 0 auto;
-        max-width: 41rem;
+        @include container-narrow;
+        padding-bottom: 2rem;
     }
 
     @include mq(md) {
