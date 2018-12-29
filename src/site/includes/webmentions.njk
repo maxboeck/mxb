@@ -2,11 +2,12 @@
 {% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
 
 <div class="webmentions">
-    <a href="#webmentions" class="webmentions__toggle">
-        {% icon "message" %}
-        Show All ({{ mentions | length }})
-    </a>
-    <div class="webmentions__panel">
+    <div class="webmentions__header">
+        <a href="#webmentions" class="webmentions__toggle">
+            {% icon "message" %} Show All ({{ mentions | length }})
+        </a>
+    </div>
+    <div class="webmentions__content">
         {% if mentions %}
             <ol class="webmentions__list">
             {% for webmention in mentions | reverse %}
