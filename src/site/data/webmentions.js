@@ -8,20 +8,19 @@ require('dotenv').config()
 // Define Cache Location and API Endpoint
 const CACHE_FILE_PATH = '_cache/webmentions.json'
 const API = 'https://webmention.io/api'
+const DOMAIN = 'mxb.at'
 
 async function fetchWebmentions(since) {
-    const domain = 'mxb.at'
     const token = process.env.WEBMENTION_IO_TOKEN
-
-    // If we dont have a domain access token, abort
     if (!token) {
+        // If we dont have a domain access token, abort
         console.warn(
             'unable to fetch webmentions: no access token specified in environment.'
         )
         return false
     }
 
-    let url = `${API}/mentions.jf2?domain=${domain}&token=${token}&per-page=100`
+    let url = `${API}/mentions.jf2?domain=${DOMAIN}&token=${token}&per-page=100`
     if (since) url += `&since=${since}`
 
     const response = await fetch(url)
