@@ -67,12 +67,19 @@
     /* Code blocks */
     pre[class*='language-'] {
         display: block;
-        position: relative;
         font-size: 1rem;
-        padding: 2rem 0;
-        margin: 2rem 0;
-        width: 100%;
+        padding: 2rem 1.5rem;
+        margin: 2rem calc(50% - 50vw);
         overflow-x: scroll;
+
+        > code {
+            @include container-narrow;
+            display: block;
+        }
+
+        @include mq(lg) {
+            padding: 2rem 3rem;
+        }
     }
 
     /* Inline code */

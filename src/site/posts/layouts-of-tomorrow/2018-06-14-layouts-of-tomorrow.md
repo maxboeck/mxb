@@ -149,8 +149,8 @@ The secret here is to leverage CSS 3D transforms to separate the layers along th
 
 .parallax-child {
   transform-origin: 0 0;
-  /* move the children to a layer in the background,
-     then scale them back up to their original size */
+  /* move the children to a layer in the background, */
+  /* then scale them back up to their original size */
   transform: translateZ(-2px) scale(3);
 }
 ```

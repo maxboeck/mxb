@@ -9,9 +9,6 @@ pre[class*='language-'] {
     tab-size: 4;
     hyphens: none;
     white-space: pre;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
     background: #1d1f21;
     color: #f9f8f5;
 }
@@ -31,7 +28,8 @@ pre[class*='language-'] {
 .token.tag,
 .token.constant,
 .token.symbol,
-.token.deleted {
+.token.deleted,
+.token.class-name {
     color: #ae81ff;
 }
 
@@ -65,7 +63,7 @@ pre[class*='language-'] {
 }
 
 .token.keyword {
-    color: #00e0e0;
+    color: #66d9ef;
 }
 
 .token.regex,
