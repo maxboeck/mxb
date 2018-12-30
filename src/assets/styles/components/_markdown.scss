@@ -6,7 +6,7 @@
     }
 
     /* In-Text Links */
-    p a {
+    p a:not(.btn) {
         box-shadow: inset 0 -2px 0 0 $link-color;
         border-bottom: 1px solid $link-color;
 
