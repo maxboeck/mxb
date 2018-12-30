@@ -5,6 +5,8 @@ const htmlmin = require('html-minifier')
 const filters = require('./_custom/filters.js')
 const shortcodes = require('./_custom/shortcodes.js')
 
+const env = process.env.ELEVENTY_ENV
+
 module.exports = function(config) {
     // Filters
     Object.keys(filters).forEach(filterName => {
@@ -37,12 +39,12 @@ module.exports = function(config) {
         })
     })
 
-    // Collections: Posts in Blog
+    // Collections: Posts
     config.addCollection('posts', function(collection) {
         return collection
             .getAllSorted()
             .filter(item => item.inputPath.match(/\/posts\//) !== null)
-            .filter(item => item.data.public !== false)
+            .filter(item => !(item.data.draft && env === 'prod'))
     })
 
     // Collections: Notes

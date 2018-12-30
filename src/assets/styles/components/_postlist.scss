@@ -18,7 +18,11 @@
     }
     &__title {
         margin-bottom: 0.25rem;
-        color: $link-color;
+        color: $brand-primary;
+
+        .postlist__item--draft & {
+            color: $brand-secondary;
+        }
     }
     &__meta {
         font-size: 1.125rem;

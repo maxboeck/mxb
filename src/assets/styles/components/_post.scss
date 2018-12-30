@@ -22,6 +22,10 @@
         text-transform: uppercase;
         letter-spacing: 4px;
     }
+    &__status {
+        font-weight: 700;
+        color: $brand-secondary;
+    }
     &__demo {
         margin-left: 2rem;
     }

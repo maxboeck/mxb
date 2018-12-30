@@ -19,6 +19,10 @@ layout: base
             &sdot; <span class="post__category p-category">{{ category | capitalize }}</span>
             {% endif %}
 
+            {% if draft %}
+            &sdot; <span class="post__status">(Draft)</span>
+            {% endif %}
+
             {% if demo %}
             <a href="{{ demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">
                 ViewDemo

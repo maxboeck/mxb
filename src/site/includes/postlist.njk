@@ -1,6 +1,6 @@
 <ol reversed class="postlist" start="{{ postlist.length }}">
     {% for post in postlist | reverse %}
-        <li class="postlist__item">
+        <li class="postlist__item{% if post.data.draft %} postlist__item--draft{% endif %}">
             <a
                 href="{{ post.url | url }}"
                 class="postlist__link"
@@ -23,7 +23,7 @@
                         </span>
                     {% endif %}
 
-                    {% if post.data.is_draft %}
+                    {% if post.data.draft %}
                         &sdot;
                         <span class="postlist__status">(Draft)</span>
                     {% endif %}
