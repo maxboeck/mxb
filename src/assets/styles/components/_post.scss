@@ -26,12 +26,26 @@
         margin-left: 2rem;
     }
     &__content {
-        margin: 0 auto;
-        max-width: $container-narrow-max-width;
+        @include container-narrow;
+    }
+    &__footer {
+        @include container-narrow;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem auto;
+
+        &__info {
+            margin: 1rem 0;
+            color: $gray;
+            font-style: italic;
+        }
     }
 }
 
 .postsection {
+    @include container-narrow;
     padding: 2rem 0;
     border-top: 1px solid $gray-lighter;
 

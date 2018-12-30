@@ -89,6 +89,7 @@
 }
 
 @mixin container-narrow() {
+    width: 100%;
     max-width: $container-narrow-max-width;
     margin-left: auto;
     margin-right: auto;

@@ -9,7 +9,7 @@ layout: base
     itemtype="http://schema.org/BlogPosting" 
     aria-labelledby="{{ title | slug }}-title" 
 >
-    <header class="post__header container">
+    <header class="post__header">
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
@@ -33,8 +33,7 @@ layout: base
     </div>
 
     <div class="post__footer">
-
-        <div class="post__reldata" hidden>
+        <div hidden>
             <a class="u-url" href="{{ url }}">{{ title }}</a>
             <p class="h-card p-author">
                 <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ author.name }}</a>
@@ -42,17 +41,21 @@ layout: base
             </p>
         </div>
 
-        <p>
-            <small>Published in [{{ category }}] &sdot; {{ page.date | readableDate }}</small>
+        <p class="post__footer__info">
+            Published in [ {{ category }} ] &sdot; {{ page.date | readableDate }}
         </p>
 
-        <a href="https://twitter.com/intent/follow?screen_name=mxbck" target="_blank" rel="noopener noreferrer" title="Follow Max Böck on Twitter"
-            class="btn btn--twitter">
+        <a
+            href="https://twitter.com/intent/follow?screen_name=mxbck"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Follow {{ author.name }} on Twitter"
+            class="btn btn--twitter"
+        >
             {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
         </a>
     </div>
 </article>
-
 
 <section class="postsection" id="webmentions">
     <h3 class="postsection__title">Webmentions</h3>

@@ -1,4 +1,6 @@
 .postlist {
+    @include container-narrow;
+
     &__item {
         margin-bottom: 3rem;
 
