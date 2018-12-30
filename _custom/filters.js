@@ -2,7 +2,7 @@ const { DateTime } = require('luxon')
 
 module.exports = {
     format: function(date, format) {
-        return DateTime.fromJSDate(date).toFormat(format)
+        return DateTime.fromJSDate(date).toFormat(String(format))
     },
 
     isoDate: function(date) {
