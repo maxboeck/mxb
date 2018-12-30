@@ -6,7 +6,7 @@ navtitle: Notes
 navorder: 3
 pagination:
   data: collections.notes
-  size: 2
+  size: 20
   alias: notes
 ---
 <ol class="notelist">
@@ -36,4 +36,6 @@ pagination:
 {% endfor %}
 </ol>
 
-{{ pagination.nextPageHref }}
+{% if pagination.nextPageHref %}
+    <a href="{{ pagination.nextPageHref }}" hidden>next page</a>
+{% endif %}

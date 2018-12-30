@@ -32,8 +32,14 @@
             border-radius: 50%;
         }
     }
+
+    a.u-mention,
+    a:empty {
+        display: none;
+    }
 }
 
+// WM Section
 .webmentions {
     &__toggle {
         display: block;
@@ -45,7 +51,7 @@
         margin-bottom: 1rem;
     }
 }
-
+// Expand when targeted
 #webmentions:target {
     .webmentions__header {
         display: none;

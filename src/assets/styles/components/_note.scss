@@ -1,5 +1,5 @@
 .note {
-    width: 100%;
+    @include container-narrow;
     position: relative;
     min-height: 100px;
     padding: 1rem;
@@ -75,7 +75,9 @@
 }
 
 .notelist {
+    @include container-narrow;
     position: relative;
+
     &::before {
         content: '';
         display: block;
