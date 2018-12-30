@@ -1,7 +1,10 @@
 ---
 layout: base
 ---
-<div class="note h-entry">
+{% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
+
+<div class="note note--detail h-entry">
     <div class="note__meta">
         <a class="note__author u-author" href="{{ site.url }}">
             <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
@@ -15,4 +18,15 @@ layout: base
             {{ content | safe }}
         </div>
     </div>
+    {% if mentions %}
+    <div class="note__webmentions">
+        <ol class="webmentions">
+            {% for webmention in mentions | reverse %}
+            <li class="webmentions__item">
+                {% include 'webmention.njk' %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    {% endif %}
 </div>
