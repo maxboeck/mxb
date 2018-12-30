@@ -11,9 +11,9 @@
         {% if mentions %}
             <ol class="webmentions__list">
             {% for webmention in mentions | reverse %}
-            <li class="webmentions__item">
-                {% include 'webmention.njk' %}
-            </li>
+                <li class="webmentions__item">
+                    {% include 'webmention.njk' %}
+                </li>
             {% endfor %}
             </ol>
         {% else %}
