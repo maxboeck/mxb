@@ -1,6 +1,6 @@
 ---
 title: How to turn your website into a PWA
-category: code
+tags: code
 image: /blog/how-to-turn-your-website-into-a-pwa/cover.jpg
 ---
 

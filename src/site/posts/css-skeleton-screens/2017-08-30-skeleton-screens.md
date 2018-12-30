@@ -1,7 +1,7 @@
 ---
 title: Building Skeleton Screens with CSS
 slug: css-skeleton-screens
-category: code
+tags: code
 image: /blog/css-skeleton-screens/cover.png
 description: "Designing loading states on the web is often overlooked or dismissed as an afterthought. Building an experience that works with slow connections is not only a developer's challenge..."
 ---

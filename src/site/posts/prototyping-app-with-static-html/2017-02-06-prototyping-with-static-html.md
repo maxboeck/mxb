@@ -1,7 +1,7 @@
 ---
 title: Prototyping an App in Static HTML
 slug: prototyping-app-with-static-html
-category: code
+tags: code
 image: /blog/prototyping-app-with-static-html/laptop-files.jpg
 ---
 

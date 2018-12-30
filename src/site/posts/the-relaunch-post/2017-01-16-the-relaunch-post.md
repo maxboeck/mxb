@@ -1,6 +1,6 @@
 ---
 title: The Relaunch Post
-category: code
+tags: code
 image: /blog/the-relaunch-post/screenshot.jpg
 ---
 

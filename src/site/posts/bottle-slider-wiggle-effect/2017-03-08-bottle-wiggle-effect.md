@@ -1,6 +1,6 @@
 ---
 title: Bottle Slider Wiggle Effect
-category: code, design
+tags: ["code", "design"]
 image: /blog/bottle-slider-wiggle-effect/slider.jpg
 ---
 

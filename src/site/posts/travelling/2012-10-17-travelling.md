@@ -1,6 +1,6 @@
 ---
 title: Travelling
-category: General
+tags: general
 ---
 
 <p class="lead">

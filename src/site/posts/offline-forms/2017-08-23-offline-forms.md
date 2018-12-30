@@ -1,7 +1,7 @@
 ---
 title: Offline-Friendly Forms
 slug: "offline-forms"
-category: code
+tags: code
 image: /blog/offline-forms/cover.jpg
 ---
 

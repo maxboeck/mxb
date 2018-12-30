@@ -1,7 +1,7 @@
 ---
 title: "Frontend Developer Interview Answers"
 permalink: "/blog/frontend-developer-interview-answers/"
-category: code
+tags: code
 ---
 
 <p class="lead">

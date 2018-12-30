@@ -1,7 +1,7 @@
 ---
 title: The Layouts of Tomorrow
 slug: layouts-of-tomorrow
-category: code, design
+tags: ["code", "design"]
 image: /blog/layouts-of-tomorrow/cover.jpg
 description: "I went over to dribbble in search of fresh webdesign ideas - how hard is it to build a non-standard layout, given the modern CSS tools we have today? An experiment on CodePen."
 demo: https://codepen.io/mxbck/live/81020404c9d5fd873a717c4612c914dd

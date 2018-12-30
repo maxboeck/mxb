@@ -15,8 +15,8 @@ layout: base
 
             <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
 
-            {% if category %}
-            &sdot; <span class="post__category p-category">{{ category | capitalize }}</span>
+            {% if tags %}
+            &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
             {% endif %}
 
             {% if draft %}
@@ -46,7 +46,7 @@ layout: base
         </div>
 
         <p class="post__footer__info">
-            Published in [ {{ category }} ] &sdot; {{ page.date | readableDate }}
+            Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate }}
         </p>
 
         <a

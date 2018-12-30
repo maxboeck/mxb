@@ -16,10 +16,10 @@
                         {{ post.date | readableDate }}
                     </time>
 
-                    {% if post.data.category %}
+                    {% if post.data.tags %}
                         &sdot;
-                        <span class="postlist__category">
-                            {{ post.data.category }}
+                        <span class="postlist__tags">
+                            {{ post.data.tags|join(', ') }}
                         </span>
                     {% endif %}
 

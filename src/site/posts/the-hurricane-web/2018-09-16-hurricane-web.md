@@ -1,7 +1,7 @@
 ---
 title: The Hurricane Web
 slug: hurricane-web
-category: general
+tags: general
 image: /blog/hurricane-web/npr.png
 ---
 

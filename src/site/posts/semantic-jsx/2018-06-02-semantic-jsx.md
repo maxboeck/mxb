@@ -1,6 +1,6 @@
 ---
 title: Semantic JSX
-category: code
+tags: code
 image: /blog/semantic-jsx/cover.jpg
 ---
 

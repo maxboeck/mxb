@@ -1,6 +1,6 @@
 ---
 title: Music to work to
-category: general
+tags: general
 ---
 
 <p class="lead">
