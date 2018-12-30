@@ -29,13 +29,13 @@
                     {% endif %}
                 </div>
 
-                <div class="postlist__excerpt p-summary">
+                <p class="postlist__excerpt p-summary">
                 {% if post.data.description %}
                     {{ post.data.description }}
                 {% else %}
                     {% excerpt post %}
                 {% endif %}
-                </div>
+                </p>
             </a>
         </li>
     {% endfor %}

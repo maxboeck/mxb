@@ -7,7 +7,7 @@ module.exports = {
     },
 
     excerpt: function(post) {
-        const excerptMinimumLength = 140
+        const excerptMinimumLength = 80
         const excerptSeparator = '<!--more-->'
         const findExcerptEnd = (content, skipLength = 0) => {
             if (content === '') {
@@ -27,6 +27,7 @@ module.exports = {
 
             return paragraphEnd
         }
+        const clean = str => str.trim().replace(/<[^>]+>/g, '')
 
         if (!post.hasOwnProperty('templateContent')) {
             return
@@ -35,14 +36,14 @@ module.exports = {
         const content = post.templateContent
 
         if (content.includes(excerptSeparator)) {
-            return content
-                .substring(0, content.indexOf(excerptSeparator))
-                .trim()
+            return clean(
+                content.substring(0, content.indexOf(excerptSeparator))
+            )
         } else if (content.length <= excerptMinimumLength) {
-            return content.trim()
+            return clean(content)
         }
 
         const excerptEnd = findExcerptEnd(content)
-        return content.substring(0, excerptEnd).trim()
+        return clean(content.substring(0, excerptEnd))
     }
 }
