@@ -1,5 +1,4 @@
 {
     "layout": "post",
-    "tags" : ["posts"],
     "permalink": "blog/{% if slug %}{{ slug }}{% else %}{{ title | slug }}{% endif %}/index.html"
 }

@@ -3,6 +3,7 @@
 title: "Layered Image Loading"
 permalink: "/blog/layered-image-loading/"
 category: code
+public: false
 ---
 
 <p class="lead">An attempt to use big, beautiful backgrounds responsibly.</p>

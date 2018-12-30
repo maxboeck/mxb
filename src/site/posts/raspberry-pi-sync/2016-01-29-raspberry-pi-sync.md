@@ -2,6 +2,7 @@
 title: DIY Sync Server with Raspberry Pi
 slug: raspberry-pi-sync
 category: code
+public: false
 ---
 
 <p class="lead">For the past years, I had all my work files sync between my machines using Dropbox.</p>

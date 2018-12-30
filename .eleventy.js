@@ -37,6 +37,22 @@ module.exports = function(config) {
         })
     })
 
+    // Collections: Posts in Blog
+    config.addCollection('posts', function(collection) {
+        return collection
+            .getAllSorted()
+            .filter(item => item.inputPath.match(/\/posts\//) !== null)
+            .filter(item => item.data.public !== false)
+    })
+
+    // Collections: Notes
+    config.addCollection('notes', function(collection) {
+        return collection
+            .getAllSorted()
+            .filter(item => item.inputPath.match(/\/notes\//) !== null)
+            .reverse()
+    })
+
     // Minify HTML Output
     config.addTransform('htmlmin', function(content, outputPath) {
         if (outputPath.endsWith('.html')) {
