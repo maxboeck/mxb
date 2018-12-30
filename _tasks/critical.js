@@ -11,13 +11,12 @@ const criticalConfig = {
     ignore: ['@font-face']
 }
 
-const optimizedPages = ['/', '/blog/', '/about/'].map(
-    slug => config.buildDest + slug + 'index.html'
-)
-
 gulp.task('critical', function() {
     return gulp
-        .src(optimizedPages)
+        .src(config.buildDest + '/index.html')
         .pipe(critical(criticalConfig))
+        .on('error', function(err) {
+            console.error(err.message)
+        })
         .pipe(gulp.dest(config.buildDest))
 })

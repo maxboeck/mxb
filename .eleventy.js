@@ -57,7 +57,7 @@ module.exports = function(config) {
 
     // Minify HTML Output
     config.addTransform('htmlmin', function(content, outputPath) {
-        if (outputPath.endsWith('.html')) {
+        if (env === 'prod' && outputPath.endsWith('.html')) {
             return htmlmin.minify(content, {
                 useShortDoctype: true,
                 removeComments: true,
