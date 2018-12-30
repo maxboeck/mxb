@@ -11,7 +11,7 @@ const criticalConfig = {
     ignore: ['@font-face']
 }
 
-const optimizedPages = ['/', '/blog/', '/about/', '/contact/'].map(
+const optimizedPages = ['/', '/blog/', '/about/'].map(
     slug => config.buildDest + slug + 'index.html'
 )
 
