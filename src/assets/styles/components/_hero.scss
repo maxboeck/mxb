@@ -5,6 +5,10 @@
     justify-content: center;
     padding: 2rem 0 4rem;
 
+    @include mq(lg) {
+        min-height: 500px;
+    }
+
     &__inner {
         display: flex;
         flex-direction: column;

@@ -67,10 +67,12 @@
     /* Code blocks */
     pre[class*='language-'] {
         display: block;
+        position: relative;
         font-size: 1rem;
         padding: 2rem 0;
-        margin: 2rem calc(50% - 50vw);
-        overflow: auto;
+        margin: 2rem 0;
+        width: 100%;
+        overflow-x: scroll;
     }
 
     /* Inline code */
