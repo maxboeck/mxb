@@ -6,6 +6,7 @@
         @extend .lead;
     }
     &__content {
+        @include container-narrow;
         padding-bottom: 2rem;
     }
 

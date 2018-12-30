@@ -1,50 +1,16 @@
 ---
-layout: page
+layout: base
 tags: nav
 title: Articles
 navtitle: Articles
 navorder: 2
 ---
-
-<ol reversed class="postlist" start="{{ collections.post.length }}">
-{% for post in collections.posts | reverse %}
-    <li class="postlist__item">
-        <a
-            href="{{ post.url | url }}"
-            class="postlist__link"
-            rel="bookmark"
-            aria-labelledby="{{ post.data.title | slug }}-title"
-        >
-            <h2 id="{{ post.data.title | slug }}-title" class="postlist__title p-name">
-                {{ post.data.title }}
-            </h2>
-
-            <div class="postlist__meta">
-                <time class="postlist__date dt-published" datetime="{{ post.date | isoDate }}">
-                    {{ post.date | readableDate }}
-                </time>
-
-                {% if post.data.category %}
-                    &sdot;
-                    <span class="postlist__category">
-                        {{ post.data.category }}
-                    </span>
-                {% endif %}
-
-                {% if post.data.is_draft %}
-                    &sdot;
-                    <span class="postlist__status">(Draft)</span>
-                {% endif %}
-            </div>
-
-            <div class="postlist__excerpt p-summary">
-            {% if post.data.description %}
-                {{ post.data.description }}
-            {% else %}
-                {% excerpt post %}
-            {% endif %}
-            </div>
-        </a>
-    </li>
-{% endfor %}
-</ol>
+<div class="page page--blog">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+    </header>
+    <div class="page__content">
+        {%- set postlist = collections.posts -%}
+        {% include "postlist.njk" %}
+    </div>
+</div>
