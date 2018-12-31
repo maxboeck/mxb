@@ -2,7 +2,7 @@
 title: The Hurricane Web
 slug: hurricane-web
 tags: general
-image: /blog/hurricane-web/npr.png
+image: npr.png
 ---
 
 As Hurricane Florence makes its way across the US southeast coast, many people are stuck in areas with severe flooding. These people rely on outside information, yet have limited bandwidth and power.
@@ -14,7 +14,7 @@ To help them, news platforms like [CNN](http://lite.cnn.io/en) and [NPR](https:/
 That's a great thing. Here's how it looks:
 
 <a href="https://text.npr.org/">
-    <img src="{% media 'npr.png', page %}" style="border:1px solid #DDD;" alt="Screenshot of the NPR text-only site">
+    <img src="{{ 'npr.png' | media(page) }}" style="border:1px solid #DDD;" alt="Screenshot of the NPR text-only site">
 </a>   
 
 ## Less is More
@@ -32,7 +32,7 @@ I'd argue though that in some aspects, they are actually better than the origina
 * It has close to perfect performance scores:
 
 <figure>
-    <img src="{% media 'lighthouse-npr.png', page %}" alt="Google Lighthouse Report for text.npr.org">
+    <img src="{{ 'lighthouse-npr.png' | media(page) }}" alt="Google Lighthouse Report for text.npr.org">
     <figcaption>The site needs exactly one request (the HTML), weighs in under 5KB and loads in about one second on a low-bandwidth 2g connection.</figcaption>
 </figure>
 
@@ -42,7 +42,7 @@ The only thing missing here might be a few sensible lines of CSS to set better t
 
 This is the web as it was originally designed. Pure information, with zero overhead. Beautiful in a way.
 
-<img src="{% media 'requests-npr.png', page %}" alt="" />
+<img src="{{ 'requests-npr.png' | media(page) }}" alt="" />
 
 The "full" NPR site in comparison takes __~114 requests__ and weighs close to __3MB__ on average. Time to first paint is around 20 seconds on slow connections. It includes ads, analytics, tracking scripts and social media widgets.
 

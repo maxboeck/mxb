@@ -45,11 +45,5 @@ module.exports = {
 
         const excerptEnd = findExcerptEnd(content)
         return clean(content.substring(0, excerptEnd))
-    },
-
-    media: function(filename, page) {
-        const path = page.inputPath.split('/')
-        const subdir = path[path.length - 2]
-        return `/assets/media/${subdir}/${filename}`
     }
 }

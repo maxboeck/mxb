@@ -56,5 +56,11 @@ module.exports = {
         return posts
             .filter(post => post.data.title !== currentPostTitle)
             .slice(-10)
+    },
+
+    media: function(filename, page) {
+        const path = page.inputPath.split('/')
+        const subdir = path[path.length - 2]
+        return `/assets/media/${subdir}/${filename}`
     }
 }
