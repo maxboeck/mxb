@@ -44,6 +44,7 @@ module.exports = function(config) {
         return collection
             .getAllSorted()
             .filter(item => item.inputPath.match(/\/posts\//) !== null)
+            .filter(item => item.data.permalink !== false)
             .filter(item => !(item.data.draft && env === 'prod'))
     })
 
