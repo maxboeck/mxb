@@ -10,7 +10,7 @@ const CACHE_FILE_PATH = '_cache/webmentions.json'
 const API = 'https://webmention.io/api'
 const DOMAIN = 'mxb.at'
 
-async function fetchWebmentions(since) {
+async function fetchWebmentions(since, perPage = 100) {
     const token = process.env.WEBMENTION_IO_TOKEN
     if (!token) {
         // If we dont have a domain access token, abort
@@ -20,14 +20,17 @@ async function fetchWebmentions(since) {
         return false
     }
 
-    let url = `${API}/mentions.jf2?domain=${DOMAIN}&token=${token}&per-page=100`
+    let url = `${API}/mentions.jf2?domain=${DOMAIN}&token=${token}&per-page=${perPage}`
     if (since) url += `&since=${since}`
 
     const response = await fetch(url)
-    const feed = await response.json()
+    if (response.ok) {
+        const feed = await response.json()
+        console.log(`${feed.children.length} webmentions fetched from ${API}`)
+        return feed
+    }
 
-    console.log(`${feed.children.length} webmentions fetched from ${API}`)
-    return feed
+    return null
 }
 
 // Merge fresh webmentions with cached entries, unique per id
@@ -37,8 +40,14 @@ function mergeWebmentions(a, b) {
 
 // save combined webmentions in cache file
 function writeToCache(data) {
+    const dir = '_cache'
     const fileContent = JSON.stringify(data, null, 2)
-    fs.writeFile(CACHE_FILE_PATH, fileContent, err => {
+    // create cache folder if it doesnt exist already
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir)
+    }
+    // write data to cache json file
+    fs.writeFile(CACHE_FILE_PATH, fileContent, { flag: 'wx' }, err => {
         if (err) throw err
         console.log(`webmentions cached to ${CACHE_FILE_PATH}`)
     })
@@ -61,7 +70,8 @@ module.exports = async function() {
 
     // Only fetch new mentions in production
     if (process.env.ELEVENTY_ENV === 'prod') {
-        const feed = await fetchWebmentions(cache.lastFetched)
+        const limit = cache.children.length ? 100 : 1000
+        const feed = await fetchWebmentions(cache.lastFetched, limit)
         if (feed) {
             const webmentions = {
                 lastFetched: new Date().toISOString(),
