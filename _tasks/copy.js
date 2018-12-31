@@ -10,7 +10,7 @@ gulp.task('copy:assets', function() {
 })
 
 gulp.task('copy:media', function() {
-    const postDir = config.buildSrc + '/site/posts'
+    const postDir = config.buildSrc + '/posts'
     const postMediaGlobs = [
         postDir + '/**/*.{jpg,jpeg,png,gif,webp,mp3,mp4,webm,ogg}'
     ]

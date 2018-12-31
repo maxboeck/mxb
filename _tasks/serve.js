@@ -29,7 +29,10 @@ gulp.task('watch', function() {
     gulp.watch(config.assetSrc + '/styles/**/*', gulp.series('styles', reload))
     gulp.watch(config.assetSrc + '/icons/**/*', gulp.parallel('icons'))
 
-    gulp.watch(config.buildSrc + '/site/**/*', gulp.series('generate', reload))
+    gulp.watch(
+        config.buildSrc + '/**/*.{njk,html,md}',
+        gulp.series('generate', reload)
+    )
 })
 
 gulp.task('serve', gulp.parallel('browsersync', 'watch'))
