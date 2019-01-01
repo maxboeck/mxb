@@ -1,7 +1,11 @@
 {% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
 {% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
 
-<div class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" id="webmentions">
+<div
+    class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" 
+    id="webmentions"
+    data-last-fetched="{{ webmentions.lastFetched }}"
+>
     {% if mentions | length %}
         <div class="webmentions__header">
             <a href="#webmentions" class="webmentions__toggle">
