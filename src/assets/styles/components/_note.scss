@@ -2,7 +2,6 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
-    padding: 1rem;
     border: 1px solid $gray-lighter;
     background-color: #fff;
 
@@ -14,7 +13,7 @@
     &__meta {
         display: flex;
         align-items: center;
-        margin-bottom: 0.5rem;
+        padding: 1rem 1rem 0.5rem 1rem;
 
         &__divider {
             display: inline-block;
@@ -42,6 +41,8 @@
         }
     }
     &__content {
+        padding: 0 1rem 1rem;
+
         a {
             position: relative;
             z-index: 1;
@@ -49,6 +50,24 @@
 
         p {
             margin: 0 !important;
+        }
+    }
+    &__stats {
+        display: flex;
+        color: $gray-light;
+        font-size: 0.875rem;
+        padding: 1rem;
+        background-color: $gray-lightest;
+        border-top: 1px solid $gray-lighter;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            margin-right: 2rem;
+
+            .icon {
+                margin-right: 0.25rem;
+            }
         }
     }
     &__link {
@@ -61,16 +80,21 @@
             box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.05);
         }
     }
+    &__webmentions {
+        padding: 1rem;
+        border-top: 1px solid $gray-lighter;
+    }
 
     @include mq(md) {
         border-radius: 6px;
 
         &__meta {
-            padding-left: 4rem;
+            padding-left: 5rem;
             margin-bottom: 0;
         }
-        &__content {
-            padding-left: 4rem;
+        &__content,
+        &__stats {
+            padding-left: 5rem;
         }
         &__author__photo {
             position: absolute;

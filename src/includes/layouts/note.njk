@@ -2,6 +2,7 @@
 layout: base
 ---
 {% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentionCount = webmentions.children | webmentionCountByType(absolutePostUrl, "in-reply-to", "mention-of") %}
 {% set likeCount = webmentions.children | webmentionCountByType(absolutePostUrl, "like-of") %}
 {% set repostCount = webmentions.children | webmentionCountByType(absolutePostUrl, "repost-of") %}
 
@@ -21,11 +22,20 @@ layout: base
             {{ content | safe }}
         </div>
     </div>
-    <div class="note__stats">
-        {% icon "heart" %}{{ likeCount }}
-        {% icon "repost" %}{{ repostCount }}
-    </div>
-    <div class="note__webmentions">
-        {% include 'webmentions.njk' %}       
-    </div>
+    <ul class="note__stats">
+        <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
+            {% icon "message" %}{{ mentionCount }}
+        </li>
+        <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
+            {% icon "repost" %}{{ repostCount }}
+        </li>
+        <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
+            {% icon "heart" %}{{ likeCount }}
+        </li>
+    </ul>
+    {% if mentionCount != "0" %}
+        <div class="note__webmentions">
+            {% include 'webmentions.njk' %}       
+        </div>
+    {% endif %}
 </div>
