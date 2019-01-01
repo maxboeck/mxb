@@ -15,35 +15,40 @@ pagination:
     </header>
     <div class="page__content">
 
-        <ol reversed class="notelist">
-        {% for note in notes %}
-            <li class="notelist__item">
+        {% if notes | length %}
+            <ol reversed class="notelist">
+            {% for note in notes %}
+                <li class="notelist__item">
 
-                <div class="note h-entry">
-                    <div class="note__meta">
-                        <span class="note__author u-author">
-                            <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
-                            <strong class="note__author__name">{{ author.name }}</strong>
-                        </span>
-                        <span class="note__meta__divider">&sdot;</span>
-                        <time class="note__date dt-published" datetime="{{ note.date | iso }}">
-                            {{ note.date | readableDate }}
-                        </time>
-                    </div>
-                    <div class="note__content">
-                        <div class="p-name p-content markdown">
-                            {{ note.templateContent | safe }}
+                    <div class="note h-entry">
+                        <div class="note__meta">
+                            <span class="note__author u-author">
+                                <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
+                                <strong class="note__author__name">{{ author.name }}</strong>
+                            </span>
+                            <span class="note__meta__divider">&sdot;</span>
+                            <time class="note__date dt-published" datetime="{{ note.date | iso }}">
+                                {{ note.date | readableDate }}
+                            </time>
                         </div>
+                        <div class="note__content">
+                            <div class="p-name p-content markdown">
+                                {{ note.templateContent | safe }}
+                            </div>
+                        </div>
+                        <a href="{{ note.url }}" class="note__link"></a>
                     </div>
-                    <a href="{{ note.url }}" class="note__link"></a>
-                </div>
 
-            </li>
-        {% endfor %}
-        </ol>
+                </li>
+            {% endfor %}
+            </ol>
 
-        {% if pagination.nextPageHref %}
-            <a href="{{ pagination.nextPageHref }}" hidden>next page</a>
+            {% if pagination.nextPageHref %}
+                <a href="{{ pagination.nextPageHref }}" hidden>next page</a>
+            {% endif %}
+
+        {% else %}
+            <p class="lead">No Notes yet.</p>
         {% endif %}
 
     </div>
