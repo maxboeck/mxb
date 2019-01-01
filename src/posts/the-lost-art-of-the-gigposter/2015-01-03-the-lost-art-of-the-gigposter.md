@@ -9,12 +9,8 @@ There are some very talented people out there dedicated to poster art. Some of m
 
 Here are a few of my own works that I made over the years:
 
-<div class="scrollpane scrollpane--posters">
-    <ul class="scrollpane__content">
-        {% for src in posters %}
-        <li class="scrollpane__item">
-            <img src="{{ src | media(page) }}" alt="">
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+{% for src in posters %}
+<figure>
+    <img src="{{ src | media(page) }}" style="border:1px solid #EAEAEA" alt="">
+</figure>
+{% endfor %}
