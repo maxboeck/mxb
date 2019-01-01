@@ -29,10 +29,11 @@ module.exports = {
     },
 
     webmentionsByUrl: function(webmentions, url) {
-        const types = ['mention-of', 'in-reply-to']
+        const allowedTypes = ['mention-of', 'in-reply-to']
+
         const clean = entry => {
             const { content } = entry
-            if (content['content-type'] === 'text/html') {
+            if (content && content['content-type'] === 'text/html') {
                 if (content.value.length > 2000) {
                     // really long html mentions, usually newsletters or compilations
                     entry.content.value = `mentioned this in <a href="${
@@ -47,9 +48,17 @@ module.exports = {
 
         return webmentions
             .filter(entry => entry['wm-target'] === url)
-            .filter(entry => types.includes(entry['wm-property']))
+            .filter(entry => allowedTypes.includes(entry['wm-property']))
             .filter(entry => !!entry.content)
             .map(clean)
+    },
+
+    webmentionCountByType: function(webmentions, url, ...types) {
+        return String(
+            webmentions
+                .filter(entry => entry['wm-target'] === url)
+                .filter(entry => types.includes(entry['wm-property'])).length
+        )
     },
 
     otherPosts: function(posts, currentPostTitle) {

@@ -1,14 +1,14 @@
 {% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
 {% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
 
-<div class="webmentions">
+<div class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" id="webmentions">
     <div class="webmentions__header">
         <a href="#webmentions" class="webmentions__toggle">
             {% icon "message" %} Show All ({{ mentions | length }})
         </a>
     </div>
     <div class="webmentions__content">
-        {% if mentions %}
+        {% if mentions | length %}
             <ol class="webmentions__list">
             {% for webmention in mentions | reverse %}
                 <li class="webmentions__item">
