@@ -21,7 +21,6 @@
   "dependencies": {
     "focus-visible": "^4.1.5",
     "lodash": "^4.17.10",
-    "luxon": "^1.8.2",
     "promise-polyfill": "^8.0.0",
     "svg4everybody": "^2.1.9"
   },
@@ -47,6 +46,7 @@
     "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "html-minifier": "^3.5.20",
+    "luxon": "^1.8.2",
     "node-fetch": "^2.3.0",
     "require-dir": "^1.2.0",
     "webpack-stream": "^4.0.3",
