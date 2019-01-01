@@ -14,7 +14,7 @@ A number of options exist to provide music while working, the easiest being your
 I recently switched to Spotify, which provides me with an endless stream of new songs and artists. A major drawback are the advertisements in between though, plus it's hard too find some of the more obscure tracks. I do like some of the predefined "mood" playlists for working though, there's quite a few of them called "Focus" or similar.
 
 <figure class="extend">
-  <img src="spotify-playlists.jpg" alt="Collection of Spotify Playlists">
+  <img src="{{ 'spotify-playlists.jpg' | media(page) }}" alt="Collection of Spotify Playlists">
   <figcaption>Some working music playlists on spotify</figcaption>
 </figure>
 

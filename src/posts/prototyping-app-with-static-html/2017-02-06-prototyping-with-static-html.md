@@ -2,7 +2,7 @@
 title: Prototyping an App in Static HTML
 slug: prototyping-app-with-static-html
 tags: code
-image: /blog/prototyping-app-with-static-html/laptop-files.jpg
+image: laptop-files.jpg
 ---
 
 <p class="lead">I recently worked on a larger new web app. The product was in its early stages, so one of the first big tasks was to come up with a prototype for the UI design.</p>
@@ -115,7 +115,7 @@ The view files should ideally only arrange different components, and have very l
 Designers (myself included), sometimes tend to make things "too pretty" to produce nice-looking mockups for the client.
 
 <figure class="extend">
-  <img src="apple-watch.jpg" alt="Apple Watch Models">
+  <img src="{{ 'apple-watch.jpg' | media(page) }}" alt="Apple Watch Models">
   <figcaption>Look at all my cool model friends with four-letter names.</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ Here's where static HTML prototypes shine. One of their big benefits is the abil
 Mockup data generators like [Mockaroo](https://www.mockaroo.com/) give you a simple interface to quickly produce demo data in any structure you like. Say you needed some sample users for your app:
 
 <figure class="extend">
-  <img src="mockaroo.png" alt="The Mockaroo UI, different field types define the structure of a data ressource">
+  <img src="{{ 'mockaroo.png' | media(page) }}" alt="The Mockaroo UI, different field types define the structure of a data ressource">
 </figure>
 
 Mockaroo lets you define your data as a collecton of fields and it has a field type for almost anything you can think of. You can generate text, images, bitcoin addresses - you name it. It can also give you a predefined percentage of random blank fields.

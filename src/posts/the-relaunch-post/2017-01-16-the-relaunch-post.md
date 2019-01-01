@@ -1,7 +1,7 @@
 ---
 title: The Relaunch Post
 tags: code
-image: /blog/the-relaunch-post/screenshot.jpg
+image: screenshot.jpg
 ---
 
 <p class="lead">Two weeks into 2017, I used some spare time to relaunch my website.</p>
@@ -174,7 +174,7 @@ gulp.task('critical', () => {
 The task inserts the extracted styles in a `<style>` tag and includes a tiny script to load the main CSS after the page is done:
 
 <figure class="extend">
-  <img alt="Inserted inline CSS in head" src="critical-css.jpg" />
+  <img alt="Inserted inline CSS in head" src="{{ 'critical-css.jpg' | media(page) }}" />
 </figure>
 
 ### Offline is the new black
@@ -193,7 +193,7 @@ There are different methods of letting SW handle network requests, you can find 
 On my site, I opted for a pretty simple approach. Since it's all static files, I can pre-cache the most important assets and top-level pages in a Service Worker to drastically reduce the amount of data and network requests necessary. When a client first hits the site, the SW installs itself and caches a list of ressources with it, after the page has loaded:
 
 <figure class="extend">
-  <img alt="network requests made by Service Worker" src="sw-install.jpg" />
+  <img alt="network requests made by Service Worker" src="{{ 'sw-install.jpg' | media(page) }}" />
   <figcaption>See the small Cog Icon? That's the ServiceWorker doing its thing.</figcaption>
 </figure>
 
@@ -201,7 +201,7 @@ Now, once it is active, the SW can intercept all requests to files in its cache,
 Here's what happens when the client navigates to another page:
 
 <figure class="extend">
-  <img alt="cached assets delivered by the service worker" src="sw-active.jpg" />
+  <img alt="cached assets delivered by the service worker" src="{{ 'sw-active.jpg' | media(page) }}" />
 </figure>
 
 Everything important is instantly available. Even when offline, these assets can be accessed.
@@ -218,19 +218,19 @@ Here's how it turned out. I'm pretty happy with it!
 
 #### WebpageTest
 <figure class="extend">
-  <img src="webpagetest.png" alt="webpagetest results" />
+  <img src="{{ 'webpagetest.png' | media(page) }}" alt="webpagetest results" />
   <figcaption>SpeedIndex under 1000! also note the improvement on repeat views due to service worker.</figcaption>
 </figure>
 
 #### Google PageSpeed
 <figure class="extend">
-  <img src="pagespeed.jpg" alt="pagespeed results" />
+  <img src="{{ 'pagespeed.jpg' | media(page) }}" alt="pagespeed results" />
   <figcaption>analytics is not properly cached - oh the irony <span style="font-style:normal">😒</span></figcaption>
 </figure>
 
 #### Google Lighthouse
 <figure class="extend">
-  <img src="lighthouse.jpg" alt="lighthouse results" />
+  <img src="{{ 'lighthouse.jpg' | media(page) }}" alt="lighthouse results" />
 </figure>
 
 Alright, that's it! Let's see how much of this still holds up in 2018. See you then!

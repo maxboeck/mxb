@@ -1,7 +1,7 @@
 ---
 title: Connection-Aware Components
 tags: code
-image: /blog/connection-aware-components/cover.jpg
+image: cover.jpg
 description: "The Network Information API provides insight into a user's network condition. Combining it with React might enable us to build sites that can respond to different connection speeds."
 demo: https://codepen.io/mxbck/pen/5e897c9cd7c75d130d1f86bc5b87a1d2?editors=0010
 ---
@@ -40,7 +40,7 @@ This is a combined estimation of the network quality, based on the round-trip ti
 
 <div class="extend">
     <figure>
-        <img src="connection-types.png" alt="" />
+        <img src="{{ 'connection-types.png' | media(page) }}" alt="" />
         <figcaption>Table of the <a href="http://wicg.github.io/netinfo/#dfn-effective-connection-type">effective connection types (ECT)</a></figcaption> 
     </figure>
 </div>
@@ -62,7 +62,7 @@ navigator.connection.addEventListener('change', onConnectionChange)
 ### Support
 
 <a href="https://caniuse.com/#search=Network%20Information%20API">
-    <img src="support.png" alt="can I use support table for the network information API" />
+    <img src="{{ 'support.png' | media(page) }}" alt="can I use support table for the network information API" />
 </a>
 
 👉 __Be aware that all of this is still experimental.__ Only Chrome and Samsung Internet browsers have currently implemented the API. It's a very good candidate for progressive enhancement though - and support for other platforms [is on the way](https://docs.google.com/document/d/1LTk9uVMGi4kurzcF5ellsAJReTF31fFJMHrQwSVtBjc/edit).
@@ -80,7 +80,7 @@ By combining the Network Information API with **React**, we could write a compon
 
 <div class="extend">
     <figure>
-        <img src="component-states.jpg" alt="a media component, showing four different states of an image or video of a chameleon" />
+        <img src="{{ 'component-states.jpg' | media(page) }}" alt="a media component, showing four different states of an image or video of a chameleon" />
         <figcaption>The different states of our Media component</figcaption> 
     </figure>
 </div>

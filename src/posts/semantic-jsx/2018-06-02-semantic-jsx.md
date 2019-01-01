@@ -1,7 +1,7 @@
 ---
 title: Semantic JSX
 tags: code
-image: /blog/semantic-jsx/cover.jpg
+image: cover.jpg
 ---
 
 <p class="lead">The React JSX Syntax offers a layer of abstraction that's very useful for component-based systems - but it's easy to forget that everything you write ultimately compiles down to HTML.</p>
@@ -22,14 +22,14 @@ Instead, choose elements based on **behaviour** and **meaning**. As a quick chec
 
 Here's a little quiz: Imagine you're building an App for [we rate dogs™](https://twitter.com/dog_rates) that provides a searchable database of dog pics. What element would you use to build the `<Tag />` component seen here?
 
-![four tags with different dog attributes, labelled "Popular Tags"](tags1.png)
+![four tags with different dog attributes, labelled "Popular Tags"]({{ 'tags1.png' | media(page) }})
 
 In this case, clicking the tags leads you to another page, so they're links. Easy. 
 
 OK, how about now?
 
 <figure>
-    <img src="tags2.png" alt="another set of tags that looks the same, labelled 'Select Tags (pick three)'">
+    <img src="{{ 'tags2.png' | media(page) }}" alt="another set of tags that looks the same, labelled 'Select Tags (pick three)'">
     <figcaption>The component looks the same, but its behaviour is different now.</figcaption>
 </figure>
 

@@ -2,12 +2,12 @@
 title: You're Offline
 tags: code
 slug: youre-offline
-image: /blog/youre-offline/cover.jpg
+image: cover.jpg
 description: "A truly responsive website should adapt to all kinds of situations. Besides different viewport sizes, there are other factors to consider. A change in connectivity is one of them."
 ---
 
 <figure>
-  <img src="notification-sample.jpg" alt="" />
+  <img src="{{ 'notification-sample.jpg' | media(page) }}" alt="" />
 </figure>
 
 <p class="lead">A truly responsive website should adapt to all kinds of situations. Besides different viewport sizes, there are other factors to consider. A change in connectivity is one of them.</p>
@@ -92,10 +92,10 @@ Go ahead, I'll wait.
 
 If you're somewhere else or your browser doesn't support service worker / offline events, here's how this could look:
 
-<div class="extend" style="margin-top:3rem;">
-  <video poster="offline-notification.png" width="944" height="528" alt="Offline Notification" controls>
-    <source src="offline-notification.webm" type="video/webm" />
-    <source src="offline-notification.mp4" type="video/mp4" />
+<div class="extend" style="margin-top:2rem;">
+  <video poster="{{ 'offline-notification.png' | media(page) }}" width="944" height="528" alt="Offline Notification" controls>
+    <source src="{{ 'offline-notification.webm' | media(page) }}" type="video/webm" />
+    <source src="{{ 'offline-notification.mp4' | media(page) }}" type="video/mp4" />
   </video>
 </div>
 
@@ -166,7 +166,7 @@ What's worse is that users might not know there is a problem until it's too late
 ```
 
 <figure>
-  <img src="form-offline.jpg" alt="a disabled form with the words 'sorry, youre offline' in a box on top" />
+  <img src="{{ 'form-offline.jpg' | media(page) }}" alt="a disabled form with the words 'sorry, youre offline' in a box on top" />
   <figcaption>No contact forms in offline country.</figcaption>
 </figure>
 

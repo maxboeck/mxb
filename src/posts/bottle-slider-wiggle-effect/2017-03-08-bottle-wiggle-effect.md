@@ -1,13 +1,13 @@
 ---
 title: Bottle Slider Wiggle Effect
 tags: ["code", "design"]
-image: /blog/bottle-slider-wiggle-effect/slider.jpg
+image: slider.jpg
 ---
 
 <div class="extend">
-  <video poster="/project/weingut-huber/images/bottleslider-still.jpg" preload="" autoplay="autoplay" loop="loop" width="960" height="360">
-    <source src="/project/weingut-huber/video/bottleslider.webm" type="video/webm" />
-    <source src="/project/weingut-huber/video/bottleslider.mp4" type="video/mp4" />
+  <video poster="{{ 'bottleslider-still.jpg' | media(page) }}" preload="" autoplay="autoplay" loop="loop" width="960" height="360">
+    <source src="{{ 'bottleslider.webm' | media(page) }}" type="video/webm" />
+    <source src="{{ 'bottleslider.mp4' | media(page) }}" type="video/mp4" />
   </video>
 </div>
 

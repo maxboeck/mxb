@@ -20,5 +20,5 @@ Of course, some of these questions depend strongly on the context, and some are 
 So my answers are far from perfect and in some cases barely scratch the surface of a topic. But hey, I’m not on trial here, so calm down 😉
 
 <figure class="extend">
-  <img src="ihavenoideawhatimdoing.jpg" alt="I have no idea what I'm doing">
+  <img src="{{ 'ihavenoideawhatimdoing.jpg' | media(page) }}" alt="I have no idea what I'm doing">
 </figure>

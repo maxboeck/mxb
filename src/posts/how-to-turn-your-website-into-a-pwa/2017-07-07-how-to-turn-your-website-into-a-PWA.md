@@ -1,13 +1,13 @@
 ---
 title: How to turn your website into a PWA
 tags: code
-image: /blog/how-to-turn-your-website-into-a-pwa/cover.jpg
+image: cover.jpg
 ---
 
 <p class="lead">A Progressive Web App, or PWA, uses modern web capabilities to deliver an app-like user experience. Any website can be a PWA - here's how to do it.</p>
 
 <figure style="text-align:center">
-  <img src="install.jpg" alt="" />
+  <img src="{{ 'install.jpg' | media(page) }}" alt="" />
   <figcaption>The "add to homescreen" prompt in a PWA</figcaption>    
 </figure>
 
@@ -88,7 +88,7 @@ After you obtained a certificate, there might be some adjustments you need to ma
 
 If everything goes as planned, you'll be rewarded with a nice green lock icon next to your URL:
 
-![HTTPS lock icon](lock-icon.png)
+![HTTPS lock icon]({{ 'lock-icon.png' | media(page) }})
 
 ## Step 3: The Service Worker.
 
@@ -173,7 +173,7 @@ The Chrome [Lighthouse Extension](https://chrome.google.com/webstore/detail/ligh
 It tests your site in different viewports and network speeds, measures time to first paint and other performance factors, and gives valueable advice for areas that still need improvement. It's a really good benchmark for websites in general.
 
 <figure class="extend">
-  <img src="lighthouse.png" alt="Google Lighthouse Report showing audits for PWA, Performance, Accessibility and Best Practices" />
+  <img src="{{ 'lighthouse.png' | media(page) }}" alt="Google Lighthouse Report showing audits for PWA, Performance, Accessibility and Best Practices" />
   <figcaption>Lighthouse report for mxb.at</figcaption>
 </figure>
 

@@ -1,7 +1,7 @@
 ---
 title: CSS Grid Admin Dashboard
 tags: code
-image: /blog/css-grid-admin-dashboard/cover.jpg
+image: cover.jpg
 description: "A closer look at how CSS grid layout can be used in production today, including fallback styles for flexbox."
 ---
 
