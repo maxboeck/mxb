@@ -1,7 +1,7 @@
 // Register Service Worker
 
 export default function() {
-    if (window.build && window.build.env === 'dev') {
+    if (window.env && window.env === 'dev') {
         console.info('skipping service worker registration in development.')
         return false
     }
