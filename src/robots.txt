@@ -1,6 +1,5 @@
 # www.robotstxt.org/
 
-# DO NOT Allow crawling of all content
-# TODO: REMOVE
+Allow crawling of all content
 User-agent: *
-Disallow: /
+Disallow: 
