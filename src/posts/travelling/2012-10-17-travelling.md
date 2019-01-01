@@ -11,9 +11,7 @@ description: "For the last couple of years, I've been fortunate enough to travel
 {% for img in photos %}
 <figure>
     <img 
-      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
-      data-src={{ img.src | media(page) }} 
-      class="lazyload" 
+      src="{{ img.src | media(page) }}"
       alt=""
     >
     <figcaption>{{ img.caption }}</figcaption>
