@@ -61,7 +61,7 @@ module.exports = {
         )
     },
 
-    otherPosts: function(posts, currentPostTitle) {
+    excludePost: function(posts, currentPostTitle) {
         return posts
             .filter(post => post.data.title !== currentPostTitle)
             .slice(-10)
@@ -69,7 +69,10 @@ module.exports = {
 
     media: function(filename, page) {
         const path = page.inputPath.split('/')
-        const subdir = path[path.length - 2]
-        return `/assets/media/${subdir}/${filename}`
+        if (path.length && path.includes('posts')) {
+            const subdir = path[path.length - 2]
+            return `/assets/media/${subdir}/${filename}`
+        }
+        return filename
     }
 }
