@@ -47,7 +47,7 @@ function writeToCache(data) {
         fs.mkdirSync(dir)
     }
     // write data to cache json file
-    fs.writeFile(CACHE_FILE_PATH, fileContent, { flag: 'wx' }, err => {
+    fs.writeFile(CACHE_FILE_PATH, fileContent, err => {
         if (err) throw err
         console.log(`webmentions cached to ${CACHE_FILE_PATH}`)
     })

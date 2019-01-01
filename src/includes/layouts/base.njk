@@ -42,6 +42,8 @@
             {% include "footer.njk" %}
         </div>
 
+        {% if build.env == 'dev' %}<script>window.build.env = 'dev';</script>{% endif %}
+
         {# Main JS Bundle #}
         <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
 

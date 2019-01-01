@@ -1,4 +1,7 @@
+const timestamp = new Date()
+
 module.exports = {
     env: process.env.ELEVENTY_ENV,
-    timestamp: new Date()
+    timestamp: timestamp,
+    id: timestamp.valueOf()
 }

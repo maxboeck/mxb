@@ -1,7 +1,7 @@
 // Register Service Worker
 
 export default function() {
-    if (window.location.hostname === 'localhost') {
+    if (window.build && window.build.env === 'dev') {
         console.info('skipping service worker registration in development.')
         return false
     }
