@@ -2,6 +2,7 @@
 title: The Relaunch Post
 tags: code
 image: screenshot.jpg
+description: 'Two weeks into 2017, I used some spare time to relaunch this website. I do this as a way for me to try new things and catch up on latest techniques.'
 ---
 
 <p class="lead">Two weeks into 2017, I used some spare time to relaunch my website.</p>

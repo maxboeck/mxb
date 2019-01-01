@@ -1,6 +1,7 @@
 ---
 title: Travelling
 tags: general
+description: "For the last couple of years, I've been fortunate enough to travel to quite a few beautiful places on this planet. Here are some of them."
 ---
 
 <p class="lead">

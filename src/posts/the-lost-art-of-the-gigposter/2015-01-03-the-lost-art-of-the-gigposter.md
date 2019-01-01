@@ -1,6 +1,7 @@
 ---
 title: The Lost Art of the Gigposter
 tags: design
+description: "I'm a big fan of good looking music posters. I used to do them myself back when I was in school, and my living room still features some of my favourite designs."
 ---
 
 I'm a big fan of good looking band art. Sadly though, unlike other countries, Austria doesn't really have a culture of well designed concert posters - they're usually just bold type on bright neon paper stapled to a signpost. So for a long time, collecting and designing covers and gig posters for local bands has been one of my favourite hobbies. I just love when music and design come together like this.
