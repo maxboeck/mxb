@@ -83,6 +83,10 @@
     &__webmentions {
         padding: 1rem;
         border-top: 1px solid $gray-lighter;
+
+        .webmentions__item {
+            margin-bottom: 0 !important;
+        }
     }
 
     @include mq(md) {
