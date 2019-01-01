@@ -11,41 +11,10 @@ Here are a few of my own works that I made over the years:
 
 <div class="scrollpane scrollpane--posters">
     <ul class="scrollpane__content">
+        {% for src in posters %}
         <li class="scrollpane__item">
-          <img src="rage2016.jpg" alt="">
+            <img src="{{ src | media(page) }}" alt="">
         </li>
-        <li class="scrollpane__item">
-          <img src="stwoodstock.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="waiting.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="burst.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="treeposter.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="sovjet.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="herzbuben.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="skybreak.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="monkeyposter.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="flammable.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="disominds.jpg" alt="">
-        </li>
-        <li class="scrollpane__item">
-          <img src="rage2017.jpg" alt="">
-        </li>
+        {% endfor %}
     </ul>
 </div>
