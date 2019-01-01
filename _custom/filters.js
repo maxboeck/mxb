@@ -1,4 +1,5 @@
 const { DateTime } = require('luxon')
+const sanitizeHTML = require('sanitize-html')
 
 module.exports = {
     format: function(date, format) {
@@ -40,8 +41,8 @@ module.exports = {
                         entry.url
                     }">${entry.url}</a>`
                 }
-                // strip linebreaks
-                content.value = content.value.replace(/<br\s*\/?>/gi, '')
+                // sanitize HTML
+                content.value = sanitizeHTML(content.value)
             }
             return entry
         }
