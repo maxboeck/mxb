@@ -42,3 +42,16 @@ a {
         color: $link-hover-color;
     }
 }
+
+blockquote {
+    font-family: $font-family-serif;
+    font-style: italic;
+    padding-left: 2.25em;
+    border-left: 10px solid $gray-lighter;
+
+    footer {
+        font-family: $font-family-sans-serif;
+        text-align: right;
+        font-size: 0.875em;
+    }
+}

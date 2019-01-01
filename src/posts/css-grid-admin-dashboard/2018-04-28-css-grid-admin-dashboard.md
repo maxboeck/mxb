@@ -11,7 +11,7 @@ Not only is grid worth checking out, it's also ready to be used in production, t
 
 <figure class="extend">
   <a href="https://caniuse.com/#search=grid">
-    <img src="caniuse_grid.png" alt="Support Statistics for CSS Grid Layout" />
+    <img src="{{ 'caniuse_grid.png' | media(page) }}" alt="Support Statistics for CSS Grid Layout" />
   </a>
   <figcaption>Grid support as of 04/18. Look at all that green.</figcaption>
 </figure>
@@ -26,7 +26,7 @@ We're going to build a pretty common layout for the backend of an application, w
 
 <figure class="extend">
     <a href="https://codepen.io/mxbck/pen/5be32fd8e3ca7b6b2f5108ba7d22debd" target="_blank" rel="noopener noreferrer">
-        <img src="admin.png" alt="An admin interface layout demo" />
+        <img src="{{ 'admin.png' | media(page) }}" alt="An admin interface layout demo" />
     </a>
     <figcaption>Our admin dashboard. (Nevermind the hyperrealistic content)</figcaption>
 </figure>
@@ -77,7 +77,7 @@ We can nest another grid inside our main content area to display the dashboard. 
 
 Here's a common design pattern where different statistics and widgets are displayed in a card grid:
 
-![Grid Layout for the dashboard view](dashboard_grid.png)
+![Grid Layout for the dashboard view]({{ 'dashboard_grid.png' | media(page) }})
 
 This time, rather than explicitly defining our rows and columns, we'll leave that open. We'll just tell the browser how many columns we want, and to space them out evenly. When more items are placed on the grid, the container can just generate additional grid tracks on the fly. This ["implicit" grid](https://www.w3.org/TR/css-grid-1/#implicit-grids) will accommodate any amount of content we may want to display.
 
