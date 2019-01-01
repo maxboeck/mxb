@@ -42,7 +42,14 @@
             {% include "footer.njk" %}
         </div>
 
-        {% include "scripts.njk" %}
+        {# Main JS Bundle #}
+        <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
+
+        {# Include additional scripts on post pages #}
+        {% if layout == 'post' %}
+            <script src="//platform.twitter.com/widgets.js" async defer></script>
+        {% endif %}
+
         <!--! LAST BUILD: {{ build.timestamp | isoDate }} -->
     </body>
 </html>
