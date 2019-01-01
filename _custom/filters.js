@@ -5,9 +5,9 @@ module.exports = {
         return DateTime.fromJSDate(date).toFormat(String(format))
     },
 
-    isoDate: function(date) {
-        return DateTime.fromJSDate(date).toISODate({
-            includeOffset: true,
+    iso: function(date) {
+        return DateTime.fromJSDate(date).toISO({
+            includeOffset: false,
             suppressMilliseconds: true
         })
     },

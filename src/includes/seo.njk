@@ -11,7 +11,7 @@
 {# Posts Only #}
 {% if layout == 'post' %}
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="{{ page.date | isoDate }}">
+    <meta property="article:published_time" content="{{ page.date | iso }}">
 {% endif %}
 
 {# General #}

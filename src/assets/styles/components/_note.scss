@@ -8,7 +8,7 @@
 
     &--detail {
         margin: 2rem auto;
-        box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.05);
     }
 
     &__meta {
@@ -58,7 +58,7 @@
         transition: box-shadow 0.2s ease;
 
         &:hover {
-            box-shadow: $box-shadow-elevated;
+            box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.05);
         }
     }
 

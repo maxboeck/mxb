@@ -5,7 +5,7 @@
         <li class="otherposts__item">
             <a href="{{ post.url | url }}" class="otherposts__link">
                 <span class="otherposts__title">{{ post.data.title }}</span>
-                <time class="otherposts__date" datetime="{{ post.date | isoDate }}" aria-label=", written {{ post.date | readableDate }}">
+                <time class="otherposts__date" datetime="{{ post.date | iso }}" aria-label=", written {{ post.date | readableDate }}">
                     {{ post.date | readableDate }}
                 </time>
             </a>

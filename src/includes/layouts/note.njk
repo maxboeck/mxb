@@ -12,7 +12,9 @@ layout: base
             <strong class="note__author__name">{{ author.name }}</strong>
         </a>
         <span class="note__meta__divider">&sdot;</span>
-        <time class="note__date dt-published" datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+        <time class="note__date dt-published" datetime="{{ page.date | iso }}">
+            {{ page.date | readableDate }}
+        </time>
     </div>
     <div class="note__content">
         <div class="p-name p-content markdown">
