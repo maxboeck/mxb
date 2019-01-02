@@ -20,12 +20,12 @@
         <ul class="nav__menu js-nav-menu" id="nav-menu">
         {%- for nav in collections.nav -%}
             {%- set isCurrent = (nav.url == page.url) -%}
-            {%- set isParent = nav.url != '/' and nav.url in page.url %}
-            {%- set navHref = "#main" if isCurrent else nav.url | url -%}
+            {%- set isParent = nav.url != '/' and nav.url in page.url -%}
 		    <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
                 <a
-                    href="{{ navHref }}"
-                    class="nav__link" {% if isCurrent %}aria-current="page"{% endif %}
+                    href="{% if isCurrent %}#main{% else %}{{ nav.url | url }}{% endif %}"
+                    class="nav__link"
+                    {% if isCurrent %}aria-current="page"{% endif %}
                 >
                     <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span>
                     {{ nav.data.navtitle }}
