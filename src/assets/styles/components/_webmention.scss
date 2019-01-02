@@ -50,7 +50,10 @@
         margin-right: 1rem;
     }
     &__info {
+        display: flex;
+        align-items: center;
         color: $gray-light;
+
         @include hover-focus {
             color: $gray-darker;
         }
