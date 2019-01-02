@@ -38,13 +38,13 @@
     </div>
     <ul class="note__stats">
         <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
-            {% icon "message" %}{{ mentionCount }}
+            {% icon "message", useInlineIcons %}{{ mentionCount }}
         </li>
         <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
-            {% icon "repost" %}{{ repostCount }}
+            {% icon "repost", useInlineIcons %}{{ repostCount }}
         </li>
         <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
-            {% icon "heart" %}{{ likeCount }}
+            {% icon "heart", useInlineIcons %}{{ likeCount }}
         </li>
     </ul>
     {% if isDetailView and mentionCount != "0" %}
