@@ -30,6 +30,7 @@ module.exports = function(config) {
 
     // Pass-through files
     config.addPassthroughCopy('src/site.webmanifest')
+    config.addPassthroughCopy('src/keybase.txt')
     config.addPassthroughCopy('src/robots.txt')
 
     // Collections: Navigation
