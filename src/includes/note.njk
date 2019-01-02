@@ -31,7 +31,9 @@
             </div>
         </div>
         {% if not isDetailView %}
-            <a href="{{ note.url }}" class="note__link"></a>
+            <a href="{{ note.url }}" class="note__link">
+                <span class="sr-only">read more</span>
+            </a>
         {% endif %}
     </div>
     <ul class="note__stats">
