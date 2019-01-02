@@ -1,6 +1,4 @@
-{% set absolutePostUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
-{% set mentions = webmentions.children | webmentionsByUrl(absolutePostUrl) %}
-
+{% set mentions = webmentions.children | webmentionsByUrl(webmentionUrl) %}
 <div
     class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" 
     id="webmentions"

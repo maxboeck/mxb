@@ -1,0 +1,53 @@
+{%- set isDetailView = layout == 'note' -%}
+
+{% if isDetailView %}
+    {%- set note = page -%}
+{% endif %}
+
+{%- set webmentionUrl -%}{{ note.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set mentionCount = webmentions.children | webmentionCountByType(webmentionUrl, "in-reply-to", "mention-of") -%}
+{%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
+{%- set repostCount = webmentions.children | webmentionCountByType(webmentionUrl, "repost-of") -%}
+
+<div class="note {% if isDetailView %}note--detail{% endif %} h-entry">
+    <div class="note__main">
+        <div class="note__meta">
+            <a class="note__author u-author" href="{{ site.url }}">
+                <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
+                <strong class="note__author__name">{{ author.name }}</strong>
+            </a>
+            <span class="note__meta__divider">&sdot;</span>
+            <time class="note__date dt-published" datetime="{{ note.date | iso }}">
+                {{ note.date | readableDate }}
+            </time>
+        </div>
+        <div class="note__content">
+            <div class="p-name p-content markdown">
+                {% if isDetailView %}
+                    {{ content | safe }}
+                {% else %}
+                    {{ note.templateContent | safe }}
+                {% endif %}
+            </div>
+        </div>
+        {% if not isDetailView %}
+            <a href="{{ note.url }}" class="note__link"></a>
+        {% endif %}
+    </div>
+    <ul class="note__stats">
+        <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
+            {% icon "message" %}{{ mentionCount }}
+        </li>
+        <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
+            {% icon "repost" %}{{ repostCount }}
+        </li>
+        <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
+            {% icon "heart" %}{{ likeCount }}
+        </li>
+    </ul>
+    {% if isDetailView and mentionCount != "0" %}
+        <div class="note__webmentions">
+            {% include 'webmentions.njk' %}       
+        </div>
+    {% endif %}
+</div>
