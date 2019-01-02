@@ -131,11 +131,15 @@
             &--active > a {
                 color: #fff;
             }
+            &--active .nav__num {
+                color: $gray-light;
+            }
         }
 
         &__link {
             padding: 1.5rem;
             text-transform: none;
+            color: $gray-lighter;
 
             @include hover-focus {
                 color: #fff;
