@@ -8,6 +8,10 @@
     &__content {
         @include container-narrow;
         padding-bottom: 2rem;
+
+        &--fullwidth {
+            max-width: none;
+        }
     }
 
     @include mq(md) {

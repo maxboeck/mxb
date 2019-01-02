@@ -1,0 +1,39 @@
+.about {
+    &__photo {
+        position: relative;
+        display: block;
+        padding-bottom: 75%;
+        margin-bottom: 2rem;
+
+        img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 50%;
+        }
+    }
+
+    @include mq(lg) {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 calc(50% - 50vw);
+
+        &__photo {
+            width: 40%;
+            padding-bottom: 450px;
+            margin: 0;
+        }
+        &__content {
+            flex: 1 0 60%;
+            padding: 2rem;
+            max-width: 54rem;
+        }
+    }
+    @include mq(xl) {
+        &__content {
+            padding: 3rem;
+        }
+    }
+}

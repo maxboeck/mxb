@@ -10,17 +10,21 @@ permalink: about/index.html
     <header class="page__header">
         <h1 class="page__title">Hey there.</h1>
     </header>
-    <div class="page__content">
+    <div class="page__content page__content--fullwidth">
 
-        <p class="lead">
-            I’m Max Böck, a frontend web developer and designer based in Vienna, Austria. 
-            For the last ten years, I've been working with all sorts of clients, 
-            helping them build awesome things on the web.
-        </p>
-        <img
-            src="{{ '/assets/images/max-boeck.jpg' | url }}" 
-            alt="Max Böck"
-        />
+        <div class="about">
+            <div class="about__photo">
+                <img
+                    src="{{ '/assets/images/max-boeck.jpg' | url }}" 
+                    alt="Max Böck"
+                />
+            </div>
+            <div class="about__content markdown">
+                <p class="lead">I’m Max Böck, a frontend web developer and designer based in Vienna, Austria.</p>
+                <p class="lead">For the last ten years, I've been working with all sorts of clients, 
+                helping them build awesome things on the web.</p>
+            </div>
+        </div>
 
     </div>
 </div>
