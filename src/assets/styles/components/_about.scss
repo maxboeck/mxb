@@ -14,26 +14,32 @@
             object-position: 0 50%;
         }
     }
+    &__intro {
+        max-width: 54rem;
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
 
     @include mq(lg) {
-        display: flex;
-        align-items: flex-start;
-        margin: 0 calc(50% - 50vw);
-
+        &__header {
+            display: flex;
+            align-items: center;
+            margin: 0 calc(50% - 50vw) 2rem;
+        }
         &__photo {
             width: 40%;
             padding-bottom: 450px;
+            padding-bottom: 32vw;
             margin: 0;
         }
-        &__content {
-            flex: 1 0 60%;
-            padding: 2rem;
-            max-width: 54rem;
+        &__intro {
+            flex: 1 1 60%;
+            padding: 2rem 3rem;
         }
-    }
-    @include mq(xl) {
         &__content {
-            padding: 3rem;
+            @include container-narrow;
         }
     }
 }

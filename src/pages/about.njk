@@ -13,16 +13,31 @@ permalink: about/index.html
     <div class="page__content page__content--fullwidth">
 
         <div class="about">
-            <div class="about__photo">
-                <img
-                    src="{{ '/assets/images/max-boeck.jpg' | url }}" 
-                    alt="Max Böck"
-                />
+            <div class="about__header">
+                <div class="about__photo">
+                    <img
+                        src="{{ '/assets/images/max-boeck.jpg' | url }}" 
+                        alt="Max Böck"
+                    />
+                </div>
+                <div class="about__intro lead">
+                    <p>I’m Max Böck, a frontend web developer and designer based in Vienna, Austria.</p>
+                    <p>I've been building stuff on the web for the last ten years, working with clients across various countries and industries.</p>
+                    <p>My focus is on creating engaging, accessible &amp; performant interfaces for humans.</p>
+                </div>
             </div>
             <div class="about__content markdown">
-                <p class="lead">I’m Max Böck, a frontend web developer and designer based in Vienna, Austria.</p>
-                <p class="lead">For the last ten years, I've been working with all sorts of clients, 
-                helping them build awesome things on the web.</p>
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aspernatur maiores nulla illo, blanditiis ad vel quaerat assumenda ratione minima.</p>
+                
+                <h2>Speaking</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>
+                <p>If you want to talk to me about speaking at an event, <a href="mailto:{{ author.email | obfuscate | safe }}">get in touch</a>.</p>
             </div>
         </div>
 
