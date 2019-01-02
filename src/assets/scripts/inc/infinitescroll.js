@@ -9,12 +9,16 @@ const SELECTORS = {
 
 export default function() {
     const container = document.querySelector(SELECTORS.container)
-    if (container) {
-        const infinite = new InfiniteScroll(container, {
+    const nextLink = document.querySelector(SELECTORS.nextLink)
+
+    if (container && nextLink) {
+        const ifs = new InfiniteScroll(container, {
             path: SELECTORS.nextLink,
             append: SELECTORS.item,
             hideNav: SELECTORS.pagination
         })
-        console.log(infinite)
+        if (window.env && window.env === 'dev') {
+            console.log('infinite scroll loaded', ifs)
+        }
     }
 }
