@@ -49,6 +49,11 @@
         }
 
         p {
+            margin-bottom: 1rem;
+        }
+
+        p:last-child,
+        img:last-child {
             margin: 0 !important;
         }
     }
