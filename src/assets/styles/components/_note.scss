@@ -116,20 +116,18 @@
 .notelist {
     position: relative;
 
-    @include mq(md) {
-        &::before {
-            content: '';
-            display: block;
-            width: 1px;
-            background-color: $gray-lighter;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 2.5rem;
-        }
+    &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        background-color: $gray-lighter;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2.5rem;
+    }
 
-        &__item:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+    &__item:not(:last-child) {
+        margin-bottom: 2rem;
     }
 }
