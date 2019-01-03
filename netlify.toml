@@ -13,6 +13,12 @@
         X-Content-Type-Options = "nosniff"
         Referrer-Policy= "no-referrer-when-downgrade"
 
+# Netlify subdomain
+[[redirects]]
+    from = "https://mxb.netlify.com/*"
+    to = "https://mxb.at/:splat"
+    status = 301
+
 # 404s
 [[redirects]]
     from = "*"
