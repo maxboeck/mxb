@@ -6,6 +6,10 @@
         margin-bottom: 2rem;
     }
 
+    a {
+        @include hyphenate;
+    }
+
     /* In-Text Links */
     p,
     li {
