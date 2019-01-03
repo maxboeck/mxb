@@ -24,6 +24,6 @@ The local development environment uses gulp to process various stuff for the sit
 The most important commands can be run as npm scripts:
 
 `npm start`: does a development build and serves the site through browsersync  
-`npm run build`: produces a production build
-`npm run serve`: serves the current build `dist` directory
-`npm run debug`: start Eleventy in debug mode and serves the site
+`npm run build`: produces a production build  
+`npm run serve`: serves the current build `dist` directory  
+`npm run debug`: start Eleventy in debug mode and serves the site  
