@@ -34,6 +34,13 @@ p {
     }
 }
 
+.smalltitle {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
 a {
     color: $link-color;
     text-decoration: none;

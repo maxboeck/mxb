@@ -24,6 +24,15 @@
             margin-bottom: 1rem;
         }
     }
+    &__social {
+        list-style-type: none !important;
+
+        .icon {
+            color: $body-color;
+            font-size: 1.25rem;
+            margin-right: 1.25rem;
+        }
+    }
 
     @include mq(lg) {
         &__header {

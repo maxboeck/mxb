@@ -54,10 +54,7 @@
     border-top: 1px solid $gray-lighter;
 
     &__title {
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 1px;
+        @extend .smalltitle;
         margin-bottom: 1rem;
     }
 }
