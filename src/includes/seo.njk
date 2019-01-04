@@ -1,21 +1,31 @@
 {%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
+{%- set isPost = layout == 'post' -%}
+{%- set isNote = layout == 'note' -%}
 
-{%- if layout == 'note' -%}
+{%- if isNote -%}
+    {# Notes dont have Titles, use the Date  #}
     {%- set seoTitle = page.date | readableDate %}
 {%- endif -%}
-{%- if layout == 'post' or layout == 'note' -%}
-    {%- set seoDescription = content | stripText(150) -%}
+{%- if isPost or isNote -%}
+    {# Try to extract a description from content  #}
+    {%- set seoDescription = content | extractText(150) -%}
 {%- endif -%}
 
 {# Page-Specific #}
-<meta property="og:title" content="{{ title or seoTitle or site.title }}">
 <meta name="description" content="{{ description or seoDescription or site.description }}">
+<meta property="og:title" content="{{ title or seoTitle or site.title }}">
 <meta property="og:description" content="{{ description or seoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+<meta name="twitter:card" content="{% if isNote -%}summary{% else %}summary_large_image{% endif %}">
 
-{# Posts and Notes Only #}
-{%- if layout == 'post' or layout == 'note' -%}
+
+{% if not isNote -%}
+    {# Notes dont get an og image #}
+    <meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+{% endif %}
+
+{# Posts and Notes Get additional meta tags #}
+{%- if isPost or isNote -%}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ page.date | iso }}">
 {%- endif -%}
@@ -24,7 +34,6 @@
 <meta name="author" content="{{ author.name }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:locale" content="{{ site.locale }}">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@{{ author.social.twitter.name }}">
 <meta name="twitter:creator" content="@{{ author.name }}">
 <meta property="fb:app_id" content="127677017332959">

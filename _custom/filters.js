@@ -30,7 +30,7 @@ module.exports = {
         return chars.join('')
     },
 
-    stripText: function(html, length) {
+    extractText: function(html, length) {
         const maxLength = length || 200
         const $ = cheerio.load(html)
         const content = $('.markdown')
