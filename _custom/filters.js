@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon')
 const sanitizeHTML = require('sanitize-html')
+const cheerio = require('cheerio')
 
 module.exports = {
     format: function(date, format) {
@@ -27,6 +28,20 @@ module.exports = {
             chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
         }
         return chars.join('')
+    },
+
+    stripText: function(html, length) {
+        const maxLength = length || 200
+        const $ = cheerio.load(html)
+        const content = $('.markdown')
+
+        if (content) {
+            const text = content.text().trim()
+            return text.length <= maxLength
+                ? text
+                : text.substring(0, maxLength) + '...'
+        }
+        return null
     },
 
     webmentionsByUrl: function(webmentions, url) {

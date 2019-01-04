@@ -1,17 +1,24 @@
-{# Page-Specific #}
-{% set absolutePageUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
 
-<meta property="og:title" content="{{ title or site.title }}">
-<meta name="description" content="{{ description or site.description }}">
-<meta property="og:description" content="{{ description or site.description }}">
+{%- if layout == 'note' -%}
+    {%- set seoTitle = page.date | readableDate %}
+{%- endif -%}
+{%- if layout == 'post' or layout == 'note' -%}
+    {%- set seoDescription = content | stripText(150) -%}
+{%- endif -%}
+
+{# Page-Specific #}
+<meta property="og:title" content="{{ title or seoTitle or site.title }}">
+<meta name="description" content="{{ description or seoDescription or site.description }}">
+<meta property="og:description" content="{{ description or seoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 
 {# Posts and Notes Only #}
-{% if layout == 'post' or layout == 'note' %}
+{%- if layout == 'post' or layout == 'note' -%}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ page.date | iso }}">
-{% endif %}
+{%- endif -%}
 
 {# General #}
 <meta name="author" content="{{ author.name }}">
