@@ -8,7 +8,7 @@ excludeFromSitemap: true
         "id": {{ loop.index }},
         "date": "{{- note.date | iso -}}",
         "url": "{{- note.url | url | absoluteUrl(site.url) -}}",
-        "content": "{%- note.templateContent -%}"
+        "content": "{{- note.templateContent -}}"
     }
     {%- if not loop.last -%},{%- endif -%}
 {%- endfor -%}
