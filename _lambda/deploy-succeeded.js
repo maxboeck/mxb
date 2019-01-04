@@ -4,6 +4,10 @@ import Twitter from 'twitter'
 
 dotenv.config()
 
+// URL of notes JSON feed
+const NOTES_URL = 'https://mxb.at/notes.json'
+
+// Configure Twitter API Client
 const twitter = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -11,55 +15,74 @@ const twitter = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 })
 
+// Helper Function to return unknown errors
+const handleError = err => ({
+    statusCode: 422,
+    body: String(err)
+})
+
+// Push a new note to Twitter
 const publishNote = async note => {
-    // extract content for tweet
-    const { content } = note
-    twitter.post('statuses/update', { status: content })
+    const { content, date } = note
+
+    // TODO: prepare content string for tweet
+    let statusText = content.trim().replace(/<[^>]+>/g, '')
+    console.log(statusText)
+
+    try {
+        // Actually Post to Twitter API (disabled)
+        // const tweet = await twitter.post('statuses/update', { status: statusText })
+        return {
+            statusCode: 200,
+            body: `Note ${date} successfully syndicated on twitter`
+        }
+    } catch (err) {
+        return handleError(err)
+    }
 }
 
+// Check exisiting notes if there's one to tweet
 const processNotes = async notes => {
-    // check if we have a note that should be published
     if (!notes.length) {
         return {
             statusCode: 404,
-            body: 'no notes found'
+            body: 'No notes found'
         }
     }
 
-    // assume the last note is not yet published -
+    // assume the last note is not yet syndicated -
     // check twitter for any tweets containing its URL.
     // if there are, abort the process.
     const latestNote = notes[0]
-    twitter.get('search/tweets', { q: latestNote.url }, (err, tweets) => {
-        if (tweets.length) {
+
+    try {
+        const q = await twitter.get('search/tweets', { q: latestNote.url })
+        if (q.statuses && q.statuses.length === 0) {
+            return publishNote(latestNote)
+        } else {
             return {
                 statusCode: 400,
-                body: 'last note was already published'
+                body: 'Latest note was already syndicated to twitter'
             }
         }
-    })
-
-    return {
-        statusCode: 200,
-        body: `note syndicated to twitter`
+    } catch (err) {
+        return handleError(err)
     }
 }
 
+// Main Lambda Function Handler
 exports.handler = async (event, context) => {
-    // TODO: remove when done
-    if (process.env.ELEVENTY_ENV !== 'dev') {
+    // Only allow POST
+    if (event.httpMethod !== 'POST') {
         return {
-            statusCode: 403,
-            body: 'Forbidden'
+            statusCode: 405,
+            body: 'Method Not Allowed'
         }
     }
 
-    const notesUrl = 'https://mxb.at/notes.json'
-    return fetch(notesUrl)
+    // Fetch the list of published notes to work on
+    return fetch(NOTES_URL)
         .then(response => response.json())
         .then(processNotes)
-        .catch(err => ({
-            statusCode: 422,
-            body: String(err)
-        }))
+        .catch(handleError)
 }
