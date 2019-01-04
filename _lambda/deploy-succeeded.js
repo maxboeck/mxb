@@ -21,26 +21,6 @@ const handleError = err => ({
     body: String(err)
 })
 
-// Push a new note to Twitter
-const publishNote = async note => {
-    const { content, date } = note
-
-    // TODO: prepare content string for tweet
-    let statusText = content.trim().replace(/<[^>]+>/g, '')
-    console.log(statusText)
-
-    try {
-        // Actually Post to Twitter API (disabled)
-        // const tweet = await twitter.post('statuses/update', { status: statusText })
-        return {
-            statusCode: 200,
-            body: `Note ${date} successfully syndicated on twitter`
-        }
-    } catch (err) {
-        return handleError(err)
-    }
-}
-
 // Check exisiting notes if there's one to tweet
 const processNotes = async notes => {
     if (!notes.length) {
@@ -70,8 +50,30 @@ const processNotes = async notes => {
     }
 }
 
+// TODO: prepare content string for tweet format
+const prepareStatusText = content => {
+    return content.trim().replace(/<[^>]+>/g, '')
+}
+
+// Push a new note to Twitter
+const publishNote = async note => {
+    const { content, date } = note
+    const statusText = prepareStatusText(content)
+
+    try {
+        // Actually Post to Twitter API (disabled)
+        // const tweet = await twitter.post('statuses/update', { status: statusText })
+        return {
+            statusCode: 200,
+            body: `Note ${date} successfully syndicated on twitter`
+        }
+    } catch (err) {
+        return handleError(err)
+    }
+}
+
 // Main Lambda Function Handler
-exports.handler = async (event, context) => {
+exports.handler = async event => {
     // Only allow POST
     if (event.httpMethod !== 'POST') {
         return {

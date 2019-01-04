@@ -3,13 +3,13 @@ permalink: notes.json
 excludeFromSitemap: true
 ---
 [
-{%- for note in collections.notes -%}
+{% for note in collections.notes %}
     {
         "id": {{ loop.revindex }},
         "date": "{{- note.date | iso -}}",
         "url": "{{- note.url | url | absoluteUrl(site.url) -}}",
-        "content": "{{- note.templateContent -}}"
+        "content": "{{- note.templateContent | safe | striptags -}}"
     }
     {%- if not loop.last -%},{%- endif -%}
-{%- endfor -%}
+{% endfor %}
 ]
