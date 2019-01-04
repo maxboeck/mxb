@@ -7,10 +7,12 @@ This version is built with [Eleventy](https://www.11ty.io). If you're looking fo
 ## Features
 
 * Static Files
-* BEM-flavoured SCSS (w/ Critical Path Inlining)
+* BEM-flavoured Sass (w/ Critical CSS Inlining)
 * Vanilla JS (ES6 / Babel)
 * System Fonts & FontFaceObserver
+* SVG Icons
 * Offline Support w/ Service Worker
+* Webmention.io Support
 * Focus on Speed and Accessibility
 
 ## Installation
@@ -23,7 +25,7 @@ Inside the project root, run `npm install` or `yarn` to install the dependencies
 The local development environment uses gulp to process various stuff for the site. 
 The most important commands can be run as npm scripts:
 
-`npm start`: does a development build and serves the site through browsersync  
-`npm run build`: produces a production build  
-`npm run serve`: serves the current build `dist` directory  
-`npm run debug`: start Eleventy in debug mode and serves the site  
+`npm start`: make a development build and serve the site through browsersync  
+`npm run build`: make a production build  
+`npm run serve`: serve the current build `dist` directory  
+`npm run debug`: start Eleventy in debug mode and serve the site  
