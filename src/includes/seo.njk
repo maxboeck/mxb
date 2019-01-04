@@ -16,13 +16,8 @@
 <meta property="og:title" content="{{ title or seoTitle or site.title }}">
 <meta property="og:description" content="{{ description or seoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta name="twitter:card" content="{% if isNote -%}summary{% else %}summary_large_image{% endif %}">
-
-
-{% if not isNote -%}
-    {# Notes dont get an og image #}
-    <meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
-{% endif %}
+<meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+<meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
 
 {# Posts and Notes Get additional meta tags #}
 {%- if isPost or isNote -%}
