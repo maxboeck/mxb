@@ -53,6 +53,7 @@
     "node-fetch": "^2.3.0",
     "require-dir": "^1.2.0",
     "sanitize-html": "^1.20.0",
+    "twitter": "^1.7.1",
     "webpack-stream": "^4.0.3",
     "workbox-build": "^3.6.3"
   }
