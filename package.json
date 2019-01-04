@@ -4,7 +4,7 @@
   "description": "Personal Website of Max Böck",
   "scripts": {
     "start": "gulp build:dev && yarn run serve",
-    "build": "gulp build",
+    "build": "ELEVENTY_ENV=prod gulp build",
     "debug": "DEBUG=Eleventy* yarn start",
     "serve": "gulp serve"
   },
