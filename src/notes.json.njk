@@ -5,7 +5,7 @@ excludeFromSitemap: true
 [
 {%- for note in collections.notes -%}
     {
-        "id": {{ loop.index }},
+        "id": {{ loop.revindex }},
         "date": "{{- note.date | iso -}}",
         "url": "{{- note.url | url | absoluteUrl(site.url) -}}",
         "content": "{{- note.templateContent -}}"
