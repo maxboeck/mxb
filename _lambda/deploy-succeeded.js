@@ -1,6 +1,7 @@
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import Twitter from 'twitter'
+import { AllHtmlEntities as Entities } from 'html-entities'
 
 dotenv.config()
 
@@ -21,30 +22,28 @@ const handleError = err => ({
     body: String(err)
 })
 
-// Check exisiting notes if there's one to tweet
-const processNotes = async notes => {
-    let msg
+// Helper Function to return function status
+const status = (code, msg) => {
+    console.log(msg)
+    return {
+        statusCode: code,
+        body: msg
+    }
+}
 
+// Check exisiting notes
+const processNotes = async notes => {
     if (!notes.length) {
-        msg = 'No notes found to process.'
-        console.log(msg)
-        return {
-            statusCode: 404,
-            body: msg
-        }
+        return status(404, 'No notes found to process.')
     }
 
     // assume the last note is not yet syndicated
     const latestNote = notes[0]
-
-    // Check the syndicate flag first to override publishing
     if (!latestNote.syndicate) {
-        msg = 'Latest note has disabled syndication. No action taken.'
-        console.log(msg)
-        return {
-            statusCode: 400,
-            body: msg
-        }
+        return status(
+            400,
+            'Latest note has disabled syndication. No action taken.'
+        )
     }
 
     try {
@@ -54,12 +53,10 @@ const processNotes = async notes => {
         if (q.statuses && q.statuses.length === 0) {
             return publishNote(latestNote)
         } else {
-            msg = 'Latest note was already syndicated. No action taken.'
-            console.log(msg)
-            return {
-                statusCode: 400,
-                body: msg
-            }
+            return status(
+                400,
+                'Latest note was already syndicated. No action taken.'
+            )
         }
     } catch (err) {
         return handleError(err)
@@ -68,17 +65,12 @@ const processNotes = async notes => {
 
 // Prepare the content string for tweet format
 const prepareStatusText = note => {
-    const maxLength =
-        280 - // max tweet size
-        3 - //...
-        1 - // space
-        23 - // t.co link
-        20 // safety padding
+    const maxLength = 280 - 3 - 1 - 23 - 20
+    const entities = new Entities()
 
+    // strip html tags and decode entities
     let text = note.content.trim().replace(/<[^>]+>/g, '')
-
-    // start all notes with emoji
-    text = '🗒' + text
+    text = entities.decode(text)
 
     // truncate note text if its too long for a tweet.
     if (text.length > maxLength) {
@@ -98,12 +90,7 @@ const publishNote = async note => {
     try {
         // Actually Post to Twitter API (disabled)
         // const tweet = await twitter.post('statuses/update', { status: statusText })
-        const msg = `Note ${note.date} successfully posted to twitter`
-        console.log(msg)
-        return {
-            statusCode: 200,
-            body: msg
-        }
+        return status(200, `Note ${note.date} successfully posted to twitter`)
     } catch (err) {
         return handleError(err)
     }
@@ -111,7 +98,8 @@ const publishNote = async note => {
 
 // Main Lambda Function Handler
 exports.handler = async () => {
-    // Fetch the list of published notes to work on
+    // Fetch the list of published notes to work on,
+    // then process them to check if an action is necessary
     return fetch(NOTES_URL)
         .then(response => response.json())
         .then(processNotes)
