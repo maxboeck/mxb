@@ -33,7 +33,7 @@
                 {% if post.data.description %}
                     {{ post.data.description }}
                 {% else %}
-                    {% excerpt post %}
+                    {{ post.templateContent | excerpt | striptags }}
                 {% endif %}
                 </p>
             </a>

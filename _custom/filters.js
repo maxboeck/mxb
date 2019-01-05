@@ -1,6 +1,5 @@
 const { DateTime } = require('luxon')
 const sanitizeHTML = require('sanitize-html')
-const cheerio = require('cheerio')
 
 module.exports = {
     format: function(date, format) {
@@ -28,20 +27,6 @@ module.exports = {
             chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
         }
         return chars.join('')
-    },
-
-    extractText: function(html, length) {
-        const maxLength = length || 200
-        const $ = cheerio.load(html)
-        const content = $('.markdown')
-
-        if (content) {
-            const text = content.text().trim()
-            return text.length <= maxLength
-                ? text
-                : text.substring(0, maxLength) + '...'
-        }
-        return null
     },
 
     webmentionsByUrl: function(webmentions, url) {
@@ -81,6 +66,42 @@ module.exports = {
         return posts
             .filter(post => post.data.title !== currentPostTitle)
             .slice(-10)
+    },
+
+    excerpt: function(content) {
+        const excerptMinimumLength = 80
+        const excerptSeparator = '<!--more-->'
+        const findExcerptEnd = content => {
+            if (content === '') {
+                return 0
+            }
+
+            const paragraphEnd = content.indexOf('</p>', 0) + 4
+            if (paragraphEnd < excerptMinimumLength) {
+                return (
+                    paragraphEnd +
+                    findExcerptEnd(
+                        content.substring(paragraphEnd),
+                        paragraphEnd
+                    )
+                )
+            }
+
+            return paragraphEnd
+        }
+
+        if (!content) {
+            return
+        }
+
+        if (content.includes(excerptSeparator)) {
+            return content.substring(0, content.indexOf(excerptSeparator))
+        } else if (content.length <= excerptMinimumLength) {
+            return content
+        }
+
+        const excerptEnd = findExcerptEnd(content)
+        return content.substring(0, excerptEnd)
     },
 
     media: function(filename, page) {

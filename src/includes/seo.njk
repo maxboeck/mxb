@@ -4,17 +4,13 @@
 
 {%- if isNote -%}
     {# Notes dont have Titles, use the Date  #}
-    {%- set seoTitle = page.date | readableDate %}
-{%- endif -%}
-{%- if isPost or isNote -%}
-    {# Try to extract a description from content  #}
-    {%- set seoDescription = content | extractText(150) -%}
+    {%- set title = page.date | readableDate %}
 {%- endif -%}
 
 {# Page-Specific #}
-<meta name="description" content="{{ description or seoDescription or site.description }}">
-<meta property="og:title" content="{{ title or seoTitle or site.title }}">
-<meta property="og:description" content="{{ description or seoDescription or site.description }}">
+<meta name="description" content="{{ description or renderData.description or site.description }}">
+<meta property="og:title" content="{{ title or site.title }}">
+<meta property="og:description" content="{{ description or renderData.description or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 <meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
