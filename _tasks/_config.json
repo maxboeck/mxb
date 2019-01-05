@@ -1,6 +1,7 @@
 {
     "buildSrc": "src",
     "buildDest": "dist",
+    "lambdaDest": "functions",
     "assetSrc": "src/assets",
     "assetDest": "dist/assets"
 }
