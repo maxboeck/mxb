@@ -50,22 +50,39 @@ const processNotes = async notes => {
     }
 }
 
-// TODO: prepare content string for tweet format
-const prepareStatusText = content => {
-    return content.trim().replace(/<[^>]+>/g, '')
+// Prepare the content string for tweet format
+const prepareStatusText = note => {
+    const maxLength =
+        280 - // max tweet size
+        3 - //...
+        1 - // space
+        23 - // t.co link
+        15 // safety padding
+
+    let text = note.content.trim().replace(/<[^>]+>/g, '')
+
+    // truncate note text if its too long for a tweet.
+    if (text.length > maxLength) {
+        text = text.substring(0, maxLength) + '...'
+    }
+
+    // include the note url at the end;
+    // twitter will shorten it to 23 characters.
+    text = text + ' ' + note.url
+    return text
 }
 
 // Push a new note to Twitter
 const publishNote = async note => {
-    const { content, date } = note
-    const statusText = prepareStatusText(content)
+    const statusText = prepareStatusText(note)
 
     try {
+        console.log(statusText)
         // Actually Post to Twitter API (disabled)
         // const tweet = await twitter.post('statuses/update', { status: statusText })
         return {
             statusCode: 200,
-            body: `Note ${date} successfully syndicated on twitter`
+            body: `Note ${note.date} successfully syndicated on twitter`
         }
     } catch (err) {
         return handleError(err)

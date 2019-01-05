@@ -4,10 +4,11 @@
   "description": "Personal Website of Max Böck",
   "scripts": {
     "start": "gulp build:dev && yarn run serve",
-    "build": "ELEVENTY_ENV=prod gulp build",
+    "build": "ELEVENTY_ENV=prod gulp build && yarn run build:lambda",
     "debug": "DEBUG=Eleventy* yarn start",
     "serve": "gulp serve",
-    "lambda": "netlify-lambda serve _lambda"
+    "serve:lambda": "netlify-lambda serve _lambda",
+    "build:lambda": "netlify-lambda build _lambda"
   },
   "repository": {
     "type": "git",
