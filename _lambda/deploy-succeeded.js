@@ -85,12 +85,19 @@ const prepareStatusText = note => {
 // Push a new note to Twitter
 const publishNote = async note => {
     const statusText = prepareStatusText(note)
-    console.log(statusText)
-
     try {
-        // Actually Post to Twitter API (disabled)
-        // const tweet = await twitter.post('statuses/update', { status: statusText })
-        return status(200, `Note ${note.date} successfully posted to twitter`)
+        // Actually Post to Twitter API
+        const tweet = await twitter.post('statuses/update', {
+            status: statusText
+        })
+        if (tweet) {
+            return status(
+                200,
+                `Note ${note.date} successfully posted to Twitter.`
+            )
+        } else {
+            return status(422, 'Error posting to Twitter API.')
+        }
     } catch (err) {
         return handleError(err)
     }
