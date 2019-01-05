@@ -10,9 +10,9 @@ This version is built with [Eleventy](https://www.11ty.io). If you're looking fo
 * BEM-flavoured Sass (w/ Critical CSS Inlining)
 * Vanilla JS (ES6 / Babel)
 * System Fonts & FontFaceObserver
-* SVG Icons
 * Offline Support w/ Service Worker
 * Webmention.io Support
+* Auto-publish notes on twitter via AWS Lambda Function
 * Focus on Speed and Accessibility
 
 ## Installation
@@ -29,3 +29,5 @@ The most important commands can be run as npm scripts:
 `npm run build`: make a production build  
 `npm run serve`: serve the current build `dist` directory  
 `npm run debug`: start Eleventy in debug mode and serve the site  
+`npm run serve:lambda`: serve lambda functions with netlify-lambda  
+`npm run build:lambda`: compile lambda functions for production  
