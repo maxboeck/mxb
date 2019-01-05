@@ -84,9 +84,8 @@ const prepareStatusText = note => {
 
 // Push a new note to Twitter
 const publishNote = async note => {
-    const statusText = prepareStatusText(note)
     try {
-        // Actually Post to Twitter API
+        const statusText = prepareStatusText(note)
         const tweet = await twitter.post('statuses/update', {
             status: statusText
         })
