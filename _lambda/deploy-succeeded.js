@@ -23,26 +23,42 @@ const handleError = err => ({
 
 // Check exisiting notes if there's one to tweet
 const processNotes = async notes => {
+    let msg
+
     if (!notes.length) {
+        msg = 'No notes found to process.'
+        console.log(msg)
         return {
             statusCode: 404,
-            body: 'No notes found'
+            body: msg
         }
     }
 
-    // assume the last note is not yet syndicated -
-    // check twitter for any tweets containing its URL.
-    // if there are, abort the process.
+    // assume the last note is not yet syndicated
     const latestNote = notes[0]
 
+    // Check the syndicate flag first to override publishing
+    if (!latestNote.syndicate) {
+        msg = 'Latest note has disabled syndication. No action taken.'
+        console.log(msg)
+        return {
+            statusCode: 400,
+            body: msg
+        }
+    }
+
     try {
+        // check twitter for any tweets containing note URL.
+        // if there are none, publish it.
         const q = await twitter.get('search/tweets', { q: latestNote.url })
         if (q.statuses && q.statuses.length === 0) {
             return publishNote(latestNote)
         } else {
+            msg = 'Latest note was already syndicated. No action taken.'
+            console.log(msg)
             return {
                 statusCode: 400,
-                body: 'Latest note was already syndicated to twitter'
+                body: msg
             }
         }
     } catch (err) {
@@ -57,9 +73,12 @@ const prepareStatusText = note => {
         3 - //...
         1 - // space
         23 - // t.co link
-        15 // safety padding
+        20 // safety padding
 
     let text = note.content.trim().replace(/<[^>]+>/g, '')
+
+    // start all notes with emoji
+    text = '🗒' + text
 
     // truncate note text if its too long for a tweet.
     if (text.length > maxLength) {
@@ -67,7 +86,6 @@ const prepareStatusText = note => {
     }
 
     // include the note url at the end;
-    // twitter will shorten it to 23 characters.
     text = text + ' ' + note.url
     return text
 }
@@ -75,14 +93,16 @@ const prepareStatusText = note => {
 // Push a new note to Twitter
 const publishNote = async note => {
     const statusText = prepareStatusText(note)
+    console.log(statusText)
 
     try {
-        console.log(statusText)
         // Actually Post to Twitter API (disabled)
         // const tweet = await twitter.post('statuses/update', { status: statusText })
+        const msg = `Note ${note.date} successfully posted to twitter`
+        console.log(msg)
         return {
             statusCode: 200,
-            body: `Note ${note.date} successfully syndicated on twitter`
+            body: msg
         }
     } catch (err) {
         return handleError(err)
@@ -90,15 +110,7 @@ const publishNote = async note => {
 }
 
 // Main Lambda Function Handler
-exports.handler = async event => {
-    // Only allow POST
-    if (event.httpMethod !== 'POST') {
-        return {
-            statusCode: 405,
-            body: 'Method Not Allowed'
-        }
-    }
-
+exports.handler = async () => {
     // Fetch the list of published notes to work on
     return fetch(NOTES_URL)
         .then(response => response.json())
