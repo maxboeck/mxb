@@ -68,7 +68,7 @@ exports.handler = async () => {
 }
 ```
 
-Since we will have to interact with the Twitter API, it's a good idea to use a dedicated helper class to take some of that complexity off our hands. The `twitter` [package on npm](https://www.npmjs.com/package/twitter) does just that. We will have to register for a [developer account](https://apps.twitter.com/) on Twitter first though, to get the necessary API keys and tokens. Store those in your projects' `.env` file.
+Since we will have to interact with the Twitter API, it's a good idea to use a dedicated helper class to take some of that complexity off our hands. The `twitter` [package on npm](https://www.npmjs.com/package/twitter) does just that. We will have to register for a [developer account](https://apps.twitter.com/) on Twitter first though, to get the necessary API keys and tokens. Store those in your project's `.env` file.
 
 ```js
 // Configure Twitter API Client
