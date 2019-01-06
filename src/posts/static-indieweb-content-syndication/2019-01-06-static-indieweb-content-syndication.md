@@ -4,6 +4,7 @@ slug: "syndicating-content-to-twitter-with-netlify-functions"
 tags: code
 description: "How to automatically publish content from a static site on Twitter, using Eleventy and Netlify's lambda functions."
 demo: https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js
+image: cover.jpg
 ---
 
 <p class="lead">One of the core principles of the <a href="https://indieweb.org/">IndieWeb</a> is that people should own their own content. Controlling how and where they publish makes users more independent from big content silos.</p>
