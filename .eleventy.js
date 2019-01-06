@@ -2,8 +2,8 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
 
-const filters = require('./_custom/filters.js')
-const shortcodes = require('./_custom/shortcodes.js')
+const filters = require('./_eleventy/filters.js')
+const shortcodes = require('./_eleventy/shortcodes.js')
 
 const env = process.env.ELEVENTY_ENV
 
