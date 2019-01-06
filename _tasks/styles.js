@@ -53,7 +53,7 @@ function prodStyles() {
 }
 
 gulp.task('styles', function() {
-    if (process.env.ELEVENTY_ENV === 'dev') {
+    if (process.env.NODE_ENV === 'dev') {
         return devStyles()
     } else {
         return prodStyles()

@@ -5,7 +5,7 @@ const htmlmin = require('html-minifier')
 const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
 
-const env = process.env.ELEVENTY_ENV
+const env = process.env.NODE_ENV
 
 module.exports = function(config) {
     // Filters

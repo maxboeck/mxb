@@ -69,7 +69,7 @@ module.exports = async function() {
     const cache = readFromCache()
 
     // Only fetch new mentions in production
-    if (process.env.ELEVENTY_ENV === 'prod') {
+    if (process.env.NODE_ENV === 'prod') {
         const limit = cache.children.length ? 100 : 1000
         const feed = await fetchWebmentions(cache.lastFetched, limit)
         if (feed) {
