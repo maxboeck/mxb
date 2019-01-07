@@ -45,7 +45,7 @@
         {% if build.env == 'dev' %}<script>window.env = 'dev';</script>{% endif %}
 
         {# Main JS Bundle #}
-        <script src="{{ '/assets/js/bundle.min.js' | url }}" defer></script>
+        <script src="{{ '/assets/js/main.min.js' | url }}" defer></script>
 
         {# Include additional scripts on post pages #}
         {% if layout == 'post' %}

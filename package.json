@@ -24,6 +24,7 @@
     "focus-visible": "^4.1.5",
     "infinite-scroll": "^3.0.5",
     "lodash": "^4.17.10",
+    "preact": "^8.4.2",
     "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.0",
     "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.3",

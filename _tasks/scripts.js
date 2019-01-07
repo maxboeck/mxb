@@ -5,6 +5,13 @@ const uglify = require('gulp-uglify')
 const webpack = require('webpack-stream')
 
 const webpackConfig = {
+    entry: {
+        main: `./${config.assetSrc}/scripts/main.js`,
+        webmentions: `./${config.assetSrc}/scripts/webmentions/index.js`
+    },
+    output: {
+        filename: '[name].js'
+    },
     module: {
         rules: [
             {
@@ -13,7 +20,13 @@ const webpackConfig = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env'],
+                        plugins: [
+                            [
+                                '@babel/plugin-transform-react-jsx',
+                                { pragma: 'h' }
+                            ]
+                        ]
                     }
                 }
             }
@@ -26,6 +39,6 @@ gulp.task('scripts', function() {
         .src(config.assetSrc + '/scripts/main.js')
         .pipe(webpack(webpackConfig))
         .pipe(uglify())
-        .pipe(rename('bundle.min.js'))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.assetDest + '/js'))
 })
