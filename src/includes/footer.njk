@@ -1,14 +1,19 @@
 <footer class="footer" role="contentinfo">
     <div class="footer__inner container">
 
-        <p class="footer__item">
+        <p class="footer__item h-card">
             <strong>&copy; {{ build.timestamp | format('yyyy') }}</strong><br />
-            <a class="h-card" rel="me" href="{{ site.url }}">{{ author.name }}</a>
+            <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ author.name }}</a>
+            <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" hidden />
         </p>
 
         <p class="footer__item">
             <strong>Contact</strong><br />
-            <a href="mailto:{{ author.email | obfuscate | safe }}" title="Contact Email">
+            <a
+                href="mailto:{{ author.email | obfuscate | safe }}"
+                rel="me"
+                class="u-url"
+            >
                 {{ author.email | obfuscate | safe }}
             </a>
         </p>
