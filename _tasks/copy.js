@@ -2,7 +2,10 @@ const config = require('./_config.json')
 const gulp = require('gulp')
 
 gulp.task('copy:assets', function() {
-    const assetGlobs = [config.assetSrc + '/fonts/**']
+    const assetGlobs = [
+        config.assetSrc + '/fonts/**/*',
+        config.assetSrc + '/images/**/*'
+    ]
 
     return gulp
         .src(assetGlobs, { base: config.assetSrc })
