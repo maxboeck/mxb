@@ -47,9 +47,10 @@
         {# Main JS Bundle #}
         <script src="{{ '/assets/js/main.min.js' | url }}" defer></script>
 
-        {# Include additional scripts on post pages #}
-        {% if layout == 'post' %}
+        {# Include additional scripts on post/note pages #}
+        {% if layout == 'post' or layout == 'note' %}
             <script src="//platform.twitter.com/widgets.js" async defer></script>
+            <script src="{{ '/assets/js/webmentions.min.js' | url }}" defer></script>
         {% endif %}
 
         <!--! LAST BUILD: {{ build.timestamp | iso }} -->

@@ -4,25 +4,27 @@
     id="webmentions"
     data-last-fetched="{{ webmentions.lastFetched }}"
 >
-    {% if mentions | length %}
-        <div class="webmentions__header">
-            <a href="#webmentions" class="webmentions__toggle">
-                {% icon "message" %} Show All ({{ mentions | length }})
-            </a>
-            <a href="https://indieweb.org/Webmention" class="webmentions__info" target="_blank" rel="noopener noreferrer">
-                {% icon "question" %} What’s this?
-            </a>
-        </div>
-        <div class="webmentions__content">
-            <ol class="webmentions__list">
-            {% for webmention in mentions | reverse %}
-                <li class="webmentions__item">
-                    {% include 'webmention.njk' %}
-                </li>
-            {% endfor %}
-            </ol>
-        </div>
-    {% else %}
-        <p>No mentions yet.</p>
-    {% endif %}
+    <div data-render-root>
+        {% if mentions | length %}
+            <div class="webmentions__header">
+                <a href="#webmentions" class="webmentions__toggle">
+                    {% icon "message" %} Show All ({{ mentions | length }})
+                </a>
+                <a href="https://indieweb.org/Webmention" class="webmentions__info" target="_blank" rel="noopener noreferrer">
+                    {% icon "question" %} What’s this?
+                </a>
+            </div>
+            <div class="webmentions__content">
+                <ol class="webmentions__list">
+                {% for webmention in mentions | reverse %}
+                    <li class="webmentions__item">
+                        {% include 'webmention.njk' %}
+                    </li>
+                {% endfor %}
+                </ol>
+            </div>
+        {% else %}
+            <p>No mentions yet.</p>
+        {% endif %}
+    </div>
 </div>
