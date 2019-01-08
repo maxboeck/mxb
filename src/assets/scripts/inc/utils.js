@@ -16,6 +16,24 @@ export const getWindowDimensions = () => {
     }
 }
 
+// IE user agent sniffing (I know, gross)
+export const detectIE = () => {
+    const sAgent = window.navigator.userAgent
+    const idx = sAgent.indexOf('MSIE')
+
+    // If IE, return version number.
+    if (idx > 0) {
+        return parseInt(sAgent.substring(idx + 5, sAgent.indexOf('.', idx)), 10)
+    }
+
+    // If IE 11 then look for Updated user agent string.
+    else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+        return 11
+    }
+
+    return false
+}
+
 // Reusable Focus Trap Method
 export const createFocusTrap = (el, opt = {}) => {
     let isActive = false
