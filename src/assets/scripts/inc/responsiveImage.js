@@ -1,4 +1,4 @@
-import { detectIE } from '../utils'
+import { detectIE } from './utils'
 
 const SELECTORS = {
     responsiveImage: '.js-responsive-image'
