@@ -1,6 +1,6 @@
 import 'focus-visible'
 import 'svgxuse'
-import './polyfills'
+import './inc/polyfills'
 
 import Navigation from './inc/navigation'
 import infinitescroll from './inc/infinitescroll'
