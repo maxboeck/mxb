@@ -1,5 +1,5 @@
 import 'focus-visible'
-import svg4everybody from 'svg4everybody'
+import 'svgxuse'
 
 import Navigation from './inc/navigation'
 import infinitescroll from './inc/infinitescroll'
@@ -9,7 +9,6 @@ function init() {
     new Navigation()
     infinitescroll()
     registerServiceWorker()
-    svg4everybody()
 }
 
 init()
