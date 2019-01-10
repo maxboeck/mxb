@@ -12,14 +12,12 @@
                 </a>
                 <div class="webmentions__faces">
                     {% for webmention in mentions | reverse | slice(7) %}
-                        {% if webmention.author.photo %}
-                            <img
-                                class="webmentions__faces__img"
-                                src="{{ webmention.author.photo }}"
-                                title="{{ webmention.author.name }}"
-                                alt=""
-                            />
-                        {% endif %}
+                        <img
+                            class="webmentions__faces__img"
+                            src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/assets/images/avatar-default.jpg' | url }}{% endif %}"
+                            title="{{ webmention.author.name }}"
+                            alt=""
+                        />
                     {% endfor %}
                     {% if mentions.length > 7 %}
                     <span class="webmentions__faces__more">

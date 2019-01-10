@@ -31,15 +31,17 @@ export default class App extends Component {
 
     renderMentionsHeader(webmentions) {
         const faces = webmentions.slice(0, 7).map(entry => {
-            return entry.author && entry.author.photo ? (
+            const imgSrc =
+                entry.author.photo || '/assets/images/avatar-default.jpg'
+            return (
                 <img
                     key={entry['wm-id']}
                     className="webmentions__faces__img"
-                    src={entry.author.photo}
+                    src={imgSrc}
                     title={entry.author.name}
                     alt=""
                 />
-            ) : null
+            )
         })
         if (webmentions.length > 7) {
             faces.push(
