@@ -6,6 +6,13 @@ import Icon from './Icon'
 
 export default class App extends Component {
     clean(webmentions) {
+        const options = {
+            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+            allowedAttributes: {
+                a: ['href']
+            }
+        }
+
         return webmentions.map(entry => {
             const { content } = entry
             if (content['content-type'] === 'text/html') {
@@ -16,7 +23,7 @@ export default class App extends Component {
                     }">${entry.url}</a>`
                 }
                 // sanitize HTML
-                content.value = sanitizeHTML(content.value)
+                content.value = sanitizeHTML(content.value, options)
             }
             return entry
         })

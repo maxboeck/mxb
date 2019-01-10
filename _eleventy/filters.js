@@ -31,6 +31,12 @@ module.exports = {
 
     webmentionsByUrl: function(webmentions, url) {
         const allowedTypes = ['mention-of', 'in-reply-to']
+        const allowedHTML = {
+            allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+            allowedAttributes: {
+                a: ['href']
+            }
+        }
 
         const clean = entry => {
             const { content } = entry
@@ -42,7 +48,7 @@ module.exports = {
                     }">${entry.url}</a>`
                 }
                 // sanitize HTML
-                content.value = sanitizeHTML(content.value)
+                content.value = sanitizeHTML(content.value, allowedHTML)
             }
             return entry
         }
