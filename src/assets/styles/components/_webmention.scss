@@ -46,7 +46,6 @@
         display: block;
     }
     &__toggle {
-        flex: 1;
         margin-right: 1rem;
     }
     &__info {
@@ -63,8 +62,30 @@
     }
     &__header {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+    }
+    &__faces {
+        display: flex;
+        flex: 1 0 auto;
+        flex-wrap: wrap;
+        padding: 0.5rem 0;
+        margin-right: 1rem;
+
+        &__img,
+        &__more {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            flex: none;
+        }
+        &__more {
+            font-size: 0.75rem;
+            line-height: 2rem;
+            text-align: center;
+            background-color: $gray-lighter;
+        }
     }
     &__item:not(:last-child) {
         margin-bottom: 1rem;

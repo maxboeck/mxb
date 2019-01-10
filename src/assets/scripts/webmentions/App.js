@@ -29,6 +29,44 @@ export default class App extends Component {
         })
     }
 
+    renderMentionsHeader(webmentions) {
+        const faces = webmentions.slice(0, 7).map(entry => {
+            return entry.author && entry.author.photo ? (
+                <img
+                    key={entry['wm-id']}
+                    className="webmentions__faces__img"
+                    src={entry.author.photo}
+                    title={entry.author.name}
+                    alt=""
+                />
+            ) : null
+        })
+        if (webmentions.length > 7) {
+            faces.push(
+                <span className="webmentions__faces__more">
+                    +{webmentions.length - 7}
+                </span>
+            )
+        }
+        return (
+            <div className="webmentions__header">
+                <a href="#webmentions" class="webmentions__toggle">
+                    <Icon name="message" /> Show All ({webmentions.length})
+                </a>
+                <div className="webmentions__faces">{faces}</div>
+                <a
+                    href="https://indieweb.org/Webmention"
+                    className="webmentions__info"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Icon name="question" />
+                    What’s this?
+                </a>
+            </div>
+        )
+    }
+
     renderMentionsList(webmentions) {
         return (
             <ol className="webmentions__list">
@@ -64,20 +102,7 @@ export default class App extends Component {
         webmentions = this.clean(webmentions)
         return (
             <div data-rendered>
-                <div className="webmentions__header">
-                    <a href="#webmentions" class="webmentions__toggle">
-                        <Icon name="message" /> Show All ({webmentions.length})
-                    </a>
-                    <a
-                        href="https://indieweb.org/Webmention"
-                        className="webmentions__info"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Icon name="question" />
-                        What’s this?
-                    </a>
-                </div>
+                {this.renderMentionsHeader(webmentions)}
                 <div className="webmentions__content">
                     {this.renderMentionsList(webmentions)}
                 </div>

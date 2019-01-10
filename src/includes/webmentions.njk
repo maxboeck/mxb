@@ -10,6 +10,23 @@
                 <a href="#webmentions" class="webmentions__toggle">
                     {% icon "message" %} Show All ({{ mentions | length }})
                 </a>
+                <div class="webmentions__faces">
+                    {% for webmention in mentions | reverse | slice(7) %}
+                        {% if webmention.author.photo %}
+                            <img
+                                class="webmentions__faces__img"
+                                src="{{ webmention.author.photo }}"
+                                title="{{ webmention.author.name }}"
+                                alt=""
+                            />
+                        {% endif %}
+                    {% endfor %}
+                    {% if mentions.length > 7 %}
+                    <span class="webmentions__faces__more">
+                        +{{ mentions.length - 7 }}
+                    </span>
+                    {% endif %}
+                </div>
                 <a href="https://indieweb.org/Webmention" class="webmentions__info" target="_blank" rel="noopener noreferrer">
                     {% icon "question" %} What’s this?
                 </a>

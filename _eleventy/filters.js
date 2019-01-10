@@ -29,6 +29,10 @@ module.exports = {
         return chars.join('')
     },
 
+    slice: function(array, limit) {
+        return array.slice(0, limit)
+    },
+
     webmentionsByUrl: function(webmentions, url) {
         const allowedTypes = ['mention-of', 'in-reply-to']
         const allowedHTML = {
