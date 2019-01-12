@@ -11,7 +11,7 @@
                     {% icon "message" %} Show All ({{ mentions | length }})
                 </a>
                 <div class="webmentions__faces">
-                    {% for webmention in mentions | reverse | slice(7) %}
+                    {% for webmention in mentions | reverse | slice(5) %}
                         <img
                             class="webmentions__faces__img"
                             src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/assets/images/avatar-default.jpg' | url }}{% endif %}"
@@ -19,9 +19,9 @@
                             alt=""
                         />
                     {% endfor %}
-                    {% if mentions.length > 7 %}
+                    {% if mentions.length > 5 %}
                     <span class="webmentions__faces__more">
-                        +{{ mentions.length - 7 }}
+                        +{{ mentions.length - 5 }}
                     </span>
                     {% endif %}
                 </div>

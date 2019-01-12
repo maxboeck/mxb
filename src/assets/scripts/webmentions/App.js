@@ -30,7 +30,7 @@ export default class App extends Component {
     }
 
     renderMentionsHeader(webmentions) {
-        const faces = webmentions.slice(0, 7).map(entry => {
+        const faces = webmentions.slice(0, 5).map(entry => {
             const imgSrc =
                 entry.author.photo || '/assets/images/avatar-default.jpg'
             return (
@@ -43,10 +43,10 @@ export default class App extends Component {
                 />
             )
         })
-        if (webmentions.length > 7) {
+        if (webmentions.length > 5) {
             faces.push(
                 <span className="webmentions__faces__more">
-                    +{webmentions.length - 7}
+                    +{webmentions.length - 5}
                 </span>
             )
         }
