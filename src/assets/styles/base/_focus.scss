@@ -5,6 +5,7 @@
 a:focus,
 button:focus,
 input:focus {
+    outline: 5px solid $brand-color-secondary;
     outline: 5px solid var(--brand-color-secondary);
 }
 

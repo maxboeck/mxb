@@ -39,9 +39,22 @@ $gray-lightest: #f7f7f9;
 
 $brand-red: #fc6767;
 $brand-cyan: #43a9a3;
-
 $simpleloop-brand-primary: #26ffae;
 $twitter-brand-primary: #1da1f2;
+
+// Color Mappings
+
+$bg-color: #fff;
+$bg-color-semitransparent: rgba(255, 255, 255, 0.85);
+$bg-color-secondary: $gray-lightest;
+$text-color: $gray-darkest;
+$text-color-secondary: $gray;
+$border-color: $gray-light;
+$brand-color-primary: $brand-red;
+$brand-color-primary-offset: darken($brand-red, 6%);
+$brand-color-secondary: $brand-cyan;
+$header-border-color: $gray-darkest;
+$logo-color: $gray-darkest;
 
 // Typography
 //

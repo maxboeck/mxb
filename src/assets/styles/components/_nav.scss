@@ -15,6 +15,7 @@
             content: '';
             display: block;
             height: 5px;
+            background-color: $border-color;
             background-color: var(--border-color);
             position: absolute;
             left: 1.25rem;
@@ -33,10 +34,12 @@
         // Current Page Active Item
         &--active {
             &::after {
+                background-color: $brand-color-primary !important;
                 background-color: var(--brand-color-primary) !important;
                 transform: none;
             }
             > a {
+                color: $text-color;
                 color: var(--text-color);
             }
         }
@@ -52,10 +55,12 @@
         line-height: 1;
         white-space: nowrap;
         text-transform: lowercase;
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
         transition: color 0.2s linear;
 
         @include hover-focus {
+            color: $text-color;
             color: var(--text-color);
         }
     }
@@ -81,6 +86,7 @@
         border: 0;
         padding: 0;
         border-radius: 50%;
+        background-color: $bg-color-semitransparent;
         background-color: var(--bg-color-semitransparent);
     }
 
