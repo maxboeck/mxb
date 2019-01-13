@@ -125,7 +125,7 @@
                 right: 70%;
                 height: 10px;
                 bottom: 15%;
-                background-color: $gray-dark;
+                background-color: $gray;
             }
 
             &--active > a {
@@ -151,7 +151,7 @@
             font-family: $font-family-base;
             font-weight: 300;
             font-size: 0.5em;
-            color: $gray-dark;
+            color: $gray;
         }
 
         &__togglebtn {
