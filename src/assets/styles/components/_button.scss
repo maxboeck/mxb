@@ -20,13 +20,13 @@
 }
 
 .btn--primary {
-    background-color: $brand-primary;
+    background-color: var(--brand-color-primary);
     border-color: transparent;
     color: #fff;
 
     @include hover-focus {
         color: #fff;
-        background-color: $brand-primary-offset;
+        background-color: var(--brand-color-primary-offset);
     }
 }
 

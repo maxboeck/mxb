@@ -18,16 +18,16 @@
     }
     &__title {
         margin-bottom: 0.25rem;
-        color: $brand-primary;
+        color: var(--brand-color-primary);
 
         .postlist__item--draft & {
-            color: $brand-secondary;
+            color: var(--brand-color-secondary);
         }
     }
     &__meta {
         font-size: 1.125rem;
         margin-bottom: 1rem;
-        color: $gray;
+        color: var(--text-color-secondary);
     }
     &__tags {
         font-family: $font-family-serif;
@@ -37,7 +37,7 @@
     }
     &__status {
         font-weight: 700;
-        color: $brand-secondary;
+        color: var(--brand-color-secondary);
     }
     &__excerpt {
         @include body-text();

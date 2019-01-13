@@ -53,12 +53,10 @@
     &__info {
         display: flex;
         align-items: center;
-        color: inherit;
-        opacity: 0.65;
+        color: var(--text-color-secondary);
 
         @include hover-focus {
-            color: inherit;
-            opacity: 1;
+            color: var(--text-color);
         }
     }
     &__content {

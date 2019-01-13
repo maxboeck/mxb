@@ -33,7 +33,7 @@
         // Current Page Active Item
         &--active {
             &::after {
-                background-color: $brand-primary !important;
+                background-color: var(--brand-color-primary) !important;
                 transform: none;
             }
             > a {

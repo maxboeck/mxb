@@ -76,7 +76,7 @@
         }
 
         &::after {
-            background-color: $brand-primary;
+            background-color: var(--brand-color-primary);
             transform: scaleX(0);
             transform-origin: 0 50%;
             transition: transform 0.3s cubic-bezier(0.86, 0, 0.07, 1);

@@ -3,7 +3,7 @@
     position: relative;
     min-height: 100px;
     border: 1px solid var(--border-color);
-    background-color: #fff;
+    background-color: var(--bg-color);
 
     &--detail {
         margin: 2rem auto 4rem;
@@ -56,7 +56,7 @@
     }
     &__stats {
         display: flex;
-        color: $gray;
+        color: var(--text-color-secondary);
         font-size: 0.875rem;
         padding: 1rem;
         background-color: var(--bg-color-secondary);

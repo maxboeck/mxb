@@ -11,7 +11,7 @@
     &__meta {
         font-size: 1rem;
         margin: 1rem 0;
-        color: $gray;
+        color: var(--text-color-secondary);
 
         @include mq(md) {
             font-size: 1.25rem;
@@ -24,7 +24,7 @@
     }
     &__status {
         font-weight: 700;
-        color: $brand-secondary;
+        color: var(--brand-color-secondary);
     }
     &__demo {
         margin-left: 2rem;

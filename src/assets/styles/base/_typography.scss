@@ -42,11 +42,11 @@ p {
 }
 
 a {
-    color: $brand-primary;
+    color: var(--brand-color-primary);
     text-decoration: none;
 
     @include hover-focus {
-        color: $brand-primary-offset;
+        color: var(--brand-color-primary-offset);
     }
 }
 
