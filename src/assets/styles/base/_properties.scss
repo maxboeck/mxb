@@ -9,19 +9,21 @@
     --brand-color-primary-offset: #{$brand-primary-offset};
     --brand-color-secondary: #{$brand-secondary};
     --header-border-color: #{$gray-darkest};
+    --logo-color: #{$gray-darkest};
 }
 
 @media (prefers-color-scheme: dark) {
-    // :root {
-    //     --bg-color: #1d1f21;
-    //     --bg-color-semitransparent: rgba(0, 0, 0, 0.75);
-    //     --bg-color-secondary: #252526;
-    //     --text-color: #f9f8f5;
-    //     --text-color-secondary: #{$gray};
-    //     --border-color: #{$gray-darkest};
-    //     --brand-color-primary: #{$brand-primary};
-    //     --brand-color-primary-offset: #{$brand-primary-offset};
-    //     --brand-color-secondary: #{$brand-secondary};
-    //     --header-border-color: #{$gray-dark};
-    // }
+    :root {
+        --bg-color: #212121;
+        --bg-color-semitransparent: rgba(#212121, 0.75);
+        --bg-color-secondary: #252526;
+        --text-color: #e8dbdb;
+        --text-color-secondary: #858585;
+        --border-color: #2d2d2d;
+        --brand-color-primary: #{darken($brand-red, 4%)};
+        --brand-color-primary-offset: #{darken($brand-red, 8%)};
+        --brand-color-secondary: #{$brand-cyan};
+        --header-border-color: #55595c;
+        --logo-color: #55595c;
+    }
 }
