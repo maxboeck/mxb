@@ -11,7 +11,7 @@
     &__meta {
         font-size: 1rem;
         margin: 1rem 0;
-        color: $gray-light;
+        color: $gray;
 
         @include mq(md) {
             font-size: 1.25rem;
@@ -42,7 +42,7 @@
 
         &__info {
             margin: 1rem 0;
-            color: $gray;
+            color: $gray-dark;
             font-style: italic;
         }
     }
@@ -51,7 +51,7 @@
 .postsection {
     @include container-narrow;
     padding: 2rem 0;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-light;
 
     &__title {
         @extend .smalltitle;

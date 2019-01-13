@@ -10,10 +10,10 @@
     }
     &__link {
         display: block;
-        color: $body-color;
+        color: $body-text-color;
 
         @include hover-focus {
-            color: $body-color;
+            color: $body-text-color;
         }
     }
     &__title {
@@ -27,7 +27,7 @@
     &__meta {
         font-size: 1.125rem;
         margin-bottom: 1rem;
-        color: $gray-light;
+        color: $gray;
     }
     &__tags {
         font-family: $font-family-serif;

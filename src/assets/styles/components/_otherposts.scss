@@ -7,7 +7,7 @@
         display: block;
         padding: 0.25rem 0;
         font-size: 1.125rem;
-        color: $body-color;
+        color: $body-text-color;
 
         @include mq(md) {
             display: flex;
@@ -28,7 +28,7 @@
 
     &__date {
         display: block;
-        color: $gray-light;
+        color: $gray;
         font-size: 0.75em;
         white-space: nowrap;
 

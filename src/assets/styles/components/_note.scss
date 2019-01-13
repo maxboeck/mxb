@@ -2,7 +2,7 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-light;
     background-color: #fff;
 
     &--detail {
@@ -21,7 +21,7 @@
         }
     }
     &__date {
-        color: $gray;
+        color: $gray-dark;
     }
     &__author {
         display: flex;
@@ -37,7 +37,7 @@
         }
 
         &__name {
-            color: $body-color;
+            color: $body-text-color;
         }
     }
     &__content {
@@ -59,11 +59,11 @@
     }
     &__stats {
         display: flex;
-        color: $gray-light;
+        color: $gray;
         font-size: 0.875rem;
         padding: 1rem;
         background-color: $gray-lightest;
-        border-top: 1px solid $gray-lighter;
+        border-top: 1px solid $gray-light;
 
         &__item {
             display: flex;
@@ -87,7 +87,7 @@
     }
     &__webmentions {
         padding: 1rem;
-        border-top: 1px solid $gray-lighter;
+        border-top: 1px solid $gray-light;
 
         .webmentions__item {
             margin-bottom: 0 !important;
@@ -120,7 +120,7 @@
         content: '';
         display: block;
         width: 1px;
-        background-color: $gray-lighter;
+        background-color: $gray-light;
         position: absolute;
         top: 0;
         bottom: 0;

@@ -1,13 +1,13 @@
 .footer {
     font-size: 0.875rem;
     padding: 2rem 0;
-    border-top: 1px solid $gray-lighter;
-    color: $gray;
+    border-top: 1px solid $gray-light;
 
     a {
-        color: $gray-light;
+        color: $gray;
+
         @include hover-focus {
-            color: $gray-dark;
+            color: $body-text-color;
             text-decoration: underline;
         }
     }

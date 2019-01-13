@@ -29,12 +29,10 @@ $z-layers: (
 //
 // Grayscale.
 
-$gray-darkest: #121212;
-$gray-darker: #2a2a2a;
-$gray-dark: #373a3c;
-$gray: #55595c;
-$gray-light: #818a91;
-$gray-lighter: #eceeef;
+$gray-darkest: #373a3c;
+$gray-dark: #55595c;
+$gray: #818a91;
+$gray-light: #eceeef;
 $gray-lightest: #f7f7f9;
 
 // Brand Colors
@@ -70,8 +68,8 @@ $link-hover-color: $brand-primary-dark;
 //
 // Settings for the `<body>` element.
 
-$body-bg: #fff;
-$body-color: $gray-dark;
+$body-bg-color: #fff;
+$body-text-color: $gray-darkest;
 
 // Typography
 //

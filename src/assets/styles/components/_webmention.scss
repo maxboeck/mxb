@@ -12,7 +12,7 @@
     &__meta {
         order: -1;
         font-size: 0.875rem;
-        color: $gray;
+        color: $gray-dark;
 
         &__divider {
             display: inline-block;
@@ -21,7 +21,7 @@
     }
     &__author {
         font-size: 1rem;
-        color: $body-color;
+        color: $body-text-color;
 
         &__photo {
             position: absolute;
@@ -51,10 +51,10 @@
     &__info {
         display: flex;
         align-items: center;
-        color: $gray-light;
+        color: $gray;
 
         @include hover-focus {
-            color: $gray-darker;
+            color: $body-text-color;
         }
     }
     &__content {
@@ -84,7 +84,7 @@
             font-size: 0.75rem;
             line-height: 2rem;
             text-align: center;
-            background-color: $gray-lighter;
+            background-color: $gray-light;
         }
     }
     &__item:not(:last-child) {

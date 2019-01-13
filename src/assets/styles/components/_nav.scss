@@ -15,7 +15,7 @@
             content: '';
             display: block;
             height: 5px;
-            background-color: $gray-lighter;
+            background-color: $gray-light;
             position: absolute;
             left: 1.25rem;
             right: 1.25rem;
@@ -37,7 +37,7 @@
                 transform: none;
             }
             > a {
-                color: $gray-dark;
+                color: $body-text-color;
             }
         }
     }
@@ -52,11 +52,11 @@
         line-height: 1;
         white-space: nowrap;
         text-transform: lowercase;
-        color: $gray-light;
+        color: $gray;
         transition: color 0.2s linear;
 
         @include hover-focus {
-            color: $gray-dark;
+            color: $body-text-color;
         }
     }
 
@@ -81,8 +81,8 @@
         border: 0;
         padding: 0;
         border-radius: 50%;
-        background-color: rgba($body-bg, 0.85);
-        color: $gray-dark;
+        background-color: rgba($body-bg-color, 0.85);
+        color: $body-text-color;
     }
 
     // ==================================
@@ -125,21 +125,21 @@
                 right: 70%;
                 height: 10px;
                 bottom: 15%;
-                background-color: $gray;
+                background-color: $gray-dark;
             }
 
             &--active > a {
                 color: #fff;
             }
             &--active .nav__num {
-                color: $gray-light;
+                color: $gray;
             }
         }
 
         &__link {
             padding: 1.5rem;
             text-transform: none;
-            color: $gray-lighter;
+            color: $gray-light;
 
             @include hover-focus {
                 color: #fff;
@@ -151,7 +151,7 @@
             font-family: $font-family-base;
             font-weight: 300;
             font-size: 0.5em;
-            color: $gray;
+            color: $gray-dark;
         }
 
         &__togglebtn {
@@ -231,7 +231,7 @@
 
         border-radius: 50%;
         backface-visibility: hidden;
-        background-color: darken($gray-dark, 5%);
+        background-color: darken($gray-darkest, 5%);
 
         transform: scale(0);
         transform-origin: 50% 50%;
