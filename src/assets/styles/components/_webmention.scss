@@ -5,14 +5,13 @@
     padding: 1rem 0 1rem 60px;
 
     &--own {
-        background-color: rgba($gray-light, 0.1);
+        background-color: var(--bg-color-secondary);
         border-radius: 0.5rem;
     }
 
     &__meta {
         order: -1;
         font-size: 0.875rem;
-        color: $gray;
 
         &__divider {
             display: inline-block;
@@ -21,7 +20,7 @@
     }
     &__author {
         font-size: 1rem;
-        color: $body-text-color;
+        color: inherit;
 
         &__photo {
             position: absolute;
@@ -31,6 +30,9 @@
             width: 48px;
             border-radius: 50%;
         }
+    }
+    &__pubdate {
+        color: $gray;
     }
 
     a.u-mention,
@@ -51,10 +53,12 @@
     &__info {
         display: flex;
         align-items: center;
-        color: $gray;
+        color: inherit;
+        opacity: 0.65;
 
         @include hover-focus {
-            color: $body-text-color;
+            color: inherit;
+            opacity: 1;
         }
     }
     &__content {
@@ -84,7 +88,7 @@
             font-size: 0.75rem;
             line-height: 2rem;
             text-align: center;
-            background-color: $gray-light;
+            background-color: var(--bg-color-secondary);
         }
     }
     &__item:not(:last-child) {

@@ -2,7 +2,7 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
-    border: 1px solid $gray-light;
+    border: 1px solid var(--border-color);
     background-color: #fff;
 
     &--detail {
@@ -21,11 +21,12 @@
         }
     }
     &__date {
-        color: $gray;
+        color: var(--text-color-secondary);
     }
     &__author {
         display: flex;
         align-items: center;
+        color: inherit;
 
         &__photo {
             display: block;
@@ -34,10 +35,6 @@
             width: 3rem;
             height: 3rem;
             margin-right: 1rem;
-        }
-
-        &__name {
-            color: $body-text-color;
         }
     }
     &__content {
@@ -62,8 +59,8 @@
         color: $gray;
         font-size: 0.875rem;
         padding: 1rem;
-        background-color: $gray-lightest;
-        border-top: 1px solid $gray-light;
+        background-color: var(--bg-color-secondary);
+        border-top: 1px solid var(--border-color);
 
         &__item {
             display: flex;
@@ -87,7 +84,7 @@
     }
     &__webmentions {
         padding: 1rem;
-        border-top: 1px solid $gray-light;
+        border-top: 1px solid var(--border-color);
 
         .webmentions__item {
             margin-bottom: 0 !important;
@@ -120,7 +117,7 @@
         content: '';
         display: block;
         width: 1px;
-        background-color: $gray-light;
+        background-color: var(--border-color);
         position: absolute;
         top: 0;
         bottom: 0;

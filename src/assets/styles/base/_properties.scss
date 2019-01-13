@@ -1,9 +1,11 @@
 :root {
-    --bg-color: white;
-    --bg-color-secondary: $gray-lightest;
-
-    --text-color: $gray-darkest;
-    --text-color-secondary: $gray;
-
-    --border-color: $gray-light;
+    --bg-color: rgba(255, 255, 255);
+    --bg-color-semitransparent: rgba(255, 255, 255, 0.85);
+    --bg-color-secondary: #{$gray-lightest};
+    --text-color: #{$gray-darkest};
+    --text-color-secondary: #{$gray};
+    --border-color: #{$gray-light};
+    --brand-color-primary: #{$brand-primary};
+    --brand-color-primary-offset: #{$brand-primary-offset};
+    --header-border-color: #{$gray-darkest};
 }

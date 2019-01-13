@@ -79,10 +79,9 @@ body {
     font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: $line-height;
-    // Go easy on the eyes and use something other than `#000` for text
-    color: $body-text-color;
-    // By default, `<body>` has no `background-color` so we set one as a best practice.
-    background-color: $body-bg-color;
+
+    color: var(--text-color);
+    background-color: var(--bg-color);
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;

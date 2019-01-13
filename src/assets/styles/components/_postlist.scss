@@ -10,10 +10,10 @@
     }
     &__link {
         display: block;
-        color: $body-text-color;
+        color: inherit;
 
         @include hover-focus {
-            color: $body-text-color;
+            color: inherit;
         }
     }
     &__title {

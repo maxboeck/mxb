@@ -15,7 +15,7 @@
             content: '';
             display: block;
             height: 5px;
-            background-color: $gray-light;
+            background-color: var(--border-color);
             position: absolute;
             left: 1.25rem;
             right: 1.25rem;
@@ -37,7 +37,7 @@
                 transform: none;
             }
             > a {
-                color: $body-text-color;
+                color: var(--text-color);
             }
         }
     }
@@ -52,11 +52,11 @@
         line-height: 1;
         white-space: nowrap;
         text-transform: lowercase;
-        color: $gray;
+        color: var(--text-color-secondary);
         transition: color 0.2s linear;
 
         @include hover-focus {
-            color: $body-text-color;
+            color: var(--text-color);
         }
     }
 
@@ -81,8 +81,7 @@
         border: 0;
         padding: 0;
         border-radius: 50%;
-        background-color: rgba($body-bg-color, 0.85);
-        color: $body-text-color;
+        background-color: var(--bg-color-semitransparent);
     }
 
     // ==================================

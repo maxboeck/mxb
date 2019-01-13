@@ -46,23 +46,8 @@ $twitter-brand-primary: #1da1f2;
 //Color Mappings
 
 $brand-primary: $brand-red;
-$brand-primary-dark: darken($brand-primary, 6%);
-
+$brand-primary-offset: darken($brand-red, 5%);
 $brand-secondary: $brand-cyan;
-
-// Links
-//
-// Style anchor elements.
-
-$link-color: $brand-primary;
-$link-hover-color: $brand-primary-dark;
-
-// Body
-//
-// Settings for the `<body>` element.
-
-$body-bg-color: #fff;
-$body-text-color: $gray-darkest;
 
 // Typography
 //

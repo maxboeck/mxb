@@ -7,7 +7,7 @@
         display: block;
         padding: 0.25rem 0;
         font-size: 1.125rem;
-        color: $body-text-color;
+        color: inherit;
 
         @include mq(md) {
             display: flex;

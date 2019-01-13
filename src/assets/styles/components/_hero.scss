@@ -72,7 +72,7 @@
         }
 
         &::before {
-            background-color: $gray-light;
+            background-color: var(--border-color);
         }
 
         &::after {
