@@ -2,7 +2,9 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
+    border: 1px solid $border-color;
     border: 1px solid var(--border-color);
+    background-color: $bg-color;
     background-color: var(--bg-color);
 
     &--detail {
