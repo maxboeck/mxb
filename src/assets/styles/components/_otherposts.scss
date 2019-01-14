@@ -28,6 +28,7 @@
 
     &__date {
         display: block;
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
         font-size: 0.75em;
         white-space: nowrap;

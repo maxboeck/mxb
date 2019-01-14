@@ -21,6 +21,7 @@
         }
     }
     &__date {
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
     }
     &__author {
@@ -56,10 +57,13 @@
     }
     &__stats {
         display: flex;
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
         font-size: 0.875rem;
         padding: 1rem;
+        background-color: $bg-color-secondary;
         background-color: var(--bg-color-secondary);
+        border-top: 1px solid $border-color;
         border-top: 1px solid var(--border-color);
 
         &__item {
@@ -84,6 +88,7 @@
     }
     &__webmentions {
         padding: 1rem;
+        border-top: 1px solid $border-color;
         border-top: 1px solid var(--border-color);
 
         .webmentions__item {
@@ -117,6 +122,7 @@
         content: '';
         display: block;
         width: 1px;
+        background-color: $border-color;
         background-color: var(--border-color);
         position: absolute;
         top: 0;

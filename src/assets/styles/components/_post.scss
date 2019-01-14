@@ -11,6 +11,7 @@
     &__meta {
         font-size: 1rem;
         margin: 1rem 0;
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
 
         @include mq(md) {
@@ -24,6 +25,7 @@
     }
     &__status {
         font-weight: 700;
+        color: $brand-color-secondary;
         color: var(--brand-color-secondary);
     }
     &__demo {
@@ -51,6 +53,7 @@
 .postsection {
     @include container-narrow;
     padding: 2rem 0;
+    border-top: 1px solid $border-color;
     border-top: 1px solid var(--border-color);
 
     &__title {

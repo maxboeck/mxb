@@ -5,6 +5,7 @@
     padding: 1rem 0 1rem 60px;
 
     &--own {
+        background-color: $bg-color-secondary;
         background-color: var(--bg-color-secondary);
         border-radius: 0.5rem;
     }
@@ -53,9 +54,11 @@
     &__info {
         display: flex;
         align-items: center;
+        color: $text-color-secondary;
         color: var(--text-color-secondary);
 
         @include hover-focus {
+            color: $text-color;
             color: var(--text-color);
         }
     }
@@ -86,6 +89,7 @@
             font-size: 0.75rem;
             line-height: 2rem;
             text-align: center;
+            background-color: $bg-color-secondary;
             background-color: var(--bg-color-secondary);
         }
     }
