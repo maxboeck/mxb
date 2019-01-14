@@ -15,18 +15,26 @@
 }
 
 // Dark Color Scheme
+@mixin dark-color-scheme() {
+    --bg-color: #1d1f21;
+    --bg-color-semitransparent: rgba(#212121, 0.75);
+    --bg-color-secondary: #252526;
+    --text-color: #e8dbdb;
+    --text-color-secondary: #818a91;
+    --border-color: #2d2d2d;
+    --brand-color-primary: #{darken($brand-red, 4%)};
+    --brand-color-primary-offset: #{darken($brand-red, 8%)};
+    --brand-color-secondary: #{$brand-cyan};
+    --header-border-color: #55595c;
+    --logo-color: #818a91;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #1d1f21;
-        --bg-color-semitransparent: rgba(#212121, 0.75);
-        --bg-color-secondary: #252526;
-        --text-color: #e8dbdb;
-        --text-color-secondary: #858585;
-        --border-color: #2d2d2d;
-        --brand-color-primary: #{darken($brand-red, 4%)};
-        --brand-color-primary-offset: #{darken($brand-red, 8%)};
-        --brand-color-secondary: #{$brand-cyan};
-        --header-border-color: #55595c;
-        --logo-color: #858585;
+        @include dark-color-scheme();
     }
+}
+
+html.theme-dark {
+    @include dark-color-scheme();
 }

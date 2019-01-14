@@ -44,7 +44,8 @@
 
         &__info {
             margin: 1rem 0;
-            color: $gray;
+            color: $text-color-secondary;
+            color: var(--text-color-secondary);
             font-style: italic;
         }
     }

@@ -4,7 +4,8 @@
     border-top: 1px solid $border-color;
     border-top: 1px solid var(--border-color);
 
-    a {
+    a,
+    button {
         color: $text-color-secondary;
         color: var(--text-color-secondary);
 
@@ -32,7 +33,15 @@
     }
 
     &__icon {
+        @include button-reset;
         display: inline-block;
+
+        &--darkmode {
+            display: none;
+            @supports (color: var(--fake-var)) {
+                display: inline-block;
+            }
+        }
 
         & + & {
             margin-left: 1rem;
