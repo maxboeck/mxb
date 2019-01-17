@@ -3,7 +3,7 @@ title: "Static Indieweb pt2: Using Webmentions"
 slug: "using-webmentions-on-static-sites"
 tags: code
 description: "How to pull interactions from social media platforms like Twitter back to your own site, using Webmentions, webmention.io and Bridgy."
-demo: https://github.com/maxboeck/mxb/blob/master/src/data/webmentions.js
+demo: https://github.com/maxboeck/eleventy-webmentions
 image: cover.jpg
 ---
 
@@ -185,6 +185,10 @@ if (rootElement) {
 And that's it! There are of course still some missing pieces, most notably the ability to send *outgoing* webmentions to URLs linked to in your own blog posts. I might have to look into that.
 
 My implementation was heavily inspired by Aaron Gustafson's excellent Jekyll Plugin (link below), which goes even further with customization and caching options. If you're running a Jekyll site, use that for almost instant webmention support 👍. 
+
+## Eleventy Starter
+
+UPDATE: I made an [Eleventy Starter Template](https://github.com/maxboeck/eleventy-webmentions) with basic webmention support, using some of the techniques in this post. Check it out!
 
 ## Further Resources
 
