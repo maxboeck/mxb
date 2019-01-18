@@ -6,19 +6,45 @@ const CLASSES = {
     darkMode: 'theme-dark'
 }
 
-export default function() {
-    const toggleBtn = document.querySelector(SELECTORS.toggleBtn)
-    const supportsCSSVariables =
-        window.CSS && CSS.supports('color', 'var(--fake-var)')
+export default class DarkMode {
+    constructor() {
+        this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
+        this.storageKey = 'darkMode'
+        this.isActive = false
 
-    if (toggleBtn) {
-        // skip if we dont have css custom properites support
-        if (!supportsCSSVariables) {
-            return false
+        this.support = window.CSS && CSS.supports('color', 'var(--fake-var)')
+        if (!this.support) {
+            return
         }
 
-        toggleBtn.addEventListener('click', () => {
-            document.documentElement.classList.toggle(CLASSES.darkMode)
-        })
+        if (this.toggleBtn) {
+            this.toggleBtn.addEventListener('click', () => this.toggle())
+        }
+
+        this.init()
+    }
+
+    init() {
+        if (this.hasLocalStorage()) {
+            const preference = localStorage.getItem(this.storageKey) === 'true'
+            this.toggle(preference)
+        }
+    }
+
+    toggle(force) {
+        this.isActive = typeof force === 'boolean' ? force : !this.isActive
+        document.documentElement.classList.toggle(
+            CLASSES.darkMode,
+            this.isActive
+        )
+        this.toggleBtn.setAttribute('aria-checked', String(this.isActive))
+
+        if (this.hasLocalStorage()) {
+            localStorage.setItem(this.storageKey, this.isActive)
+        }
+    }
+
+    hasLocalStorage() {
+        return typeof Storage !== 'undefined'
     }
 }

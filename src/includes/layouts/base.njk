@@ -19,6 +19,7 @@
         {% endif %}
 
         {% include "meta.njk" %}
+        <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('theme-dark');</script>
     </head>
     <body>
         <!--[if lte IE 9]>
