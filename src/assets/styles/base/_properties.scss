@@ -35,6 +35,6 @@
     }
 }
 
-html.theme-dark {
+.theme-dark {
     @include dark-color-scheme();
 }
