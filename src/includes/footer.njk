@@ -1,10 +1,14 @@
-<footer class="footer" role="contentinfo">
+<footer class="footer h-card" role="contentinfo">
     <div class="footer__inner container">
 
-        <p class="footer__item h-card">
+        <div hidden>
+            <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" />
+            <p class="p-note">{{ site.description }}</p>
+        </div>
+
+        <p class="footer__item">
             <strong>&copy; {{ build.timestamp | format('yyyy') }}</strong><br />
             <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ author.name }}</a>
-            <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" hidden />
         </p>
 
         <p class="footer__item">
@@ -12,7 +16,7 @@
             <a
                 href="mailto:{{ author.email | obfuscate | safe }}"
                 rel="me"
-                class="u-url"
+                class="u-email"
             >
                 {{ author.email | obfuscate | safe }}
             </a>
