@@ -27,9 +27,13 @@
         color: var(--text-color-secondary);
     }
     &__author {
-        display: flex;
-        align-items: center;
-        color: inherit;
+        margin: 0;
+
+        &__url {
+            display: flex;
+            align-items: center;
+            color: inherit;
+        }
 
         &__photo {
             display: block;
