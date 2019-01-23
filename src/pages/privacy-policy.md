@@ -54,5 +54,4 @@ Hohenstaufengasse 3
 1010 Vienna, AT  
 [dsb@dsb.gv.at](mailto:dsb@dsb.gv.at)
 
-
-*Version: 2019-01-23*
+<p class="u-align-right"><em>Version: 2019-01-23</em></p>
