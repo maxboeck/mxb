@@ -30,7 +30,7 @@ module.exports = {
     },
 
     slice: function(array, limit) {
-        return array.slice(0, limit)
+        return limit > 0 ? array.slice(0, limit) : array.slice(limit)
     },
 
     webmentionsByUrl: function(webmentions, url) {
@@ -72,10 +72,18 @@ module.exports = {
         )
     },
 
-    excludePost: function(posts, currentPostTitle) {
-        return posts
-            .filter(post => post.data.title !== currentPostTitle)
-            .slice(-10)
+    excludePost: function(allPosts, currentPost) {
+        return allPosts.filter(post => post.inputPath !== currentPost.inputPath)
+    },
+
+    currentPage: function(allPages, currentPage) {
+        const matches = allPages.filter(
+            page => page.inputPath === currentPage.inputPath
+        )
+        if (matches && matches.length) {
+            return matches[0]
+        }
+        return null
     },
 
     excerpt: function(content) {

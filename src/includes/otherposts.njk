@@ -1,4 +1,4 @@
-{% set otherposts = collections.posts | excludePost(title) %}
+{% set otherposts = collections.posts | excludePost(page) | slice(-10) %}
 
 <ol class="otherposts">
     {% for post in otherposts | reverse %}

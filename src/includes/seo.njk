@@ -2,15 +2,21 @@
 {%- set isPost = layout == 'post' -%}
 {%- set isNote = layout == 'note' -%}
 
+{%- if isPost or isNote -%}
+    {# Auto-Generate a Description for Posts and Notes  #}
+    {%- set currentPage = collections.all | currentPage(page) -%}
+    {%- set autoDescription = currentPage.templateContent | excerpt | safe | striptags -%}
+{% endif %}
+
 {%- if isNote -%}
     {# Notes dont have Titles, use the Date  #}
     {%- set title = page.date | readableDate %}
 {%- endif -%}
 
 {# Page-Specific #}
-<meta name="description" content="{{ description or renderData.description or site.description }}">
+<meta name="description" content="{{ description or autoDescription or site.description }}">
 <meta property="og:title" content="{{ title or site.title }}">
-<meta property="og:description" content="{{ description or renderData.description or site.description }}">
+<meta property="og:description" content="{{ description or autoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 <meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
