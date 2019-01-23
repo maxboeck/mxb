@@ -1,5 +1,6 @@
 .nav {
-    display: block;
+    display: flex;
+    align-items: center;
 
     // Nav Menu UL
     &__menu {
@@ -90,6 +91,28 @@
         background-color: var(--bg-color-semitransparent);
     }
 
+    // Darkmode Button
+    &__darkmodebtn {
+        @include button-reset;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 1.75;
+        height: 1.75;
+        margin-left: 2rem;
+        color: $text-color-secondary;
+        color: var(--text-color-secondary);
+
+        @include hover-focus {
+            color: $text-color;
+            color: var(--text-color);
+        }
+
+        @supports (color: var(--fake-var)) {
+            display: flex;
+        }
+    }
+
     // ==================================
     // MOBILE VERSION (TABLET AND DOWN)
     // ==================================
@@ -162,6 +185,11 @@
         &__togglebtn {
             display: flex;
             top: 2.625rem;
+        }
+
+        &__darkmodebtn {
+            margin-left: 0;
+            margin-right: 5rem;
         }
     }
 

@@ -35,6 +35,17 @@
         </ul>
     </div>
 
+    {# Dark Mode Switch #}
+    <button
+        class="nav__darkmodebtn js-darkmode-toggle"
+        title="Toggle Dark Mode"
+        role="switch"
+        aria-checked="false"
+    >
+        {% icon "moon" %}
+        <span class="sr-only">Toggle Dark Mode</span>
+    </button>
+
     {# Menu BG Animation #}
     <div class="nav__bg theme-dark">
         <div class="nav__bg__circle"></div>

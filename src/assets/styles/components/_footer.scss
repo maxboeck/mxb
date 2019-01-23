@@ -36,13 +36,6 @@
         @include button-reset;
         display: inline-block;
 
-        &--darkmode {
-            display: none;
-            @supports (color: var(--fake-var)) {
-                display: inline-block;
-            }
-        }
-
         & + & {
             margin-left: 1rem;
         }
