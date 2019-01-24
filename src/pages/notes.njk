@@ -26,29 +26,27 @@ pagination:
         <h1 class="page__title">{{ title }}</h1>
     </header>
     <div class="page__content">
-
         {% if notes | length %}
-                <ol reversed class="notelist js-infinitescroll-container">
-                {% for note in notes %}
-                    <li class="notelist__item js-infinitescroll-item">
-                        {% include 'note.njk' %}
-                    </li>
-                {% endfor %}
-                </ol>
+            <ol reversed class="notelist js-infinitescroll-container">
+            {% for note in notes %}
+                <li class="notelist__item js-infinitescroll-item">
+                    {% include 'note.njk' %}
+                </li>
+            {% endfor %}
+            </ol>
 
-                <nav class="js-infinitescroll-pagination">
-                    {% if pagination.nextPageHref %}
-                        <a
-                            href="{{ pagination.nextPageHref }}"
-                            class="js-infinitescroll-next"
-                        >
-                            next page
-                        </a>
-                    {% endif %}
-                </nav>
+            <nav class="js-infinitescroll-pagination">
+                {% if pagination.nextPageHref %}
+                    <a
+                        href="{{ pagination.nextPageHref }}"
+                        class="js-infinitescroll-next"
+                    >
+                        next page
+                    </a>
+                {% endif %}
+            </nav>
         {% else %}
             <p class="lead">No Notes yet.</p>
         {% endif %}
-
     </div>
 </div>
