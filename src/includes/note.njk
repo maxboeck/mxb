@@ -48,7 +48,7 @@
             {% icon "heart", useInlineIcons %}{{ likeCount }}
         </li>
     </ul>
-    {% if isDetailView and mentionCount != "0" %}
+    {% if isDetailView %}
         <div class="note__webmentions">
             {% include 'webmentions.njk' %}       
         </div>
