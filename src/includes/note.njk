@@ -13,10 +13,17 @@
     <div class="note__main">
         <div class="note__meta">
             <p class="note__author h-card p-author" rel=author>
-                <a class="note__author__url u-url" href="{{ site.url }}">
+                {% if isDetailView %}
+                <a class="note__author__link u-url" href="{{ site.url }}">
                     <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
                     <strong class="note__author__name p-name">{{ author.name }}</strong>
                 </a>
+                {% else %}
+                <span class="note__author__link">
+                    <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
+                    <strong class="note__author__name p-name">{{ author.name }}</strong>
+                </span>
+                {% endif %}
             </p>
             <span class="note__meta__divider">&sdot;</span>
             <time class="note__date dt-published" datetime="{{ note.date | iso }}">
