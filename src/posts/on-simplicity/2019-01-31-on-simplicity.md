@@ -17,14 +17,12 @@ Obviously not every problem has a simple solution, and most complex tools exist 
 
 Static sites are on the rise again now, precisely because they are simple. They don't try to manage serverside code with clever abstractions - they don't have any. They don't try to prevent security breaches with advanced firewalls - they get rid of the database entirely.
 
-Some of the most important things in the world are intentionally designed "stupid". In any system, the potential for error directly increases with its complexity - that's why most elections still work by putting pieces of paper in a box. 
+Some of the most important things in the world are intentionally designed "simple". In any system, the potential for error directly increases with its complexity - that's why most elections still work by putting pieces of paper in a box. 
 
 ## Think for Yourself, Question Complexity
 
 Developers are obsessed with the notion of "best practice".  
-It implies that there is one correct way of doing things, and all other solutions are either imperfect or, at worst, "anti-patterns". 
-
-The definition of best practice changes everytime a new technology arises, rendering the previous solution worthless garbage (even though it still gets the job done).
+It implies that there is one correct way of doing things, and all other solutions are either imperfect or, at worst, "anti-patterns". But the definition of best practice changes everytime a new technology arises, rendering the previous solution worthless garbage (even though it still gets the job done).
 
 There is an undeniable ego factor to the way we use technology in our projects. To show everyone else how clever we are, we come up with harder and harder ways to achieve our tasks. And of course they all solve specific problems - but that does not mean they are always the best solution, regardless of context.
 
