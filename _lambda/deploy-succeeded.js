@@ -17,10 +17,14 @@ const twitter = new Twitter({
 })
 
 // Helper Function to return unknown errors
-const handleError = err => ({
-    statusCode: 422,
-    body: String(err)
-})
+const handleError = err => {
+    console.error(err)
+    const msg = Array.isArray(err) ? err[0].message : err.message
+    return {
+        statusCode: 422,
+        body: String(msg)
+    }
+}
 
 // Helper Function to return function status
 const status = (code, msg) => {
