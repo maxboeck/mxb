@@ -1,6 +1,8 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
+const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
 
 const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
@@ -33,6 +35,30 @@ module.exports = function(config) {
     config.addPassthroughCopy('src/site.webmanifest')
     config.addPassthroughCopy('src/keybase.txt')
     config.addPassthroughCopy('src/robots.txt')
+
+    // Markdown Parsing
+    config.setLibrary(
+        'md',
+        markdownIt({
+            html: true,
+            breaks: true,
+            typographer: true
+        }).use(markdownItAnchor, {
+            permalink: true,
+            permalinkSymbol: '#',
+            permalinkClass: 'heading-anchor',
+            level: 2,
+            slugify: s =>
+                encodeURIComponent(
+                    'h-' +
+                        String(s)
+                            .trim()
+                            .toLowerCase()
+                            .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+                            .replace(/\s+/g, '-')
+                )
+        })
+    )
 
     // Collections: Navigation
     config.addCollection('nav', function(collection) {

@@ -73,11 +73,35 @@
     h2,
     h3,
     h4 {
+        position: relative;
         margin-top: 1.5em;
         margin-bottom: 0.75em;
 
         &:first-child {
             margin-top: 0;
+        }
+        @include hover-focus {
+            > .heading-anchor {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    .heading-anchor {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -1em;
+        width: 1em;
+        opacity: 0;
+        font-weight: 400;
+
+        @include hover-focus {
+            opacity: 1 !important;
+        }
+
+        @include mq(md) {
+            display: block;
         }
     }
 
