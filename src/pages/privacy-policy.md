@@ -5,10 +5,7 @@ title: Privacy Policy
 subtitle: How I handle your data
 ---
 
-This website does not collect any personal data. It does not set any cookies and it
-does not use any third-party tracking scripts. No user analytics or other metrics are 
-processed during your visit, and the server does not write any log files, which means 
-your IP address is not stored anywhere.
+This website does not collect any personal data. It does not set any cookies and it does not use any third-party tracking scripts. No user analytics or other metrics are processed during your visit, and the server does not write any log files, which means your IP address is not stored anywhere.
 
 Basically, it's just a free piece of content, no strings attached.
 
