@@ -1,9 +1,9 @@
 <ol reversed class="postlist" start="{{ postlist.length }}">
     {% for post in postlist | reverse %}
-        <li class="postlist__item{% if post.data.draft %} postlist__item--draft{% endif %}">
+        <li class="postlist__item h-entry {% if post.data.draft %}postlist__item--draft{% endif %}">
             <a
                 href="{{ post.url | url }}"
-                class="postlist__link"
+                class="postlist__link u-url"
                 rel="bookmark"
                 aria-labelledby="{{ post.data.title | slug }}-title"
             >
@@ -18,7 +18,7 @@
 
                     {% if post.data.tags %}
                         &sdot;
-                        <span class="postlist__tags">
+                        <span class="postlist__tags p-category">
                             {{ post.data.tags|join(', ') }}
                         </span>
                     {% endif %}
