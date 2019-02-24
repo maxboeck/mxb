@@ -7,7 +7,6 @@ body {
 .layout {
     display: flex;
     flex-direction: column;
-    height: 99.99vh; // IE11 flexbox column bug
     min-height: 100%;
     min-height: 100vh;
     position: relative;
