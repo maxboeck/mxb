@@ -8,7 +8,7 @@ const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
 
 require('dotenv').config()
-const env = process.env.NODE_ENV
+const isProduction = process.env.NODE_ENV === 'prod'
 
 module.exports = function(config) {
     // Filters
@@ -69,11 +69,12 @@ module.exports = function(config) {
 
     // Collections: Posts
     config.addCollection('posts', function(collection) {
+        const pathsRegex = /\/posts\/|\/drafts\//
         return collection
             .getAllSorted()
-            .filter(item => item.inputPath.match(/\/posts\//) !== null)
+            .filter(item => item.inputPath.match(pathsRegex) !== null)
             .filter(item => item.data.permalink !== false)
-            .filter(item => !(item.data.draft && env === 'prod'))
+            .filter(item => !(item.data.draft && isProduction))
     })
 
     // Collections: Notes
@@ -86,7 +87,7 @@ module.exports = function(config) {
 
     // Minify HTML Output
     config.addTransform('htmlmin', function(content, outputPath) {
-        if (env === 'prod' && outputPath.endsWith('.html')) {
+        if (outputPath.endsWith('.html') && isProduction) {
             return htmlmin.minify(content, {
                 useShortDoctype: true,
                 removeComments: true,
