@@ -16,7 +16,7 @@ excludeFromSitemap: true
         <name>{{ author.name }}</name>
         <email>{{ author.email }}</email>
     </author>
-    {%- for post in collections.posts -%}
+    {%- for post in collections.posts | reverse -%}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
         <entry>
             <title>{{ post.data.title }}</title>
