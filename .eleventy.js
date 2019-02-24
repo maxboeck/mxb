@@ -97,6 +97,9 @@ module.exports = function(config) {
         return content
     })
 
+    // opt out of using gitignore for eleventy
+    config.setUseGitIgnore(false)
+
     // Base Config
     return {
         dir: {
