@@ -11,19 +11,21 @@
                 </h2>
 
                 <div class="postlist__meta">
+                    <span class="sr-only">written</span>
                     <time class="postlist__date dt-published" datetime="{{ post.date | iso }}">
                         {{ post.date | readableDate }}
                     </time>
 
                     {% if post.data.tags %}
-                        &sdot;
+                        <span class="sr-only">in category</span>
+                        <span aria-hidden="true">&sdot;</span>
                         <span class="postlist__tags p-category">
                             {{ post.data.tags|join(', ') }}
                         </span>
                     {% endif %}
 
                     {% if post.data.draft %}
-                        &sdot;
+                        <span aria-hidden="true">&sdot;</span>
                         <span class="postlist__status">(Draft)</span>
                     {% endif %}
                 </div>
