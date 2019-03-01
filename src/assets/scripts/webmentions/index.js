@@ -2,14 +2,16 @@ import { h, render } from 'preact'
 import App from './App'
 
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
-const SITE_URL = 'https://mxb.at'
+const BASE_URLS = ['https://mxb.at', 'https://mxb.dev']
 
 const webmentionsElement = document.getElementById('webmentions')
 const replaceElement = webmentionsElement.querySelector('[data-render-root]')
 
 const fetchMentions = () => {
-    const targetUrl = SITE_URL + window.location.pathname
-    let url = `${API_ORIGIN}?target=${targetUrl}&per-page=1000`
+    const targetUrls = BASE_URLS.map(
+        domain => `target[]=${domain + window.location.pathname}`
+    ).join('&')
+    let url = `${API_ORIGIN}?per-page=1000&${targetUrls}`
 
     return fetch(url)
         .then(response => response.json())
