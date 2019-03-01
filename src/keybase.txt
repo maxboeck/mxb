@@ -4,48 +4,79 @@ https://keybase.io/mxb
 
 I hereby claim:
 
-  * I am an admin of https://mxb.at
+  * I am an admin of https://mxb.dev
   * I am mxb (https://keybase.io/mxb) on keybase.
-  * I have a public key ASA0wNasmYYqnW_yLG-okwF0VSMlo1IYDe6bJ1LtyDOVlQo
+  * I have a public key with fingerprint 2D6B F9EA CA44 6DD6 4A4E  83FF 944E 076E 5FC2 7685
 
 To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "eldest_kid": "012034c0d6ac99862a9d6ff22c6fa8930174552325a352180dee9b2752edc83395950a",
-            "host": "keybase.io",
-            "kid": "012034c0d6ac99862a9d6ff22c6fa8930174552325a352180dee9b2752edc83395950a",
-            "uid": "cec9401a768b2b9c51df144e3d921f00",
-            "username": "mxb"
-        },
-        "merkle_root": {
-            "ctime": 1497948066,
-            "hash": "3585aa1421cf46fbf6de60e5e3122399c9f39655e61a933427b027cafa55a9f11a3549ec3f7a1707e9b73343d28df2c06f83acf34399d550d03147d0a3b5d8cd",
-            "hash_meta": "cd9f74cd49e74c1698bc9414e4cd5f9e7f4df315ec6059bcdc302927e9ed46e3",
-            "seqno": 1182014
-        },
-        "service": {
-            "hostname": "mxb.at",
-            "protocol": "https:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "012034c0d6ac99862a9d6ff22c6fa8930174552325a352180dee9b2752edc83395950a",
+      "fingerprint": "2d6bf9eaca446dd64a4e83ff944e076e5fc27685",
+      "host": "keybase.io",
+      "key_id": "944e076e5fc27685",
+      "kid": "010141db038fd0097ed3d80833acb60c611c1618169eb55b7bdd53173dc6f0e740550a",
+      "uid": "cec9401a768b2b9c51df144e3d921f00",
+      "username": "mxb"
     },
-    "client": {
-        "name": "keybase.io go client",
-        "version": "1.0.24"
+    "merkle_root": {
+      "ctime": 1551474619,
+      "hash_meta": "8a77923905cff8432091be2dce36858f8e3cf5b271a3e2cb5dc9bdc6a4c244a0",
+      "seqno": 4859291
     },
-    "ctime": 1497948097,
-    "expire_in": 504576000,
-    "prev": "11cb8d9d3bd0c9e680a9bbbcd97a09919640f338cec4179ba66e2e7e9a425d99",
-    "seqno": 14,
-    "tag": "signature"
+    "revoke": {
+      "sig_ids": [
+        "bb4216744cfeed833c82fb383535891c3a634e349e62bf68bd3c0c429db2459c0f"
+      ]
+    },
+    "service": {
+      "hostname": "mxb.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1551474627,
+  "expire_in": 157680000,
+  "prev": "dc7132807cb568a3427175bc2c2e75623128e15cab52e55407f3aaddb2bedb3e",
+  "seqno": 26,
+  "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNMDWrJmGKp1v8ixvqJMBdFUjJaNSGA3umydS7cgzlZUKp3BheWxvYWTFAzp7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMzRjMGQ2YWM5OTg2MmE5ZDZmZjIyYzZmYTg5MzAxNzQ1NTIzMjVhMzUyMTgwZGVlOWIyNzUyZWRjODMzOTU5NTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMzRjMGQ2YWM5OTg2MmE5ZDZmZjIyYzZmYTg5MzAxNzQ1NTIzMjVhMzUyMTgwZGVlOWIyNzUyZWRjODMzOTU5NTBhIiwidWlkIjoiY2VjOTQwMWE3NjhiMmI5YzUxZGYxNDRlM2Q5MjFmMDAiLCJ1c2VybmFtZSI6Im14YiJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5Nzk0ODA2NiwiaGFzaCI6IjM1ODVhYTE0MjFjZjQ2ZmJmNmRlNjBlNWUzMTIyMzk5YzlmMzk2NTVlNjFhOTMzNDI3YjAyN2NhZmE1NWE5ZjExYTM1NDllYzNmN2ExNzA3ZTliNzMzNDNkMjhkZjJjMDZmODNhY2YzNDM5OWQ1NTBkMDMxNDdkMGEzYjVkOGNkIiwiaGFzaF9tZXRhIjoiY2Q5Zjc0Y2Q0OWU3NGMxNjk4YmM5NDE0ZTRjZDVmOWU3ZjRkZjMxNWVjNjA1OWJjZGMzMDI5MjdlOWVkNDZlMyIsInNlcW5vIjoxMTgyMDE0fSwic2VydmljZSI6eyJob3N0bmFtZSI6Im14Yi5hdCIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjI0In0sImN0aW1lIjoxNDk3OTQ4MDk3LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6IjExY2I4ZDlkM2JkMGM5ZTY4MGE5YmJiY2Q5N2EwOTkxOTY0MGYzMzhjZWM0MTc5YmE2NmUyZTdlOWE0MjVkOTkiLCJzZXFubyI6MTQsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAikSjxWGfYfC0Aoh/m4GiMXnqSQhfrk6VzY6efHEbT9UIqG/HpVhDzXnCDbtW4oYdx9Nch7XkLOLTOknvtsHTBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIEv5zrKvs8tCy9E2ag0OI6DOFreNsXohQeH/zRz+gkWBo3RhZ80CAqd2ZXJzaW9uAQ==
+-----BEGIN PGP MESSAGE-----
+
+owFtU3tQFVUYB7QQlHAyEgsp1xFRQXfPYx+3lMbUBPWqRaGi3nbPOctd4N697r1e
+5XHFYpxM0tFBkJqy0aKS0DJrzExRHN8Og2lZE2Xi6JiTpmYkjo/OpRxnms4/O+fb
+3/f9Huec1Um9YhJj17rj/Z7W8LLYo78aMXPL3m2rEAyblgmuCqGE9XxYKWXBkKfE
+ooJLECUgQkREKutE01QZ6BqVTRMAIpu6qkFRUhDGAAKsQwwkVaSMaQZQMGCUqBBq
+WMOiLmQJpuUvYk7AsfwhPhZQ2TA1phMdIZlSGemIqdA0NYSYqMgMmwQosop5o9cO
+Rju4OEMPstGWzWt84+mR9z/4e7pFCUnUEKFqUlHUFEYhVUWuSCeGLBJZkogkS6ok
+a8zA2FAMSjGUFEi5MZEpSMT/6F7YM44woiFR0jmHAQyNYImaEueGVAOSKYpRYJA5
+ft3HONq32BAiWYKPOSWlzOPYdiiaKwlZ0b8SxhJSkCxp3Jse9Hp8LKTzJlVXFA1A
+TcTENFUEgahJBgOUMMiNqabKIDExj1bSIQPEwJRoBlerIwIQ0qMSgmyB3xZcSMUa
+0CSuwGFhu4RFyYNWEU8sKLgKBcNAQJIVhPb4iMkY5ZkQFZgGVCGGWNUkAnUZcm9I
+YzIwTG6ZQiISBDRqAIQ1IprCvEiUzglbpGd89JDumx9NWZjLCTh2yCZ2KS96Q6FA
+0BUNJVQWiKIWMcPzb7/HsPyU3w7eEWZO0LL9PCSO/E9eQMkS2OKA5TCPFUVgfhYi
+X1EeTucSKFEkCFRR4dnIqg4Rj0rBBgEEMAXLAEpAZRImusEvJ8ZIVEyo65R7Mhg1
+ILsfIJC5Tr2Iz+Sx+fXQQocJkcTX42DvmNjEmMGPDumdXdJ98cgE33d57uq7917U
+A3HR5xSTmND/XuXJK8m307+oC7TEXU32bm1yP1KxaX3r3KcXXRmcMGBs27H2ukzf
+9kq3pVUF+ryd273lofalez9+bOjW+CkrNtTlN9TO6+z712uNN5dWPThseWR265kR
+r5Qf7XUk5+U1l3N3rcu+VZ2R1uW6MPV0gVIXnzH+2jN2zrbG9Mdd74zx35jcJ+4G
+e8Ldb2/372NT3c93Ffw4dVr/NXvv7oxMT3LK42em/Ybzm5sONEM7eXZWY9HBGRs3
+Lu43c/K1AufQiI6+68e1f5+RmdmQfbJrYHfhyT+DkdlybcWpqzsm7g9fHjbOlTPs
+eHp59eG0i3PKmmdcP5/wPn1wwvybCw7nL/l6XMoPKxOqbpraJ2lXUs/5yjPqp/ar
+mWQFCy5/lJF3buTnpXdW55yYN3zh6aSWTb/cfaqieltyU2dXx5fF89N+avh2V4G6
+uTO5c3k4tqZlKH2pOVybX3DquaRVq3Jr3khfi6YLA75aJy8qG7jnQu7+jrm5P0uV
+o87vrp1yNnXlkuQNtdnhi9frIzvunBkUzr90IHR88OTms5Pos7nvlRR+4N3Hiva1
+Fk/cvHNkYXnt+d1l45vuTPhDrj5467PuYnXLzhNjpn1ztPtSXqxcPGsryExtmzW2
+5sNRx5JGrTukvNqxunHZw/Wq9y38ZsuelXPahqd0ySmw8nZDVZ09RHG/6M3v/emK
+S9sTQVt9+wvjnYRbM65Vxtp40Ky86SlFfwM=
+=p87E
+-----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
