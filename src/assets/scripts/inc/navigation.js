@@ -12,7 +12,7 @@ const CLASSES = {
     navMenuVisible: 'nav__menu--visible'
 }
 
-export default class Navigation {
+class Navigation {
     constructor() {
         this.isOpen = false
 
@@ -63,4 +63,8 @@ export default class Navigation {
             `${diameter}px`
         )
     }
+}
+
+if (document.querySelector(SELECTORS.nav)) {
+    new Navigation()
 }

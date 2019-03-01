@@ -6,16 +6,11 @@ const CLASSES = {
     darkMode: 'theme-dark'
 }
 
-export default class DarkMode {
+class DarkMode {
     constructor() {
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
         this.storageKey = 'darkMode'
         this.isActive = false
-
-        this.support = window.CSS && CSS.supports('color', 'var(--fake-var)')
-        if (!this.support) {
-            return
-        }
 
         if (this.toggleBtn) {
             this.toggleBtn.addEventListener('click', () => this.toggle())
@@ -47,4 +42,8 @@ export default class DarkMode {
     hasLocalStorage() {
         return typeof Storage !== 'undefined'
     }
+}
+
+if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
+    new DarkMode()
 }
