@@ -27,7 +27,7 @@ The first step is to publish a machine-readable feed of the content we want to s
 
 For my own site, I chose to provide notes as a simple JSON object. I already have an atom feed for content readers, and JSON makes the note processing easier later on.
 
-[My feed](https://mxb.at/notes.json) looks something like this:
+[My feed](https://mxb.dev/notes.json) looks something like this:
 
 ```js
 // notes.json
@@ -35,7 +35,7 @@ For my own site, I chose to provide notes as a simple JSON object. I already hav
     {
         "id": 1,
         "date": "2018-12-02T14:20:17",
-        "url": "https://mxb.at/notes/2018-12-02/",
+        "url": "https://mxb.dev/notes/2018-12-02/",
         "content": "Here's my first note!",
         "syndicate": true
     },
@@ -61,7 +61,7 @@ Whenever that function is invoked, it should fetch the list of published notes f
 ```js
 // deploy-succeeded.js
 exports.handler = async () => {
-    return fetch('https://mxb.at/notes.json')
+    return fetch('https://mxb.dev/notes.json')
         .then(response => response.json())
         .then(processNotes)
         .catch(err => ({

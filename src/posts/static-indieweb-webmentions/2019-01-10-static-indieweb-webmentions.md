@@ -24,8 +24,8 @@ Webmention.io is a free service made by indieweb pioneer [Aaron Parecki](https:/
 To use it, include a link tag in the `head` of your site:
 
 ```html
-<link rel="pingback" href="https://webmention.io/mxb.at/xmlrpc">
-<link rel="webmention" href="https://webmention.io/mxb.at/webmention">
+<link rel="pingback" href="https://webmention.io/mxb.dev/xmlrpc">
+<link rel="webmention" href="https://webmention.io/mxb.dev/webmention">
 ```
 
 ### Turning social media interactions into webmentions
@@ -52,13 +52,13 @@ The resulting entry on webmention.io then looks something like this:
       "wm-received": "2018-07-25T07:01:17Z",
       "wm-id": 537028,
       "wm-source": "https://brid-gy.appspot.com/comment/twitter/mxbck/1022001729389383680/1022009419926839296",
-      "wm-target": "https://mxb.at/blog/layouts-of-tomorrow/",
+      "wm-target": "https://mxb.dev/blog/layouts-of-tomorrow/",
       "content": {
         "content-type": "text/plain",
         "value": "This looks great!",
         "text": "This looks great!"
       },
-      "in-reply-to": "https://mxb.at/blog/layouts-of-tomorrow/",
+      "in-reply-to": "https://mxb.dev/blog/layouts-of-tomorrow/",
       "wm-property": "in-reply-to",
       "wm-private": false
     }
@@ -84,7 +84,7 @@ My site uses [Eleventy](https://11ty.io), which has a conventient way to pull in
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
 
 module.exports = async function() {
-    const domain = 'mxb.at'
+    const domain = 'mxb.dev'
     const token = process.env.WEBMENTION_IO_TOKEN
     const url = `${API_ORIGIN}?domain=${domain}&token=${token}`
 
