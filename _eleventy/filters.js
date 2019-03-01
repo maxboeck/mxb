@@ -42,6 +42,10 @@ module.exports = {
             }
         }
 
+        const isUrlMatch = entry =>
+            entry['wm-target'] === url ||
+            entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
+
         const clean = entry => {
             const { content } = entry
             if (content && content['content-type'] === 'text/html') {
@@ -58,16 +62,20 @@ module.exports = {
         }
 
         return webmentions
-            .filter(entry => entry['wm-target'] === url)
+            .filter(isUrlMatch)
             .filter(entry => allowedTypes.includes(entry['wm-property']))
             .filter(entry => !!entry.content)
             .map(clean)
     },
 
     webmentionCountByType: function(webmentions, url, ...types) {
+        const isUrlMatch = entry =>
+            entry['wm-target'] === url ||
+            entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
+
         return String(
             webmentions
-                .filter(entry => entry['wm-target'] === url)
+                .filter(isUrlMatch)
                 .filter(entry => types.includes(entry['wm-property'])).length
         )
     },
