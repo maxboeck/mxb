@@ -17,7 +17,14 @@
 # Netlify subdomain
 [[redirects]]
     from = "https://mxb.netlify.com/*"
-    to = "https://mxb.at/:splat"
+    to = "https://mxb.dev/:splat"
+    status = 301
+    force = true
+
+# AT domain
+[[redirects]]
+    from = "https://mxb.at/*"
+    to = "https://mxb.dev/:splat"
     status = 301
     force = true
 
