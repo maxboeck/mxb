@@ -7,7 +7,7 @@ const SELECTORS = {
     nextLink: '.js-infinitescroll-next'
 }
 
-export default function() {
+function infscroll() {
     const container = document.querySelector(SELECTORS.container)
     const nextLink = document.querySelector(SELECTORS.nextLink)
 
@@ -22,3 +22,5 @@ export default function() {
         }
     }
 }
+
+infscroll()

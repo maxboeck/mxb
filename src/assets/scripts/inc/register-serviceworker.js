@@ -1,12 +1,9 @@
 // Register Service Worker
 
-export default function() {
+if ('serviceWorker' in navigator) {
     if (window.env && window.env === 'dev') {
         console.info('skipping service worker registration in development.')
-        return false
-    }
-
-    if ('serviceWorker' in navigator) {
+    } else {
         window.addEventListener('load', () => {
             navigator.serviceWorker
                 .register('/sw.js')

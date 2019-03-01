@@ -14,9 +14,7 @@ const transformImagesForIE = image => {
     image.parentNode.replaceChild(bg, image)
 }
 
-export default function responsiveImage() {
-    if (detectIE()) {
-        const allImages = document.querySelectorAll(SELECTORS.responsiveImage)
-        Array.from(allImages, transformImagesForIE)
-    }
+if (detectIE()) {
+    const allImages = document.querySelectorAll(SELECTORS.responsiveImage)
+    Array.from(allImages, transformImagesForIE)
 }
