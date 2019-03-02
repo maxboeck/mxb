@@ -28,6 +28,12 @@
     status = 301
     force = true
 
+[[redirects]]
+    from = "https://www.mxb.at/*"
+    to = "https://mxb.dev/:splat"
+    status = 301
+    force = true
+
 # 404s
 [[redirects]]
     from = "*"
