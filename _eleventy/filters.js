@@ -46,6 +46,9 @@ module.exports = {
             entry['wm-target'] === url ||
             entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
 
+        const orderByDate = (a, b) =>
+            new Date(a.published) - new Date(b.published)
+
         const clean = entry => {
             const { content } = entry
             if (content && content['content-type'] === 'text/html') {
@@ -65,6 +68,7 @@ module.exports = {
             .filter(isUrlMatch)
             .filter(entry => allowedTypes.includes(entry['wm-property']))
             .filter(entry => !!entry.content)
+            .sort(orderByDate)
             .map(clean)
     },
 

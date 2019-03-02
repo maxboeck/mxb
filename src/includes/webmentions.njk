@@ -11,7 +11,7 @@
                     {% icon "message" %} Show All ({{ mentions | length }})
                 </a>
                 <div class="webmentions__faces">
-                    {% for webmention in mentions | reverse | slice(5) %}
+                    {% for webmention in mentions | slice(5) %}
                         <img
                             class="webmentions__faces__img"
                             src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/assets/images/avatar-default.jpg' | url }}{% endif %}"
@@ -31,7 +31,7 @@
             </div>
             <div class="webmentions__content">
                 <ol class="webmentions__list">
-                {% for webmention in mentions | reverse %}
+                {% for webmention in mentions %}
                     <li class="webmentions__item">
                         {% include 'webmention.njk' %}
                     </li>

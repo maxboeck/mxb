@@ -101,7 +101,9 @@ export default class App extends Component {
             return <p>No webmentions yet.</p>
         }
 
-        webmentions = this.clean(webmentions)
+        webmentions = this.clean(webmentions).sort(
+            (a, b) => new Date(a.published) - new Date(b.published)
+        )
         return (
             <div data-rendered>
                 {this.renderMentionsHeader(webmentions)}

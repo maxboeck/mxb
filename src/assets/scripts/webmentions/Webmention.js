@@ -78,7 +78,12 @@ export default class Webmention extends Component {
             <div className={classNames.join(' ')} id={`webmention-${id}`}>
                 <div className="webmention__meta">
                     {this.renderAuthor()}
-                    <span className="webmention__meta__divider">&sdot;</span>
+                    <span
+                        className="webmention__meta__divider"
+                        aria-hidden="true"
+                    >
+                        &sdot;
+                    </span>
                     <time
                         className="webmention__pubdate dt-published"
                         datetime={published}

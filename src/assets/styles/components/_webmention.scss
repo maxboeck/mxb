@@ -11,6 +11,9 @@
     }
 
     &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         order: -1;
         font-size: 0.875rem;
 
