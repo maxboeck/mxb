@@ -29,7 +29,7 @@ const processMentions = webmentions => {
     return webmentions
         .filter(entry => allowedTypes.includes(entry['wm-property']))
         .filter(entry => !!entry.content)
-        .reverse()
+        .sort((a, b) => new Date(a.published) - new Date(b.published))
 }
 
 const renderMentions = webmentions => {
