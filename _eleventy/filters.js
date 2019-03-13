@@ -50,17 +50,21 @@ module.exports = {
             new Date(a.published) - new Date(b.published)
 
         const clean = entry => {
-            const { content } = entry
-            if (content && content['content-type'] === 'text/html') {
-                if (content.value.length > 2000) {
+            const { html, text } = entry.content
+
+            if (html) {
+                if (html.length > 2000) {
                     // really long html mentions, usually newsletters or compilations
                     entry.content.value = `mentioned this in <a href="${
                         entry.url
                     }">${entry.url}</a>`
                 }
                 // sanitize HTML
-                content.value = sanitizeHTML(content.value, allowedHTML)
+                entry.content.value = sanitizeHTML(html, allowedHTML)
+            } else {
+                entry.content.value = text
             }
+
             return entry
         }
 

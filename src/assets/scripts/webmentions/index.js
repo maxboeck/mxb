@@ -1,4 +1,5 @@
 import { h, render } from 'preact'
+import sanitizeHTML from 'sanitize-html'
 import App from './App'
 
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
@@ -15,12 +16,7 @@ const fetchMentions = () => {
 
     return fetch(url)
         .then(response => response.json())
-        .then(feed => {
-            if (feed.children && feed.children.length) {
-                return processMentions(feed.children)
-            }
-            return []
-        })
+        .then(feed => feed.children || [])
         .catch(err => console.error(err))
 }
 
@@ -30,6 +26,31 @@ const processMentions = webmentions => {
         .filter(entry => allowedTypes.includes(entry['wm-property']))
         .filter(entry => !!entry.content)
         .sort((a, b) => new Date(a.published) - new Date(b.published))
+        .map(cleanMentions)
+}
+
+const cleanMentions = entry => {
+    const { html, text } = entry.content
+    const allowedHTML = {
+        allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+        allowedAttributes: {
+            a: ['href']
+        }
+    }
+
+    if (html) {
+        if (html.length > 2000) {
+            // really long html mentions, usually newsletters or compilations
+            entry.content.value = `mentioned this in <a href="${entry.url}">${
+                entry.url
+            }</a>`
+        }
+        // sanitize HTML
+        entry.content.value = sanitizeHTML(html, allowedHTML)
+    } else {
+        entry.content.value = text
+    }
+    return entry
 }
 
 const renderMentions = webmentions => {
@@ -44,6 +65,7 @@ const renderMentions = webmentions => {
 
 if (webmentionsElement) {
     fetchMentions()
+        .then(processMentions)
         .then(renderMentions)
         .catch(err => {
             console.error(err)
