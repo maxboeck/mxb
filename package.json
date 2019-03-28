@@ -1,7 +1,7 @@
 {
-  "name": "Adelle Charles",
+  "name": "mxb.dev",
   "version": "4.1.0",
-  "description": "I write, sometimes.",
+  "description": "Personal Website of Max Böck",
   "scripts": {
     "start": "gulp build:dev && yarn run serve",
     "build": "NODE_ENV=prod gulp build && yarn run build:lambda",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/adellecharles/mxb"
+    "url": "http://github.com/maxboeck/mxb"
   },
   "author": "Max Böck",
   "license": "MIT",
