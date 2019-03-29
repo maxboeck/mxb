@@ -1,12 +1,10 @@
 ---
-title: The Luxury of Just Enough.
+title: new post
 tags: Experience
 image: cover.jpg
 ---
 
-<p class="lead">Can the experience you run into with your daily software or apps be the Luxury of just enough? As a designer myself I truly believe that an experience is literally no experience. You shouldn't have to think or act
-Any different while using a product or service. If you are, there might be confusion, unanswered questions or such a terrible experience that you never come back to the product. The luxury of just enough = the good feels and retention.
-</p>
+<p class="lead">paragraph</p>
 
 <figure style="text-align:center">
   <img src="{{ 'install.jpg' | media(page) }}" alt="" />
