@@ -1,10 +1,12 @@
 ---
-title: How to turn your website into a PWA
-tags: code
+title: The Luxury of Just Enough.
+tags: Experience
 image: cover.jpg
 ---
 
-<p class="lead">A Progressive Web App, or PWA, uses modern web capabilities to deliver an app-like user experience. Any website can be a PWA - here's how to do it.</p>
+<p class="lead">Can the experience you run into with your daily software or apps be the Luxury of just enough? As a designer myself I truly believe that an experience is literally no experience. You shouldn't have to think or act
+Any different while using a product or service. If you are, there might be confusion, unanswered questions or such a terrible experience that you never come back to the product. The luxury of just enough = the good feels and retention.
+</p>
 
 <figure style="text-align:center">
   <img src="{{ 'install.jpg' | media(page) }}" alt="" />
@@ -18,7 +20,7 @@ But first, let me address some common misconceptions:
 **1) Your thing does not have to be an "Application" to be a PWA.**<br>
 A Progressive Web App can easily be a blog, a marketing site, a shop or a collection of cat memes. At its core, a PWA is just a way to optimize your code for better, faster delivery. You can -and should- take advantage of these new possibilites, regardless of your content.
 
-*Side note: the term "Application" in PWA is [heavily debated](https://adactio.com/journal/12461), since some people feel it communicates the wrong idea. IMHO, its just a name - and these days it's hard to define the difference between websites and "web apps" anyway.* 
+*Side note: the term "Application" in PWA is [heavily debated](https://adactio.com/journal/12461), since some people feel it communicates the wrong idea. IMHO, its just a name - and these days it's hard to define the difference between websites and "web apps" anyway.*
 
 **2) Your thing does not have to be a Javascript-powered single page app.**<br>
 Again, if you're not running a cutting edge React-Redux <abbr title="Single Page Application">SPA</abbr>, that's no reason to shy away from using this technology. My own site is just a [bunch of static HTML](https://github.com/maxboeck/mxb) based on Jekyll, and it's still a perfectly valid Progressive Web App. If you run something on the web, it can benefit.
@@ -65,7 +67,7 @@ A *manifest* is just a JSON file that describes all the meta data of your PWA. T
   "display": "standalone",
   "orientation": "natural"
 }
-``` 
+```
 This is usually called "manifest.json", and linked to from the `<head>` of your site:
 ```html
 <link rel="manifest" href="manifest.json">
@@ -96,7 +98,7 @@ This is where the magic happens. A Service Worker is essentially a piece of Java
 
 You can set up a new SW by simply creating a Javascript file at the root directory of your project. Let's call it `sw.js`. The contents of that file depend on what you want to achieve - we'll get to that in a second.
 
-To let the browser know we intend to use this file as a Service Worker, we need to register it first. In your site's main script, include a function like this: 
+To let the browser know we intend to use this file as a Service Worker, we need to register it first. In your site's main script, include a function like this:
 
 ```js
 function registerServiceWorker() {
@@ -161,7 +163,7 @@ gulp.task('generate-service-worker', callback => {
 });
 ```
 
-Run this task in your build, and you'll never have to worry about cache invalidation again! 
+Run this task in your build, and you'll never have to worry about cache invalidation again!
 For smaller, mostly static sites, you can have it precache every image, HTML, JavaScript, and CSS file. For sites with lots of dynamic content, or many large images that aren’t always needed, precaching a “skeleton” subset of your site often makes the most sense.
 
 *PS: For a deeper look into the subject of offline support, be sure to check out ["The Offline Cookbook"](https://jakearchibald.com/2014/offline-cookbook/) by Jake Archibald.*
