@@ -3,7 +3,7 @@ import sanitizeHTML from 'sanitize-html'
 import App from './App'
 
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
-const BASE_URLS = ['https://mxb.at', 'https://mxb.dev']
+const BASE_URLS = ['https://adellecharles.com']
 
 const webmentionsElement = document.getElementById('webmentions')
 const replaceElement = webmentionsElement.querySelector('[data-render-root]')

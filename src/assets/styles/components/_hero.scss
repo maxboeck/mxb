@@ -88,8 +88,8 @@
             transform: scaleX(1);
         }
 
-        &--simpleloop::after {
-            background-color: $simpleloop-brand-primary;
+        &--bitly::after {
+            background-color: $bitly-brand-primary;
         }
         &--twitter::after {
             background-color: $twitter-brand-primary;
