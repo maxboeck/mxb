@@ -8,7 +8,7 @@ require('dotenv').config()
 // Define Cache Location and API Endpoint
 const CACHE_FILE_PATH = '_cache/webmentions.json'
 const API = 'https://webmention.io/api'
-const DOMAIN = 'mxb.at'
+const DOMAIN = 'adellecharles.com'
 
 async function fetchWebmentions(since, perPage = 100) {
     const token = process.env.WEBMENTION_IO_TOKEN
