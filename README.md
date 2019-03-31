@@ -2,9 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/57999461-2350-4da3-8788-ca4e0e6dcb30/deploy-status)](https://app.netlify.com/sites/mxb/deploys)  
 
-Source code for [mxb.dev](https://mxb.dev), my personal website.  
+Source code from [mxb.dev](https://mxb.dev)
 
-This version is built with [Eleventy](https://www.11ty.io). If you're looking for the previous Jekyll-based site, that repo has moved to [https://github.com/maxboeck/mxb-jekyll](https://github.com/maxboeck/mxb-jekyll)
+This version is built with [Eleventy](https://www.11ty.io).
 
 ## Features
 
@@ -24,7 +24,7 @@ Inside the project root, run `npm install` or `yarn` to install the dependencies
 
 ## Getting Started
 
-The local development environment uses gulp to process various stuff for the site. 
+The local development environment uses gulp to process various stuff for the site.
 The most important commands can be run as npm scripts:
 
 `npm start`: make a development build and serve the site through browsersync  
