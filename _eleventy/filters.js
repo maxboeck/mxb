@@ -44,7 +44,7 @@ module.exports = {
 
         const isUrlMatch = entry =>
             entry['wm-target'] === url ||
-            entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
+            entry['wm-target'] === url.replace('adellecharles.com')
 
         const orderByDate = (a, b) =>
             new Date(a.published) - new Date(b.published)
@@ -79,7 +79,7 @@ module.exports = {
     webmentionCountByType: function(webmentions, url, ...types) {
         const isUrlMatch = entry =>
             entry['wm-target'] === url ||
-            entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
+            entry['wm-target'] === url.replace('adellecharles.com')
 
         return String(
             webmentions
