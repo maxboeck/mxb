@@ -9,6 +9,16 @@
         font-size: 1.125rem;
         color: inherit;
 
+        &--draft {
+            color: $brand-color-secondary;
+            color: var(--brand-color-secondary);
+
+            .otherposts__title::after {
+                content: '(Draft)';
+                padding-left: 0.25em;
+            }
+        }
+
         @include mq(md) {
             display: flex;
             align-items: center;
