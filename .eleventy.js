@@ -26,10 +26,10 @@ module.exports = function(config) {
     config.addPlugin(pluginSyntaxHighlight)
 
     // Layouts
-    config.addLayoutAlias('base', 'layouts/base.njk')
-    config.addLayoutAlias('page', 'layouts/page.njk')
-    config.addLayoutAlias('post', 'layouts/post.njk')
-    config.addLayoutAlias('note', 'layouts/note.njk')
+    config.addLayoutAlias('base', 'base.njk')
+    config.addLayoutAlias('page', 'page.njk')
+    config.addLayoutAlias('post', 'post.njk')
+    config.addLayoutAlias('note', 'note.njk')
 
     // Pass-through files
     config.addPassthroughCopy('src/site.webmanifest')
@@ -106,6 +106,7 @@ module.exports = function(config) {
             input: 'src',
             output: 'dist',
             includes: 'includes',
+            layouts: 'layouts',
             data: 'data'
         },
         templateFormats: ['njk', 'md'],
