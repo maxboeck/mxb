@@ -96,10 +96,10 @@
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
-"@11ty/eleventy@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.8.0.tgz#1e52958047717dbe282ed67d1b255089f15a1ad0"
-  integrity sha512-odCKV6BDOH45nn1NpBmjY72YG2Pjtocqyv/9wH97v5GGDI4j61T1HDO3kI+MzdXucNUBgF2W96kGiVNKUP5XkA==
+"@11ty/eleventy@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy/-/eleventy-0.8.2.tgz#bc87576eb9b4773377e8367c4e66b82717a31f6c"
+  integrity sha512-CqSwSTdYxYXr/CzwX8tOOA4f+UUk5dSjkB43352pdFaJoJfJnxK0kQo54w2oCd1Tf5XyMzIZ2i+IT+Rhm1w5IA==
   dependencies:
     browser-sync "^2.26.3"
     chalk "^2.4.2"
