@@ -1,8 +1,7 @@
 node_modules
 dist
-.dsstore
+.DS_Store
 functions
 drafts
 _cache
-.env
-env
+process.env
