@@ -122,8 +122,14 @@
         display: block;
         font-size: 1rem;
         padding: 2rem 1.5rem;
-        margin: 2rem calc(50% - 50vw);
         overflow-x: auto;
+
+        .post & {
+            margin: 2rem calc(50% - 50vw);
+        }
+        .note & {
+            border-radius: 0.5rem;
+        }
 
         > code {
             @include container-narrow;
