@@ -1,0 +1,92 @@
+[
+    {
+        "title": "Manuel Matuzović",
+        "url": "https://www.matuzo.at",
+        "description": "Manuel is a developer, consultant, speaker and friend from Vienna who specializes in HTML, CSS and accessibility."
+    },
+    {
+        "title": "Charlie Owen",
+        "url": "https://www.sonniesedge.net",
+        "description": "Charlie is a front-end developer and speaker based in Berlin. She is best known for her work with Springer Nature and offending tech-bros on twitter."
+    },
+    {
+        "title": "Matthias Ott",
+        "url": "https://matthiasott.com",
+        "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes passionately about design and the IndieWeb."
+    },
+    {
+        "title": "Ethan Marcotte",
+        "url": "https://ethanmarcotte.com",
+        "description": "Ethan wrote the book on responsive web design, but he's also an avid blogger"
+    },
+    {
+        "title": "Tobias Ahlin",
+        "url": "https://tobiasahlin.com",
+        "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github, Minecraft and Hyper Island."
+    },
+    {
+        "title": "Michael Scharnagl",
+        "url": "https://justmarkup.com",
+        "description": ""
+    },
+    {
+        "title": "Sarah Drasner",
+        "url": "https://sarah.dev",
+        "description": "Sarah needs no introduction. She's an expert on SVG, core team member of Vue, award winning speaker and staff writer on CSS-Tricks."
+    },
+    {
+        "title": "Heydon Pickering",
+        "url": "http://www.heydonworks.com",
+        "description": ""
+    },
+    {
+        "title": "Oliver Schöndorfer",
+        "url": "https://www.zeichenschatz.net",
+        "description": "Oliver loves good typography. He runs a two-person design studio in Vienna and is a talented writer and speaker."
+    },
+    {
+        "title": "Lisi Linhart",
+        "url": "https://lisilinhart.info",
+        "description": "Lisi is a creative developer from Salzburg. She's an expert in the field of web animation and a lecturer for multimedia technology."
+    },
+    {
+        "title": "Marcus Herrmann",
+        "url": "https://marcus.io",
+        "description": ""
+    },
+    {
+        "title": "Max Stoiber",
+        "url": "https://mxstbr.com",
+        "description": ""
+    },
+    {
+        "title": "Cathy Dutton",
+        "url": "https://cathydutton.co.uk",
+        "description": "Cathy is a human centered designer from Cheshire. She designs and builds inclusive services focusing on usability, accessibility and information architecture."
+    },
+    {
+        "title": "Jeremy Wagner",
+        "url": "https://jeremy.codes",
+        "description": ""
+    },
+    {
+        "title": "Zach Leatherman",
+        "url": "https://www.zachleat.com",
+        "description": ""
+    },
+    {
+        "title": "Sara Soueidan",
+        "url": "https://www.sarasoueidan.com",
+        "description": ""
+    },
+    {
+        "title": "Andy Bell",
+        "url": "https://andy-bell.design",
+        "description": ""
+    },
+    {
+        "title": "Dan Abramov",
+        "url": "https://overreacted.io",
+        "description": ""
+    }
+]

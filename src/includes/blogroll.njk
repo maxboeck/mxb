@@ -1,0 +1,8 @@
+{% set featured_blog = blogroll | random %}
+
+<h4>{{ featured_blog.title }}</h4>
+<a href="{{ featured_blog.url }}">{{ featured_blog.url }}</a>
+
+{% if featured_blog.description %}
+    <p>{{ featured_blog.description }}</p>
+{% endif %}
