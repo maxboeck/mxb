@@ -100,16 +100,28 @@
         width: 1.75;
         height: 1.75;
         margin-left: 2rem;
-        color: $text-color-secondary;
-        color: var(--text-color-secondary);
-
-        @include hover-focus {
-            color: $text-color;
-            color: var(--text-color);
-        }
+        color: $text-color;
+        color: var(--text-color);
 
         @supports (color: var(--fake-var)) {
             display: flex;
+        }
+
+        .icon--sun {
+            display: none;
+            transform: scale(1.1);
+        }
+        .icon--moon {
+            display: block;
+        }
+
+        .theme-dark & {
+            .icon--sun {
+                display: block;
+            }
+            .icon--moon {
+                display: none;
+            }
         }
     }
 
