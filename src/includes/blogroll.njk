@@ -1,8 +1,15 @@
 {% set featured_blog = blogroll | random %}
 
 <div class="blogroll">
-    <h4 class="blogroll__title">{{ featured_blog.title }}</h4>
-    <a class="blogroll__link" href="{{ featured_blog.url }}">{{ featured_blog.url }}</a>
+    <div class="blogroll__profile">
+        <div class="blogroll__header">
+            <h4 class="blogroll__title">{{ featured_blog.title }}</h4>
+            <a class="blogroll__link" href="{{ featured_blog.url }}">{{ featured_blog.url }}</a>
+        </div>
+        {% if featured_blog.twitter %}
+            <img src="https://avatars.io/twitter/{{ featured_blog.twitter }}" class="blogroll__avatar" width="150" height="150" alt="" />
+        {% endif %}
+    </div>
 
     {% if featured_blog.description %}
         <p class="blogroll__desc">{{ featured_blog.description }}</p>

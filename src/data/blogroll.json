@@ -2,96 +2,109 @@
     {
         "title": "Manuel Matuzović",
         "url": "https://www.matuzo.at",
-        "description": "Manuel is a developer, consultant, speaker and friend from Vienna who specializes in HTML, CSS and accessibility."
+        "description": "Manuel is a developer, consultant, speaker and friend from Vienna who specializes in HTML, CSS and accessibility.",
+        "twitter": "mmatuzo"
     },
     {
         "title": "Charlie Owen",
         "url": "https://www.sonniesedge.net",
-        "description": "Charlie is a front-end developer and speaker based in Berlin. She is best known for her work with Springer Nature and offending tech-bros on twitter."
+        "description": "Charlie is a front-end developer and speaker based in Berlin. She is best known for her work with Springer Nature and offending tech-bros on twitter.",
+        "twitter": "sonniesedge"
     },
     {
         "title": "Matthias Ott",
         "url": "https://matthiasott.com",
-        "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes about Front-End, Design and the IndieWeb."
+        "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes about Front-End, Design and the IndieWeb.",
+        "twitter": "m_ott"
     },
     {
         "title": "Ethan Marcotte",
         "url": "https://ethanmarcotte.com",
-        "description": "Ethan wrote the book on responsive web design, but he's also a gifted blogger. His posts cover web culture, technology and life in general."
+        "description": "Ethan wrote the book on responsive web design, but he's also a gifted blogger. His posts cover web culture, technology and life in general.",
+        "twitter": "beep"
     },
     {
         "title": "Tobias Ahlin",
         "url": "https://tobiasahlin.com",
-        "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github and Minecraft and has a lot of interesting posts about CSS."
+        "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github and Minecraft and has a lot of interesting posts about CSS.",
+        "twitter": "tobiasahlin"
     },
     {
         "title": "Michael Scharnagl",
         "url": "https://justmarkup.com",
-        "description": "Michael is a front-end developer from Germany. His work is focused on accessibility, progressive enhancement and web performance."
+        "description": "Michael is a front-end developer from Germany. His work is focused on accessibility, progressive enhancement and web performance.",
+        "twitter": "justmarkup"
     },
     {
         "title": "Sarah Drasner",
         "url": "https://sarah.dev",
-        "description": "Sarah really needs no introduction. She's an expert on SVG, core team member of Vue, award winning speaker and staff writer on CSS-Tricks."
+        "description": "Sarah really needs no introduction. She's an expert on SVG, core team member of Vue, award winning speaker and staff writer on CSS-Tricks.",
+        "twitter": "sarah_edo"
     },
     {
         "title": "Heydon Pickering",
         "url": "http://www.heydonworks.com",
-        "description": ""
+        "description": "Heydon is a designer and accessibility consultant based in the UK. He wrote 'Inclusive Design', edits for Smashing Magazine and is an excellent speaker on all things a11y.",
+        "twitter": "heydonworks"
     },
     {
         "title": "Oliver Schöndorfer",
         "url": "https://www.zeichenschatz.net",
-        "description": "Oliver loves good typography. He's part of a two-person design studio in Vienna and is a talented writer and speaker. He has some very interesting posts about web fonts."
+        "description": "Oliver loves good typography. He's part of a two-person design studio in Vienna and is a talented writer and speaker. He has some very interesting posts about web fonts.",
+        "twitter": "glyphe"
     },
     {
         "title": "Lisi Linhart",
         "url": "https://lisilinhart.info",
-        "description": "Lisi is a creative developer from Salzburg. She's an expert in the field of web animation and a lecturer for multimedia technology."
+        "description": "Lisi is a creative developer from Salzburg. She's an expert in the field of web animation and a lecturer for multimedia technology.",
+        "twitter": "lisi_linhart"
     },
     {
         "title": "Marcus Herrmann",
         "url": "https://marcus.io",
-        "description": "Marcus is a freelance web developer from Berlin. His blog covers accessibility techniques for modern JavaScript apps, progressive enhancement and the IndieWeb."
+        "description": "Marcus is a freelance web developer from Berlin. His blog covers accessibility techniques for modern JavaScript apps, progressive enhancement and the IndieWeb.",
+        "twitter": "_marcusherrmann"
     },
     {
         "title": "Max Stoiber",
         "url": "https://mxstbr.com",
-        "description": "Max is a Javascript Engineer from Vienna. He made React Boilerplate, styled-components and co-founded the community platform Spectrum. His posts cover JS, React and Open Source Software."
+        "description": "Max is a Javascript Engineer from Vienna. He made React Boilerplate, styled-components and co-founded the community platform Spectrum. His posts cover JS, React and Open Source Software.",
+        "twitter": "mxstbr"
     },
     {
         "title": "Cathy Dutton",
         "url": "https://cathydutton.co.uk",
-        "description": "Cathy is a designer from Cheshire in the UK. She designs and builds inclusive services focusing on usability, accessibility and information architecture."
+        "description": "Cathy is a designer from Cheshire in the UK. She designs and builds inclusive services focusing on usability, accessibility and information architecture.",
+        "twitter": "cathy_dutton"
     },
     {
         "title": "Jeremy Wagner",
         "url": "https://jeremy.codes",
-        "description": ""
+        "description": "Jeremy is a web developer, writer and speaker from Minnesota. His blog is an excellent resource on web performance techniques, as well as general best practices for development.",
+        "twitter": "malchata"
     },
     {
         "title": "Zach Leatherman",
         "url": "https://www.zachleat.com",
-        "description": ""
+        "description": "Zach is a web developer working with Filament Group. He's currently fixated on web fonts and making the static site generator Eleventy. His blog has interesting posts about a lot of different topics.",
+        "twitter": "zachleat"
     },
     {
         "title": "Sara Soueidan",
         "url": "https://www.sarasoueidan.com",
-        "description": ""
+        "description": "Sara is a developer who specializes in responsive web design, CSS, progressive enhancement, SVG and accessibility. She's an expert in many fields and regularly writes amazing posts for major publications. Topics on her blog range from SVG techniques to general web development.",
+        "twitter": "SaraSoueidan"
     },
     {
         "title": "Andy Bell",
         "url": "https://andy-bell.design",
-        "description": ""
-    },
-    {
-        "title": "Dan Abramov",
-        "url": "https://overreacted.io",
-        "description": ""
+        "description": "Andy is a freelance web designer from the UK trying to make everyone’s experience on the web better. His focus is on progressive enhancement, accessibility and design systems. He writes about CSS, web components and other interesting topics.",
+        "twitter": "andybelldesign"
     },
     {
         "title": "Monica Dinculescu",
         "url": "https://meowni.ca",
-        "description": ""
+        "description": "Monica is an engineer at Google who has previously worked on projects like Chrome and Polymer. Her blog is a very interesting resource for all kinds of stuff, including Machine Learning, Web Components and Emojis.",
+        "twitter": "notwaldorf"
     }
 ]
