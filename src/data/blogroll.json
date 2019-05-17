@@ -12,27 +12,27 @@
     {
         "title": "Matthias Ott",
         "url": "https://matthiasott.com",
-        "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes passionately about design and the IndieWeb."
+        "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes about Front-End, Design and the IndieWeb."
     },
     {
         "title": "Ethan Marcotte",
         "url": "https://ethanmarcotte.com",
-        "description": "Ethan wrote the book on responsive web design, but he's also an avid blogger"
+        "description": "Ethan wrote the book on responsive web design, but he's also a gifted blogger. His posts cover web culture, technology and life in general."
     },
     {
         "title": "Tobias Ahlin",
         "url": "https://tobiasahlin.com",
-        "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github, Minecraft and Hyper Island."
+        "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github and Minecraft and has a lot of interesting posts about CSS."
     },
     {
         "title": "Michael Scharnagl",
         "url": "https://justmarkup.com",
-        "description": ""
+        "description": "Michael is a front-end developer from Germany. His work is focused on accessibility, progressive enhancement and web performance."
     },
     {
         "title": "Sarah Drasner",
         "url": "https://sarah.dev",
-        "description": "Sarah needs no introduction. She's an expert on SVG, core team member of Vue, award winning speaker and staff writer on CSS-Tricks."
+        "description": "Sarah really needs no introduction. She's an expert on SVG, core team member of Vue, award winning speaker and staff writer on CSS-Tricks."
     },
     {
         "title": "Heydon Pickering",
@@ -42,7 +42,7 @@
     {
         "title": "Oliver Schöndorfer",
         "url": "https://www.zeichenschatz.net",
-        "description": "Oliver loves good typography. He runs a two-person design studio in Vienna and is a talented writer and speaker."
+        "description": "Oliver loves good typography. He's part of a two-person design studio in Vienna and is a talented writer and speaker. He has some very interesting posts about web fonts."
     },
     {
         "title": "Lisi Linhart",
@@ -52,17 +52,17 @@
     {
         "title": "Marcus Herrmann",
         "url": "https://marcus.io",
-        "description": ""
+        "description": "Marcus is a freelance web developer from Berlin. His blog covers accessibility techniques for modern JavaScript apps, progressive enhancement and the IndieWeb."
     },
     {
         "title": "Max Stoiber",
         "url": "https://mxstbr.com",
-        "description": ""
+        "description": "Max is a Javascript Engineer from Vienna. He made React Boilerplate, styled-components and co-founded the community platform Spectrum. His posts cover JS, React and Open Source Software."
     },
     {
         "title": "Cathy Dutton",
         "url": "https://cathydutton.co.uk",
-        "description": "Cathy is a human centered designer from Cheshire. She designs and builds inclusive services focusing on usability, accessibility and information architecture."
+        "description": "Cathy is a designer from Cheshire in the UK. She designs and builds inclusive services focusing on usability, accessibility and information architecture."
     },
     {
         "title": "Jeremy Wagner",
