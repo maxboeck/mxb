@@ -1,5 +1,5 @@
 .otherposts {
-    &__item {
+    &__item:not(:last-child) {
         margin-bottom: 0.25rem;
     }
 

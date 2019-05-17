@@ -1,8 +1,15 @@
 {% set featured_blog = blogroll | random %}
 
-<h4>{{ featured_blog.title }}</h4>
-<a href="{{ featured_blog.url }}">{{ featured_blog.url }}</a>
+<div class="blogroll">
+    <h4 class="blogroll__title">{{ featured_blog.title }}</h4>
+    <a class="blogroll__link" href="{{ featured_blog.url }}">{{ featured_blog.url }}</a>
 
-{% if featured_blog.description %}
-    <p>{{ featured_blog.description }}</p>
-{% endif %}
+    {% if featured_blog.description %}
+        <p class="blogroll__desc">{{ featured_blog.description }}</p>
+    {% endif %}
+
+    <a class="blogroll__arrow" href="{{ featured_blog.url }}">
+        {% icon "arrow-right" %}
+        <span class="sr-only">Read More</span>
+    </a>
+</div>

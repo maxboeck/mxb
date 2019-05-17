@@ -61,18 +61,18 @@ layout: base
     </div>
 </article>
 
-<section class="postsection">
+<div class="postsection">
     <h3 class="postsection__title">Webmentions</h3>
     {%- set webmentionUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
     {% include 'webmentions.njk' %}
-</section>
+</div>
 
-<section class="postsection">
+<div class="postsection">
     <h3 class="postsection__title">Other things I've written</h3>
     {% include 'otherposts.njk' %}
-</section>
+</div>
 
-{# <section class="postsection">
-    <h3 class="postsection__title">Random Blogroll</h3>
+<div class="postsection u-mb2">
+    <h3 class="postsection__title">Featured Blog</h3>
     {% include 'blogroll.njk' %}
-</section> #}
+</div>
