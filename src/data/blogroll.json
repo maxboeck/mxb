@@ -106,5 +106,29 @@
         "url": "https://meowni.ca",
         "description": "Monica is an engineer at Google who has previously worked on projects like Chrome and Polymer. Her blog is a very interesting resource for all kinds of stuff, including Machine Learning, Web Components and Emojis.",
         "twitter": "notwaldorf"
+    },
+    {
+        "title": "Una Kravets",
+        "url": "https://una.im",
+        "description": "Una is a developer advocate at Google for their Material Design System. She writes about design and development, including great pieces about CSS, SVG and Service Worker.",
+        "twitter": "una"
+    },
+    {
+        "title": "Veerle Pieters",
+        "url": "https://veerle.duoh.com",
+        "description": "Veerle is a graphic/web designer from Belgium. Her blog is an invaluable source of insight into her design process, creativity, technology and life.",
+        "twitter": "vpieters"
+    },
+    {
+        "title": "Jonathan Snook",
+        "url": "https://snook.ca",
+        "description": "Snook is a web designer, developer, writer, speaker, sometimes angel investor, and hobbyist photographer. He writes about many facets of modern front-end development and his blog features interesting posts on a variety of topics.",
+        "twitter": "snookca"
+    },
+    {
+        "title": "Jeremy Keith",
+        "url": "https://adactio.com",
+        "description": "Jeremy is a developer and co-founder of the Brighton-based design studio Clearleft. He's a terrific speaker and has wirtten several books on web development, including 'HTML5 for Web Designers' and 'Going Offline'.",
+        "twitter": "adactio"
     }
 ]
