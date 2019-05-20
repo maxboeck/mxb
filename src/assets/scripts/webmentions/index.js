@@ -22,14 +22,19 @@ const fetchMentions = () => {
 
 const processMentions = webmentions => {
     const allowedTypes = ['in-reply-to', 'mention-of']
+    const checkRequiredFields = entry => {
+        const { author, published, content } = entry
+        return !!author && !!author.name && !!published && !!content
+    }
     return webmentions
         .filter(entry => allowedTypes.includes(entry['wm-property']))
-        .filter(entry => !!entry.content)
+        .filter(checkRequiredFields)
         .sort((a, b) => new Date(a.published) - new Date(b.published))
         .map(cleanMentions)
 }
 
 const cleanMentions = entry => {
+    console.log(entry)
     const { html, text } = entry.content
     const allowedHTML = {
         allowedTags: ['b', 'i', 'em', 'strong', 'a'],

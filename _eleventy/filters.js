@@ -13,8 +13,8 @@ module.exports = {
         })
     },
 
-    readableDate: function(date) {
-        return DateTime.fromJSDate(date).toFormat('dd LLL yyyy')
+    readableDate: function(date, format = 'dd LLL yyyy') {
+        return DateTime.fromJSDate(date).toFormat(format)
     },
 
     fromIso: function(timestamp) {
@@ -49,6 +49,11 @@ module.exports = {
         const orderByDate = (a, b) =>
             new Date(a.published) - new Date(b.published)
 
+        const checkRequiredFields = entry => {
+            const { author, published, content } = entry
+            return !!author && !!author.name && !!published && !!content
+        }
+
         const clean = entry => {
             const { html, text } = entry.content
 
@@ -71,7 +76,7 @@ module.exports = {
         return webmentions
             .filter(isUrlMatch)
             .filter(entry => allowedTypes.includes(entry['wm-property']))
-            .filter(entry => !!entry.content)
+            .filter(checkRequiredFields)
             .sort(orderByDate)
             .map(clean)
     },

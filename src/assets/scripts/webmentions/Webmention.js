@@ -1,31 +1,9 @@
 import { h, Component } from 'preact'
+import { DateTime } from 'luxon'
 
 const readableDate = iso => {
     const date = new Date(iso)
-    const year = date.getFullYear()
-    const monthNames = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-    ]
-
-    let month = monthNames[date.getMonth()]
-    let dt = date.getDate()
-
-    if (dt < 10) {
-        dt = '0' + dt
-    }
-
-    return `${dt} ${month} ${year}`
+    return DateTime.fromJSDate(date).toFormat('dd LLL yyyy - HH:mm')
 }
 
 export default class Webmention extends Component {
