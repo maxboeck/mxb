@@ -63,7 +63,6 @@ The resulting entry on webmention.io then looks something like this:
       "wm-private": false
     }
 ```
-*(shameless brag about that one time Sara liked something I did)*
 
 ### But wait, there's more!
 
@@ -88,13 +87,16 @@ module.exports = async function() {
     const token = process.env.WEBMENTION_IO_TOKEN
     const url = `${API_ORIGIN}?domain=${domain}&token=${token}`
 
-    const response = await fetch(url)
-    if (response.ok) {
-        const feed = await response.json()
-        return feed
+    try {
+        const response = await fetch(url)
+        if (response.ok) {
+            const feed = await response.json()
+            return feed
+        }
+    } catch err {
+        console.error(err)
+        return null
     }
-
-    return null
 }
 ```
 {% raw %}*The feed can now be accessed in the {{ webmentions }} variable.*{% endraw %}
@@ -117,6 +119,10 @@ const sanitizeHTML = require('sanitize-html')
 function getWebmentionsForUrl(webmentions, url) {
     const allowedTypes = ['mention-of', 'in-reply-to']
 
+    const hasRequiredFields = entry => {
+        const { author, published, content } = entry
+        return author.name && published && content
+    }
     const sanitize = entry => {
         const { content } = entry
         if (content['content-type'] === 'text/html') {
@@ -128,13 +134,13 @@ function getWebmentionsForUrl(webmentions, url) {
     return webmentions
         .filter(entry => entry['wm-target'] === url)
         .filter(entry => allowedTypes.includes(entry['wm-property']))
-        .filter(entry => !!entry.content)
+        .filter(hasRequiredFields)
         .map(sanitize)
 }
 ```
 
 In Eleventy's case, I can set that function as a custom filter to use in my post templates.
-Each post will then loop over the webmentions and output them underneath.
+Each post will then loop over its webmentions and output them underneath.
 
 {% raw %}
 ```html
