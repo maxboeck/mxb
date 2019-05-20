@@ -9,7 +9,7 @@ image: cover.jpg
 
 <p class="lead">In last week's post, I talked about syndicating content from a static site to Twitter. But getting content out is only half the challenge.</p>
 
-The real value of social media (apart from the massive ad revenue and data mining) is in the reactions we get from other people. The likes, reposts and replies - they're what makes it "social". To gain control over our own content, we need to capture these interactions as well and pull them back to our sites. In indieweb terms, that's known as ["backfeed"](https://indieweb.org/backfeed).
+The real value of social media (apart from the massive ad revenue and dystopian data mining) is in the reactions we get from other people. The likes, reposts and replies - they're what makes it "social". To gain control over our own content, we need to capture these interactions as well and pull them back to our sites. In indieweb terms, that's known as ["backfeed"](https://indieweb.org/backfeed).
 
 ## Hello Webmentions
 
@@ -19,9 +19,9 @@ It's comparable to pingbacks, except that webmentions contain a lot more informa
 
 To make a site support webmentions, it needs to declare an endpoint to accept them. That endpoint can be a script hosted on your own server, or in the case of static sites, a third-party service like [webmention.io](https://webmention.io).
 
-Webmention.io is a free service made by indieweb pioneer [Aaron Parecki](https://aaronparecki.com/) that does most of the groundwork of receiving, storing and organizing incoming webmentions for you. It's awesome!
+Webmention.io is a free service made by indieweb pioneer Aaron Parecki that does most of the groundwork of receiving, storing and organizing incoming webmentions for you. It's awesome!
 
-To use it, include a link tag in the `head` of your site:
+To use it, sign up for a free account there using the [IndieAuth](https://indieauth.com/) process, then include a link tag in the `head` of your site:
 
 ```html
 <link rel="pingback" href="https://webmention.io/mxb.dev/xmlrpc">
