@@ -93,7 +93,7 @@ module.exports = async function() {
             const feed = await response.json()
             return feed
         }
-    } catch err {
+    } catch (err) {
         console.error(err)
         return null
     }
