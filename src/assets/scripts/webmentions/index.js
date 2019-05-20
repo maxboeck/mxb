@@ -34,7 +34,6 @@ const processMentions = webmentions => {
 }
 
 const cleanMentions = entry => {
-    console.log(entry)
     const { html, text } = entry.content
     const allowedHTML = {
         allowedTags: ['b', 'i', 'em', 'strong', 'a'],
