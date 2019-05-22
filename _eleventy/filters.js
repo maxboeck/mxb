@@ -1,5 +1,6 @@
 const { DateTime } = require('luxon')
 const sanitizeHTML = require('sanitize-html')
+const random = require('lodash/random')
 
 module.exports = {
     format: function(date, format) {
@@ -150,5 +151,9 @@ module.exports = {
             return `/assets/media/${subdir}/${filename}`
         }
         return filename
+    },
+
+    randomItem: function(arr) {
+        return arr[random(arr.length - 1)]
     }
 }
