@@ -132,6 +132,24 @@
         "twitter": "snookca"
     },
     {
+        "title": "Michelle Barker",
+        "url": "https://css-irl.info",
+        "description": "Michelle is a very talented developer based in the UK. She runs 'CSS In Real Life', a fantastic blog about -you guessed it- CSS. Bookmark it.",
+        "twitter": "MicheBarks"
+    },
+    {
+        "title": "Mina Markham",
+        "url": "http://mina.codes",
+        "description": "Mina is a front-end architect based in Brooklyn, New York. She's responsible for 'Pantsuit', the design system used in Hillary Clinton's presidential campaign. Her blog is a great resource on topics like Sass, Typography and Graphic Design.",
+        "twitter": "MinaMarkham"
+    },
+    {
+        "title": "Laura Kalbag",
+        "url": "https://laurakalbag.com",
+        "description": "Laura is a designer based in Ireland. She wrote the excellent 'Accessibility for Everyone' and is the co-founder of Ind.ie, a nonprofit working towards a better, more ethical web. Her blog is very much worth a read.",
+        "twitter": "laurakalbag"
+    },
+    {
         "title": "Jeremy Keith",
         "url": "https://adactio.com",
         "description": "Jeremy is a developer and co-founder of the Brighton-based design studio Clearleft. He's a terrific speaker and has wirtten several books on web development, including 'HTML5 for Web Designers' and 'Going Offline'.",
