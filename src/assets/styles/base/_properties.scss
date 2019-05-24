@@ -1,6 +1,7 @@
 // GLOBAL DYNAMIC PROPERTIES (THEMING)
 
-:root {
+// Light Color Scheme
+@mixin light-color-scheme() {
     --bg-color: #{$bg-color};
     --bg-color-semitransparent: #{$bg-color-semitransparent};
     --bg-color-secondary: #{$bg-color-secondary};
@@ -27,10 +28,8 @@
     --header-border-color: #55595c;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        @include dark-color-scheme();
-    }
+:root {
+    @include light-color-scheme();
 }
 
 .theme-dark {
