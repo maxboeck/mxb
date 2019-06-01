@@ -108,7 +108,11 @@
     /* Lists */
     ul,
     ol {
-        list-style-position: inside;
+        list-style-position: outside;
+        padding-left: 1em;
+        li:not(:last-child) {
+            margin-bottom: 0.25em;
+        }
     }
     ul {
         list-style-type: disc;

@@ -2,6 +2,8 @@
 
 {% if isDetailView %}
     {%- set note = page -%}
+{% else %}
+    {%- set tags = note.data.tags -%}
 {% endif %}
 
 {%- set webmentionUrl -%}{{ note.url | url | absoluteUrl(site.url) }}{%- endset -%}
@@ -29,6 +31,13 @@
             <time class="note__date dt-published" datetime="{{ note.date | iso }}">
                 {{ note.date | readableDate }}
             </time>
+            {% if tags %}
+            <div class="note__tags">
+                {% for tag in tags %}
+                    <span class="note__tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
         <div class="note__content">
             <div class="e-content p-name markdown">

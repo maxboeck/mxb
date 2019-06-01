@@ -26,6 +26,18 @@
         color: $text-color-secondary;
         color: var(--text-color-secondary);
     }
+    &__tags {
+        margin-left: auto;
+    }
+    &__tag {
+        display: inline-block;
+        font-size: 0.875rem;
+        padding: 0.25em 0.5em;
+        border-radius: 0.25rem;
+        background-color: $brand-color-secondary;
+        background-color: var(--brand-color-secondary);
+        color: #fff;
+    }
     &__author {
         margin: 0;
 
