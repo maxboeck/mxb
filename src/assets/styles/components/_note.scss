@@ -14,6 +14,7 @@
 
     &__meta {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         padding: 1rem 1rem 0.5rem 1rem;
 
@@ -27,7 +28,16 @@
         color: var(--text-color-secondary);
     }
     &__tags {
-        margin-left: auto;
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        transform: translateY(-50%);
+
+        @include mq(md) {
+            position: static;
+            margin-left: auto;
+            transform: none;
+        }
     }
     &__tag {
         display: inline-block;
