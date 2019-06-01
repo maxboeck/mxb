@@ -6,10 +6,12 @@ const CLASSES = {
     darkMode: 'theme-dark'
 }
 
+const STORAGE_KEY = 'darkMode'
+const COLOR_SCHEME_KEY = '--color-scheme'
+
 class DarkMode {
     constructor() {
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
-        this.storageKey = 'darkMode'
         this.isActive = false
 
         if (this.toggleBtn) {
@@ -19,9 +21,31 @@ class DarkMode {
         this.init()
     }
 
+    getSystemPreference() {
+        let response = getComputedStyle(
+            document.documentElement
+        ).getPropertyValue(COLOR_SCHEME_KEY)
+
+        if (response.length) {
+            return response.replace(/\"/g, '').trim()
+        }
+
+        return null
+    }
+
     init() {
         if (this.hasLocalStorage()) {
-            const preference = localStorage.getItem(this.storageKey) === 'true'
+            const systemPreference = this.getSystemPreference()
+            const storedSetting = localStorage.getItem(STORAGE_KEY)
+            console.log(systemPreference, storedSetting)
+
+            let preference
+            if (storedSetting) {
+                preference = storedSetting === 'true'
+            } else if (systemPreference) {
+                preference = systemPreference === 'dark'
+            }
+
             this.toggle(preference)
         }
     }
@@ -35,7 +59,7 @@ class DarkMode {
         this.toggleBtn.setAttribute('aria-checked', String(this.isActive))
 
         if (this.hasLocalStorage()) {
-            localStorage.setItem(this.storageKey, this.isActive)
+            localStorage.setItem(STORAGE_KEY, this.isActive)
         }
     }
 
