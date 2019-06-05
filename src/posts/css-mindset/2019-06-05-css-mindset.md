@@ -9,7 +9,7 @@ Ah yes, CSS. Hardly a week passes without it being the topic of a heated online 
 
 I don't know why CSS sparks so many different emotions in developers, but I have a hunch as to why it can sometimes seem illogical or frustrating: You need a certain __mindset__ to write good CSS.
 
-Now, you probably need a certain mindset for coding in general, but the declarative nature of CSS makes it particulary difficult to grasp, especially if you think about it in terms of a "traditional" programming language. 
+Now, you probably need a mindset for coding in general, but the declarative nature of CSS makes it particulary difficult to grasp, especially if you think about it in terms of a "traditional" programming language. 
 
 Other programming languages often work in controlled environments, like servers. They expect certain conditions to be true at all times, and can therefore be understood as concrete instructions as to how a program should execute. CSS on the other hand works in a place that can never be fully controlled, so it has to be flexible by default. It's more about translating a design into a set of rules that allow the browser to do the heavy lifting for you.
 
