@@ -67,7 +67,7 @@ The number one mistake made by designers and developers alike is assuming that t
 
 When you set out to turn a design mockup into code, it's often helpful to take inventory of the different patterns included first. Analyse each screen and take not of any concept that occurs more than one. It might be something small like a typographic style, or large like a certain layout pattern. 
 
-What can be abstracted? What's unique? Thinking of pieces in a design as standalone things makes them easier to reason about, and helps drawing the boundaries between components.
+What can be abstracted? What's unique? Thinking of pieces in a design as standalone things makes them easier to reason about, and helps to draw the boundaries between components.
 
 ------
 
