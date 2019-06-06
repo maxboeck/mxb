@@ -59,6 +59,11 @@ layout: base
             {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
         </a>
     </div>
+
+    {% if pattern %}
+        {%- set patternUrl -%}/assets/images/patterns/{{ pattern }}{%- endset -%}
+        <div class="post__bg" style="background-image: url({{ patternUrl | url }});"></div>
+    {% endif %}
 </article>
 
 <div class="postsection">

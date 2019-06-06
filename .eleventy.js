@@ -35,6 +35,7 @@ module.exports = function(config) {
     config.addPassthroughCopy('src/site.webmanifest')
     config.addPassthroughCopy('src/keybase.txt')
     config.addPassthroughCopy('src/robots.txt')
+    config.addPassthroughCopy('src/assets/images')
 
     // Markdown Parsing
     config.setLibrary(
