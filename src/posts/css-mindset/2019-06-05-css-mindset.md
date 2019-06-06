@@ -56,7 +56,7 @@ background-attachment: scroll;
 
 It's better to be explicit. If you want to change the background color, use `background-color`.
 
-### Be Flexible
+### Always Be Flexible
 
 CSS deals with a large amount of unknown variables: screen size, dynamic content, device capabilities - the list goes on. If your styles are too narrow or restrictive, chances are one of these variables will trip you up. That's why a key aspect in writing good CSS is to embrace its flexibility.
 
@@ -88,7 +88,7 @@ Strings may be longer than intended or contain special characters, images might 
 
 The number one mistake made by designers and developers alike is assuming that things will always look like they do in the static mockup. I can assure you, they will not. 
 
-### Find Patterns and Re-use them
+### Find Patterns and re-use them
 
 When you set out to turn a design mockup into code, it's often helpful to take inventory of the different patterns included first. Analyse each screen and take note of any concept that occurs more than one. It might be something small like a typographic style, or large like a certain layout pattern.
 
