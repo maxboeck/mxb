@@ -56,7 +56,7 @@
         right: 0;
         height: 70vh;
         z-index: -1;
-        opacity: 0.15;
+        opacity: 0.17;
 
         &::after {
             @include coverall;
@@ -64,9 +64,14 @@
             display: block;
             background: linear-gradient(
                 170deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 1) 70%
+                transparent 0%,
+                var(--bg-color) 70%
             );
+        }
+
+        .theme-dark &,
+        .theme-dark &::after {
+            filter: invert(100%);
         }
     }
 }

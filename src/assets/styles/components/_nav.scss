@@ -56,8 +56,8 @@
         line-height: 1;
         white-space: nowrap;
         text-transform: lowercase;
-        color: $text-color-secondary;
-        color: var(--text-color-secondary);
+        color: $text-color;
+        color: var(--text-color);
         transition: color 0.2s linear;
 
         @include hover-focus {
