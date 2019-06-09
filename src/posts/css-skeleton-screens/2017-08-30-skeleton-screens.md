@@ -4,7 +4,6 @@ slug: css-skeleton-screens
 tags: code
 image: cover.png
 description: "Designing loading states on the web is often overlooked or dismissed as an afterthought. Building an experience that works with slow connections is not only a developer's challenge..."
-pattern: skulls.svg
 ---
 
 *This article was originally published on [CSS-Tricks.com](https://css-tricks.com/building-skeleton-screens-css-custom-properties/).*

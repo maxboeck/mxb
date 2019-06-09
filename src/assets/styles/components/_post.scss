@@ -49,31 +49,6 @@
             font-style: italic;
         }
     }
-    &__bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 70vh;
-        z-index: -1;
-        opacity: 0.17;
-
-        &::after {
-            @include coverall;
-            content: '';
-            display: block;
-            background: linear-gradient(
-                170deg,
-                transparent 0%,
-                var(--bg-color) 70%
-            );
-        }
-
-        .theme-dark &,
-        .theme-dark &::after {
-            filter: invert(100%);
-        }
-    }
 }
 
 .postsection {

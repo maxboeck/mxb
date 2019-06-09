@@ -41,6 +41,11 @@
             </main>
 
             {% include "footer.njk" %}
+
+            {% if backgroundPattern %}
+                {%- set patternUrl -%}/assets/images/patterns/{{ backgroundPattern }}{%- endset -%}
+                <div class="background-pattern" style="background-image: url({{ patternUrl | url }});"></div>
+            {% endif %}
         </div>
 
         {# Main JS Bundle #}

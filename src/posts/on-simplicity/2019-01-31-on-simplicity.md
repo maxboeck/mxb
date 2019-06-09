@@ -3,7 +3,6 @@ title: On Simplicity
 tags: general
 image: cover.jpg
 description: "We assume that complex problems always require complex solutions. But sometimes the smarter way to build things is to try and take some pieces away, rather than add more to it."
-pattern: graph-paper.svg
 ---
 
 <p class="lead">In the 1997 movie "Contact", Jodie Foster discovers an alien signal that contains the construction plans for a spaceship. Trying to assemble it, the engineers are surprised to find that the crew capsule is just an empty metal pod.</p>
