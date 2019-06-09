@@ -49,6 +49,7 @@ module.exports = function(config) {
             permalink: true,
             permalinkSymbol: '#',
             permalinkClass: 'heading-anchor',
+            permalinkBefore: true,
             level: 2,
             slugify: s =>
                 encodeURIComponent(
