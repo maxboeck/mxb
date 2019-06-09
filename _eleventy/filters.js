@@ -34,6 +34,17 @@ module.exports = {
         return limit > 0 ? array.slice(0, limit) : array.slice(limit)
     },
 
+    isOwnWebmention: function(webmention) {
+        const urls = [
+            'https://mxb.at',
+            'https://mxb.dev',
+            'https://twitter.com/mxbck'
+        ]
+        const authorUrl = webmention.author ? webmention.author.url : false
+        // check if a given URL is part of this site.
+        return authorUrl && urls.includes(authorUrl)
+    },
+
     webmentionsByUrl: function(webmentions, url) {
         const allowedTypes = ['mention-of', 'in-reply-to']
         const allowedHTML = {

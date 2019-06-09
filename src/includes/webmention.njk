@@ -1,4 +1,4 @@
-<div class="webmention {% if webmention.author.url == site.url %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
+<div class="webmention {% if webmention|isOwnWebmention %}webmention--own{% endif %}" id="webmention-{{ webmention['wm-id'] }}">
     <div class="webmention__meta">
         {% if webmention.author %}
             <a 
