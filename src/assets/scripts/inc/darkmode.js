@@ -37,7 +37,6 @@ class DarkMode {
         if (this.hasLocalStorage()) {
             const systemPreference = this.getSystemPreference()
             const storedSetting = localStorage.getItem(STORAGE_KEY)
-            console.log(systemPreference, storedSetting)
 
             let preference
             if (storedSetting) {
