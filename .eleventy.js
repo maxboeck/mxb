@@ -99,7 +99,8 @@ module.exports = function(config) {
         return content
     })
 
-    // opt out of using gitignore for eleventy
+    // opt out of using gitignore for eleventy,
+    // because the drafts folder is ignored, but should still be processed.
     config.setUseGitIgnore(false)
 
     // Base Config

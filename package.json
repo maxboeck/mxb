@@ -4,7 +4,7 @@
   "description": "Personal Website of Max Böck",
   "scripts": {
     "start": "gulp build:dev && yarn run serve",
-    "build": "gulp build && yarn run build:lambda",
+    "build": "NODE_ENV=production gulp build && yarn run build:lambda",
     "debug": "DEBUG=Eleventy* yarn start",
     "serve": "gulp serve",
     "serve:lambda": "netlify-lambda serve _lambda",

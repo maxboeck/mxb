@@ -1,6 +1,9 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 const unionBy = require('lodash/unionBy')
+const domain = require('./site.json').domain
+// Load legacy webmentions from mxb.at
+const legacyWebmentions = require('./legacy/webmentions-mxb.at.json')
 
 // Load .env variables with dotenv
 require('dotenv').config()
@@ -8,11 +11,18 @@ require('dotenv').config()
 // Define Cache Location and API Endpoint
 const CACHE_FILE_PATH = '_cache/webmentions.json'
 const API = 'https://webmention.io/api'
-const DOMAIN = 'mxb.at'
+const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
-async function fetchWebmentions(since, perPage = 100) {
-    const token = process.env.WEBMENTION_IO_TOKEN
-    if (!token) {
+async function fetchWebmentions(since, perPage = 10000) {
+    if (!domain) {
+        // If we dont have a domain name, abort
+        console.warn(
+            'unable to fetch webmentions: no domain name specified in site.json'
+        )
+        return false
+    }
+
+    if (!TOKEN) {
         // If we dont have a domain access token, abort
         console.warn(
             'unable to fetch webmentions: no access token specified in environment.'
@@ -20,13 +30,15 @@ async function fetchWebmentions(since, perPage = 100) {
         return false
     }
 
-    let url = `${API}/mentions.jf2?domain=${DOMAIN}&token=${token}&per-page=${perPage}`
+    let url = `${API}/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=${perPage}`
     if (since) url += `&since=${since}`
 
     const response = await fetch(url)
     if (response.ok) {
         const feed = await response.json()
-        console.log(`${feed.children.length} webmentions fetched from ${API}`)
+        console.log(
+            `${feed.children.length} new webmentions fetched from ${API}`
+        )
         return feed
     }
 
@@ -57,21 +69,32 @@ function writeToCache(data) {
 function readFromCache() {
     if (fs.existsSync(CACHE_FILE_PATH)) {
         const cacheFile = fs.readFileSync(CACHE_FILE_PATH)
-        return JSON.parse(cacheFile)
+        const cachedWebmentions = JSON.parse(cacheFile)
+
+        // merge cache with wms for legacy domain
+        return {
+            lastFetched: cachedWebmentions.lastFetched,
+            children: mergeWebmentions(legacyWebmentions, cachedWebmentions)
+        }
     }
+
+    // no cache found.
     return {
         lastFetched: null,
-        children: []
+        children: legacyWebmentions.children
     }
 }
 
 module.exports = async function() {
     const cache = readFromCache()
 
+    if (cache.children.length) {
+        console.log(`${cache.children.length} webmentions loaded from cache`)
+    }
+
     // Only fetch new mentions in production
     if (process.env.NODE_ENV === 'production') {
-        const limit = cache.children.length ? 100 : 1000
-        const feed = await fetchWebmentions(cache.lastFetched, limit)
+        const feed = await fetchWebmentions(cache.lastFetched)
         if (feed) {
             const webmentions = {
                 lastFetched: new Date().toISOString(),
@@ -83,6 +106,5 @@ module.exports = async function() {
         }
     }
 
-    console.log(`${cache.children.length} webmentions loaded from cache`)
     return cache
 }

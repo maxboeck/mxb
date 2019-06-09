@@ -43,10 +43,6 @@ module.exports = {
             }
         }
 
-        const isUrlMatch = entry =>
-            entry['wm-target'] === url ||
-            entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
-
         const orderByDate = (a, b) =>
             new Date(a.published) - new Date(b.published)
 
@@ -75,7 +71,7 @@ module.exports = {
         }
 
         return webmentions
-            .filter(isUrlMatch)
+            .filter(entry => entry['wm-target'] === url)
             .filter(entry => allowedTypes.includes(entry['wm-property']))
             .filter(checkRequiredFields)
             .sort(orderByDate)
