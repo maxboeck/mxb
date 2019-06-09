@@ -15,19 +15,12 @@
     <div class="note__main">
         <div class="note__meta">
             <p class="note__author h-card p-author" rel=author>
-                {% if isDetailView %}
-                <a class="note__author__link u-url" href="{{ site.url }}">
-                    <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
-                    <strong class="note__author__name p-name">{{ author.name }}</strong>
-                </a>
-                {% else %}
                 <span class="note__author__link">
                     <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
                     <strong class="note__author__name p-name">{{ author.name }}</strong>
                 </span>
-                {% endif %}
             </p>
-            <span class="note__meta__divider">&sdot;</span>
+            <span class="note__meta__divider" aria-hidden="true">&sdot;</span>
             <time class="note__date dt-published" datetime="{{ note.date | iso }}">
                 {{ note.date | readableDate }}
             </time>
@@ -61,8 +54,12 @@
         </li>
     </ul>
     {% if isDetailView %}
-        <div class="note__webmentions">
-            {% include 'webmentions.njk' %}       
-        </div>
+    <div class="note__webmentions">
+        {% include 'webmentions.njk' %}       
+    </div>
+    {% else %}
+    <a href="{{ note.url }}" class="note__link">
+        <span class="sr-only">View Note</span>
+    </a>
     {% endif %}
 </div>

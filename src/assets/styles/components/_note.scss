@@ -69,7 +69,8 @@
     &__content {
         padding: 0 1rem 1rem;
 
-        a {
+        a,
+        pre[class*='language-'] {
             position: relative;
             z-index: 1;
         }
@@ -106,6 +107,7 @@
     }
     &__link {
         @include coverall;
+        display: block;
         border-radius: 6px;
         box-shadow: none;
         transition: box-shadow 0.2s ease;
@@ -121,6 +123,11 @@
 
         .webmentions__item {
             margin-bottom: 0 !important;
+        }
+        .webmentions__empty {
+            @include mq(md) {
+                padding-left: 4rem;
+            }
         }
     }
 

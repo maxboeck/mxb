@@ -2,6 +2,7 @@
 <div
     class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" 
     id="webmentions"
+    data-url="{{ webmentionUrl }}"
     data-last-fetched="{{ webmentions.lastFetched }}"
 >
     <div data-render-root>
@@ -39,7 +40,7 @@
                 </ol>
             </div>
         {% else %}
-            <p>No mentions yet.</p>
+            <p class="webmentions__empty">No mentions yet.</p>
         {% endif %}
     </div>
 </div>
