@@ -121,6 +121,10 @@
         list-style-type: decimal;
     }
 
+    blockquote {
+        margin-left: 0;
+    }
+
     /* Code blocks */
     pre[class*='language-'] {
         display: block;
