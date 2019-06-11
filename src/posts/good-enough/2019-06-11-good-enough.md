@@ -40,7 +40,7 @@ Right away, the act of making a post public forces me to read it again. And of c
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Doing a thing now were I publish stuff early to avoid &quot;It&#39;s-not-ready-anxiety&quot; and get it out there. Fixing shit later, sorry 🙃 <a href="https://t.co/MYCY382Pn9">pic.twitter.com/MYCY382Pn9</a></p>&mdash; Max Böck (@mxbck) <a href="https://twitter.com/mxbck/status/1136535575606046721?ref_src=twsrc%5Etfw">June 6, 2019</a></blockquote>
 
-Then there's the feedback aspect. Publishing might either go largely ignored, or the post might be shared or commented on.
+Then there's the feedback aspect. Publishing might either go largely ignored, or the post might get shared or commented on.
 
 If it's ignored, well - no harm done. It's out there, that's all that matters. But if it gains traction, that's not only a sign that the post is interesting to people, it's also a motivation boost to get me over that last 20%.
 
