@@ -75,7 +75,7 @@ module.exports = {
                 // sanitize HTML
                 entry.content.value = sanitizeHTML(html, allowedHTML)
             } else {
-                entry.content.value = text
+                entry.content.value = sanitizeHTML(text, allowedHTML)
             }
 
             return entry
