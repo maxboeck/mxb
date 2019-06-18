@@ -154,5 +154,11 @@
         "url": "https://hiddedevries.nl/en",
         "description": "Hidde is a front-end developer from the Netherlands. He specializes in CSS, accessibility and performance, and his blog features excellent posts on these topics.",
         "twitter": "hdv"
+    },
+    {
+        "title": "Remy Sharp",
+        "url": "https://remysharp.com",
+        "description": "Remy is a developer running his own business called Left Logic out of Brighton, UK. His blog mostly concentrates on web, code, a touch of business and some personal pieces. Highly Recommended.",
+        "twitter": "rem"
     }
 ]
