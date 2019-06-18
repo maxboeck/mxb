@@ -188,13 +188,21 @@ if (rootElement) {
 }
 ```
 
-And that's it! There are of course still some missing pieces, most notably the ability to send *outgoing* webmentions to URLs linked to in your own blog posts. I might have to look into that.
+And that's it! There are of course still some missing pieces, most notably the ability to send outgoing webmentions to URLs linked to in your own blog posts. ~~I might have to look into that.~~
 
-My implementation was heavily inspired by Aaron Gustafson's excellent Jekyll Plugin (link below), which goes even further with customization and caching options. If you're running a Jekyll site, use that for almost instant webmention support 👍. 
+## Update: Outgoing Webmentions!
+
+[Remy Sharp](https://remysharp.com/) has recently published a very useful new tool that takes care of handling **outgoing** webmentions for you. [Webmention.app](https://webmention.app/) is a platform agnostic service that will check a given URL for links to other sites, discover if they support webmentions, then send a webmention to the target. 
+
+You can use that service in a number of ways, including your own command line. If you host your site on Netlify though, it's also very straightforward to integrate it [using deployment webhooks](https://webmention.app/docs#how-to-integrate-with-netlify)!
 
 ## Eleventy Starter
 
-UPDATE: I made an [Eleventy Starter Template](https://github.com/maxboeck/eleventy-webmentions) with basic webmention support, using some of the techniques in this post. Check it out!
+I made an [Eleventy Starter Template](https://github.com/maxboeck/eleventy-webmentions) with basic webmention support, using some of the techniques in this post. Check it out!
+
+## Jekyll Plugin
+
+My implementation was heavily inspired by Aaron Gustafson's excellent Jekyll Plugin (link below), which goes even further with customization and caching options. If you're running a Jekyll site, use that for almost instant webmention support 👍.
 
 ## Further Resources
 
