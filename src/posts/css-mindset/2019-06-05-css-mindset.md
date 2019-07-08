@@ -19,7 +19,7 @@ For most people who write CSS professionally, the mindset just comes naturally a
 
 I tried to list some of these here.
 
-### Everthing is a Rectangle
+### Everything is a Rectangle
 
 This seems obvious, given that the box model is probably one of the first things people learn about CSS. But picturing each DOM element as a box is crucial to understanding why things layout the way they do. Is it inline or block level? Is it a flex item? How will it grow/shrink/wrap in different contexts?
 
