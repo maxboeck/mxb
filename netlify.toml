@@ -35,8 +35,21 @@
     status = 301
     force = true
 
+# Favicon
+[[redirects]]
+    from = "/assets/images/touch/*"
+    to = "/assets/images/favicon/:splat"
+    status = 301
+
 # 404s
 [[redirects]]
     from = "*"
     to = "/404"
     status = 404
+
+# Bots
+[[redirects]]
+    from = "/wp-login.php"
+    to = "/"
+    status = 403
+    force = true
