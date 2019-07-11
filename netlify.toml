@@ -49,7 +49,7 @@
 
 # Bots
 [[redirects]]
-    from = "/wp-login.php"
+    from = "/wp-login*"
     to = "https://wordpress.com/log-in"
     status = 301
     force = true
