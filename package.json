@@ -23,7 +23,7 @@
   "dependencies": {
     "focus-visible": "^4.1.5",
     "infinite-scroll": "^3.0.5",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.14",
     "markdown-it-anchor": "^5.0.2",
     "preact": "^8.4.2",
     "svgxuse": "^1.2.6"
@@ -62,6 +62,7 @@
     "workbox-build": "^3.6.3"
   },
   "resolutions": {
-      "**/**/axios": "^0.19.0"
+    "**/**/axios": "^0.19.0",
+    "**/**/lodash.merge": "^4.6.2"
   }
 }
