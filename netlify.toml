@@ -50,6 +50,6 @@
 # Bots
 [[redirects]]
     from = "/wp-login.php"
-    to = "/"
-    status = 403
+    to = "https://wordpress.com/log-in"
+    status = 301
     force = true
