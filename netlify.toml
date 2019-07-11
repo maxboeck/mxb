@@ -46,10 +46,3 @@
     from = "*"
     to = "/404"
     status = 404
-
-# Bots
-[[redirects]]
-    from = "/wp-login*"
-    to = "https://wordpress.com/log-in"
-    status = 301
-    force = true
