@@ -1,0 +1,26 @@
+--- 
+excludeFromSitemap: true 
+permalink: publish/index.html 
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Publish on MXB</title>
+
+        {% if build.env !== 'production' %}
+            <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | url }}">
+        {% endif %}
+
+        <meta name="ROBOTS" content="noindex,nofollow">
+        <meta name="robots" content="noindex">
+    </head>
+    <body>
+        {% include "publishing-form.njk" %}
+    </body>
+</html>
