@@ -8,28 +8,15 @@
             </li>
             <li>
                 <label for="sharing-url">URL</label>
-                <input type="url" id="sharing-url" name="url">
+                <input type="url" id="sharing-url" name="url" required>
             </li>
             <li>
-                <label for="sharing-source">Source</label>
-                <input type="text" id="sharing-source" name="source">
+                <label for="sharing-via">via</label>
+                <input type="text" id="sharing-via" name="via">
             </li>
             <li>
                 <label for="sharing-body">Tweet Body (without link)</label>
                 <textarea id="sharing-body" maxlength="200" name="body"></textarea>
-            </li>
-        </ul>
-    </fieldset>
-    <fieldset>
-        <legend>Did you find this link via someone?</legend>
-        <ul class="fields">
-            <li>
-                <label for="sharing-via-name">Name</label>
-                <input id="sharing-via-name">
-            </li>
-            <li>
-                <label for="sharing-via-url">URL</label>
-                <input type="url" id="sharing-via-url">
             </li>
         </ul>
     </fieldset>
@@ -38,11 +25,11 @@
         <ul class="fields">
             <li>
                 <label for="sharing-username">Username</label>
-                <input id="sharing-username" name="username">
+                <input id="sharing-username" name="username" required>
             </li>
             <li>
                 <label for="sharing-token">Token</label>
-                <input type="password" id="sharing-token" name="password">
+                <input type="password" id="sharing-token" name="token" required>
             </li>
         </ul>
     </details>
