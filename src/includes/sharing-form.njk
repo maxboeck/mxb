@@ -1,0 +1,52 @@
+<form action="/.netlify/functions/share" accept-charset="UTF-8" method="POST">
+    <fieldset>
+        <legend>Link Info</legend>
+        <ul class="fields">
+            <li>
+                <label for="sharing-title">Title</label>
+                <input type="text" id="sharing-title" name="title">
+            </li>
+            <li>
+                <label for="sharing-url">URL</label>
+                <input type="url" id="sharing-url" name="url">
+            </li>
+            <li>
+                <label for="sharing-source">Source</label>
+                <input type="text" id="sharing-source" name="source">
+            </li>
+            <li>
+                <label for="sharing-body">Tweet Body (without link)</label>
+                <textarea id="sharing-body" maxlength="200" name="body"></textarea>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>Did you find this link via someone?</legend>
+        <ul class="fields">
+            <li>
+                <label for="sharing-via-name">Name</label>
+                <input id="sharing-via-name">
+            </li>
+            <li>
+                <label for="sharing-via-url">URL</label>
+                <input type="url" id="sharing-via-url">
+            </li>
+        </ul>
+    </fieldset>
+    <details>
+        <summary>Config</summary>
+        <ul class="fields">
+            <li>
+                <label for="sharing-username">Username</label>
+                <input id="sharing-username" name="username">
+            </li>
+            <li>
+                <label for="sharing-token">Token</label>
+                <input type="password" id="sharing-token" name="password">
+            </li>
+        </ul>
+    </details>
+    <div>
+        <button type="submit">Publish</button>
+    </div>
+</form>

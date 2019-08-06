@@ -1,6 +1,6 @@
 --- 
 excludeFromSitemap: true 
-permalink: publish/index.html 
+permalink: share/index.html 
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@ permalink: publish/index.html
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Publish on MXB</title>
+        <title>Share on MXB</title>
 
         {% if build.env !== 'production' %}
             <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
@@ -21,6 +21,6 @@ permalink: publish/index.html
         <meta name="robots" content="noindex">
     </head>
     <body>
-        {% include "publishing-form.njk" %}
+        {% include "sharing-form.njk" %}
     </body>
 </html>
