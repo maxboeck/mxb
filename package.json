@@ -26,6 +26,7 @@
     "lodash": "^4.17.15",
     "markdown-it-anchor": "^5.0.2",
     "preact": "^8.4.2",
+    "querystring": "^0.2.0",
     "svgxuse": "^1.2.6"
   },
   "devDependencies": {
