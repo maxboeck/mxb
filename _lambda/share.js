@@ -79,7 +79,7 @@ async function postFile(params) {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/vnd.github.v3+json',
-            Authorization: `token ${token}4`
+            Authorization: `token ${token}`
         },
         body: JSON.stringify(payload)
     }
