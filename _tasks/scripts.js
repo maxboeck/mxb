@@ -1,7 +1,7 @@
 const config = require('./_config.json')
 const gulp = require('gulp')
 const rename = require('gulp-rename')
-// const uglify = require('gulp-uglify')
+const uglify = require('gulp-uglify')
 const webpack = require('webpack')
 const webpackStream = require('webpack-stream')
 require('dotenv').config()
@@ -36,12 +36,10 @@ const webpackConfig = {
 }
 
 gulp.task('scripts', function() {
-    return (
-        gulp
-            .src(config.assetSrc + '/scripts/main.js')
-            .pipe(webpackStream(webpackConfig))
-            // .pipe(uglify())
-            .pipe(rename({ suffix: '.min' }))
-            .pipe(gulp.dest(config.assetDest + '/js'))
-    )
+    return gulp
+        .src(config.assetSrc + '/scripts/main.js')
+        .pipe(webpackStream(webpackConfig))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(config.assetDest + '/js'))
 })
