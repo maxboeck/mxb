@@ -17,7 +17,7 @@ function getFileContent(data) {
     if (via) {
         content += ` (via ${via})`
     }
-    content += '\n\n' + url
+    content += '\n\n' + `[${url}](${url})`
     return unescape(encodeURIComponent(content))
 }
 
