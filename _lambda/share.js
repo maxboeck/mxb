@@ -6,10 +6,10 @@ const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
 function getFileContent(data) {
-    const { title, url, via, body } = data
+    const { title, url, via, body, syndicate } = data
     const frontMatter = getFrontmatter({
         title: title,
-        syndicate: false,
+        syndicate: Boolean(syndicate),
         tags: 'link'
     })
 
