@@ -73,14 +73,11 @@ export default class NotePreview extends Component {
     }
 
     render(props) {
-        if (!props.url) {
-            return null
-        }
         return (
             <div className="note">
                 <div className="note__main">
                     {this.renderMeta()}
-                    <div className="note__content" style={{ minHeight: 200 }}>
+                    <div className="note__content" style={{ minHeight: 100 }}>
                         <div className="markdown">{this.previewContent()}</div>
                     </div>
                 </div>

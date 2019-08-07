@@ -1,0 +1,46 @@
+.form {
+    width: 100%;
+    margin: 2rem 0;
+
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+
+        @include mq(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__field {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &--full {
+            grid-column: 1 / -1;
+        }
+    }
+    &__label {
+        display: block;
+        font-weight: 700;
+        font-size: 0.875rem;
+    }
+    &__input {
+        display: block;
+        width: 100%;
+        background-color: $gray-lightest;
+        border: 1px solid $gray;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        box-sizing: border-box;
+    }
+    &__settings,
+    &__body,
+    &__preview {
+        margin-bottom: 2rem;
+    }
+    &__actions {
+        text-align: right;
+    }
+}

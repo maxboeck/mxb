@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import NotePreview from './NotePreview'
 
 export default class SharingForm extends Component {
     constructor() {
@@ -13,13 +14,19 @@ export default class SharingForm extends Component {
 
     render(props) {
         return (
-            <form onSubmit={this.handleSubmit} accept-charset="UTF-8">
-                <fieldset>
-                    <legend>Link Info</legend>
-                    <ul>
-                        <li>
-                            <label for="sharing-title">Title</label>
+            <form
+                className="form"
+                onSubmit={this.handleSubmit}
+                accept-charset="UTF-8"
+            >
+                <div class="form__body">
+                    <ul className="form__fields">
+                        <li className="form__field">
+                            <label className="form__label" for="sharing-title">
+                                Title
+                            </label>
                             <input
+                                className="form__input"
                                 type="text"
                                 id="sharing-title"
                                 name="title"
@@ -27,9 +34,12 @@ export default class SharingForm extends Component {
                                 onInput={props.onUpdate}
                             />
                         </li>
-                        <li>
-                            <label for="sharing-url">URL</label>
+                        <li className="form__field">
+                            <label className="form__label" for="sharing-url">
+                                URL
+                            </label>
                             <input
+                                className="form__input"
                                 type="url"
                                 id="sharing-url"
                                 name="url"
@@ -38,21 +48,12 @@ export default class SharingForm extends Component {
                                 required
                             />
                         </li>
-                        <li>
-                            <label for="sharing-via">via</label>
-                            <input
-                                type="text"
-                                id="sharing-via"
-                                name="via"
-                                value={props.via}
-                                onInput={props.onUpdate}
-                            />
-                        </li>
-                        <li>
-                            <label for="sharing-body">
-                                Note Body (without link)
+                        <li className="form__field form__field--full">
+                            <label className="form__label" for="sharing-body">
+                                Note Body
                             </label>
                             <textarea
+                                className="form__input"
                                 id="sharing-body"
                                 maxlength="200"
                                 name="body"
@@ -60,26 +61,43 @@ export default class SharingForm extends Component {
                                 onInput={props.onUpdate}
                             />
                         </li>
-                        <li>
-                            <label for="sharing-syndicate">
+                        <li className="form__field">
+                            <label className="form__label" for="sharing-via">
+                                Via
+                            </label>
+                            <input
+                                className="form__input"
+                                type="text"
+                                id="sharing-via"
+                                name="via"
+                                value={props.via}
+                                onInput={props.onUpdate}
+                            />
+                        </li>
+                        <li className="form__field">
+                            <label
+                                className="form__label"
+                                for="sharing-syndicate"
+                            >
                                 <input
+                                    className="form__checkbox"
                                     type="checkbox"
                                     id="sharing-syndicate"
                                     name="syndicate"
                                     value={props.syndicate}
                                     onInput={props.onUpdate}
                                 />
-                                Syndicate to Twitter
+                                &nbsp;Syndicate to Twitter
                             </label>
                         </li>
                     </ul>
-                </fieldset>
+                </div>
                 <div
                     className="sr-only"
                     style={{ visibility: 'hidden' }}
                     aria-hidden="true"
                 >
-                    <label for="sharing-hp">
+                    <label className="form__label" for="sharing-hp">
                         Don’t fill this out if you're human:
                     </label>
                     <input
@@ -91,12 +109,20 @@ export default class SharingForm extends Component {
                         onInput={props.onUpdate}
                     />
                 </div>
-                <details>
-                    <summary>Config</summary>
-                    <ul>
+                <details className="form__settings">
+                    <summary>
+                        ⚙️<span className="sr-only">Config</span>
+                    </summary>
+                    <ul className="form__fields">
                         <li>
-                            <label for="sharing-username">User Name</label>
+                            <label
+                                className="form__label"
+                                for="sharing-username"
+                            >
+                                User Name
+                            </label>
                             <input
+                                className="form__input"
                                 type="text"
                                 id="sharing-username"
                                 name="username"
@@ -105,8 +131,11 @@ export default class SharingForm extends Component {
                             />
                         </li>
                         <li>
-                            <label for="sharing-token">Access Token</label>
+                            <label className="form__label" for="sharing-token">
+                                Access Token
+                            </label>
                             <input
+                                className="form__input"
                                 type="password"
                                 id="sharing-token"
                                 name="token"
@@ -116,9 +145,16 @@ export default class SharingForm extends Component {
                         </li>
                     </ul>
                 </details>
-                <div>
-                    <button type="submit" disabled={props.isLoading}>
-                        Publish
+                <div className="form__preview">
+                    <NotePreview {...props} />
+                </div>
+                <div className="form__actions">
+                    <button
+                        type="submit"
+                        className="btn btn--primary"
+                        disabled={props.isLoading}
+                    >
+                        Publish Note
                     </button>
                 </div>
             </form>
