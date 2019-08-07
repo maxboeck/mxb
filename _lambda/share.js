@@ -9,15 +9,19 @@ function getFileContent(data) {
     const { title, url, via, body, syndicate } = data
     const frontMatter = getFrontmatter({
         title: title,
-        syndicate: syndicate === 'true',
+        syndicate: syndicate,
         tags: 'link'
     })
 
-    let content = frontMatter + '\n\n' + body
+    let content = frontMatter
+    if (body) {
+        content += '\n\n' + body
+    }
     if (via) {
         content += ` (via ${via})`
     }
     content += '\n\n' + `[${url}](${url})`
+
     return unescape(encodeURIComponent(content))
 }
 
@@ -91,8 +95,6 @@ async function postFile(params) {
 // Main Lambda Function Handler
 exports.handler = async event => {
     const params = querystring.parse(event.body)
-
-    console.log(event.body, params)
 
     // Only allow POST
     if (event.httpMethod !== 'POST') {
