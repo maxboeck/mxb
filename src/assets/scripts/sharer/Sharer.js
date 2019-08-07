@@ -26,13 +26,16 @@ export default class Sharer extends Component {
 
     handleResponse(response) {
         if (response.ok) {
-            alert("Note posted!")
+            alert('Note posted!')
         } else {
-            response.text().then(text => {
-                alert(`Error ${response.status}: ${text}`)
-            }).catch(err) {
-                console.error(err)
-            }
+            response
+                .text()
+                .then(text => {
+                    alert(`Error ${response.status}: ${text}`)
+                })
+                .catch(err => {
+                    console.error(err)
+                })
         }
     }
 
