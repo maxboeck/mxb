@@ -98,6 +98,9 @@ export default class Sharer extends Component {
                     onUpdate={this.update}
                 />
                 <NotePreview {...state} />
+                <p>
+                    <code>{window.location.search}</code>
+                </p>
             </div>
         )
     }
