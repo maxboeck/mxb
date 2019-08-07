@@ -126,6 +126,7 @@ export default class SharingForm extends Component {
                                 type="text"
                                 id="sharing-username"
                                 name="username"
+                                autoComplete="username"
                                 value={props.username}
                                 onInput={props.onUpdate}
                             />
@@ -139,6 +140,7 @@ export default class SharingForm extends Component {
                                 type="password"
                                 id="sharing-token"
                                 name="token"
+                                autoComplete="current-password"
                                 value={props.token}
                                 onInput={props.onUpdate}
                             />
