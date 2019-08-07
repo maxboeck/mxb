@@ -54,7 +54,7 @@ export default class Sharer extends Component {
         // @see https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
         if (queryParams.has('text')) {
             const text = queryParams.get('text')
-            if (text.includes('http')) {
+            if (text.includes('http') && !initialValues.url) {
                 initialValues.url = text
             }
         }
