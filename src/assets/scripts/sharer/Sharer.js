@@ -53,7 +53,10 @@ export default class Sharer extends Component {
         // worakround a quirk in mobile sharing behaviour
         // @see https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
         if (queryParams.has('text')) {
-            initialValues.body = queryParams.get('text')
+            const text = queryParams.get('text')
+            if (text.includes('http')) {
+                initialValues.url = text
+            }
         }
 
         this.setState(Object.assign({}, initialValues))
