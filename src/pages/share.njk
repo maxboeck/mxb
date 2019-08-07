@@ -22,6 +22,8 @@ permalink: share/index.html
     </head>
     <body>
         <div id="sharer-root"></div>
+        <p>Bookmarklet: <a href="javascript:(function(){var title = document.getElementsByTagName('title')[0].innerHTML;title = encodeURIComponent(title);var selection = '';if (window.getSelection) {selection = window.getSelection().toString();} else if (document.selection &amp;&amp; document.selection.type != 'Control') {selection = document.selection.createRange().text;}selection = encodeURIComponent(selection);new_window=window.open('{{ page.url | url | absoluteUrl(site.url) }}?title='+title+'&amp;text='+selection+'&amp;url='+encodeURIComponent(document.location.href),'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=640,height=600,location=0');})();">Share on MXB</a></p>
+
         <script>
         var assetUrls = {
             avatar: '{{ author.avatar | url }}'
