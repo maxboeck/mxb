@@ -43,10 +43,31 @@ export default class Sharer extends Component {
     }
 
     post() {
-        if (this.state._honeyp0t.length) {
-            console.log('honeypot triggered')
+        const { action } = this.props
+        const { _honeyp0t, ...data } = this.state
+
+        if (_honeyp0t.length) {
+            return
         }
-        console.log(this.state)
+
+        const makeFormdata = obj => {
+            const fd = new FormData()
+            for (let key in obj) {
+                fd.append(key, obj[key])
+            }
+            return fd
+        }
+
+        fetch(action, {
+            method: 'post',
+            body: makeFormdata(data)
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
 
     render(props, state) {
