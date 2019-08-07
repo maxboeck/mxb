@@ -6,6 +6,7 @@ export default class Sharer extends Component {
     constructor() {
         super()
         this.state = {
+            _honeyp0t: '',
             title: '',
             url: '',
             via: '',
@@ -42,6 +43,9 @@ export default class Sharer extends Component {
     }
 
     post() {
+        if (this.state._honeyp0t.length) {
+            console.log('honeypot triggered')
+        }
         console.log(this.state)
     }
 

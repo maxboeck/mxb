@@ -74,6 +74,23 @@ export default class SharingForm extends Component {
                         </li>
                     </ul>
                 </fieldset>
+                <div
+                    className="sr-only"
+                    style={{ visibility: 'hidden' }}
+                    aria-hidden="true"
+                >
+                    <label for="sharing-hp">
+                        Don’t fill this out if you're human:
+                    </label>
+                    <input
+                        type="text"
+                        name="_honeyp0t"
+                        id="sharing-hp"
+                        tabindex="-1"
+                        value={props._honeyp0t}
+                        onInput={props.onUpdate}
+                    />
+                </div>
                 <details>
                     <summary>Config</summary>
                     <ul>
@@ -85,7 +102,6 @@ export default class SharingForm extends Component {
                                 name="token"
                                 value={props.token}
                                 onInput={props.onUpdate}
-                                required
                             />
                         </li>
                     </ul>
