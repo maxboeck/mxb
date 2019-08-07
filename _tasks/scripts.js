@@ -20,7 +20,8 @@ const babelConfig = {
 const webpackConfig = {
     entry: {
         main: `./${config.assetSrc}/scripts/main.js`,
-        webmentions: `./${config.assetSrc}/scripts/webmentions/index.js`
+        webmentions: `./${config.assetSrc}/scripts/webmentions/index.js`,
+        sharer: `./${config.assetSrc}/scripts/sharer/index.js`
     },
     output: { filename: '[name].js' },
     module: {
