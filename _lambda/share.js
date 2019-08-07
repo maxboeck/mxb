@@ -92,6 +92,8 @@ async function postFile(params) {
 exports.handler = async event => {
     const params = querystring.parse(event.body)
 
+    console.log(event.body, params)
+
     // Only allow POST
     if (event.httpMethod !== 'POST') {
         return { statusCode: 405, body: 'Method Not Allowed' }
