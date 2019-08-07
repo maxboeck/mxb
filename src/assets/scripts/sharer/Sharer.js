@@ -10,7 +10,8 @@ export default class Sharer extends Component {
             title: '',
             url: '',
             via: '',
-            text: '',
+            body: '',
+            username: '',
             token: undefined,
             syndicate: false,
             isLoading: false
@@ -48,6 +49,13 @@ export default class Sharer extends Component {
                 initialValues[key] = value
             }
         }
+
+        // worakround a quirk in mobile sharing behaviour
+        // @see https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
+        if (queryParams.has('text')) {
+            initialValues.body = queryParams.get('text')
+        }
+
         this.setState(Object.assign({}, initialValues))
     }
 
@@ -98,9 +106,6 @@ export default class Sharer extends Component {
                     onUpdate={this.update}
                 />
                 <NotePreview {...state} />
-                <p>
-                    <code>{window.location.search}</code>
-                </p>
             </div>
         )
     }

@@ -3,7 +3,7 @@ import { DateTime } from 'luxon'
 
 export default class NotePreview extends Component {
     previewContent() {
-        const { title, url, via, text } = this.props
+        const { title, url, via, body } = this.props
         const content = []
 
         const handleLink = handle => {
@@ -24,10 +24,10 @@ export default class NotePreview extends Component {
             content.push(<h2 key="n-title">{title}</h2>)
         }
 
-        if (text || via) {
+        if (body || via) {
             content.push(
                 <p key="n-body">
-                    {text}
+                    {body}
                     {viaLink}
                 </p>
             )

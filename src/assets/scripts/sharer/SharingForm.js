@@ -55,7 +55,7 @@ export default class SharingForm extends Component {
                             <textarea
                                 id="sharing-text"
                                 maxlength="200"
-                                name="text"
+                                name="body"
                                 value={props.text}
                                 onInput={props.onUpdate}
                             />
@@ -94,6 +94,16 @@ export default class SharingForm extends Component {
                 <details>
                     <summary>Config</summary>
                     <ul>
+                        <li>
+                            <label for="sharing-username">User Name</label>
+                            <input
+                                type="text"
+                                id="sharing-username"
+                                name="username"
+                                value={props.username}
+                                onInput={props.onUpdate}
+                            />
+                        </li>
                         <li>
                             <label for="sharing-token">Access Token</label>
                             <input
