@@ -12,7 +12,8 @@ export default class Sharer extends Component {
             via: '',
             text: '',
             token: undefined,
-            syndicate: false
+            syndicate: false,
+            isLoading: false
         }
 
         this.update = this.update.bind(this)
@@ -21,6 +22,18 @@ export default class Sharer extends Component {
 
     componentDidMount() {
         this.getInitialValues()
+    }
+
+    handleResponse(response) {
+        if (response.ok) {
+            alert("Note posted!")
+        } else {
+            response.text().then(text => {
+                alert(`Error ${response.status}: ${text}`)
+            }).catch(err) {
+                console.error(err)
+            }
+        }
     }
 
     getInitialValues() {
@@ -44,7 +57,7 @@ export default class Sharer extends Component {
 
     post() {
         const { action } = this.props
-        const { _honeyp0t, ...data } = this.state
+        const { _honeyp0t, isLoading, ...data } = this.state
 
         if (_honeyp0t.length) {
             return
@@ -58,12 +71,15 @@ export default class Sharer extends Component {
             return fd
         }
 
+        this.setState({ isLoading: true })
+
         fetch(action, {
             method: 'post',
             body: makeFormdata(data)
         })
             .then(response => {
-                console.log(response)
+                this.setState({ isLoading: false })
+                this.handleResponse(response)
             })
             .catch(err => {
                 console.error(err)

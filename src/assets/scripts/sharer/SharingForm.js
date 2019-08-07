@@ -107,7 +107,9 @@ export default class SharingForm extends Component {
                     </ul>
                 </details>
                 <div>
-                    <button type="submit">Publish</button>
+                    <button type="submit" disabled={props.isLoading}>
+                        Publish
+                    </button>
                 </div>
             </form>
         )
