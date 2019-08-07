@@ -9,7 +9,7 @@ function getFileContent(data) {
     const { title, url, via, body, syndicate } = data
     const frontMatter = getFrontmatter({
         title: title,
-        syndicate: Boolean(syndicate),
+        syndicate: syndicate === 'true',
         tags: 'link'
     })
 
