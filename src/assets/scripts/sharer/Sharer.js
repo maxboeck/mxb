@@ -77,19 +77,19 @@ export default class Sharer extends Component {
             return
         }
 
-        const makeFormdata = obj => {
-            const fd = new FormData()
+        const encode = obj => {
+            const params = new URLSearchParams()
             for (let key in obj) {
-                fd.append(key, obj[key])
+                params.append(key, obj[key])
             }
-            return fd
+            return params
         }
 
         this.setState({ isLoading: true })
 
         fetch(action, {
             method: 'post',
-            body: makeFormdata(data)
+            body: encode(data)
         })
             .then(response => {
                 this.setState({ isLoading: false })
