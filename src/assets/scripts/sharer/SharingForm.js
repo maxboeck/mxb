@@ -49,14 +49,14 @@ export default class SharingForm extends Component {
                             />
                         </li>
                         <li>
-                            <label for="sharing-text">
+                            <label for="sharing-body">
                                 Note Body (without link)
                             </label>
                             <textarea
-                                id="sharing-text"
+                                id="sharing-body"
                                 maxlength="200"
                                 name="body"
-                                value={props.text}
+                                value={props.body}
                                 onInput={props.onUpdate}
                             />
                         </li>
