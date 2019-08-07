@@ -22,6 +22,11 @@ permalink: share/index.html
     </head>
     <body>
         <div id="sharer-root"></div>
+        <script>
+        var assetUrls = {
+            avatar: '{{ author.avatar | url }}'
+        };
+        </script>
         <script src="{{ '/assets/js/sharer.min.js' | url }}"></script>
     </body>
 </html>

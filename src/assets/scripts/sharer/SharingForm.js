@@ -13,7 +13,7 @@ export default class SharingForm extends Component {
 
     render(props) {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} accept-charset="UTF-8">
                 <fieldset>
                     <legend>Link Info</legend>
                     <ul>
@@ -74,6 +74,22 @@ export default class SharingForm extends Component {
                         </li>
                     </ul>
                 </fieldset>
+                <details>
+                    <summary>Config</summary>
+                    <ul>
+                        <li>
+                            <label for="sharing-token">Access Token</label>
+                            <input
+                                type="password"
+                                id="sharing-token"
+                                name="token"
+                                value={props.token}
+                                onInput={props.onUpdate}
+                                required
+                            />
+                        </li>
+                    </ul>
+                </details>
                 <div>
                     <button type="submit">Publish</button>
                 </div>
