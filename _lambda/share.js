@@ -1,6 +1,7 @@
 import fetch from 'node-fetch'
 import slugify from 'slugify'
 import querystring from 'querystring'
+import { DateTime } from 'luxon'
 
 const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
@@ -17,12 +18,14 @@ function sanitizeYAML(str) {
 
 function getFileContent(data) {
     const { title, url, via, body, syndicate } = data
+    const date = DateTime.utc().toISO({ suppressMilliseconds: true })
     const frontMatter = getFrontmatter({
         title: `"${sanitizeYAML(title)}"`,
-        date: 'Created',
+        date: `"${date}"`,
         syndicate: syndicate,
         tags: 'link'
     })
+
     console.log(frontMatter)
 
     let content = frontMatter
@@ -42,24 +45,18 @@ function getFileContent(data) {
 }
 
 function getFileName(title) {
-    const d = new Date()
-    const yyyy = d.getFullYear()
-    let dd = d.getDate()
-    let mm = d.getMonth() + 1
-
-    if (dd < 10) dd = '0' + dd
-    if (mm < 10) mm = '0' + mm
-
-    let filename = `${yyyy}-${mm}-${dd}`
+    const date = DateTime.utc()
+    const unixSeconds = date.toSeconds()
+    let filename = date.toFormat('yyyy-LL-dd')
 
     if (!title) {
-        filename = filename + '-' + d.getTime()
+        filename = `${filename}-${unixSeconds}`
     } else {
         const slug = slugify(title, {
             remove: /[^a-z0-9 ]/gi,
             lower: true
         })
-        filename += slug.length > 1 ? `-${slug}` : `-${d.getTime()}`
+        filename += slug.length > 1 ? `-${slug}` : `-${unixSeconds}`
     }
 
     return `${filename}.md`
