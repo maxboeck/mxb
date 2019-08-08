@@ -9,6 +9,7 @@ function getFileContent(data) {
     const { title, url, via, body, syndicate } = data
     const frontMatter = getFrontmatter({
         title: title,
+        date: 'Created',
         syndicate: syndicate,
         tags: 'link'
     })
@@ -18,7 +19,11 @@ function getFileContent(data) {
         content += '\n\n' + body
     }
     if (via) {
-        content += ` (via ${via})`
+        const vialink =
+            via.charAt(0) === '@'
+                ? `[${via}](https://twitter.com/${via.substring(1)})`
+                : via
+        content += ` (via ${vialink})`
     }
     content += '\n\n' + `[${url}](${url})`
 
@@ -40,7 +45,7 @@ function getFileName(title) {
         filename = filename + '-' + d.getTime()
     } else {
         const slug = slugify(title, {
-            remove: /[*+~.()'"!:@]/g,
+            remove: /[^a-z0-9 ]/gi,
             lower: true
         })
         filename += slug.length > 1 ? `-${slug}` : `-${d.getTime()}`
