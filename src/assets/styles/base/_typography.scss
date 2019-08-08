@@ -74,9 +74,16 @@ blockquote {
     border: 1px solid $brand-color-secondary;
     background-color: rgba($brand-color-secondary, 0.25);
     color: $brand-color-secondary;
-    cursor: move;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 
     @include hover-focus {
         color: darken($brand-color-secondary, 10%);
+        outline: 0;
+    }
+
+    &:active {
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
     }
 }

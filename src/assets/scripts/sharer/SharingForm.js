@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import NotePreview from './NotePreview'
 
 export default class SharingForm extends Component {
     constructor() {
@@ -91,64 +90,64 @@ export default class SharingForm extends Component {
                             </label>
                         </li>
                     </ul>
-                </div>
-                <div
-                    className="sr-only"
-                    style={{ visibility: 'hidden' }}
-                    aria-hidden="true"
-                >
-                    <label className="form__label" for="sharing-hp">
-                        Don’t fill this out if you're human:
-                    </label>
-                    <input
-                        type="text"
-                        name="_honeyp0t"
-                        id="sharing-hp"
-                        tabindex="-1"
-                        value={props._honeyp0t}
-                        onInput={props.onUpdate}
-                    />
-                </div>
-                <details className="form__settings">
-                    <summary>
-                        ⚙️<span className="sr-only">Config</span>
-                    </summary>
-                    <ul className="form__fields">
-                        <li>
-                            <label
-                                className="form__label"
-                                for="sharing-username"
-                            >
-                                User Name
-                            </label>
-                            <input
-                                className="form__input"
-                                type="text"
-                                id="sharing-username"
-                                name="username"
-                                autoComplete="username"
-                                value={props.username}
-                                onInput={props.onUpdate}
-                            />
-                        </li>
-                        <li>
-                            <label className="form__label" for="sharing-token">
-                                Access Token
-                            </label>
-                            <input
-                                className="form__input"
-                                type="password"
-                                id="sharing-token"
-                                name="token"
-                                autoComplete="current-password"
-                                value={props.token}
-                                onInput={props.onUpdate}
-                            />
-                        </li>
-                    </ul>
-                </details>
-                <div className="form__preview">
-                    <NotePreview {...props} />
+                    <details className="form__settings">
+                        <summary>
+                            ⚙️<span className="sr-only">Config</span>
+                        </summary>
+                        <ul className="form__fields">
+                            <li>
+                                <label
+                                    className="form__label"
+                                    for="sharing-username"
+                                >
+                                    User Name
+                                </label>
+                                <input
+                                    className="form__input"
+                                    type="text"
+                                    id="sharing-username"
+                                    name="username"
+                                    autoComplete="username"
+                                    value={props.username}
+                                    onInput={props.onUpdate}
+                                />
+                            </li>
+                            <li>
+                                <label
+                                    className="form__label"
+                                    for="sharing-token"
+                                >
+                                    Access Token
+                                </label>
+                                <input
+                                    className="form__input"
+                                    type="password"
+                                    id="sharing-token"
+                                    name="token"
+                                    autoComplete="current-password"
+                                    value={props.token}
+                                    onInput={props.onUpdate}
+                                />
+                            </li>
+                        </ul>
+                    </details>
+                    <div
+                        className="sr-only"
+                        style={{ visibility: 'hidden' }}
+                        aria-hidden="true"
+                    >
+                        <label className="form__label" for="sharing-hp">
+                            Don’t fill this out if you're human:
+                        </label>
+                        <input
+                            type="text"
+                            name="_honeyp0t"
+                            id="sharing-hp"
+                            tabindex="-1"
+                            value={props._honeyp0t}
+                            onInput={props.onUpdate}
+                        />
+                    </div>
                 </div>
                 <div className="form__actions">
                     <button

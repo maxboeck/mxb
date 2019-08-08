@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 import SharingForm from './SharingForm'
-
+import NotePreview from './NotePreview'
 export default class Sharer extends Component {
     constructor() {
         super()
@@ -101,11 +101,14 @@ export default class Sharer extends Component {
 
     render(props, state) {
         return (
-            <SharingForm
-                {...state}
-                onSubmit={data => this.post(data)}
-                onUpdate={this.update}
-            />
+            <div class="u-mt2 u-mb2">
+                <NotePreview {...state} />
+                <SharingForm
+                    {...state}
+                    onSubmit={data => this.post(data)}
+                    onUpdate={this.update}
+                />
+            </div>
         )
     }
 }

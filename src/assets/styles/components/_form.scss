@@ -5,7 +5,8 @@
     &__fields {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 2rem;
+        grid-row-gap: 1rem;
+        grid-column-gap: 2rem;
 
         @include mq(md) {
             grid-template-columns: repeat(2, 1fr);
@@ -35,10 +36,11 @@
         padding: 0.5rem 1rem;
         box-sizing: border-box;
     }
-    &__settings,
-    &__body,
-    &__preview {
-        margin-bottom: 2rem;
+    &__checkbox {
+        margin-right: 0.25rem;
+    }
+    &__settings {
+        margin: 1rem 0;
     }
     &__actions {
         text-align: right;
