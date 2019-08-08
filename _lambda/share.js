@@ -5,14 +5,25 @@ import querystring from 'querystring'
 const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
+function sanitizeYAML(str) {
+    // replace endash and emdash with hyphens
+    str = str.replace(/–/g, '-')
+    str = str.replace(/—/g, '-')
+
+    // replace double quotes
+    str = str.replace(/"/g, "'")
+    return str
+}
+
 function getFileContent(data) {
     const { title, url, via, body, syndicate } = data
     const frontMatter = getFrontmatter({
-        title: `"${title}"`,
+        title: `"${sanitizeYAML(title)}"`,
         date: 'Created',
         syndicate: syndicate,
         tags: 'link'
     })
+    console.log(frontMatter)
 
     let content = frontMatter
     if (body) {
@@ -100,7 +111,6 @@ async function postFile(params) {
 // Main Lambda Function Handler
 exports.handler = async event => {
     const params = querystring.parse(event.body)
-    console.log(params)
 
     // Only allow POST
     if (event.httpMethod !== 'POST') {

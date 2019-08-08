@@ -78,19 +78,15 @@ export default class Sharer extends Component {
             return
         }
 
-        const buildQuery = obj => {
-            const params = new URLSearchParams()
-            for (let key in obj) {
-                params.append(key, obj[key])
-            }
-            return params
+        const body = new URLSearchParams()
+        for (let key in data) {
+            body.append(key, data[key])
         }
 
         this.setState({ isLoading: true })
-
         fetch(action, {
             method: 'post',
-            body: buildQuery(data)
+            body: body
         })
             .then(response => {
                 this.setState({ isLoading: false })
