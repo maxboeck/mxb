@@ -11,9 +11,11 @@ function sanitizeYAML(str) {
     str = str.replace(/–/g, '-')
     str = str.replace(/—/g, '-')
 
-    // replace double quotes
+    // replace double quotes and apostrophes
     str = str.replace(/"/g, "'")
-    return str
+    str = str.replace(/’/g, "'")
+
+    return str.trim()
 }
 
 function getFileContent(data) {
