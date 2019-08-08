@@ -34,6 +34,9 @@
         </div>
         <div class="note__content">
             <div class="e-content p-name markdown">
+                {% if note.data.title %}
+                    <h2>{{ note.data.title }}</h2>
+                {% endif %}
                 {% if isDetailView %}
                     {{ content | safe }}
                 {% else %}
