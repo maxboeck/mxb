@@ -31,7 +31,7 @@ export default class Sharer extends Component {
             response
                 .text()
                 .then(text => {
-                    alert(`Error: ${text}`)
+                    alert(`Error ${response.status}: ${text}`)
                 })
                 .catch(err => {
                     console.error(err)
