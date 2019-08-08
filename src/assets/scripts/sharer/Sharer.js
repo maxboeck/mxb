@@ -11,7 +11,7 @@ export default class Sharer extends Component {
             via: '',
             body: '',
             username: '',
-            token: undefined,
+            token: '',
             syndicate: false,
             isLoading: false
         }
@@ -31,7 +31,7 @@ export default class Sharer extends Component {
             response
                 .text()
                 .then(text => {
-                    alert(`Error ${response.status}: ${text}`)
+                    alert(`Error: ${text}`)
                 })
                 .catch(err => {
                     console.error(err)
@@ -62,9 +62,11 @@ export default class Sharer extends Component {
     }
 
     update(event) {
-        const { name, value } = event.target
+        const { name, value, type } = event.target
+        const nextValue = type === 'checkbox' ? !this.state[name] : value
+
         this.setState({
-            [name]: value
+            [name]: nextValue
         })
     }
 
@@ -76,7 +78,7 @@ export default class Sharer extends Component {
             return
         }
 
-        const encode = obj => {
+        const buildQuery = obj => {
             const params = new URLSearchParams()
             for (let key in obj) {
                 params.append(key, obj[key])
@@ -88,7 +90,7 @@ export default class Sharer extends Component {
 
         fetch(action, {
             method: 'post',
-            body: encode(data)
+            body: buildQuery(data)
         })
             .then(response => {
                 this.setState({ isLoading: false })

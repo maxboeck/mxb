@@ -83,8 +83,8 @@ export default class SharingForm extends Component {
                                     type="checkbox"
                                     id="sharing-syndicate"
                                     name="syndicate"
-                                    value={props.syndicate}
-                                    onInput={props.onUpdate}
+                                    checked={props.syndicate}
+                                    onChange={props.onUpdate}
                                 />
                                 &nbsp;Syndicate to Twitter
                             </label>
