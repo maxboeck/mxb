@@ -92,7 +92,7 @@
             font-size: 1.125rem;
         }
     }
-    &__stats {
+    &__footer {
         display: flex;
         color: $text-color-secondary;
         color: var(--text-color-secondary);
@@ -102,6 +102,10 @@
         background-color: var(--bg-color-secondary);
         border-top: 1px solid $border-color;
         border-top: 1px solid var(--border-color);
+    }
+    &__stats {
+        display: flex;
+        align-items: center;
 
         &__item {
             display: flex;
@@ -112,6 +116,10 @@
                 margin-right: 0.25rem;
             }
         }
+    }
+    &__syndication {
+        color: inherit;
+        margin-left: auto;
     }
     &__link {
         @include coverall;
@@ -147,7 +155,7 @@
             margin-bottom: 0;
         }
         &__content,
-        &__stats {
+        &__footer {
             padding-left: 5rem;
         }
         &__author__photo {

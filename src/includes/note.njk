@@ -45,17 +45,24 @@
             </div>
         </div>
     </div>
-    <ul class="note__stats">
-        <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
-            {% icon "message", useInlineIcons %}{{ mentionCount }}
-        </li>
-        <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
-            {% icon "repost", useInlineIcons %}{{ repostCount }}
-        </li>
-        <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
-            {% icon "heart", useInlineIcons %}{{ likeCount }}
-        </li>
-    </ul>
+    <div class="note__footer">
+        <ul class="note__stats">
+            <li class="note__stats__item note__stats__item--mentions" title="{{ mentionCount }} mentions">
+                {% icon "message", useInlineIcons %}{{ mentionCount }}
+            </li>
+            <li class="note__stats__item note__stats__item--reposts" title="{{ repostCount }} reposts">
+                {% icon "repost", useInlineIcons %}{{ repostCount }}
+            </li>
+            <li class="note__stats__item note__stats__item--likes" title="{{ likeCount }} likes">
+                {% icon "heart", useInlineIcons %}{{ likeCount }}
+            </li>
+        </ul>
+        {% if note.data.syndicate %}
+            <span class="note__syndication" title="syndicated to Twitter">
+                {% icon "twitter", useInlineIcons %}
+            </span>
+        {% endif %}
+    </div>
     {% if isDetailView %}
     <div class="note__webmentions">
         {% include 'webmentions.njk' %}       
