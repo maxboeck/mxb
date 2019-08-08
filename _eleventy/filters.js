@@ -14,8 +14,13 @@ module.exports = {
         })
     },
 
-    readableDate: function(date, format = 'dd LLL yyyy') {
-        return DateTime.fromJSDate(date).toFormat(format)
+    readableDate: function(date, format) {
+        const dt = DateTime.fromJSDate(date)
+        if (!format) {
+            format =
+                dt.hour + dt.minute > 0 ? 'dd LLL yyyy - HH:mm' : 'dd LLL yyyy'
+        }
+        return dt.toFormat(format)
     },
 
     fromIso: function(timestamp) {
