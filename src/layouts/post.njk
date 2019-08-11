@@ -13,7 +13,7 @@ layout: base
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
-            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate }}</time>
+            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
 
             {% if tags %}
             &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
