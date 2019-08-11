@@ -2,9 +2,11 @@ import fetch from 'node-fetch'
 import slugify from 'slugify'
 import { DateTime } from 'luxon'
 
+// The place where new shared notes should go
 const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
+// Helper function to clean strings for frontmatter
 const sanitizeYAML = str => {
     // replace endash and emdash with hyphens
     str = str.replace(/–/g, '-')
@@ -17,6 +19,22 @@ const sanitizeYAML = str => {
     return str.trim()
 }
 
+// generate the frontmatter string
+const getFrontmatter = yaml => {
+    let fm = []
+    fm.push('---')
+    Object.keys(yaml).forEach(key => {
+        if (yaml[key] && yaml[key].constructor == String) {
+            fm.push(`${key}: ${yaml[key]}`)
+        } else if (typeof yaml[key] === 'boolean') {
+            fm.push(`${key}: ${String(yaml[key])}`)
+        }
+    })
+    fm.push('---')
+    return fm.join('\n')
+}
+
+// generate the new md file content
 const getFileContent = data => {
     const { title, url, via, body, syndicate } = data
     const date = DateTime.utc().toISO({ suppressMilliseconds: true })
@@ -46,6 +64,7 @@ const getFileContent = data => {
     return unescape(encodeURIComponent(content))
 }
 
+// generate the new md file name
 const getFileName = title => {
     const date = DateTime.utc()
     const unixSeconds = date.toSeconds()
@@ -64,20 +83,7 @@ const getFileName = title => {
     return `${filename}.md`
 }
 
-const getFrontmatter = yaml => {
-    let fm = []
-    fm.push('---')
-    Object.keys(yaml).forEach(key => {
-        if (yaml[key] && yaml[key].constructor == String) {
-            fm.push(`${key}: ${yaml[key]}`)
-        } else if (typeof yaml[key] === 'boolean') {
-            fm.push(`${key}: ${String(yaml[key])}`)
-        }
-    })
-    fm.push('---')
-    return fm.join('\n')
-}
-
+// create the new file via the github API
 const postFile = async params => {
     const { title, token } = params
     const fileName = getFileName(title)
@@ -105,6 +111,7 @@ const postFile = async params => {
     return await fetch(url, options)
 }
 
+// helper function to handle API responses
 const handleResponse = response => {
     if (response.ok) {
         return {
@@ -119,22 +126,21 @@ const handleResponse = response => {
     }
 }
 
-// Main Lambda Function Handler
+// Main Lambda Function
 exports.handler = async event => {
-    console.log(event.body)
-    const params = JSON.parse(event.body)
-
-    // Only allow POST
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: 'Method Not Allowed' }
-    }
-
-    // Token is required
-    if (!params.token) {
-        return { statusCode: 403, body: 'Missing Access Token' }
-    }
-
     try {
+        const params = JSON.parse(event.body)
+
+        // Only allow POST
+        if (event.httpMethod !== 'POST') {
+            return { statusCode: 405, body: 'Method Not Allowed' }
+        }
+
+        // Token is required
+        if (!params.token) {
+            return { statusCode: 403, body: 'Missing Access Token' }
+        }
+
         const response = await postFile(params)
         return handleResponse(response)
     } catch (err) {

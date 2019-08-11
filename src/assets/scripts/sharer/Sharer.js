@@ -110,7 +110,7 @@ export default class Sharer extends Component {
     render(props, state) {
         const { status, ...data } = state
         return (
-            <div class="u-mt2 u-mb2">
+            <div className="sharer">
                 <NotePreview {...data} />
                 {!!status ? (
                     <Alert {...status} />

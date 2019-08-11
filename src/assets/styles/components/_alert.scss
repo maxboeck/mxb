@@ -1,8 +1,6 @@
 // Alert Component
 
-$state-success: #95b34f;
-$state-info: #498cbd;
-$state-warning: #df8a13;
+$state-success: $brand-cyan;
 $state-error: #d81e05;
 
 .alert {
@@ -14,17 +12,18 @@ $state-error: #d81e05;
 
     .icon {
         margin-right: 0.5rem;
+        transform: translateY(-10%);
     }
 
     // Variations
     &--success {
         color: darken($state-success, 10%);
-        border-color: lighten($state-success, 25%);
+        border-color: lighten($state-success, 15%);
         background-color: lighten($state-success, 50%);
     }
     &--error {
-        color: darken($state-error, 22%);
+        color: darken($state-error, 10%);
         border-color: lighten($state-error, 20%);
-        background-color: desaturate(lighten($state-error, 31%), 25%);
+        background-color: rgba($state-error, 0.2);
     }
 }

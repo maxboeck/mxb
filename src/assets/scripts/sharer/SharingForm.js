@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import Spinner from './Spinner'
 
 export default class SharingForm extends Component {
     constructor() {
@@ -150,13 +151,13 @@ export default class SharingForm extends Component {
                     </div>
                 </div>
                 <div className="form__actions">
-                    <button
-                        type="submit"
-                        className="btn btn--primary"
-                        disabled={props.isLoading}
-                    >
-                        Publish Note
-                    </button>
+                    {props.isLoading ? (
+                        <Spinner />
+                    ) : (
+                        <button type="submit" className="btn btn--primary">
+                            Publish Note
+                        </button>
+                    )}
                 </div>
             </form>
         )

@@ -1,6 +1,5 @@
 .form {
     width: 100%;
-    margin: 2rem 0;
 
     &__fields {
         display: grid;
@@ -44,5 +43,6 @@
     }
     &__actions {
         text-align: right;
+        overflow: hidden;
     }
 }

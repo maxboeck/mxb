@@ -15,3 +15,7 @@
 
     @return map-get($z-layers, $layer);
 }
+
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}

@@ -17,6 +17,36 @@
     }
 }
 
+@keyframes spinner__left-spin {
+    from {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(130deg);
+    }
+}
+
+@keyframes spinner__right-spin {
+    from {
+        transform: rotate(-130deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    to {
+        transform: rotate(-130deg);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0s !important;
