@@ -1,12 +1,11 @@
 import fetch from 'node-fetch'
 import slugify from 'slugify'
-import querystring from 'querystring'
 import { DateTime } from 'luxon'
 
 const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
-function sanitizeYAML(str) {
+const sanitizeYAML = str => {
     // replace endash and emdash with hyphens
     str = str.replace(/–/g, '-')
     str = str.replace(/—/g, '-')
@@ -18,9 +17,10 @@ function sanitizeYAML(str) {
     return str.trim()
 }
 
-function getFileContent(data) {
+const getFileContent = data => {
     const { title, url, via, body, syndicate } = data
     const date = DateTime.utc().toISO({ suppressMilliseconds: true })
+
     const frontMatter = getFrontmatter({
         title: `"${sanitizeYAML(title)}"`,
         date: `"${date}"`,
@@ -46,7 +46,7 @@ function getFileContent(data) {
     return unescape(encodeURIComponent(content))
 }
 
-function getFileName(title) {
+const getFileName = title => {
     const date = DateTime.utc()
     const unixSeconds = date.toSeconds()
     let filename = date.toFormat('yyyy-LL-dd')
@@ -64,7 +64,7 @@ function getFileName(title) {
     return `${filename}.md`
 }
 
-function getFrontmatter(yaml) {
+const getFrontmatter = yaml => {
     let fm = []
     fm.push('---')
     Object.keys(yaml).forEach(key => {
@@ -78,16 +78,15 @@ function getFrontmatter(yaml) {
     return fm.join('\n')
 }
 
-async function postFile(params) {
+const postFile = async params => {
     const { title, token } = params
     const fileName = getFileName(title)
     const fileContent = getFileContent(params)
     const url = API_FILE_TARGET + fileName
 
-    const buffer = Buffer.from(fileContent)
     const payload = {
         message: 'new shared note',
-        content: buffer.toString('base64'),
+        content: Buffer.from(fileContent).toString('base64'),
         committer: {
             name: 'Max Böck',
             email: 'hello@mxb.dev'
@@ -103,13 +102,27 @@ async function postFile(params) {
         body: JSON.stringify(payload)
     }
 
-    const response = await fetch(url, options)
-    return response
+    return await fetch(url, options)
+}
+
+const handleResponse = response => {
+    if (response.ok) {
+        return {
+            statusCode: 200,
+            body: `Note published!`
+        }
+    }
+
+    return {
+        statusCode: response.status,
+        body: `${response.statusText}`
+    }
 }
 
 // Main Lambda Function Handler
 exports.handler = async event => {
-    const params = querystring.parse(event.body)
+    console.log(event.body)
+    const params = JSON.parse(event.body)
 
     // Only allow POST
     if (event.httpMethod !== 'POST') {
@@ -123,21 +136,12 @@ exports.handler = async event => {
 
     try {
         const response = await postFile(params)
-        if (response.ok) {
-            return {
-                statusCode: 200,
-                body: `Note published!`
-            }
-        } else {
-            return {
-                statusCode: response.status,
-                body: `${response.statusText}`
-            }
-        }
+        return handleResponse(response)
     } catch (err) {
+        console.log(err)
         return {
             statusCode: 400,
-            body: err.message
+            body: err.toString()
         }
     }
 }

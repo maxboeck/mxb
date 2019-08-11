@@ -1,6 +1,8 @@
 import { h, Component } from 'preact'
 import SharingForm from './SharingForm'
 import NotePreview from './NotePreview'
+import Alert from './Alert'
+
 export default class Sharer extends Component {
     constructor() {
         super()
@@ -13,7 +15,8 @@ export default class Sharer extends Component {
             username: '',
             token: '',
             syndicate: false,
-            isLoading: false
+            isLoading: false,
+            status: undefined
         }
 
         this.update = this.update.bind(this)
@@ -26,22 +29,28 @@ export default class Sharer extends Component {
 
     handleResponse(response) {
         if (response.ok) {
-            alert('Note posted!')
+            this.setState({
+                status: {
+                    success: true,
+                    message: 'Note published!'
+                }
+            })
         } else {
-            response
-                .text()
-                .then(text => {
-                    alert(`Error: ${text}`)
+            response.text().then(text => {
+                this.setState({
+                    status: {
+                        success: false,
+                        message: text
+                    }
                 })
-                .catch(err => {
-                    console.error(err)
-                })
+            })
         }
     }
 
     getInitialValues() {
         const queryParams = new URLSearchParams(window.location.search)
         const initialValues = {}
+
         for (let param of queryParams) {
             const [key, value] = param
             if (this.state.hasOwnProperty(key)) {
@@ -78,15 +87,16 @@ export default class Sharer extends Component {
             return
         }
 
-        const body = new URLSearchParams()
-        for (let key in data) {
-            body.append(key, data[key])
-        }
-
-        this.setState({ isLoading: true })
+        this.setState({
+            isLoading: true,
+            status: undefined
+        })
         fetch(action, {
-            method: 'post',
-            body: body
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
             .then(response => {
                 this.setState({ isLoading: false })
@@ -98,14 +108,19 @@ export default class Sharer extends Component {
     }
 
     render(props, state) {
+        const { status, ...data } = state
         return (
             <div class="u-mt2 u-mb2">
-                <NotePreview {...state} />
-                <SharingForm
-                    {...state}
-                    onSubmit={data => this.post(data)}
-                    onUpdate={this.update}
-                />
+                <NotePreview {...data} />
+                {!!status ? (
+                    <Alert {...status} />
+                ) : (
+                    <SharingForm
+                        {...data}
+                        onSubmit={data => this.post(data)}
+                        onUpdate={this.update}
+                    />
+                )}
             </div>
         )
     }
