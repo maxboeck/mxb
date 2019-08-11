@@ -40,7 +40,7 @@ export default class Sharer extends Component {
                 this.setState({
                     status: {
                         success: false,
-                        message: text
+                        message: `${response.status} ${text}`
                     }
                 })
             })

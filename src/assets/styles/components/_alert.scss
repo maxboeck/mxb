@@ -1,0 +1,30 @@
+// Alert Component
+
+$state-success: #95b34f;
+$state-info: #498cbd;
+$state-warning: #df8a13;
+$state-error: #d81e05;
+
+.alert {
+    font-size: 1rem;
+    position: relative;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: 1rem;
+
+    .icon {
+        margin-right: 0.5rem;
+    }
+
+    // Variations
+    &--success {
+        color: darken($state-success, 10%);
+        border-color: lighten($state-success, 25%);
+        background-color: lighten($state-success, 50%);
+    }
+    &--error {
+        color: darken($state-error, 22%);
+        border-color: lighten($state-error, 20%);
+        background-color: desaturate(lighten($state-error, 31%), 25%);
+    }
+}
