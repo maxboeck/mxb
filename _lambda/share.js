@@ -7,7 +7,7 @@ const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
 // Helper function to clean strings for frontmatter
-const sanitizeYAML = str => {
+const sanitize = str => {
     // replace endash and emdash with hyphens
     str = str.replace(/–/g, '-')
     str = str.replace(/—/g, '-')
@@ -40,7 +40,7 @@ const getFileContent = data => {
     const date = DateTime.utc().toISO({ suppressMilliseconds: true })
 
     const frontMatter = getFrontmatter({
-        title: `"${sanitizeYAML(title)}"`,
+        title: `"${sanitize(title)}"`,
         date: `"${date}"`,
         syndicate: syndicate,
         tags: 'link'
@@ -50,7 +50,7 @@ const getFileContent = data => {
 
     let content = frontMatter
     if (body) {
-        content += '\n\n' + body
+        content += '\n\n' + sanitize(body)
     }
     if (via) {
         const vialink =
