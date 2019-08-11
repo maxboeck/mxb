@@ -14,6 +14,8 @@ const sanitize = str => {
 
     // replace double quotes and apostrophes
     str = str.replace(/"/g, "'")
+    str = str.replace(/“/g, "'")
+    str = str.replace(/”/g, "'")
     str = str.replace(/’/g, "'")
 
     return str.trim()
