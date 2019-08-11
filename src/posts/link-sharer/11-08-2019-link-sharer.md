@@ -31,16 +31,22 @@ function(){
     window.open(url,'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');
 })()
 ```
+The resulting bookmarklet looks like this: 
+<a class="bookmarklet" href="javascript:(function(){var title = document.getElementsByTagName('title')[0].innerHTML;title = encodeURIComponent(title);var selection = '';if (window.getSelection) {selection = window.getSelection().toString();} else if (document.selection &amp;&amp; document.selection.type != 'Control') {selection = document.selection.createRange().text;}selection = encodeURIComponent(selection);new_window=window.open('{{ page.url | url | absoluteUrl(site.url) }}?title='+title+'&amp;body='+selection+'&amp;url='+encodeURIComponent(document.location.href),'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');})();">Share on MXB</a> 
 
-<a class="bookmarklet" href="javascript:(function(){var title = document.getElementsByTagName('title')[0].innerHTML;title = encodeURIComponent(title);var selection = '';if (window.getSelection) {selection = window.getSelection().toString();} else if (document.selection &amp;&amp; document.selection.type != 'Control') {selection = document.selection.createRange().text;}selection = encodeURIComponent(selection);new_window=window.open('{{ page.url | url | absoluteUrl(site.url) }}?title='+title+'&amp;body='+selection+'&amp;url='+encodeURIComponent(document.location.href),'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');})();">Share on MXB</a>
+...and can then be dragged to the bookmarks bar for future use.
 
 ## The Sharing Form
+
+[mxb.dev/share](https://mxb.dev/share/)
 
 <img src="{{ 'sharer.png' | media(page) }}" style="box-shadow:0 0 24px rgba(0,0,0,0.2)" alt="The sharing form with a live preview of the note">
 
 ## The Handler Script
 
 https://github.com/maxboeck/mxb/blob/master/_lambda/share.js
+
+It reads the posted data and generates a new markdown file from it, called something like `2019-08-11-amphora-ethan-marcotte.md`:
 
 ```markdown
 ---
@@ -57,7 +63,7 @@ performance issues by supercharging the web’s accessibility problem.
 [ethanmarcotte.com/wrote/amphora](https://ethanmarcotte.com/wrote/amphora/)
 ```
 
-`2019-08-11-amphora-ethan-marcotte.md`
+
 
 ```js
 const postFile = async data => {
@@ -67,7 +73,7 @@ const postFile = async data => {
     const url = API_FILE_TARGET + fileName
 
     const payload = {
-        message: 'new shared note',
+        message: 'new shared link',
         content: Buffer.from(fileContent).toString('base64'),
         committer: {
             name: 'Max Böck',
@@ -92,4 +98,24 @@ const postFile = async data => {
 
 https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
 
-<img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android">
+```json
+// site.webmanifest
+{
+    ...,
+    "share_target": {
+        "action": "/share/",
+        "method": "GET",
+        "enctype": "application/x-www-form-urlencoded",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
+}
+```
+
+<figure>
+<img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android" style="max-width: 350px">
+<figcaption>The "Max Böck" share option is available after installing the PWA.</figcaption> 
+</figure>
