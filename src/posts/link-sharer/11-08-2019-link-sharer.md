@@ -144,7 +144,7 @@ Thankfully Aaron Gustafson recently pointed out that it's possible to [define a 
 That little bit of JSON registers your site as an application that can share things, just like Twitter, WhatsApp and the others. So after I "install" my PWA (read: create a shortcut link on my device home screen), it shows up as an option in the native Android "share" dialog:
 
 <figure>
-    <img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android" style="max-width: 350px">
+    <img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android" width="350" />
     <figcaption>The "Max Böck" share option is available after installing the PWA.</figcaption> 
 </figure>
 
