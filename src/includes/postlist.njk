@@ -12,7 +12,7 @@
 
                 <div class="postlist__meta">
                     <time class="postlist__date dt-published" datetime="{{ post.date | iso }}">
-                        {{ post.date | readableDate }}
+                        {{ post.date | readableDate('dd LLL yyyy') }}
                     </time>
 
                     {% if post.data.tags %}
