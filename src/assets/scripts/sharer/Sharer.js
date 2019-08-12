@@ -30,6 +30,7 @@ export default class Sharer extends Component {
     handleResponse(response) {
         if (response.ok) {
             this.setState({
+                isLoading: false,
                 status: {
                     success: true,
                     message: 'Note published!'
@@ -38,6 +39,7 @@ export default class Sharer extends Component {
         } else {
             response.text().then(text => {
                 this.setState({
+                    isLoading: false,
                     status: {
                         success: false,
                         message: `${response.status} ${text}`
@@ -98,10 +100,7 @@ export default class Sharer extends Component {
                 'Content-Type': 'application/json'
             }
         })
-            .then(response => {
-                this.setState({ isLoading: false })
-                this.handleResponse(response)
-            })
+            .then(this.handleResponse)
             .catch(err => {
                 console.error(err)
             })
