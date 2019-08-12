@@ -21,6 +21,7 @@ export default class Sharer extends Component {
 
         this.update = this.update.bind(this)
         this.post = this.post.bind(this)
+        this.handleResponse = this.handleResponse.bind(this)
     }
 
     componentDidMount() {
