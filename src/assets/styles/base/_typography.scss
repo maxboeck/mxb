@@ -71,14 +71,16 @@ blockquote {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
-    border: 1px solid $brand-color-secondary;
+    border: 1px solid $brand-color-secondary !important;
     background-color: rgba($brand-color-secondary, 0.25);
     color: $brand-color-secondary;
+    box-shadow: none !important;
     cursor: -moz-grab;
     cursor: -webkit-grab;
 
     @include hover-focus {
-        color: darken($brand-color-secondary, 10%);
+        color: darken($brand-color-secondary, 10%) !important;
+        background-color: rgba($brand-color-secondary, 0.3);
         outline: 0;
     }
 
