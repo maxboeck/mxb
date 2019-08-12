@@ -1,6 +1,7 @@
 ---
 title: IndieWeb Link Sharing
 tags: code
+image: cover.jpg
 description: "A pain point of the IndieWeb is that it's sometimes not as convenient to share content as it is on the common social media platforms. Let's improve that."
 ---
 
