@@ -3,15 +3,14 @@ title: Indie Link Sharer
 tags: code
 image: cover.jpg
 draft: true
+description: "A pain point of the IndieWeb is that it's sometimes not as convenient to share content as it is on the common social media platforms. Let's improve that."
 ---
 
 <p class="lead">A pain point of the IndieWeb is that it's sometimes not as convenient to share content as it is on the common social media platforms.</p>
 
-Posting a new short "note" on my site currently requires me to commit a new markdown file to the repository on Github. That's doable (for a developer), but not really convenient, especially when you're on the go and just want to share a quick link. Eventually I would then fall back to posting on Twitter et al. That's why I wanted to improve the process.
+Posting a new short ["note"](/notes) on my site currently requires me to commit a new markdown file to the repository on Github. That's doable (for a developer), but not really convenient, especially when you're on the go and just want to share a quick link. Twitter and other social media platforms literally make this as easy as clicking a single button, which makes it tempting to just post stuff straight to them. That's why I wanted to improve this process for my site.
 
-A quick Google search revealed that smarter people have already solved that problem. I came across this [blog post by Tim Kadlec](https://timkadlec.com/remembers/2018-02-06-saving-links-to-my-site-with-a-bookmarklet/) who describes adapting someone else's link sharing technique for his (Hugo-powered) blog.
-
-That just left me the task of adapting it for my setup (Eleventy, Netlify) and customizing a few details.
+A quick Google search revealed that smarter people have already solved that problem. I came across this [blog post by Tim Kadlec](https://timkadlec.com/remembers/2018-02-06-saving-links-to-my-site-with-a-bookmarklet/) who describes adapting someone else's link sharing technique for his (Hugo-powered) blog. That just left me the task of adapting it for my setup (Eleventy, Netlify) and customizing a few details.
 
 The new link sharing basically has three main parts:
 
@@ -49,7 +48,7 @@ function(){
     window.open(url,'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');
 })()
 ```
-The bookmarklet looks like this: 
+That bookmarklet looks like this: 
 <a class="bookmarklet" href="javascript:(function(){var title = document.getElementsByTagName('title')[0].innerHTML;title = encodeURIComponent(title);var selection = '';if (window.getSelection) {selection = window.getSelection().toString();} else if (document.selection &amp;&amp; document.selection.type != 'Control') {selection = document.selection.createRange().text;}selection = encodeURIComponent(selection);new_window=window.open('{{ page.url | url | absoluteUrl(site.url) }}?title='+title+'&amp;body='+selection+'&amp;url='+encodeURIComponent(document.location.href),'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');})();">Share on MXB</a> 
 
 ...and can then be dragged to the bookmarks bar for quick access.
@@ -60,11 +59,13 @@ At [mxb.dev/share](https://mxb.dev/share/), I've created a small preact app. It 
 
 There's also a form that will be pre-populated with the values, which lets me include additional information and edit everything before posting.
 
+The form also has fields for the Github username and security token, necessary for authentification. My password manager will fill those in automatically.
+
 <img src="{{ 'sharer.png' | media(page) }}" style="box-shadow:0 0 24px rgba(0,0,0,0.2)" alt="The sharing form with a live preview of the note">
 
 ## The Handler Script
 
-When I hit the submit button, the form will send the data along to another endpoint. I've built a serverless function to handle the processing, so I could theoretically send data from other sources there too in the future. Plus I wanted to give [netlify functions]() another whirl.
+When I hit the submit button, the form will send the data along to another endpoint. I've built a serverless function to handle the processing, so I could theoretically send data from other sources there too and keep the posting logic in one place. [Netlify Functions](https://www.netlify.com/docs/functions/) seemed to be a nice fit for this.
 
 Here's the [full script](https://github.com/maxboeck/mxb/blob/master/_lambda/share.js) if you're interested. It reads the posted data and generates a new markdown file from it, called something like `2019-08-11-amphora-ethan-marcotte.md`:
 
@@ -83,7 +84,9 @@ performance issues by supercharging the web’s accessibility problem.
 [ethanmarcotte.com/wrote/amphora](https://ethanmarcotte.com/wrote/amphora/)
 ```
 
+It will then use the [Github API](https://developer.github.com/v3/) to post that file as a base64-encoded string to a predetermined location in the site's repository (in my case the folder where I keep all my notes).
 
+Here's the core function responsible for that:
 
 ```js
 const postFile = async data => {
@@ -114,9 +117,13 @@ const postFile = async data => {
 }
 ```
 
+That's pretty much it! After the file is committed, Netlify will kick in and re-build the static site with the new content. If I have marked the "syndicate to Twitter" flag, another script will then cross-post the link there. (More on that in [Static Indieweb pt1: Syndicating Content](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/)).
+
 ## Mobile Share Sheet
 
-https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
+A caveat of this technique is the use on mobile. Javascript bookmarklets are not as easily available in mobile browsers, which complicates the process again. 
+
+Thankfully Aaron Gustafson recently pointed out that it's possible to [define a "Share Target"](https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/) for Progressive Web Apps. That means if your site is a PWA (it probably should be), you can add an entry like this to its manifest file:
 
 ```json
 // site.webmanifest
@@ -135,7 +142,13 @@ https://www.aaron-gustafson.com/notebook/my-own-personal-pwa/
 }
 ```
 
+That little bit of JSON registers your site as an application that can share things, just like Twitter, WhatsApp and the others. So after I "install" my PWA (read: create a shortcut link on my device home screen), it shows up as an option in the native Android "share" dialog:
+
 <figure>
-<img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android" style="max-width: 350px">
-<figcaption>The "Max Böck" share option is available after installing the PWA.</figcaption> 
+    <img src="{{ 'sharesheet.jpg' | media(page) }}" alt="PWA Share Sheet on Android" style="max-width: 350px">
+    <figcaption>The "Max Böck" share option is available after installing the PWA.</figcaption> 
 </figure>
+
+Selecting the "MXB" option will grab the current page title and URL and send them as GET args to my sharing form, just like the bookmarklet would on desktop. There's still a small bug in there where the URL will be sent as the `text` parameter, but that can be corrected with a bit of Javascript in the form app.
+
+I'm quite happy with how this turned out, as it feels really simple and straightforward. One step closer to IndieWeb bliss!
