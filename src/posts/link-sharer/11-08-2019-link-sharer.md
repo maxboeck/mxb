@@ -118,7 +118,7 @@ const postFile = async data => {
 
 That's pretty much it! After the file is committed, Netlify will kick in and re-build the static site with the new content. If I have marked the "syndicate to Twitter" flag, another script will then cross-post the link there. (More on that in [Static Indieweb pt1: Syndicating Content](https://mxb.dev/blog/syndicating-content-to-twitter-with-netlify-functions/)).
 
-## Mobile Share Sheet
+## Mobile Share Target
 
 A caveat of this technique is the use on mobile. Javascript bookmarklets are not as easily available in mobile browsers, which complicates the process again. 
 
@@ -151,3 +151,11 @@ That little bit of JSON registers your site as an application that can share thi
 Selecting the "MXB" option will grab the current page title and URL and send them as GET args to my sharing form, just like the bookmarklet would on desktop. There's still a small bug in there where the URL will be sent as the `text` parameter, but that can be corrected with a bit of Javascript in the form app.
 
 I'm quite happy with how this turned out, as it feels really simple and straightforward. One step closer to IndieWeb bliss!
+
+## One more thing...
+
+`<shameless-plug>`  
+If you're interested in this and other IndieWeb topics, you might want to check out my talk at the [webclerks conference](https://webclerks.at) on November 25th in Vienna, Austria. There's a fantastic lineup of speakers including Jeremy Keith, Rachel Andrew and Heydon Pickering. I'm very excited about it. Tickets are limited, so get yours early!  
+`</shameless-plug>`
+
+[![webclerks conference, November 25, Vienna](https://webclerks.at/assets/images/og-image-default.jpg)](https://webclerks.at)
