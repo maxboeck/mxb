@@ -6,7 +6,7 @@
             <a href="{{ post.url | url }}" class="otherposts__link {% if post.data.draft %}otherposts__link--draft{% endif %}">
                 <span class="otherposts__title">{{ post.data.title }}</span>
                 <time class="otherposts__date" datetime="{{ post.date | iso }}" aria-label=", written {{ post.date | readableDate }}">
-                    {{ post.date | readableDate }}
+                    {{ post.date | readableDate('dd LLL yyyy') }}
                 </time>
             </a>
         </li>
