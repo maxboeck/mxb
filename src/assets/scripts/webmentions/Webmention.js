@@ -16,11 +16,15 @@ export default class Webmention extends Component {
                 src={author.photo}
                 alt={author.name}
                 loading="lazy"
+                width={48}
+                height={48}
             />
         ) : (
             <img
                 className="webmention__author__photo"
                 src={defaultAvatarSrc}
+                width={48}
+                height={48}
                 alt=""
             />
         )

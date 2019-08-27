@@ -8,9 +8,17 @@
                 rel="noopener noreferrer"
             >
                 {% if webmention.author.photo %}
-                    <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}" loading="lazy">
+                    <img
+                        class="webmention__author__photo u-photo" 
+                        src="{{ webmention.author.photo }}" 
+                        alt="" 
+                        title="{{ webmention.author.name }}" 
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                    >
                 {% else %}
-                    <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.jpg' | url }}" alt="">
+                    <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.jpg' | url }}" alt="" width="48" height="48">
                 {% endif %}
                 <strong class="p-name">{{ webmention.author.name }}</strong>
             </a>

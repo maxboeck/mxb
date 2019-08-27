@@ -15,6 +15,8 @@ export default class App extends Component {
                     src={imgSrc}
                     title={entry.author.name}
                     alt=""
+                    width={32}
+                    height={32}
                     loading="lazy"
                 />
             )

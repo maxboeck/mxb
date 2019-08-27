@@ -18,6 +18,8 @@
                             src="{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/assets/images/avatar-default.jpg' | url }}{% endif %}"
                             title="{{ webmention.author.name }}"
                             alt=""
+                            width="32"
+                            height="32"
                             loading="lazy"
                         />
                     {% endfor %}
