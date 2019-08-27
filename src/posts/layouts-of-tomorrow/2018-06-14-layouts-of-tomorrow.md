@@ -35,7 +35,7 @@ There's a lot of great work out there - here's a few of my favorites:
 
 <figure>
     <a href="https://dribbble.com/shots/1573896-Warehouse" rel="noopener noreferrer" target="_blank">
-        <img src="{{ 'warehouse.jpg' | media(page) }}" alt="" />
+        <img src="{{ 'warehouse.jpg' | media(page) }}" alt="" loading="lazy" />
     </a>
     <figcaption>
         "Warehouse" by <a href="https://dribbble.com/Radium" rel="noopener noreferrer" target="_blank">Cosmin Capitanu</a>
@@ -44,7 +44,7 @@ There's a lot of great work out there - here's a few of my favorites:
 
 <figure>
     <a href="https://dribbble.com/shots/2375246-Fashion-Butique-slider-animation" rel="noopener noreferrer" target="_blank">
-        <img src="{{ 'fashion_boutique.gif' | media(page) }}" alt="" />
+        <img src="{{ 'fashion_boutique.gif' | media(page) }}" alt="" loading="lazy" />
     </a>
     <figcaption>
         "Fashion Boutique" by <a href="https://dribbble.com/KreativaStudio" rel="noopener noreferrer" target="_blank">KREATIVA Studio</a>
@@ -53,7 +53,7 @@ There's a lot of great work out there - here's a few of my favorites:
 
 <figure>
     <a href="https://dribbble.com/shots/4316958-Organic-Juicy-Co-Landing-Page" rel="noopener noreferrer" target="_blank">
-        <img src="{{ 'organic_juicy.png' | media(page) }}" alt="" />
+        <img src="{{ 'organic_juicy.png' | media(page) }}" alt="" loading="lazy" />
     </a>
     <figcaption>
         "Organic Juicy Co." by <a href="https://dribbble.com/broklinonjei" rel="noopener noreferrer" target="_blank">Broklin Onjei</a>
@@ -62,7 +62,7 @@ There's a lot of great work out there - here's a few of my favorites:
 
 <figure>
     <a href="https://dribbble.com/shots/1349782-Travel-Summary" rel="noopener noreferrer" target="_blank">
-        <img src="{{ 'travel_summary.jpg' | media(page) }}" alt="" />
+        <img src="{{ 'travel_summary.jpg' | media(page) }}" alt="" loading="lazy" />
     </a>
     <figcaption>
         "Travel Summary" by <a href="https://dribbble.com/p_kwiatkowski" rel="noopener noreferrer" target="_blank">Piotr Adam Kwiatkowski</a>
@@ -71,7 +71,7 @@ There's a lot of great work out there - here's a few of my favorites:
 
 <figure>
     <a href="https://dribbble.com/shots/2652364-Digital-Walls" rel="noopener noreferrer" target="_blank">
-        <img src="{{ 'digital_walls.gif' | media(page) }}" alt="" />
+        <img src="{{ 'digital_walls.gif' | media(page) }}" alt="" loading="lazy" />
     </a>
     <figcaption>
         "Digital Walls" by <a href="https://dribbble.com/Radium" rel="noopener noreferrer" target="_blank">Cosmin Capitanu</a>

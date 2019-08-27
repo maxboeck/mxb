@@ -13,8 +13,9 @@ Most of these pictures were shot by my girlfriend, Tina.
 {% for img in photos %}
 <figure>
     <img 
-      src="{{ img.src | media(page) }}"
-      alt=""
+        src="{{ img.src | media(page) }}"
+        alt=""
+        loading="lazy"
     >
     <figcaption>{{ img.caption }}</figcaption>
 </figure>
