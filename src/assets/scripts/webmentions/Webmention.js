@@ -13,9 +13,9 @@ export default class Webmention extends Component {
         const avatar = author.photo ? (
             <img
                 className="webmention__author__photo u-photo"
-                src={author.photo}
+                src={defaultAvatarSrc}
+                data-src={author.photo}
                 alt={author.name}
-                loading="lazy"
                 width={48}
                 height={48}
             />

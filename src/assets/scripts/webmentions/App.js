@@ -4,20 +4,26 @@ import Webmention from './Webmention'
 import Icon from './Icon'
 
 export default class App extends Component {
+    componentDidMount() {
+        if (window.initLazyLoad && typeof window.initLazyLoad === 'function') {
+            window.initLazyLoad()
+        }
+    }
+
     renderMentionsHeader(webmentions) {
         const faces = webmentions.slice(0, 5).map(entry => {
-            const imgSrc =
-                entry.author.photo || '/assets/images/avatar-default.jpg'
+            const defaultAvatarSrc = '/assets/images/avatar-default.jpg'
+            const imgSrc = entry.author.photo || defaultAvatarSrc
             return (
                 <img
                     key={entry['wm-id']}
                     className="webmentions__faces__img"
-                    src={imgSrc}
+                    src={defaultAvatarSrc}
+                    data-src={imgSrc}
                     title={entry.author.name}
                     alt=""
                     width={32}
                     height={32}
-                    loading="lazy"
                 />
             )
         })
