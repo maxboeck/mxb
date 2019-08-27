@@ -15,6 +15,7 @@ export default class Webmention extends Component {
                 className="webmention__author__photo u-photo"
                 src={author.photo}
                 alt={author.name}
+                loading="lazy"
             />
         ) : (
             <img

@@ -8,7 +8,7 @@
                 rel="noopener noreferrer"
             >
                 {% if webmention.author.photo %}
-                    <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}">
+                    <img class="webmention__author__photo u-photo" src="{{ webmention.author.photo }}" alt="" title="{{ webmention.author.name }}" loading="lazy">
                 {% else %}
                     <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.jpg' | url }}" alt="">
                 {% endif %}
