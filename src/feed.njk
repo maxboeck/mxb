@@ -11,7 +11,7 @@ excludeFromSitemap: true
     {% if collections.posts %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
-    <id>{{ site.url }}</id>
+    <id>{{ site.url }}/</id>
     <author>
         <name>{{ author.name }}</name>
         <email>{{ author.email }}</email>
