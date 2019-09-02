@@ -21,9 +21,11 @@ excludeFromSitemap: true
         <entry>
             <title>{{ post.data.title }}</title>
             <link href="{{ absolutePostUrl }}"/>
-            <updated>{{ post.date | rssDate }}</updated>
+            <updated>{{ post.date | iso }}</updated>
             <id>{{ absolutePostUrl }}</id>
-            <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+            <content type="html"><![CDATA[
+                {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}
+            ]]></content>
         </entry>
     {%- endfor -%}
 </feed>
