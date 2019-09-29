@@ -11,7 +11,7 @@ excludeFromSitemap: true
         "content": "{{ note.templateContent | excerpt | safe | striptags }}",
         "link": "{{ note.data.link }}",
         "tags": "{{ note.data.tags }}",
-        "syndicate": {{ note.data.syndicate | string }},
+        "syndicate": {{ note.data.syndicate | string }}
     }
     {%- if not loop.last -%},{%- endif -%}
 {% endfor %}
