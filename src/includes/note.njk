@@ -22,7 +22,7 @@
             </p>
             <span class="note__meta__divider" aria-hidden="true">&sdot;</span>
             <time class="note__date dt-published" datetime="{{ note.date | iso }}">
-                {{ note.date | readableDate }}
+                {{ note.date | readableDate('dd LLL yyyy') }}
             </time>
             {% if tags %}
             <div class="note__tags">

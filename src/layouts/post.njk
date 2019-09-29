@@ -46,7 +46,7 @@ layout: base
         </div>
 
         <p class="post__footer__info">
-            Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate }}
+            Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }}
         </p>
 
         <a
