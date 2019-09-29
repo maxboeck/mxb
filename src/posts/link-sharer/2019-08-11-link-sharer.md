@@ -41,10 +41,11 @@ function(){
     selection = encodeURIComponent(selection);
 
     // generate share URL
-    var url = 'https://mxb.dev/share/?title='+title+'&body='+selection+'&url'+encodeURIComponent(document.location.href)
+    var url = 'https://mxb.dev/share/?title='+title+'&body='+selection+'&url='+encodeURIComponent(document.location.href);
 
     // open popup window to sharing form
-    window.open(url,'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');
+    var opts = 'resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0';
+    window.open(url,'Sharer',opts);
 })()
 ```
 The bookmarklet looks like this: 
