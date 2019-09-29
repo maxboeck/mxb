@@ -1,8 +1,7 @@
 ---
 layout: page
-permalink: imprint/index.html
-title: Imprint
-subtitle: Legal Information and Stuff.
+permalink: legal/index.html
+title: Legal
 ---
 
 ## Content Ownership
