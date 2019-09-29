@@ -15,7 +15,8 @@ module.exports = {
     },
 
     readableDate: function(date, format) {
-        const dt = DateTime.fromJSDate(date)
+        // default to Europe/Vienna Timezone
+        const dt = DateTime.fromJSDate(date, { zone: 'UTC+2' })
         if (!format) {
             format =
                 dt.hour + dt.minute > 0 ? 'dd LLL yyyy - HH:mm' : 'dd LLL yyyy'
@@ -73,9 +74,7 @@ module.exports = {
             if (html) {
                 if (html.length > 2000) {
                     // really long html mentions, usually newsletters or compilations
-                    entry.content.value = `mentioned this in <a href="${
-                        entry.url
-                    }">${entry.url}</a>`
+                    entry.content.value = `mentioned this in <a href="${entry.url}">${entry.url}</a>`
                 }
                 // sanitize HTML
                 entry.content.value = sanitizeHTML(html, allowedHTML)
