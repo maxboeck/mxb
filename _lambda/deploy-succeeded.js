@@ -82,7 +82,14 @@ const prepareStatusText = note => {
     }
 
     // include the note url at the end;
-    text = text + ' ' + note.url
+    text += ' ' + note.url
+
+    // if it has a link, let that be the last url
+    // so twitter picks it up for the preview
+    if (note.link && note.link.length) {
+        text += ' ' + note.link
+    }
+
     return text
 }
 

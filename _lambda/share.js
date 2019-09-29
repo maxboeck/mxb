@@ -45,6 +45,7 @@ const getFileContent = data => {
         title: `"${sanitize(title)}"`,
         date: `"${date}"`,
         syndicate: syndicate,
+        link: `"${url}"`,
         tags: 'link'
     })
 
