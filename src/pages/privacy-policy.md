@@ -34,21 +34,12 @@ If your personal data was published in a webmention, you may at any time demand 
 
 ## Responsible Data Controller
 
-__Maximilian Böck__  
-Antonigasse 55  
-A-1170 Vienna  
-Austria
+__Darren Eastman__  
+NYC Region 
+United States
 
 If you have any questions or concerns about this,  
 please contact me at <a href="mailto:{{ author.email | obfuscate | safe }}">{{ author.email | obfuscate | safe }}</a>
 
-## Official Complaint
-
-It is within your rights to file an official complaint with the responsible data protection authority, should you believe this website is in violation of your privacy. I would still prefer that you reach out to me personally first - otherwise please contact:
-
-__Österreichische Datenschutzbehörde__  
-Hohenstaufengasse 3  
-1010 Vienna, AT  
-[dsb@dsb.gv.at](mailto:dsb@dsb.gv.at)
 
 <p class="u-align-right"><em>Version: 2019-01-23</em></p>

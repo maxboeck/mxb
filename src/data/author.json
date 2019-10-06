@@ -1,27 +1,20 @@
 {
-    "name": "Max Böck",
-    "email": "hello@mxb.dev",
+    "name": "Darren Eastman",
+    "email": "darren.m.eastman@gmail.com",
     "avatar": "/assets/images/avatar2.jpg",
     "social": {
         "twitter": {
-            "name": "mxbck",
-            "url": "https://twitter.com/mxbck"
+            "name": "EastmanDarren",
+            "url": "https://twitter.com/EastmanDarren"
         },
         "github": {
-            "name": "maxboeck",
-            "url": "https://github.com/maxboeck"
-        },
-        "codepen": {
-            "name": "mxbck",
-            "url": "https://codepen.io/mxbck/"
-        },
-        "notist": {
-            "name": "mxb",
-            "url": "https://noti.st/mxb"
+            "name": "Darren Eastman",
+            "url": "https://github.com/darren17082"
         },
         "keybase": {
-            "name": "mxb",
-            "url": "https://keybase.io/mxb"
+            "name": "Darren Eastman",
+            "url": "https://keybase.io/darreneastman"
         }
     }
 }
+
