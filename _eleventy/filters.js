@@ -71,15 +71,11 @@ module.exports = {
         const clean = entry => {
             const { html, text } = entry.content
 
-            if (html) {
-                if (html.length > 2000) {
-                    // really long html mentions, usually newsletters or compilations
-                    entry.content.value = `mentioned this in <a href="${entry.url}">${entry.url}</a>`
-                }
-                // sanitize HTML
-                entry.content.value = sanitizeHTML(html, allowedHTML)
+            if (html && html.length > 2000) {
+                // really long html mentions, usually newsletters or compilations
+                entry.content.value = `mentioned this in <a href="${entry.url}">${entry.url}</a>`
             } else {
-                entry.content.value = sanitizeHTML(text, allowedHTML)
+                entry.content.value = html ? sanitizeHTML(html, allowedHTML) : sanitizeHTML(text, allowedHTML)
             }
 
             return entry
