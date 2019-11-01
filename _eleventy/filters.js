@@ -40,6 +40,10 @@ module.exports = {
         return limit > 0 ? array.slice(0, limit) : array.slice(limit)
     },
 
+    stringify: function(json) {
+        return JSON.stringify(json)
+    },
+
     isOwnWebmention: function(webmention) {
         const urls = [
             'https://mxb.at',
@@ -71,11 +75,14 @@ module.exports = {
         const clean = entry => {
             const { html, text } = entry.content
 
-            if (html && html.length > 2000) {
+            if (html) {
                 // really long html mentions, usually newsletters or compilations
-                entry.content.value = `mentioned this in <a href="${entry.url}">${entry.url}</a>`
+                entry.content.value =
+                    html.length > 2000
+                        ? `mentioned this in <a href="${entry.url}">${entry.url}</a>`
+                        : sanitizeHTML(html, allowedHTML)
             } else {
-                entry.content.value = html ? sanitizeHTML(html, allowedHTML) : sanitizeHTML(text, allowedHTML)
+                entry.content.value = sanitizeHTML(text, allowedHTML)
             }
 
             return entry

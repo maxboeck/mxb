@@ -17,6 +17,9 @@
         {% else %}
             <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | url }}">
         {% endif %}
+        {% if map %}
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        {% endif %}
 
         {% include "meta.njk" %}
         <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('theme-dark');</script>
@@ -52,6 +55,10 @@
         <script src="{{ '/assets/js/main.min.js' | url }}" defer></script>
 
         {# Include additional scripts on post/note pages #}
+        {% if map %}
+            <script src="{{ '/assets/js/map.min.js' | url }}"></script>
+        {% endif %}
+
         {% if layout == 'post' or layout == 'note' %}
             <script src="//platform.twitter.com/widgets.js" async defer></script>
             <script src="{{ '/assets/js/webmentions.min.js' | url }}" defer></script>

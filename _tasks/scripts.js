@@ -21,7 +21,8 @@ const webpackConfig = {
     entry: {
         main: `./${config.assetSrc}/scripts/main.js`,
         webmentions: `./${config.assetSrc}/scripts/webmentions/index.js`,
-        sharer: `./${config.assetSrc}/scripts/sharer/index.js`
+        sharer: `./${config.assetSrc}/scripts/sharer/index.js`,
+        map: `./${config.assetSrc}/scripts/map/index.js`
     },
     output: { filename: '[name].js' },
     module: {

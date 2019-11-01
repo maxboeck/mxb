@@ -1,0 +1,25 @@
+.map {
+    height: 600px;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    .leaflet-tile-pane {
+        filter: invert(1);
+
+        .theme-dark & {
+            filter: none;
+        }
+    }
+
+    &.leaflet-container {
+        background-color: $bg-color;
+        background-color: var(--bg-color);
+    }
+}
+
+.maplocations {
+    @include mq(md) {
+        columns: 2;
+    }
+}
