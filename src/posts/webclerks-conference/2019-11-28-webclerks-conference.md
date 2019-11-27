@@ -9,10 +9,10 @@ image: webclerks-team.jpg
 
 <figure class="extend">
     <img src="{{ 'webclerks-team.jpg' | media(page) }}" alt="The webclerks team on stage in front of a screen">
-    <figcaption>Photo by Sergey Poliakov (Twitter)</figcaption>
+    <figcaption>Photo by Sergey Poliakov <a href="https://twitter.com/sergeypoliakov/status/1199253984579670018">(Twitter)</a></figcaption>
 </figure>
 
-I had been to quite a few web development conferences as an attendee, and lately even as a speaker. But the organization of such events always eluded me. I of course noticed when an event was particularly well put together, but I always assumed that the people running the show had a large team, lots of experience and were just very talented organizers.
+I have been to quite a few web development conferences as an attendee, and lately even as a speaker. But the organization of such events always eluded me. I of course noticed when an event was particularly well put together, but I always assumed that the people running the show had a large team, lots of experience and were just very talented organizers.
 
 That's why it felt so weird to suddenly find myself in that group. Clearly we're just a bunch of people who thought it would be cool to invite some of our heroes and heroines to Vienna, with little prior experience in creating an event at that scale. 
 
@@ -45,7 +45,7 @@ Here are some of my personal takeaways from the experience:
 
 - If you want to livestream an event on youtube, that apparently requires a "brand account". These take 24 hours to approve, so it's best to not discover this __the night before the conference__. (Thankfully [Joschi](https://twitter.com/jkphl) from a11yclub helped us out there!)
 
-- The __glass water bottles__ we put into everyone's goodie bag have been a big hit! People liked that they could refill anytime. Less waste, more hydration!
+- The __glass water bottles__ we put into everyone's goodie bag have been a big hit. People liked that they could refill anytime. Less waste, more hydration!
 
 - You can __make your own rules!__ Not all tech confs have to follow the same recipe. In fact some of the little differences are what makes you stand out.
 
@@ -59,7 +59,7 @@ Here are some of my personal takeaways from the experience:
 
 I really have to highlight the insane amount of work that [Manuel](https://twitter.com/mmatuzo) and [Claudi](https://twitter.com/claudia_laber) have put into this event. There's an internal Trello board with about a gazillion tasks on it, and most of those had their names on them. It is beyond me how they did it.
 
-[Daniel](https://twitter.com/lctdnl) has been an absolute beast as well - On top of all the regular organization, he did all the designs, printed badges, flags, shirts, stickers - you name it. If you thought webclerks looked like a professional brand, it's because of him.
+[Daniel](https://twitter.com/lctdnl) has been an absolute beast as well - On top of regular organization, he did all the designs, printed badges, flags, shirts, stickers - you name it. If you thought webclerks looked like a professional brand, it's because of him.
 
 We also had lots of help from awesome volunteers who dedicated their time and energy to our event. [Jeannine](https://twitter.com/jeannineprueger), [Kerstin](https://twitter.com/KerstinWuk), Michel, Anne and [Gregor](https://twitter.com/greg_808) have been incredibly helpful and I'm so glad they joined our team.
 
@@ -67,7 +67,7 @@ We also had lots of help from awesome volunteers who dedicated their time and en
 
 I honestly can't think of many industries where it would have been possible to put an event like this together from scratch. I believe the reason this worked at all is the incredible openness displayed in the web community. 
 
-Where international speakers come to a small local conference. Where sponsors support a relatively unknown event. Where attendees pay it forward to enable underrepresented others to join.
+Where international speakers come to a small local conference to share their knowledge. Where companies like mozilla support a relatively unknown event and fund inclusiveness. Where attendees pay it forward to enable underrepresented others to join.
 
 I'm happy and proud to be a part of that community. 
 
