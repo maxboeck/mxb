@@ -45,7 +45,7 @@ Here are some of my personal takeaways from the experience:
 
 - If you want to livestream an event on youtube, that apparently requires a "brand account". These take 24 hours to approve, so it's best to not discover this __the night before the conference__. (Thankfully [Joschi](https://twitter.com/jkphl) from a11yclub helped us out there!)
 
-- The __glass water bottles__ we put into everyone's goodie bag have been a big hit. People liked that they could refill anytime. Less waste, more hydration!
+- The __glass water bottles__ we put into everyone's goodie bag were a big hit. People liked that they could refill anytime. Less waste, more hydration!
 
 - You can __make your own rules!__ Not all tech confs have to follow the same recipe. In fact some of the little differences are what makes you stand out.
 
@@ -59,7 +59,7 @@ Here are some of my personal takeaways from the experience:
 
 I really have to highlight the insane amount of work that [Manuel](https://twitter.com/mmatuzo) and [Claudi](https://twitter.com/claudia_laber) have put into this event. There's an internal Trello board with about a gazillion tasks on it, and most of those had their names on them. It is beyond me how they did it.
 
-[Daniel](https://twitter.com/lctdnl) has been an absolute beast as well - On top of regular organization, he did all the designs, printed badges, flags, shirts, stickers - you name it. If you thought webclerks looked like a professional brand, it's because of him.
+[Daniel](https://twitter.com/lctdnl) has been an absolute beast as well - he did all the designs, printed badges, flags, shirts, stickers - you name it. If you thought webclerks looked like a professional brand, it's because of him.
 
 We also had lots of help from awesome volunteers who dedicated their time and energy to our event. [Jeannine](https://twitter.com/jeannineprueger), [Kerstin](https://twitter.com/KerstinWuk), Michel, Anne and [Gregor](https://twitter.com/greg_808) have been incredibly helpful and I'm so glad they joined our team.
 
