@@ -41,7 +41,7 @@ None of us really knew how this would turn out, so we just gave it our best shot
 
 Here are some of my personal takeaways from the experience:
 
-- It really pays off to have a __good tech team__. We could not have asked for a better crew, they handled the event flawlessly by themselves. A huge thing to get off your shoulders as an organizer.
+- It really pays off to have a __good tech team__. We could not have asked for a better crew than [ALC](https://www.eventsolutions.cc/), they handled the event flawlessly by themselves. A huge thing to get off your shoulders as an organizer.
 
 - If you want to livestream an event on youtube, that apparently requires a "brand account". These take 24 hours to approve, so it's best to not discover this __the night before the conference__. (Thankfully [Joschi](https://twitter.com/jkphl) from a11yclub helped us out there!)
 
