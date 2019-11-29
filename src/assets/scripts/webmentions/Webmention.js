@@ -18,6 +18,7 @@ export default class Webmention extends Component {
                 alt={author.name}
                 width={48}
                 height={48}
+                loading="lazy"
             />
         ) : (
             <img
