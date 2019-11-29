@@ -32,9 +32,9 @@
     --color-scheme: 'light';
     @include light-color-scheme();
 
-    // @media (prefers-color-scheme: dark) {
-    //     --color-scheme: 'dark';
-    // }
+    @media (prefers-color-scheme: dark) {
+        --color-scheme: 'dark';
+    }
 
     &.theme-dark {
         @include dark-color-scheme();
