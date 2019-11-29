@@ -43,17 +43,15 @@ const cleanMentions = entry => {
     }
 
     if (html) {
-        if (html.length > 2000) {
-            // really long html mentions, usually newsletters or compilations
-            entry.content.value = `mentioned this in <a href="${entry.url}">${
-                entry.url
-            }</a>`
-        }
-        // sanitize HTML
-        entry.content.value = sanitizeHTML(html, allowedHTML)
+        // really long html mentions, usually newsletters or compilations
+        entry.content.value =
+            html.length > 2000
+                ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
+                : sanitizeHTML(html, allowedHTML)
     } else {
-        entry.content.value = text
+        entry.content.value = sanitizeHTML(text, allowedHTML)
     }
+
     return entry
 }
 
