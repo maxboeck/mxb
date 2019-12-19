@@ -18,18 +18,15 @@
     }
     &__title {
         margin-bottom: 0.25rem;
-        color: $brand-color-primary;
         color: var(--brand-color-primary);
 
         .postlist__item--draft & {
-            color: $brand-color-secondary;
             color: var(--brand-color-secondary);
         }
     }
     &__meta {
         font-size: 1.125rem;
         margin-bottom: 1rem;
-        color: $text-color-secondary;
         color: var(--text-color-secondary);
     }
     &__tags {
@@ -40,7 +37,6 @@
     }
     &__status {
         font-weight: 700;
-        color: $brand-color-secondary;
         color: var(--brand-color-secondary);
     }
     &__excerpt {

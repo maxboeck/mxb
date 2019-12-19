@@ -42,12 +42,10 @@ p {
 }
 
 a {
-    color: $brand-color-primary;
     color: var(--brand-color-primary);
     text-decoration: none;
 
     @include hover-focus {
-        color: $brand-color-primary-offset;
         color: var(--brand-color-primary-offset);
     }
 }
@@ -56,7 +54,6 @@ blockquote {
     font-family: $font-family-serif;
     font-style: italic;
     padding-left: 2.25em;
-    border-left: 10px solid $border-color;
     border-left: 10px solid var(--border-color);
 
     footer {

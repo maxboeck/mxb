@@ -1,5 +1,4 @@
 .header {
-    border-top: 5px solid $header-border-color;
     border-top: 5px solid var(--header-border-color);
     padding: 2rem 0;
 
@@ -19,7 +18,6 @@
             width: 100%;
             height: auto;
             vertical-align: bottom;
-            fill: $text-color;
             fill: var(--text-color);
         }
     }

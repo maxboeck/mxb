@@ -28,15 +28,11 @@
         height: 3rem;
         margin-top: 1rem;
         border-radius: 50%;
-        color: $text-color;
         color: var(--text-color);
-        background-color: $bg-color-secondary;
         background-color: var(--bg-color-secondary);
 
         &:hover {
-            color: $bg-color;
             color: var(--bg-color);
-            background-color: $brand-color-primary;
             background-color: var(--brand-color-primary);
         }
     }

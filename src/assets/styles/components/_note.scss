@@ -2,9 +2,7 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
-    border: 1px solid $border-color;
     border: 1px solid var(--border-color);
-    background-color: $bg-color;
     background-color: var(--bg-color);
 
     &--detail {
@@ -24,7 +22,6 @@
         }
     }
     &__date {
-        color: $text-color-secondary;
         color: var(--text-color-secondary);
     }
     &__tags {
@@ -44,7 +41,6 @@
         font-size: 0.875rem;
         padding: 0.25em 0.5em;
         border-radius: 0.25rem;
-        background-color: $brand-color-secondary;
         background-color: var(--brand-color-secondary);
         color: #fff;
     }
@@ -94,13 +90,10 @@
     }
     &__footer {
         display: flex;
-        color: $text-color-secondary;
         color: var(--text-color-secondary);
         font-size: 0.875rem;
         padding: 1rem;
-        background-color: $bg-color-secondary;
         background-color: var(--bg-color-secondary);
-        border-top: 1px solid $border-color;
         border-top: 1px solid var(--border-color);
     }
     &__stats {
@@ -134,7 +127,6 @@
     }
     &__webmentions {
         padding: 1rem;
-        border-top: 1px solid $border-color;
         border-top: 1px solid var(--border-color);
 
         .webmentions__item {
@@ -173,7 +165,6 @@
         content: '';
         display: block;
         width: 1px;
-        background-color: $border-color;
         background-color: var(--border-color);
         position: absolute;
         top: 0;
