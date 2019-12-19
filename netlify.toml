@@ -35,6 +35,13 @@
     status = 301
     force = true
 
+# Bots
+[[redirects]]
+    from = "/wp-login.php"
+    to = "https://www.google.com/"
+    status = 302
+    force = true
+
 # Favicon
 [[redirects]]
     from = "/assets/images/touch/*"
