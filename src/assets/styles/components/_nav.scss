@@ -189,7 +189,7 @@
 
         &__togglebtn {
             display: flex;
-            top: 2.625rem;
+            top: 2.25rem;
         }
 
         &__darkmodebtn {
@@ -204,7 +204,7 @@
 
     @include mq-down(md) {
         &__togglebtn {
-            top: 1.5rem;
+            top: 1.15rem;
         }
     }
 }
