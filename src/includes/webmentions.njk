@@ -1,4 +1,5 @@
-{% set mentions = webmentions.children | webmentionsByUrl(webmentionUrl) %}
+{%- set mentions = webmentions.children | webmentionsByUrl(webmentionUrl) -%}
+{%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
 <div
     class="webmentions{% if layout == 'note' %} webmentions--expanded{% endif %}" 
     id="webmentions"
@@ -8,8 +9,11 @@
     <div data-render-root>
         {% if mentions | length %}
             <div class="webmentions__header">
-                <a href="#webmentions" class="webmentions__toggle">
-                    {% icon "message" %} Show All ({{ mentions | length }})
+                <span class="webmentions__metric" aria-label="{{ likeCount }} Likes">
+                    {% icon "heart" %} {{ likeCount }}
+                </span>
+                <a href="#webmentions" class="webmentions__metric" aria-label="{{ mentions | length }} Mentions, show all">
+                    {% icon "message" %} {{ mentions | length }} (Show All)
                 </a>
                 <div class="webmentions__faces">
                     {% for webmention in mentions | slice(5) %}
@@ -43,7 +47,7 @@
                 </ol>
             </div>
         {% else %}
-            <p class="webmentions__empty">No mentions yet.</p>
+            <p class="webmentions__empty">No webmentions yet.</p>
         {% endif %}
     </div>
 </div>

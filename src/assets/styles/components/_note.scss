@@ -132,6 +132,9 @@
         padding: 1rem;
         border-top: 1px solid var(--border-color);
 
+        .webmentions__header {
+            display: none;
+        }
         .webmentions__item {
             margin-bottom: 0 !important;
         }

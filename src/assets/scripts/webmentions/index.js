@@ -55,20 +55,25 @@ const cleanMentions = entry => {
     return entry
 }
 
-const renderMentions = webmentions => {
-    if (webmentions.length) {
-        render(
-            <App webmentions={webmentions} />,
-            webmentionsElement,
-            replaceElement
-        )
-    }
+const getLikeCount = webmentions => {
+    return webmentions.filter(entry => entry['wm-property'] === 'like-of')
+        .length
 }
 
 if (webmentionsElement) {
     fetchMentions()
-        .then(processMentions)
-        .then(renderMentions)
+        .then(data => {
+            const likeCount = getLikeCount(data)
+            const webmentions = processMentions(data)
+
+            if (data.length) {
+                render(
+                    <App webmentions={webmentions} likeCount={likeCount} />,
+                    webmentionsElement,
+                    replaceElement
+                )
+            }
+        })
         .catch(err => {
             console.error(err)
         })
