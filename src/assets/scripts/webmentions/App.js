@@ -10,7 +10,7 @@ export default class App extends Component {
         }
     }
 
-    renderMentionsHeader(webmentions) {
+    renderMentionsHeader(webmentions, likeCount) {
         const faces = webmentions.slice(0, 5).map(entry => {
             const defaultAvatarSrc = '/assets/images/avatar-default.jpg'
             const imgSrc = entry.author.photo || defaultAvatarSrc
@@ -36,8 +36,18 @@ export default class App extends Component {
         }
         return (
             <div className="webmentions__header">
-                <a href="#webmentions" class="webmentions__toggle">
-                    <Icon name="message" /> Show All ({webmentions.length})
+                <span
+                    className="webmentions__metric"
+                    aria-label={`${likeCount} Likes`}
+                >
+                    <Icon name="heart" /> {likeCount}
+                </span>
+                <a
+                    href="#webmentions"
+                    className="webmentions__metric"
+                    aria-label={`${webmentions.length} Mentions, show all`}
+                >
+                    <Icon name="message" /> {webmentions.length} (Show All)
                 </a>
                 <div className="webmentions__faces">{faces}</div>
                 <a
@@ -80,14 +90,14 @@ export default class App extends Component {
         )
     }
 
-    render({ webmentions }) {
+    render({ webmentions, likeCount }) {
         if (!webmentions.length) {
-            return <p>No webmentions yet.</p>
+            return <p className="webmentions__empty">No webmentions yet.</p>
         }
 
         return (
             <div data-rendered>
-                {this.renderMentionsHeader(webmentions)}
+                {this.renderMentionsHeader(webmentions, likeCount)}
                 <div className="webmentions__content">
                     {this.renderMentionsList(webmentions)}
                 </div>

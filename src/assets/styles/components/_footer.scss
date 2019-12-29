@@ -5,11 +5,11 @@
 
     a,
     button {
-        color: var(--text-color-secondary);
+        color: inherit;
+        text-decoration: underline;
 
         @include hover-focus {
-            color: var(--text-color);
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
 

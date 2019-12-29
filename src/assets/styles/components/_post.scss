@@ -5,7 +5,7 @@
     &__title {
         @extend .page__title;
         @include mq(lg) {
-            font-size: 5.5rem !important;
+            font-size: 6rem !important;
         }
     }
     &__meta {
@@ -56,5 +56,9 @@
     &__title {
         @extend .smalltitle;
         margin-bottom: 1rem;
+    }
+
+    @include mq(md) {
+        padding: 3rem 0;
     }
 }
