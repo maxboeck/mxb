@@ -8,7 +8,7 @@
     }
 
     &__brand {
-        display: block;
+        display: flex;
         position: relative;
         width: 4rem;
         height: 1.5rem; // IE11 compat
