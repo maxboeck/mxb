@@ -2,14 +2,15 @@ const fs = require('fs')
 const fetch = require('node-fetch')
 const unionBy = require('lodash/unionBy')
 const domain = require('./site.json').domain
+
 // Load legacy webmentions from mxb.at
-const legacyWebmentions = require('./legacy/webmentions-mxb.at.json')
+const legacyWebmentions = require('../../_cache/webmentions-mxb.at.json')
 
 // Load .env variables with dotenv
 require('dotenv').config()
 
 // Define Cache Location and API Endpoint
-const CACHE_FILE_PATH = '_cache/webmentions.json'
+const CACHE_DIR = '_cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
@@ -17,7 +18,7 @@ async function fetchWebmentions(since, perPage = 10000) {
     if (!domain) {
         // If we dont have a domain name, abort
         console.warn(
-            'unable to fetch webmentions: no domain name specified in site.json'
+            '>>> unable to fetch webmentions: no domain name specified in site.json'
         )
         return false
     }
@@ -25,7 +26,7 @@ async function fetchWebmentions(since, perPage = 10000) {
     if (!TOKEN) {
         // If we dont have a domain access token, abort
         console.warn(
-            'unable to fetch webmentions: no access token specified in environment.'
+            '>>> unable to fetch webmentions: no access token specified in environment.'
         )
         return false
     }
@@ -37,7 +38,7 @@ async function fetchWebmentions(since, perPage = 10000) {
     if (response.ok) {
         const feed = await response.json()
         console.log(
-            `${feed.children.length} new webmentions fetched from ${API}`
+            `>>> ${feed.children.length} new webmentions fetched from ${API}`
         )
         return feed
     }
@@ -52,23 +53,25 @@ function mergeWebmentions(a, b) {
 
 // save combined webmentions in cache file
 function writeToCache(data) {
-    const dir = '_cache'
+    const filePath = `${CACHE_DIR}/webmentions.json`
     const fileContent = JSON.stringify(data, null, 2)
     // create cache folder if it doesnt exist already
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir)
+    if (!fs.existsSync(CACHE_DIR)) {
+        fs.mkdirSync(CACHE_DIR)
     }
     // write data to cache json file
-    fs.writeFile(CACHE_FILE_PATH, fileContent, err => {
+    fs.writeFile(filePath, fileContent, err => {
         if (err) throw err
-        console.log(`webmentions cached to ${CACHE_FILE_PATH}`)
+        console.log(`>>> webmentions cached to ${filePath}`)
     })
 }
 
 // get cache contents from json file
 function readFromCache() {
-    if (fs.existsSync(CACHE_FILE_PATH)) {
-        const cacheFile = fs.readFileSync(CACHE_FILE_PATH)
+    const filePath = `${CACHE_DIR}/webmentions.json`
+
+    if (fs.existsSync(filePath)) {
+        const cacheFile = fs.readFileSync(filePath)
         const cachedWebmentions = JSON.parse(cacheFile)
 
         // merge cache with wms for legacy domain
@@ -89,7 +92,9 @@ module.exports = async function() {
     const cache = readFromCache()
 
     if (cache.children.length) {
-        console.log(`${cache.children.length} webmentions loaded from cache`)
+        console.log(
+            `>>> ${cache.children.length} webmentions loaded from cache`
+        )
     }
 
     // Only fetch new mentions in production
