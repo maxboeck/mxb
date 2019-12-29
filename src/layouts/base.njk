@@ -32,11 +32,6 @@
         {# Main JS Bundle #}
         <script src="{{ '/assets/js/main.js' | url }}" defer></script>
 
-        {# Include additional scripts on post/note pages #}
-        {% if map %}
-            <script src="{{ '/assets/js/map.js' | url }}"></script>
-        {% endif %}
-
         {% if layout == 'post' or layout == 'note' %}
             <script src="//platform.twitter.com/widgets.js" async defer></script>
             <script src="{{ '/assets/js/webmentions.js' | url }}" defer></script>

@@ -3,7 +3,6 @@ layout: page
 title: Traveling
 subtitle: "Places I've been to"
 permalink: traveling/index.html
-map: true
 ---
 
 <div id="mapcontainer" class="map u-mb2"></div>
@@ -15,3 +14,4 @@ map: true
 </ul>
 
 <script id="mapdata" type="application/json">{{ places | stringify | safe }}</script>
+<script src="{{ '/assets/js/map.js' | url }}"></script>
