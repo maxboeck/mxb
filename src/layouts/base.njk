@@ -10,15 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
-        <link rel="preload" href="{{ '/assets/fonts/noe-display-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
         {% if build.env !== 'production' %}
             <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
         {% else %}
             <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | url }}">
-        {% endif %}
-        {% if map %}
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
         {% endif %}
 
         {% include "meta.njk" %}

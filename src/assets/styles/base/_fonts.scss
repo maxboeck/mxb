@@ -2,8 +2,8 @@
     font-family: 'Noe Display';
     font-style: normal;
     font-display: swap;
-    font-weight: 400;
-    src: local('Noe Display'), local('NoeDisplay-Regular'),
-        url('/assets/fonts/noe-display-regular.woff2') format('woff2'),
-        url('/assets/fonts/noe-display-regular.woff') format('woff');
+    font-weight: 500;
+    src: local('NoeDisplay-Medium'),
+        url('/assets/fonts/noe-display-medium.woff2') format('woff2'),
+        url('/assets/fonts/noe-display-medium.woff') format('woff');
 }
