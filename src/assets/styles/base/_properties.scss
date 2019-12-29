@@ -21,8 +21,8 @@
     --text-color: #ffffff;
     --text-color-secondary: #818a91;
     --border-color: #2d2d2d;
-    --brand-color-primary: #{darken($brand-red, 4%)};
-    --brand-color-primary-offset: #{darken($brand-red, 8%)};
+    --brand-color-primary: #{lighten($brand-red, 6%)};
+    --brand-color-primary-offset: #{darken($brand-red, 2%)};
     --brand-color-secondary: #{$brand-cyan};
 }
 
