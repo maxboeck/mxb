@@ -1,6 +1,5 @@
 const config = require('./_config.json')
 const gulp = require('gulp')
-const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const webpack = require('webpack')
 const webpackStream = require('webpack-stream')
@@ -42,6 +41,5 @@ gulp.task('scripts', function() {
         .src(config.assetSrc + '/scripts/main.js')
         .pipe(webpackStream(webpackConfig))
         .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.assetDest + '/js'))
 })

@@ -11,26 +11,12 @@
 
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-
-        {% if build.env !== 'production' %}
-            <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
-        {% else %}
-            <link rel="stylesheet" href="{{ '/assets/css/main.min.css' | url }}">
-        {% endif %}
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 
         {% include "meta.njk" %}
         <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('theme-dark');</script>
     </head>
     <body>
-        <!--[if lte IE 9]>
-        <div class="legacy-warning">
-            <div class="container">
-                Seems like your browser is quite outdated. Why not <a href="http://browsehappy.com/">
-                upgrade to a modern one</a> for free and improve your experience?
-            </div>
-        </div>
-        <![endif]-->
-
         <a href="#main" class="sr-skip-link">skip to main content</a>
 
         <div class="hfeed layout" role="document">
@@ -41,24 +27,19 @@
             </main>
 
             {% include "footer.njk" %}
-
-            {% if backgroundPattern %}
-                {%- set patternUrl -%}/assets/images/patterns/{{ backgroundPattern }}{%- endset -%}
-                <div class="background-pattern" style="background-image: url({{ patternUrl | url }});"></div>
-            {% endif %}
         </div>
 
         {# Main JS Bundle #}
-        <script src="{{ '/assets/js/main.min.js' | url }}" defer></script>
+        <script src="{{ '/assets/js/main.js' | url }}" defer></script>
 
         {# Include additional scripts on post/note pages #}
         {% if map %}
-            <script src="{{ '/assets/js/map.min.js' | url }}"></script>
+            <script src="{{ '/assets/js/map.js' | url }}"></script>
         {% endif %}
 
         {% if layout == 'post' or layout == 'note' %}
             <script src="//platform.twitter.com/widgets.js" async defer></script>
-            <script src="{{ '/assets/js/webmentions.min.js' | url }}" defer></script>
+            <script src="{{ '/assets/js/webmentions.js' | url }}" defer></script>
         {% endif %}
 
         <!--! LAST BUILD: {{ build.timestamp | iso }} -->
