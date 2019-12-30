@@ -1,5 +1,5 @@
 ---
-title: Webclerks Conference 2019
+title: Webclerks Conference
 slug: webclerks-conf-2019
 tags: general
 image: webclerks-team.jpg
