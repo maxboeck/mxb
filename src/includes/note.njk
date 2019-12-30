@@ -35,10 +35,10 @@
         <div class="note__content">
             <div class="e-content p-name markdown">
                 {% if isDetailView %}
-                    {% if title %}<h1 class="h2">{{ title }}</h1>{% endif %}
+                    {% if title %}<h1 class="note__title">{{ title }}</h1>{% endif %}
                     {{ content | safe }}
                 {% else %}
-                    {% if note.data.title %}<h2>{{ note.data.title }}</h2>{% endif %}
+                    {% if note.data.title %}<h2 class="note__title">{{ note.data.title }}</h2>{% endif %}
                     {{ note.templateContent | safe }}
                 {% endif %}
             </div>
