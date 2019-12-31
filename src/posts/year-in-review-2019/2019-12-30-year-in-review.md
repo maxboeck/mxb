@@ -47,7 +47,7 @@ Following my blog post about the topic, I gave a talk on [the CSS Mindset](https
 
 A big part of this year was devoted to making our own [Webclerks Conference](https://webclerks.at/) happen in Vienna. It was the first time for me to be involved in the organization of such an event and I really had no idea how it would turn out, so I'm overjoyed that it went so well. 
 
-I also shared my experiences with the IndieWeb in a talk called ["Rage against the Content Machine"](https://noti.st/mxb/lhMFMv/rage-against-the-content-machine) there. I'd love to do that one again in the new year.
+I also shared my experiences with the IndieWeb in a talk called ["Rage against the Content Machine"](https://youtu.be/ucLEMETfrTA?t=7282) there. I'd love to do that one again in the new year.
 
 ## Traveling
 
