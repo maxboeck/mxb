@@ -15,11 +15,12 @@ Besides working as a frontend developer on a number of challenging projects this
 
 ## Writing
 
-Counting this one, I've written ten new posts in 2019. That's more than last year, but I'd still like to increase that number going forward.
+Counting this one, I've written ten new posts in 2019. That's more than last year, but I'd still like to increase that number.
 
 The most popular posts were: 
 
-* ["The CSS Mindset"](/blog/the-css-mindset/), a collection of helpful mental models for writing CSS, and 
+* ["The CSS Mindset"](/blog/the-css-mindset/), a collection of helpful mental models for writing CSS,
+* ["IndieWeb Link Sharing"](/blog/indieweb-link-sharing/), a DIY-sharing-widget technique, and 
 * ["Static Indieweb pt2: Using Webmentions"](/blog/using-webmentions-on-static-sites/), a rundown of how to implement webmentions with Eleventy. 
 
 The feedback from the web community on these posts was amazing, and it never gets old to hear that anything you've made actually helped people in some way.
@@ -44,7 +45,9 @@ Following my blog post about the topic, I gave a talk on [the CSS Mindset](https
   <figcaption>One of the slides in my <a href="https://noti.st/mxb/lhMFMv/rage-against-the-content-machine">IndieWeb talk</a></figcaption>
 </figure>
 
-A big part of this year was devoted to making our own [Webclerks Conference](https://webclerks.at/) happen in Vienna. It was the first time for me to be involved in the organization of such an event and I really had no idea how it would turn out, so I'm overjoyed that it went so well. I also shared my experiences with the IndieWeb in a talk called ["Rage against the Content Machine"](https://noti.st/mxb/lhMFMv/rage-against-the-content-machine) there. I'd love to do that one again in the new year.
+A big part of this year was devoted to making our own [Webclerks Conference](https://webclerks.at/) happen in Vienna. It was the first time for me to be involved in the organization of such an event and I really had no idea how it would turn out, so I'm overjoyed that it went so well. 
+
+I also shared my experiences with the IndieWeb in a talk called ["Rage against the Content Machine"](https://noti.st/mxb/lhMFMv/rage-against-the-content-machine) there. I'd love to do that one again in the new year.
 
 ## Traveling
 
