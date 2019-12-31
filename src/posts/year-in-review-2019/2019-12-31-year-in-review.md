@@ -19,9 +19,9 @@ Counting this one, I've written ten new posts in 2019. That's more than last yea
 
 The most popular posts were: 
 
-* ["The CSS Mindset"](/blog/the-css-mindset/), a collection of helpful mental models for writing CSS,
-* ["IndieWeb Link Sharing"](/blog/indieweb-link-sharing/), a DIY-sharing-widget technique, and 
-* ["Static Indieweb pt2: Using Webmentions"](/blog/using-webmentions-on-static-sites/), a rundown of how to implement webmentions with Eleventy. 
+* [The CSS Mindset](/blog/the-css-mindset/): a collection of helpful mental models for writing CSS,
+* [On Simplicity](/blog/on-simplicity/): how sometimes "less is more" in tech, and 
+* [Static Indieweb pt2: Using Webmentions](/blog/using-webmentions-on-static-sites/): a rundown of how to implement webmentions with Eleventy. 
 
 The feedback from the web community on these posts was amazing, and it never gets old to hear that anything you've made actually helped people in some way.
 
