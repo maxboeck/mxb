@@ -7,8 +7,7 @@ const criticalConfig = {
     base: config.buildDest + '/',
     minify: true,
     width: 1280,
-    height: 800,
-    ignore: ['@font-face']
+    height: 800
 }
 
 gulp.task('critical', function() {
