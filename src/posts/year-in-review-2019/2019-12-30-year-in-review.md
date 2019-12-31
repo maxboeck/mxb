@@ -67,7 +67,7 @@ This year, I visited Portugal, Georgia, Belarus, the Czech Republic and the Azor
 
 ## Personal
 
-2019 was also a source of frustration in many ways. From the ongoing global shift to right-wing populism to increasingly dystopian technologies to the looming threat of climate change. I've had some issues with worrying and stress in my personal life as well. 
+2019 was also a source of frustration in many ways. From the ongoing global shift to right-wing populism to increasingly dystopian technology trends to the looming threat of climate change. I've had some issues with worrying and stress in my personal life as well. 
 
 But I'd like to think that the new decade can be an opportunity to learn from past mistakes and change things for the better. I'm going to try and focus on that going forward.
 
