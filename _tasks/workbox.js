@@ -7,7 +7,9 @@ const workboxConfig = {
     globPatterns: [
         'index.html',
         '{404,about,blog,notes}/*.html',
-        'assets/{css,js,fonts,icons,images}/*'
+        'assets/{css,fonts,icons,images}/*',
+        'assets/js/main.js',
+        'assets/js/webmentions.js'
     ],
     swDest: `${config.buildDest}/sw.js`,
     clientsClaim: true,
