@@ -1,5 +1,5 @@
 import 'focus-visible'
-import 'svgxuse'
+// import 'svgxuse'
 
 import './inc/polyfills'
 import './inc/navigation'
