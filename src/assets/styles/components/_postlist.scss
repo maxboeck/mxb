@@ -10,19 +10,13 @@
     }
     &__link {
         display: block;
-        color: inherit;
-
-        @include hover-focus {
-            color: inherit;
-        }
-    }
-    &__title {
-        margin-bottom: 0;
-        color: var(--brand-color-primary);
 
         .postlist__item--draft & {
             color: var(--brand-color-secondary);
         }
+    }
+    &__title {
+        margin-bottom: 0;
     }
     &__meta {
         font-size: 1.125rem;
