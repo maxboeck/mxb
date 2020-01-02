@@ -17,9 +17,9 @@ function initMap() {
 
     const markerIcon = L.icon({
         ...L.Icon.Default.prototype.options,
-        iconUrl: '/assets/images/marker.png',
-        iconRetinaUrl: '/assets/images/marker@2x.png',
-        shadowUrl: '/assets/images/marker-shadow.png'
+        iconUrl: '/assets/images/map/marker.png',
+        iconRetinaUrl: '/assets/images/map/marker@2x.png',
+        shadowUrl: '/assets/images/map/marker-shadow.png'
     })
     const makeMarkers = (feature, latlng) =>
         L.marker(latlng, { icon: markerIcon })
