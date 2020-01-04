@@ -1,7 +1,7 @@
 ---
 title: "Letting Go of the Old Internet"
 date: "2019-12-26T17:47:06.885Z"
-syndicate: true
+syndicate: false
 link: "https://dezz.ie/web-history/still-making-for-ourselves/"
 tags: link
 ---
