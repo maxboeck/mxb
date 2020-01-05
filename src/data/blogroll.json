@@ -185,5 +185,19 @@
         "feed": "https://remysharp.com/feed.xml",
         "description": "Remy is a developer running his own business called Left Logic out of Brighton, UK. His blog mostly concentrates on web, code, a touch of business and some personal pieces. Highly Recommended.",
         "twitter": "rem"
+    },
+    {
+        "title": "Søren Birkemeyer",
+        "url": "https://annualbeta.com",
+        "feed": "https://annualbeta.com/feed.xml",
+        "description": "Søren is a webdeveloper based in Bonn, Germany. His blog is a great resource for CSS, the IndieWeb and tinkering with Eleventy.",
+        "twitter": "polarbirke"
+    },
+    {
+        "title": "Lynn Fisher",
+        "url": "https://lynnandtonic.com",
+        "feed": "https://lynnandtonic.com/feed.xml",
+        "description": "Lynn is an artist, designer, and developer. Her blog regularly blows people away with clever and creative uses of CSS. Lots of interesting posts here.",
+        "twitter": "lynnandtonic"
     }
 ]
