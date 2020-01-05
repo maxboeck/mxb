@@ -36,13 +36,11 @@
     }
     &__link {
         display: block;
-        @include hyphenate;
+        @include truncate;
         @include stretched-link;
-        &::after {
-            z-index: 1;
-        }
     }
     &__avatar {
+        flex: none;
         width: 4.5rem;
         height: 4.5rem;
         border-radius: 50%;

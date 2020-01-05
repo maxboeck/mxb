@@ -202,7 +202,7 @@
     },
     {
         "title": "Codista",
-        "url": "https://www.codista.com/en/blog/",
+        "url": "https://www.codista.com",
         "feed": "https://www.codista.com/en/feed.xml",
         "description": "Codista is the software studio where I work, and this is our company blog. It features posts about Python, Wagtail and new projects we're working on.",
         "twitter": "codista_"
