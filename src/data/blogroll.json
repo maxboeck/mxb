@@ -199,5 +199,12 @@
         "feed": "https://lynnandtonic.com/feed.xml",
         "description": "Lynn is an artist, designer, and developer. Her blog regularly blows people away with clever and creative uses of CSS. Lots of interesting posts here.",
         "twitter": "lynnandtonic"
+    },
+    {
+        "title": "Codista",
+        "url": "https://www.codista.com/en/blog/",
+        "feed": "https://www.codista.com/en/feed.xml",
+        "description": "Codista is the software studio where I work, and this is our company blog. It features posts about Python, Wagtail and new projects we're working on.",
+        "twitter": "codista_"
     }
 ]
