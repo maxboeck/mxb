@@ -2,36 +2,42 @@
     {
         "title": "Manuel Matuzović",
         "url": "https://www.matuzo.at",
+        "feed": "https://www.matuzo.at/feed.xml",
         "description": "Manuel is a developer, consultant, speaker and friend from Vienna who specializes in HTML, CSS and accessibility.",
         "twitter": "mmatuzo"
     },
     {
         "title": "Charlie Owen",
         "url": "https://www.sonniesedge.net",
+        "feed": "https://www.sonniesedge.net/rss/posts.xml",
         "description": "Charlie is a front-end developer and speaker based in Berlin. She is best known for her work with Springer Nature and offending tech-bros on twitter.",
         "twitter": "sonniesedge"
     },
     {
         "title": "Matthias Ott",
         "url": "https://matthiasott.com",
+        "feed": " https://matthiasott.com/articles/rss",
         "description": "Matthias is an UI designer and engineer based in Stuttgart. He teaches prototyping and writes about Front-End, Design and the IndieWeb.",
         "twitter": "m_ott"
     },
     {
         "title": "Ethan Marcotte",
         "url": "https://ethanmarcotte.com",
+        "feed": "https://ethanmarcotte.com/wrote/feed.xml",
         "description": "Ethan wrote the book on responsive web design, but he's also a gifted blogger. His posts cover web culture, technology and life in general.",
         "twitter": "beep"
     },
     {
         "title": "Tobias Ahlin",
         "url": "https://tobiasahlin.com",
+        "feed":"https://tobiasahlin.com/feed.xml",
         "description": "Tobias is a designer, developer and teacher from Stockholm. He's worked for Spotify, Github and Minecraft and has a lot of interesting posts about CSS.",
         "twitter": "tobiasahlin"
     },
     {
         "title": "Michael Scharnagl",
         "url": "https://justmarkup.com",
+        "feed": "https://justmarkup.com/feed/feed.xml",
         "description": "Michael is a front-end developer from Germany. His work is focused on accessibility, progressive enhancement and web performance.",
         "twitter": "justmarkup"
     },
@@ -44,90 +50,105 @@
     {
         "title": "Heydon Pickering",
         "url": "http://www.heydonworks.com",
+        "feed": "http://www.heydonworks.com/feed",
         "description": "Heydon is a designer and accessibility consultant based in the UK. He wrote 'Inclusive Design', edits for Smashing Magazine and is an excellent speaker on all things a11y.",
         "twitter": "heydonworks"
     },
     {
         "title": "Oliver Schöndorfer",
         "url": "https://www.zeichenschatz.net",
+        "feed": "https://www.zeichenschatz.net/feed",
         "description": "Oliver loves good typography. He's part of a two-person design studio in Vienna and is a talented writer and speaker. He has some very interesting posts about web fonts.",
         "twitter": "glyphe"
     },
     {
         "title": "Lisi Linhart",
         "url": "https://lisilinhart.info",
+        "feed": "https://lisilinhart.info/rss.xml",
         "description": "Lisi is a creative developer from Salzburg, blogging about CSS, JavaScript and Interface Design. She's an expert in the field of Web Animation and a lecturer for multimedia technology.",
         "twitter": "lisi_linhart"
     },
     {
         "title": "Marcus Herrmann",
         "url": "https://marcus.io",
+        "feed": "https://marcus.io/feed",
         "description": "Marcus is a freelance web developer from Berlin. His blog covers accessibility techniques for modern JavaScript apps, progressive enhancement and the IndieWeb.",
         "twitter": "_marcusherrmann"
     },
     {
         "title": "Cathy Dutton",
         "url": "https://cathydutton.co.uk",
+        "feed": "https://cathydutton.co.uk/feed.xml",
         "description": "Cathy is a designer from Cheshire in the UK. She designs and builds inclusive services focusing on usability, accessibility and information architecture.",
         "twitter": "cathy_dutton"
     },
     {
         "title": "Jeremy Wagner",
         "url": "https://jeremy.codes",
+        "feed":"https://jeremy.codes/rss.xml",
         "description": "Jeremy is a web developer, writer and speaker from Minnesota. His blog is an excellent resource on web performance techniques, as well as general best practices for development.",
         "twitter": "malchata"
     },
     {
         "title": "Zach Leatherman",
         "url": "https://www.zachleat.com",
+        "feed": "https://www.zachleat.com/web/feed/",
         "description": "Zach is a web developer working with Filament Group. He's currently fixated on web fonts and making the static site generator Eleventy. His blog has interesting posts about a lot of different topics.",
         "twitter": "zachleat"
     },
     {
         "title": "Sara Soueidan",
         "url": "https://www.sarasoueidan.com",
+        "feed": "https://www.sarasoueidan.com/blog/index.xml",
         "description": "Sara is a developer who specializes in responsive web design, CSS, progressive enhancement, SVG and accessibility. Topics on her blog range from SVG techniques to general web development.",
         "twitter": "SaraSoueidan"
     },
     {
         "title": "Bryan L. Robinson",
         "url": "https://bryanlrobinson.com",
+        "feed": "https://bryanlrobinson.com/feed.xml",
         "description": "Bryan is a Developer based in Memphis and an Advocate for HTML, CSS, JavaScript and Static Sites. His blog features posts on CSS Layout, IndieWeb and the JAM Stack.",
         "twitter": "brob"
     },
     {
         "title": "Andy Bell",
-        "url": "https://andy-bell.design",
+        "url": "https://hankchizljaw.com",
+        "feed": "https://hankchizljaw.com/feed/writing.xml",
         "description": "Andy is a freelance web designer from the UK trying to make everyone’s experience on the web better. His focus is on progressive enhancement, accessibility and design systems. He writes about CSS, web components and other interesting topics.",
         "twitter": "andybelldesign"
     },
     {
         "title": "Monica Dinculescu",
         "url": "https://meowni.ca",
+        "feed": "https://meowni.ca/atom.xml",
         "description": "Monica is an engineer at Google who has previously worked on projects like Chrome and Polymer. Her blog is a very interesting resource for all kinds of stuff, including Machine Learning, Web Components and Emojis.",
         "twitter": "notwaldorf"
     },
     {
         "title": "Una Kravets",
         "url": "https://una.im",
+        "feed": "https://una.im/feed.xml",
         "description": "Una is a developer advocate at Google for their Material Design System. She writes about design and development, including great pieces about CSS, SVG and Service Worker.",
         "twitter": "una"
     },
     {
         "title": "Veerle Pieters",
         "url": "https://veerle.duoh.com",
+        "feed": "https://veerle.duoh.com/design-feed.rss",
         "description": "Veerle is a graphic/web designer from Belgium. Her blog is an invaluable source of insight into her design process, creativity, technology and life.",
         "twitter": "vpieters"
     },
     {
         "title": "Jonathan Snook",
         "url": "https://snook.ca",
+        "feed": "https://snook.ca/posts/index.rss",
         "description": "Snook is a web designer, developer, writer, speaker, sometimes angel investor, and hobbyist photographer. He writes about many facets of modern front-end development and his blog features interesting posts on a variety of topics.",
         "twitter": "snookca"
     },
     {
         "title": "Michelle Barker",
         "url": "https://css-irl.info",
+        "feed": "https://css-irl.info/rss.xml",
         "description": "Michelle is a very talented developer based in the UK. She runs 'CSS In Real Life', a fantastic blog about -you guessed it- CSS. Bookmark it.",
         "twitter": "MicheBarks"
     },
@@ -140,24 +161,28 @@
     {
         "title": "Laura Kalbag",
         "url": "https://laurakalbag.com",
+        "feed": "https://laurakalbag.com/posts/index.xml",
         "description": "Laura is a designer based in Ireland. She wrote the excellent 'Accessibility for Everyone' and is the co-founder of Ind.ie, a nonprofit working towards a better, more ethical web. Her blog is very much worth a read.",
         "twitter": "laurakalbag"
     },
     {
         "title": "Jeremy Keith",
         "url": "https://adactio.com",
+        "feed": "https://adactio.com/journal/rss",
         "description": "Jeremy is a developer and co-founder of the Brighton-based design studio Clearleft. He's a terrific speaker and has wirtten several books on web development, including 'HTML5 for Web Designers' and 'Going Offline'.",
         "twitter": "adactio"
     },
     {
         "title": "Hidde de Vries",
         "url": "https://hiddedevries.nl/en",
+        "feed": "https://hiddedevries.nl/rss/full",
         "description": "Hidde is a front-end developer from the Netherlands. He specializes in CSS, accessibility and performance, and his blog features excellent posts on these topics.",
         "twitter": "hdv"
     },
     {
         "title": "Remy Sharp",
         "url": "https://remysharp.com",
+        "feed": "https://remysharp.com/feed.xml",
         "description": "Remy is a developer running his own business called Left Logic out of Brighton, UK. His blog mostly concentrates on web, code, a touch of business and some personal pieces. Highly Recommended.",
         "twitter": "rem"
     }

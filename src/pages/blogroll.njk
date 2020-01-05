@@ -1,14 +1,14 @@
 ---
 layout: base
 title: Blogroll
-subtitle: "Other people on the web"
+subtitle: "Other people on the web."
 permalink: blogroll/index.html
 ---
 
 <article class="page">
     <header class="page__header">
         <h1 class="page__title">{{ title }}</h1>
-        <p class="page__subtitle">{{ subtitle | safe }}</p>
+        <p class="page__subtitle">{{ subtitle | safe }}<br /><a href="/blogroll/feeds.xml" class="u-align-middle">{% icon "feed" %} All RSS feeds</a></p>
     </header>
 
     <div class="page__content page__content--fullwidth">

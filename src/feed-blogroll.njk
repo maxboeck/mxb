@@ -1,0 +1,17 @@
+---
+permalink: /blogroll/feeds.xml
+excludeFromSitemap: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>Blogroll RSS Feeds</title>
+    </head>
+    <body>
+    {% for item in blogroll %}
+        {% if item.feed %}
+        <outline type="rss" title="{{ item.title }}" text="{{ item.description }}" xmlUrl="{{ item.feed }}" htmlUrl="{{ item.url }}" />
+        {% endif %}
+    {% endfor %}
+    </body>
+</opml>
