@@ -30,7 +30,7 @@
 
     @include mq(lg) {
         &__header {
-            padding: 5rem;
+            padding: 5rem 0;
         }
         &__title {
             font-size: 7rem;
