@@ -4,7 +4,6 @@ const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
 const cleanCSS = require('gulp-clean-css')
-const browserslist = require('../package.json').browserslist
 
 require('dotenv').config()
 
@@ -36,11 +35,7 @@ function prodStyles() {
                 outputStyle: 'expanded'
             }).on('error', sass.logError)
         )
-        .pipe(
-            autoprefixer({
-                browsers: browserslist
-            })
-        )
+        .pipe(autoprefixer())
         .pipe(cleanCSS())
         .pipe(gulp.dest(styleConfig.dest))
 }
