@@ -17,8 +17,7 @@
   "author": "Max Böck",
   "license": "MIT",
   "browserslist": [
-    "> 0.25%",
-    "not dead"
+    "defaults"
   ],
   "dependencies": {
     "focus-visible": "^5.0.2",
@@ -26,8 +25,7 @@
     "leaflet": "^1.5.1",
     "lodash": "^4.17.15",
     "markdown-it-anchor": "^5.0.2",
-    "preact": "^8.4.2",
-    "svgxuse": "^1.2.6"
+    "preact": "^8.4.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
