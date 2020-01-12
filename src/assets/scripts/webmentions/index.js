@@ -1,5 +1,5 @@
 import { h, render } from 'preact'
-import sanitizeHTML from 'sanitize-html'
+import DOMPurify from 'dompurify'
 import App from './App'
 
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
@@ -36,10 +36,8 @@ const processMentions = webmentions => {
 const cleanMentions = entry => {
     const { html, text } = entry.content
     const allowedHTML = {
-        allowedTags: ['b', 'i', 'em', 'strong', 'a'],
-        allowedAttributes: {
-            a: ['href']
-        }
+        ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a'],
+        ALLOWED_ATTR: ['href']
     }
 
     if (html) {
@@ -47,9 +45,9 @@ const cleanMentions = entry => {
         entry.content.value =
             html.length > 2000
                 ? `mentioned this in <a href="${entry['wm-source']}">${entry['wm-source']}</a>`
-                : sanitizeHTML(html, allowedHTML)
+                : DOMPurify.sanitize(html, allowedHTML)
     } else {
-        entry.content.value = sanitizeHTML(text, allowedHTML)
+        entry.content.value = DOMPurify.sanitize(text, allowedHTML)
     }
 
     return entry
