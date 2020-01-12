@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
@@ -6,9 +8,17 @@ const markdownItAnchor = require('markdown-it-anchor')
 
 const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
-
-require('dotenv').config()
 const isProduction = process.env.NODE_ENV === 'production'
+
+const anchorSlugify = s =>
+    encodeURIComponent(
+        'h-' +
+            String(s)
+                .trim()
+                .toLowerCase()
+                .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
+                .replace(/\s+/g, '-')
+    )
 
 module.exports = function(config) {
     // Filters
@@ -52,15 +62,7 @@ module.exports = function(config) {
             permalinkClass: 'heading-anchor',
             permalinkBefore: true,
             level: 2,
-            slugify: s =>
-                encodeURIComponent(
-                    'h-' +
-                        String(s)
-                            .trim()
-                            .toLowerCase()
-                            .replace(/[.,\/#!$%\^&\*;:{}=_`~()]/g, '')
-                            .replace(/\s+/g, '-')
-                )
+            slugify: anchorSlugify
         })
     )
 
