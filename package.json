@@ -3,7 +3,7 @@
   "version": "4.1.0",
   "description": "Personal Website of Max Böck",
   "scripts": {
-    "start": "gulp build:dev && yarn run serve",
+    "start": "gulp build:dev",
     "build": "NODE_ENV=production gulp build && yarn run build:lambda",
     "debug": "DEBUG=Eleventy* yarn start",
     "serve": "gulp serve",
@@ -44,7 +44,6 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.0.0",
     "gulp-sass": "^4.0.1",
-    "gulp-shell": "0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.4.0",
     "gulp-uglify": "^3.0.1",
