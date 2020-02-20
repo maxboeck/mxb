@@ -6,11 +6,11 @@ slug: making-a-gigposter
 description: How to create a custom print design for a Rage against the Machine show using Illustrator, Photoshop and zero drawing skills.
 ---
 
-<p class="lead">Long before I ever wrote my first line of code, all I wanted to do was make music. I went to a music-focused high school, played in a couple of bands, and I loved it.</p>
+<p class="lead">Long before I wrote my first line of code, all I wanted to do was make music. I went to a music-focused high school, played in a couple of bands, and I loved it.</p>
 
-I also loved making flyers, posters and CD artwork for local bands - It's actually what got me started in design and ultimately led me to build for the web. You see I can't draw for shit, so my only option to create the images in my head was with the help of computers, which I was able to use. Creating posters became a hobby of mine.
+I also loved making flyers, posters and CD artwork for local bands - It's actually what got me started in design and ultimately led me to build for the web. You see I can't really draw, so my only option to create the images in my head was with the help of computers, which I was able to use. Creating posters became a hobby of mine.
 
-These days, I'm usually too busy to find time for that hobby. But I still keep a collection of my favourite gigposters and once in a while, when an occasion arises, I get to do one myself.
+These days, I'm usually too busy to find time for that hobby. But I keep a collection of my favourite gigposters and once in a while, when an occasion arises, I get to do one myself.
 
 I still do vocals in one band, and so fortunately that occasion comes once a year in the form of a _Rage Against the Machine_ cover gig we play in my hometown. The event is called "Rage/Aid" because all of the proceeds are donated to charity.
 
@@ -18,20 +18,20 @@ __TL;DR:__ [Here's the poster](#h-final-result) I did for that show, and how I m
 
 ## Concept
 
-The hardest part for me is always coming up with a good idea. A gigposter is a mixture of information and art - and should be tailored to the general vibe of the band/show. That being said, there really are no rules as to which motives fit which genre. You get to freely explore different ideas and concepts.
+The hardest part for me is coming up with a good idea. Much like a website, a gigposter is a mixture of information and art - and should be tailored to the general vibe of the band/show. That being said, there really are no rules as to which motives fit which genre. You get to freely explore different ideas and concepts.
 
-I usually start with a few crudely-drawn pencil sketches of possible motives. Just shoot these out real quick and let your mind wander - you can care about making them look good later. You can draw inspiration from anywhere: art, nature, architecture, movies... whatever captures your attention. 
+I usually start with a few crudely-drawn pencil sketches of possible motives. Just shoot these out real quick and let your mind wander - you can care about making them look good later. You can get inspiration from anywhere: art, nature, architecture, movies... whatever captures your attention. 
 
 <figure class="extend">
     <img src="{{ 'sketch.jpg' | media(page) }}" width="752" height="475" alt="initial pencil sketches on a notepad" style="border: 1px solid #BBB" />
-    <figcaption>initial sketches</figcaption>
+    <figcaption>some initial sketches</figcaption>
 </figure>
 
 For this one, I liked the idea of referencing a famous painting, ["The Son of Man"](https://en.wikipedia.org/wiki/The_Son_of_Man) by René Magritte. It's the one with the apple in front of a man's face - you might know it.
 
 I thought I could take the concept of the faceless, anonymous person and put a twist on it. I also knew I wanted fire in there somehow to symbolize Rage against the Machine's anger and spirit of revolution, so I drew a lit match instead of the apple.
 
-It really doesn't have to be clever or deep or anything though, it's a fucking poster, not an arts degree. 🧐 I just liked the visual and thought it would go well with the vibe, so that's what I used.
+_It really doesn't have to be clever or deep or anything though, it's a fucking poster, not an arts degree. 🧐 I just liked the visual and thought it would go well with the vibe, so that's what I used._
 
 ## Illustration
 
@@ -73,14 +73,14 @@ Putting the main motive together already looks cool; the flame fits nicely insid
 
 ## Background
 
-For the background, I switched to Photoshop because that will be pixel-based. It's important to work in CMYK colors here and to make sure the document is at least 300dpi and large enough for the intended poster size - it's really hard to scale pixel artwork up later on.
+For the background, I switched to Photoshop as it will be pixel-based. It's important to work in CMYK colors here and make sure the document is at least 300dpi, large enough for the intended poster size - it's a pain to scale pixel artwork up later on.
 
 <figure class="extend">
     <img src="{{ 'background.jpg' | media(page) }}" width="752" height="414" alt="a red background with multiple layers of detail applied" loading="lazy" />
     <figcaption>background with multiple layers of detail</figcaption>
 </figure>
 
-I usually start with a flat color and then progressively layer other stuff on top to give it more detail. The base here was a bright red. 
+I started with a flat color and then progressively layered other stuff on top to give it more detail. The base here was a bright red. 
 
 I then used a [watercolor texture](https://lostandtaken.com/downloads/category/paint/watercolor-texture/), a bit of speckle/noise and a grunge brush to make it look a bit eroded. I was going for a screenprint-like style, where the color often doesn't distribute evenly across the paper and has these interesting imperfections. The nice thing about blending these layers together in Photoshop is that you can still easily tweak the base color afterwards and try out different color schemes.
 
@@ -91,11 +91,11 @@ Another trick I like is to give the artwork a "frame", again to make it look a b
     <figcaption>outer frame has rough edges to make it look more like a screenprint</figcaption>
 </figure>
 
-This is just an extra mask layer, where the sides are drawn with a [paintroller brush](https://www.brusheezy.com/free/paint-roller) that gives you these nice rough edges. These are small details, but they all add to the look and feel of the poster.
+This is just an extra mask layer, where the sides are drawn with a [paintroller brush](https://www.brusheezy.com/free/paint-roller) that gives you these nice rough edges. These are small details, but they all add to the general look and feel of the poster.
 
 ## Typography
 
-Gigposters let you get really creative with type. There are some awesome pieces that use custom letterforms alltogether and make them a part of the artwork itself. For my poster, I just wanted something simple that matched the illustration style. 
+Gigposters let you get really creative with type. There are some awesome pieces that use crazy custom letterforms and make them a part of the artwork itself. For my poster, I just wanted something simple that matched the illustration style. 
 
 I found this nice big brush font called "Generous" by Danish type foundry [PizzaDude](http://pizzadude.dk/). It has broad strokes and rough edges that go well with the background, and work nicely as the display font. I paired it with the clean sans-serif [Brandon Grotesque](https://www.fonts.com/font/hvd-fonts/brandon-grotesque) for the body copy.
 
