@@ -73,7 +73,7 @@ Putting the main motive together already looks cool; the flame fits nicely insid
 
 ## Background
 
-For the background, I switched to Photoshop as it will be pixel-based. It's important to work in CMYK colors here and make sure the document is at least 300dpi, large enough for the intended poster size - it's a pain to scale pixel artwork up later on.
+For the background, I switched to Photoshop as it's pixel-based. It's important to work in CMYK colors here and make sure the document is at least 300dpi, large enough for the intended poster size - it's a pain to scale pixel artwork up later on.
 
 <figure class="extend">
     <img src="{{ 'background.jpg' | media(page) }}" width="752" height="414" alt="a red background with multiple layers of detail applied" loading="lazy" />
@@ -82,7 +82,7 @@ For the background, I switched to Photoshop as it will be pixel-based. It's impo
 
 I started with a flat color and then progressively layered other stuff on top to give it more detail. The base here was a bright red. 
 
-I then used a [watercolor texture](https://lostandtaken.com/downloads/category/paint/watercolor-texture/), a bit of speckle/noise and a grunge brush to make it look a bit eroded. I was going for a screenprint-like style, where the color often doesn't distribute evenly across the paper and has these interesting imperfections. The nice thing about blending these layers together in Photoshop is that you can still easily tweak the base color afterwards and try out different color schemes.
+I then used a [watercolor texture](https://lostandtaken.com/downloads/category/paint/watercolor-texture/), a bit of speckle/noise and a grunge brush to make it look more eroded. I was going for a screenprint-like style, where the color often doesn't distribute evenly across the paper and has these interesting imperfections. The nice thing about blending these layers together in Photoshop is that you can still easily tweak the base color afterwards and try out different color schemes.
 
 Another trick I like is to give the artwork a "frame", again to make it look a bit more handmade:
 
