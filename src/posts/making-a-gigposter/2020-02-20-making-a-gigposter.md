@@ -12,7 +12,7 @@ I also loved making flyers, posters and CD artwork for local bands - It's actual
 
 These days, I'm usually too busy to find time for that hobby. But I keep a collection of my favourite gigposters and once in a while, when an occasion arises, I get to do one myself.
 
-I still do vocals in one band, and so fortunately that occasion comes once a year in the form of a _Rage Against the Machine_ cover gig we play in my hometown. The event is called "Rage/Aid" because all of the proceeds are donated to charity.
+I still do vocals in one band, and so fortunately that occasion comes once a year in the form of a _Rage Against the Machine_ cover gig we play in my hometown. The event is called ["Rage/Aid"](https://www.youtube.com/watch?v=oxK7rSrg5jY) because all of the proceeds are donated to charity.
 
 __TL;DR:__ [Here's the poster](#h-final-result) I did for that show, and how I made it.
 

@@ -1,7 +1,7 @@
 ---
 title: "Hydration"
 date: "2020-02-08T14:13:42.302Z"
-syndicate: true
+syndicate: false
 link: "https://adactio.com/journal/16404"
 tags: link
 ---
