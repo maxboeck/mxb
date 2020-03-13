@@ -47,6 +47,7 @@
     from = "/assets/images/touch/*"
     to = "/assets/images/favicon/:splat"
     status = 301
+    force = true
 
 # 404s
 [[redirects]]
