@@ -6,13 +6,12 @@ const workboxConfig = {
     globDirectory: config.buildDest,
     globPatterns: [
         'index.html',
-        // '{404,about,blog,notes}/*.html',
-        'assets/{css,icons}/*',
-        // 'assets/fonts/*',
-        // 'assets/images/avatar-default.jpg',
-        // 'assets/images/avatar2.jpg',
-        // 'assets/js/webmentions.js',
-        'assets/js/main.js'
+        '{404,about,blog,notes}/*.html',
+        'assets/{css,fonts,icons}/*',
+        'assets/images/avatar-default.jpg',
+        'assets/images/avatar2.jpg',
+        'assets/js/main.js',
+        'assets/js/webmentions.js'
     ],
     swDest: `${config.buildDest}/sw.js`,
     clientsClaim: true,
