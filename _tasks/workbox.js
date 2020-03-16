@@ -7,7 +7,9 @@ const workboxConfig = {
     globPatterns: [
         'index.html',
         '{404,about,blog,notes}/*.html',
-        'assets/{css,fonts,icons,images}/*',
+        'assets/{css,fonts,icons}/*',
+        'assets/images/avatar-default.jpg',
+        'assets/images/avatar2.jpg',
         'assets/js/main.js',
         'assets/js/webmentions.js'
     ],
