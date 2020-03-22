@@ -9,7 +9,7 @@ In cases of emergency, many organizations need a quick way to publish critical i
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just received a shelter-in-place emergency alert with a web address for more information. Clicked the link. The site is down. All emergency sites should be static.</p>&mdash; Nicholas C. Zakas (@slicknet) <a href="https://twitter.com/slicknet/status/1239972949819404291?ref_src=twsrc%5Etfw">March 17, 2020</a></blockquote>
 
-To make things worse, natural desasters can damage local network infrastructure, sometimes leaving people with very poor mobile connections.
+To make things worse, natural desasters can also damage local network infrastructure, sometimes leaving people with very poor mobile connections.
 
 I've [written about](/blog/hurricane-web/) the practice of publishing minimal "text-only" versions of critical news websites before and I think it makes a lot of sense to rely on the [rule of least power](https://en.wikipedia.org/wiki/Rule_of_least_power) for these things. When it comes to resilience, you just can't beat static HTML.
 
@@ -23,7 +23,7 @@ Here's the main idea:
 * minimal markup, inlined CSS
 * aim to transmit everything in the first connection roundtrip (~14KB)
 * progressively enable offline-support w/ Service Worker
-* set up Netlify CMS for easy content editing
+* set up [Netlify CMS](https://www.netlifycms.org/) for easy content editing
 * one-click deployment via Netlify to get off the ground quickly
 
 The site contains only the bare minimum - no webfonts, no tracking, no unnecessary images. The entire thing should fit in a single HTTP request. It's basically just a small, ultra-lean blog focused on maximum resilience and accessibility. The Service Worker takes it a step further from there so if you've visited the site once, the information is still accessible even if you lose network coverage.
