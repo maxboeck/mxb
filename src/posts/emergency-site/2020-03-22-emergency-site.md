@@ -26,6 +26,8 @@ Here's the main idea:
 * set up Netlify CMS for easy content editing
 * one-click deployment via Netlify to get off the ground quickly
 
-It's basically just a small, ultra-lean blog focused on maximum resilience and accessibility.
+The site contains only the bare minimum - no webfonts, no tracking, no unnecessary images. The entire thing should fit in a single HTTP request. It's basically just a small, ultra-lean blog focused on maximum resilience and accessibility. The Service Worker takes it a step further from there so if you've visited the site once, the information is still accessible even if you lose network coverage.
 
-You can find the [project source on Github](https://github.com/maxboeck/emergency-site) as well as a [demo site here](https://emergency-site.dev/)
+The end result is just a set of static files that can be easily hosted on cloud infrastructure and put on a CDN. Netlify does this out of the box, but other providers or privately owned servers are possible as well.
+
+You can find the [project source on Github](https://github.com/maxboeck/emergency-site) as well as a [demo site here](https://emergency-site.dev/).
