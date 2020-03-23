@@ -9,7 +9,7 @@ In cases of emergency, many organizations need a quick way to publish critical i
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just received a shelter-in-place emergency alert with a web address for more information. Clicked the link. The site is down. All emergency sites should be static.</p>&mdash; Nicholas C. Zakas (@slicknet) <a href="https://twitter.com/slicknet/status/1239972949819404291?ref_src=twsrc%5Etfw">March 17, 2020</a></blockquote>
 
-To make things worse, natural desasters can also damage local network infrastructure, sometimes leaving people with very poor mobile connections.
+To make things worse, natural disasters can also damage local network infrastructure, sometimes leaving people with very poor mobile connections.
 
 I've [written about](/blog/hurricane-web/) the practice of publishing minimal "text-only" versions of critical news websites before and I think it makes a lot of sense to rely on the [rule of least power](https://en.wikipedia.org/wiki/Rule_of_least_power) for these things. When it comes to resilience, you just can't beat static HTML.
 
