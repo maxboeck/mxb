@@ -44,9 +44,9 @@ These are set when the site is first deployed, meaning a user would only need a 
 
 ### 2. Volunteer Devs
 
-Another great idea came from [Stephanie Walter]() on Twitter:
+Another great idea came from [Stephanie Walter](https://stephaniewalter.design/) on Twitter:
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">True, but at some point there will always be single points of failures. I still like the idea of providing something simple to organizations, I just wonder how technical most people in those are. I wonder if there&#39;s some places to put in touch organizations with devs to help</p>&mdash; St�phanie W. (@WalterStephanie) <a href="https://twitter.com/WalterStephanie/status/1243516998790889473?ref_src=twsrc%5Etfw">March 27, 2020</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">True, but at some point there will always be single points of failures. I still like the idea of providing something simple to organizations, I just wonder how technical most people in those are. I wonder if there&#39;s some places to put in touch organizations with devs to help</p>&mdash; Stephanie W. (@WalterStephanie) <a href="https://twitter.com/WalterStephanie/status/1243516998790889473?ref_src=twsrc%5Etfw">March 27, 2020</a></blockquote>
 
 Since even dealing with the unfamiliar landscapes of Github and Netlify might be a big ask for many non-technical organizations, it might be worth considering the help of volunteer developers.
 
