@@ -38,9 +38,9 @@ I'm aware that not everyone, especially the people in charge of setting up websi
 
 ### 1. No-Code Setup
 
-Taking a hint from the excellent [servicerelief.us](https://www.servicerelief.us/start) project, it is possible to configure the template in such a way that all configuration can be done via environ variables.
+Taking a hint from the excellent [servicerelief.us](https://www.servicerelief.us/start) project, it is possible to configure the template in such a way that all configuration can be done via environment variables.
 
-These are set when the site is first deployed, meaning a user would only need a free Github and Netlify account to get started, without ever touching a line of code or having to mess around with npm or Eleventy itself. The content editing can all be done through Netlify CMS, which offers a much more useable graphical interface.
+These are set when the site is first deployed, meaning a user would only need a free Github and Netlify account to get started - without ever touching a line of code or having to mess around with npm or Eleventy itself. The content editing can all be done through Netlify CMS, which offers a much more useable graphical interface.
 
 ### 2. Volunteer Devs
 
@@ -54,5 +54,5 @@ The initial setup is a 10-minute job for devs who understand the stack. Organiza
 
 ## Get in Touch!
 
-In the meantime, if you are in need of an emergency website and need help to get started, [let me know](mailto:hello@mxb.dev)!
+In the meantime, if you want to set up an emergency website and need help to get started, [let me know](mailto:hello@mxb.dev)!
 
