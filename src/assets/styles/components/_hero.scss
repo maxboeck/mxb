@@ -25,15 +25,11 @@
     }
     &__pretitle {
         order: -1;
-        font-size: 0.875rem;
+        font-size: 1.125rem;
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
         margin-bottom: 1rem;
-
-        @include mq(md) {
-            font-size: 1.1875rem; //19px
-        }
     }
 
     &__content {
