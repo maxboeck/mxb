@@ -38,7 +38,7 @@ export default class Sharer extends Component {
                 }
             })
         } else {
-            response.text().then(text => {
+            response.text().then((text) => {
                 this.setState({
                     isLoading: false,
                     status: {
@@ -102,7 +102,7 @@ export default class Sharer extends Component {
             }
         })
             .then(this.handleResponse)
-            .catch(err => {
+            .catch((err) => {
                 console.error(err)
             })
     }
@@ -117,7 +117,7 @@ export default class Sharer extends Component {
                 ) : (
                     <SharingForm
                         {...data}
-                        onSubmit={data => this.post(data)}
+                        onSubmit={(data) => this.post(data)}
                         onUpdate={this.update}
                     />
                 )}

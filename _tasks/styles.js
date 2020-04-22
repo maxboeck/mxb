@@ -40,7 +40,7 @@ function prodStyles() {
         .pipe(gulp.dest(styleConfig.dest))
 }
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     if (process.env.NODE_ENV !== 'production') {
         return devStyles()
     } else {

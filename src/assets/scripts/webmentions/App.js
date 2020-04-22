@@ -11,7 +11,7 @@ export default class App extends Component {
     }
 
     renderMentionsHeader(webmentions, likeCount) {
-        const faces = webmentions.slice(0, 5).map(entry => {
+        const faces = webmentions.slice(0, 5).map((entry) => {
             const defaultAvatarSrc = '/assets/images/avatar-default.jpg'
             const imgSrc = entry.author.photo || defaultAvatarSrc
             return (
@@ -66,7 +66,7 @@ export default class App extends Component {
     renderMentionsList(webmentions) {
         return (
             <ol className="webmentions__list">
-                {webmentions.map(item => {
+                {webmentions.map((item) => {
                     const {
                         'wm-id': id,
                         url,

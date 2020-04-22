@@ -17,7 +17,7 @@ const twitter = new Twitter({
 })
 
 // Helper Function to return unknown errors
-const handleError = err => {
+const handleError = (err) => {
     console.error(err)
     const msg = Array.isArray(err) ? err[0].message : err.message
     return {
@@ -36,7 +36,7 @@ const status = (code, msg) => {
 }
 
 // Check exisiting notes
-const processNotes = async notes => {
+const processNotes = async (notes) => {
     if (!notes.length) {
         return status(404, 'No notes found to process.')
     }
@@ -68,7 +68,7 @@ const processNotes = async notes => {
 }
 
 // Prepare the content string for tweet format
-const prepareStatusText = note => {
+const prepareStatusText = (note) => {
     const maxLength = 280 - 3 - 1 - 23 - 20
     const entities = new Entities()
 
@@ -94,7 +94,7 @@ const prepareStatusText = note => {
 }
 
 // Push a new note to Twitter
-const publishNote = async note => {
+const publishNote = async (note) => {
     try {
         const statusText = prepareStatusText(note)
         const tweet = await twitter.post('statuses/update', {
@@ -118,7 +118,7 @@ exports.handler = async () => {
     // Fetch the list of published notes to work on,
     // then process them to check if an action is necessary
     return fetch(NOTES_URL)
-        .then(response => response.json())
+        .then((response) => response.json())
         .then(processNotes)
         .catch(handleError)
 }

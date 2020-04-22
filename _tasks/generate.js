@@ -3,9 +3,9 @@ const exec = require('child_process').exec
 
 require('dotenv').config()
 
-const eleventy = cb => {
+const eleventy = (cb) => {
     const cmd = `NODE_ENV=${process.env.NODE_ENV} eleventy`
-    exec(cmd, err => {
+    exec(cmd, (err) => {
         cb(err)
     })
 }

@@ -35,10 +35,10 @@ const babelConfig = {
     }
 }
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     const entryPaths = mapValues(
         SCRIPTS,
-        file => `./${config.assetSrc}/scripts/${file}`
+        (file) => `./${config.assetSrc}/scripts/${file}`
     )
     return gulp
         .src(config.assetSrc + '/scripts/main.js')

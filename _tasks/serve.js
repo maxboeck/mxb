@@ -3,7 +3,7 @@ const gulp = require('gulp')
 const browserSync = require('browser-sync')
 const server = browserSync.create()
 
-const reload = done => {
+const reload = (done) => {
     server.reload()
     done()
 }
@@ -22,7 +22,7 @@ const watchers = {
 /*
   BrowserSync Dev Server
 */
-gulp.task('serve', function(done) {
+gulp.task('serve', function (done) {
     server.init({
         server: { baseDir: config.buildDest }
     })
@@ -32,7 +32,7 @@ gulp.task('serve', function(done) {
 /*
   Watch folders for changess
 */
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch(watchers.scripts, gulp.series('scripts', reload))
     gulp.watch(watchers.styles, gulp.series('styles', reload))
     gulp.watch(watchers.icons, gulp.series('icons', reload))

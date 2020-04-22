@@ -10,7 +10,7 @@ const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
 const isProduction = process.env.NODE_ENV === 'production'
 
-const anchorSlugify = s =>
+const anchorSlugify = (s) =>
     encodeURIComponent(
         'h-' +
             String(s)
@@ -20,14 +20,14 @@ const anchorSlugify = s =>
                 .replace(/\s+/g, '-')
     )
 
-module.exports = function(config) {
+module.exports = function (config) {
     // Filters
-    Object.keys(filters).forEach(filterName => {
+    Object.keys(filters).forEach((filterName) => {
         config.addFilter(filterName, filters[filterName])
     })
 
     // Shortcodes
-    Object.keys(shortcodes).forEach(shortCodeName => {
+    Object.keys(shortcodes).forEach((shortCodeName) => {
         config.addShortcode(shortCodeName, shortcodes[shortCodeName])
     })
 
@@ -67,32 +67,32 @@ module.exports = function(config) {
     )
 
     // Collections: Navigation
-    config.addCollection('nav', function(collection) {
-        return collection.getFilteredByTag('nav').sort(function(a, b) {
+    config.addCollection('nav', function (collection) {
+        return collection.getFilteredByTag('nav').sort(function (a, b) {
             return a.data.navorder - b.data.navorder
         })
     })
 
     // Collections: Posts
-    config.addCollection('posts', function(collection) {
+    config.addCollection('posts', function (collection) {
         const pathsRegex = /\/posts\/|\/drafts\//
         return collection
             .getAllSorted()
-            .filter(item => item.inputPath.match(pathsRegex) !== null)
-            .filter(item => item.data.permalink !== false)
-            .filter(item => !(item.data.draft && isProduction))
+            .filter((item) => item.inputPath.match(pathsRegex) !== null)
+            .filter((item) => item.data.permalink !== false)
+            .filter((item) => !(item.data.draft && isProduction))
     })
 
     // Collections: Notes
-    config.addCollection('notes', function(collection) {
+    config.addCollection('notes', function (collection) {
         return collection
             .getAllSorted()
-            .filter(item => item.inputPath.match(/\/notes\//) !== null)
+            .filter((item) => item.inputPath.match(/\/notes\//) !== null)
             .reverse()
     })
 
     // Minify HTML Output
-    config.addTransform('htmlmin', function(content, outputPath) {
+    config.addTransform('htmlmin', function (content, outputPath) {
         if (outputPath && outputPath.endsWith('.html') && isProduction) {
             return htmlmin.minify(content, {
                 useShortDoctype: true,

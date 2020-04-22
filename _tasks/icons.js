@@ -23,7 +23,7 @@ const svgSpriteConfig = {
     }
 }
 
-gulp.task('icons', function() {
+gulp.task('icons', function () {
     return gulp
         .src(config.assetSrc + '/icons/*.svg')
         .pipe(svgSprite(svgSpriteConfig))

@@ -10,30 +10,30 @@ const replaceElement = webmentionsElement.querySelector('[data-render-root]')
 
 const fetchMentions = () => {
     const targetUrls = BASE_URLS.map(
-        domain => `target[]=${domain + window.location.pathname}`
+        (domain) => `target[]=${domain + window.location.pathname}`
     ).join('&')
     let url = `${API_ORIGIN}?per-page=1000&${targetUrls}`
 
     return fetch(url)
-        .then(response => response.json())
-        .then(feed => feed.children || [])
-        .catch(err => console.error(err))
+        .then((response) => response.json())
+        .then((feed) => feed.children || [])
+        .catch((err) => console.error(err))
 }
 
-const processMentions = webmentions => {
+const processMentions = (webmentions) => {
     const allowedTypes = ['in-reply-to', 'mention-of']
-    const checkRequiredFields = entry => {
+    const checkRequiredFields = (entry) => {
         const { author, published, content } = entry
         return !!author && !!author.name && !!published && !!content
     }
     return webmentions
-        .filter(entry => allowedTypes.includes(entry['wm-property']))
+        .filter((entry) => allowedTypes.includes(entry['wm-property']))
         .filter(checkRequiredFields)
         .sort((a, b) => new Date(a.published) - new Date(b.published))
         .map(cleanMentions)
 }
 
-const cleanMentions = entry => {
+const cleanMentions = (entry) => {
     const { html, text } = entry.content
     const allowedHTML = {
         ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a'],
@@ -53,14 +53,14 @@ const cleanMentions = entry => {
     return entry
 }
 
-const getLikeCount = webmentions => {
-    return webmentions.filter(entry => entry['wm-property'] === 'like-of')
+const getLikeCount = (webmentions) => {
+    return webmentions.filter((entry) => entry['wm-property'] === 'like-of')
         .length
 }
 
 if (webmentionsElement) {
     fetchMentions()
-        .then(data => {
+        .then((data) => {
             const likeCount = getLikeCount(data)
             const webmentions = processMentions(data)
 
@@ -72,7 +72,7 @@ if (webmentionsElement) {
                 )
             }
         })
-        .catch(err => {
+        .catch((err) => {
             console.error(err)
         })
 }

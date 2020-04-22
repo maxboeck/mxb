@@ -7,7 +7,7 @@ const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
 // Helper function to clean strings for frontmatter
-const sanitize = str => {
+const sanitize = (str) => {
     // replace endash and emdash with hyphens
     str = str.replace(/–/g, '-')
     str = str.replace(/—/g, '-')
@@ -22,10 +22,10 @@ const sanitize = str => {
 }
 
 // generate the frontmatter string
-const getFrontmatter = yaml => {
+const getFrontmatter = (yaml) => {
     let fm = []
     fm.push('---')
-    Object.keys(yaml).forEach(key => {
+    Object.keys(yaml).forEach((key) => {
         if (yaml[key] && yaml[key].constructor == String) {
             fm.push(`${key}: ${yaml[key]}`)
         } else if (typeof yaml[key] === 'boolean') {
@@ -37,7 +37,7 @@ const getFrontmatter = yaml => {
 }
 
 // generate the new md file content
-const getFileContent = data => {
+const getFileContent = (data) => {
     const { title, url, via, body, syndicate } = data
     const date = DateTime.utc().toISO({ suppressMilliseconds: true })
 
@@ -68,7 +68,7 @@ const getFileContent = data => {
 }
 
 // generate the new md file name
-const getFileName = title => {
+const getFileName = (title) => {
     const date = DateTime.utc()
     const unixSeconds = date.toSeconds()
     let filename = date.toFormat('yyyy-LL-dd')
@@ -87,7 +87,7 @@ const getFileName = title => {
 }
 
 // create the new file via the github API
-const postFile = async params => {
+const postFile = async (params) => {
     const { title, token } = params
     const fileName = getFileName(title)
     const fileContent = getFileContent(params)
@@ -115,7 +115,7 @@ const postFile = async params => {
 }
 
 // helper function to handle API responses
-const handleResponse = response => {
+const handleResponse = (response) => {
     if (response.ok) {
         return {
             statusCode: 200,
@@ -130,7 +130,7 @@ const handleResponse = response => {
 }
 
 // Main Lambda Function
-exports.handler = async event => {
+exports.handler = async (event) => {
     try {
         const params = JSON.parse(event.body)
 

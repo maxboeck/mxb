@@ -6,7 +6,7 @@ export default class NotePreview extends Component {
         const { title, url, via, body } = this.props
         const content = []
 
-        const handleLink = handle => {
+        const handleLink = (handle) => {
             if (handle.charAt(0) === '@') {
                 return (
                     <a href={`https://twitter.com/${handle.substring(1)}`}>

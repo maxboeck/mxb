@@ -1,5 +1,5 @@
 module.exports = {
-    icon: function(iconName, useInline) {
+    icon: function (iconName, useInline) {
         const spriteUrl = '/assets/icons/icons.sprite.svg'
         const iconId = `#icon-${iconName}`
         const href = useInline ? iconId : spriteUrl + iconId

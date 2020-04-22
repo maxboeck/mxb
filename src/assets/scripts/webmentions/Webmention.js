@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import { DateTime } from 'luxon'
 
-const readableDate = iso => {
+const readableDate = (iso) => {
     const date = new Date(iso)
     return DateTime.fromJSDate(date).toFormat('dd LLL yyyy - HH:mm')
 }

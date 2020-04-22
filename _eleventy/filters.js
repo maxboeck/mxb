@@ -3,18 +3,18 @@ const sanitizeHTML = require('sanitize-html')
 const random = require('lodash/random')
 
 module.exports = {
-    format: function(date, format) {
+    format: function (date, format) {
         return DateTime.fromJSDate(date).toFormat(String(format))
     },
 
-    iso: function(date) {
+    iso: function (date) {
         return DateTime.fromJSDate(date).toISO({
             includeOffset: false,
             suppressMilliseconds: true
         })
     },
 
-    readableDate: function(date, format) {
+    readableDate: function (date, format) {
         // default to Europe/Vienna Timezone
         const dt = DateTime.fromJSDate(date, { zone: 'UTC+2' })
         if (!format) {
@@ -24,11 +24,11 @@ module.exports = {
         return dt.toFormat(format)
     },
 
-    fromIso: function(timestamp) {
+    fromIso: function (timestamp) {
         return DateTime.fromISO(timestamp, { zone: 'utc' }).toJSDate()
     },
 
-    obfuscate: function(str) {
+    obfuscate: function (str) {
         const chars = []
         for (var i = str.length - 1; i >= 0; i--) {
             chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''))
@@ -36,15 +36,15 @@ module.exports = {
         return chars.join('')
     },
 
-    slice: function(array, limit) {
+    slice: function (array, limit) {
         return limit > 0 ? array.slice(0, limit) : array.slice(limit)
     },
 
-    stringify: function(json) {
+    stringify: function (json) {
         return JSON.stringify(json)
     },
 
-    isOwnWebmention: function(webmention) {
+    isOwnWebmention: function (webmention) {
         const urls = [
             'https://mxb.at',
             'https://mxb.dev',
@@ -55,7 +55,7 @@ module.exports = {
         return authorUrl && urls.includes(authorUrl)
     },
 
-    webmentionsByUrl: function(webmentions, url) {
+    webmentionsByUrl: function (webmentions, url) {
         const allowedTypes = ['mention-of', 'in-reply-to']
         const allowedHTML = {
             allowedTags: ['b', 'i', 'em', 'strong', 'a'],
@@ -67,12 +67,12 @@ module.exports = {
         const orderByDate = (a, b) =>
             new Date(a.published) - new Date(b.published)
 
-        const checkRequiredFields = entry => {
+        const checkRequiredFields = (entry) => {
             const { author, published, content } = entry
             return !!author && !!author.name && !!published && !!content
         }
 
-        const clean = entry => {
+        const clean = (entry) => {
             const { html, text } = entry.content
 
             if (html) {
@@ -89,32 +89,34 @@ module.exports = {
         }
 
         return webmentions
-            .filter(entry => entry['wm-target'] === url)
-            .filter(entry => allowedTypes.includes(entry['wm-property']))
+            .filter((entry) => entry['wm-target'] === url)
+            .filter((entry) => allowedTypes.includes(entry['wm-property']))
             .filter(checkRequiredFields)
             .sort(orderByDate)
             .map(clean)
     },
 
-    webmentionCountByType: function(webmentions, url, ...types) {
-        const isUrlMatch = entry =>
+    webmentionCountByType: function (webmentions, url, ...types) {
+        const isUrlMatch = (entry) =>
             entry['wm-target'] === url ||
             entry['wm-target'] === url.replace('mxb.dev', 'mxb.at')
 
         return String(
             webmentions
                 .filter(isUrlMatch)
-                .filter(entry => types.includes(entry['wm-property'])).length
+                .filter((entry) => types.includes(entry['wm-property'])).length
         )
     },
 
-    excludePost: function(allPosts, currentPost) {
-        return allPosts.filter(post => post.inputPath !== currentPost.inputPath)
+    excludePost: function (allPosts, currentPost) {
+        return allPosts.filter(
+            (post) => post.inputPath !== currentPost.inputPath
+        )
     },
 
-    currentPage: function(allPages, currentPage) {
+    currentPage: function (allPages, currentPage) {
         const matches = allPages.filter(
-            page => page.inputPath === currentPage.inputPath
+            (page) => page.inputPath === currentPage.inputPath
         )
         if (matches && matches.length) {
             return matches[0]
@@ -122,10 +124,10 @@ module.exports = {
         return null
     },
 
-    excerpt: function(content) {
+    excerpt: function (content) {
         const excerptMinimumLength = 80
         const excerptSeparator = '<!--more-->'
-        const findExcerptEnd = content => {
+        const findExcerptEnd = (content) => {
             if (content === '') {
                 return 0
             }
@@ -158,7 +160,7 @@ module.exports = {
         return content.substring(0, excerptEnd)
     },
 
-    media: function(filename, page) {
+    media: function (filename, page) {
         const path = page.inputPath.split('/')
         if (path.length && path.includes('posts')) {
             const subdir = path[path.length - 2]
@@ -167,11 +169,11 @@ module.exports = {
         return filename
     },
 
-    randomItem: function(arr) {
+    randomItem: function (arr) {
         return arr[random(arr.length - 1)]
     },
 
-    shuffle: function(arr) {
+    shuffle: function (arr) {
         let m = arr.length,
             t,
             i
