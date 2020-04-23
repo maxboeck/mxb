@@ -21,7 +21,11 @@ export default class NotePreview extends Component {
         ) : null
 
         if (title.trim().length) {
-            content.push(<h2 key="n-title">{title}</h2>)
+            content.push(
+                <h2 key="n-title" className="note__title">
+                    {title}
+                </h2>
+            )
         }
 
         if (body || via) {
