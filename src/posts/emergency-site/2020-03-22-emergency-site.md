@@ -36,8 +36,6 @@ You can find the [project source on Github](https://github.com/maxboeck/emergenc
 
 I'm aware that not everyone, especially the people in charge of setting up websites like this, is familiar with things like `Node` or the command line. I want to keep the barrier to entry as low as possible.
 
-### No-Code Setup
-
 Taking a hint from the excellent [servicerelief.us](https://www.servicerelief.us/start) project, it is possible to configure the template in such a way that all configuration can be done via environment variables.
 
 These are set in the Netlify UI when the site is first deployed, meaning a user would only need a free Github and Netlify account to get started - without ever touching a line of code or having to mess around with npm or Eleventy itself. The content editing can all be done through Netlify CMS, which offers a much more useable graphical interface.
