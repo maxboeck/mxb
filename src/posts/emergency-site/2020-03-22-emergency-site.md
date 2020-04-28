@@ -5,7 +5,7 @@ image: cover.jpg
 demo: https://emergency-site.dev/
 ---
 
-In cases of emergency, many organizations need a quick way to publish critical information. But existing (CMS) websites are often unable to handle sudden spikes in traffic.
+<p class="lead">In cases of emergency, many organizations need a quick way to publish critical information. But existing (CMS) websites are often unable to handle sudden spikes in traffic.</p>
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Just received a shelter-in-place emergency alert with a web address for more information. Clicked the link. The site is down. All emergency sites should be static.</p>&mdash; Nicholas C. Zakas (@slicknet) <a href="https://twitter.com/slicknet/status/1239972949819404291?ref_src=twsrc%5Etfw">March 17, 2020</a></blockquote>
 
