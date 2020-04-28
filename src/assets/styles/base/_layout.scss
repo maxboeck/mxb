@@ -2,7 +2,7 @@
 
 body {
     overflow-x: hidden;
-    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+    transition: color 0.15s, background-color 0.15s;
 }
 
 .layout {
@@ -11,6 +11,7 @@ body {
     min-height: 100%;
     min-height: 100vh;
     position: relative;
+    transition: transform 0.3s $animation-curve-default;
 
     .header,
     .footer {

@@ -27,9 +27,10 @@
                 {{ content | safe }}
             </main>
 
-            {% include "themepicker.njk" %}
             {% include "footer.njk" %}
         </div>
+
+        {% include "themepicker.njk" %}
 
         {# Main JS Bundle #}
         <script src="{{ '/assets/js/main.js' | url }}" defer></script>

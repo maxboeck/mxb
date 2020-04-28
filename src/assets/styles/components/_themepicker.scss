@@ -7,10 +7,12 @@
     right: 0;
     bottom: 0;
     z-index: z('modal');
-    width: 300px;
+    width: $themepicker-width;
     color: #373a3c;
     background-color: #fff;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 0 0 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s $animation-curve-default;
+    transform: translateX($themepicker-width + 50);
 
     @supports (color: var(--fake-var)) {
         display: flex;
@@ -22,7 +24,7 @@
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
-        padding: 1rem 3rem;
+        padding: 1rem 2.5rem;
         margin: 3.125rem 0 2rem;
     }
 
@@ -60,7 +62,7 @@
 
     &__btn {
         @include button-reset;
-        padding: 1rem 1rem 1rem 3rem;
+        padding: 1rem 1rem 1rem 2.5rem;
         display: block;
         width: 100%;
         text-align: left;
@@ -87,5 +89,14 @@
         & + & {
             margin-left: -0.3125em;
         }
+    }
+}
+
+.js-themepicker-open {
+    .themepicker {
+        transform: translateX(0);
+    }
+    .layout {
+        transform: translateX($themepicker-width * -1);
     }
 }

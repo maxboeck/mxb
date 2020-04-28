@@ -1,7 +1,7 @@
 [
     {
         "id": "default",
-        "name": "Default",
+        "name": "Classic",
         "colors": {
             "primary": "#ff335f",
             "secondary": "#43a9a3",
