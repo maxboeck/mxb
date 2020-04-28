@@ -56,7 +56,7 @@ export default class NotePreview extends Component {
 
         return (
             <div className="note__meta">
-                <p className="note__author">
+                <p className="note__author" hidden>
                     <span className="note__author__link">
                         <img
                             className="note__author__photo"
@@ -65,9 +65,6 @@ export default class NotePreview extends Component {
                         <strong className="note__author__name">Max Böck</strong>
                     </span>
                 </p>
-                <span className="note__meta__divider" aria-hidden="true">
-                    &sdot;
-                </span>
                 <time className="note__date">{dateString}</time>
                 <div className="note__tags">
                     <span className="note__tag">link</span>
