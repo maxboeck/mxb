@@ -9,15 +9,22 @@
 
     &__brand {
         display: flex;
-        position: relative;
-        width: 4rem;
-        height: 1.5rem; // IE11 compat
+        align-items: center;
+        color: inherit;
 
-        svg {
-            width: 100%;
-            height: auto;
-            vertical-align: bottom;
-            fill: var(--color-text);
+        @include hover-focus {
+            color: inherit;
+        }
+
+        &__avatar {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        &__text {
+            font-weight: 700;
         }
     }
 
