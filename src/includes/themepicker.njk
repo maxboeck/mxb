@@ -1,17 +1,19 @@
-<ul>
-{% for theme in themes %}
-    <li>
-        <button class="js-theme-select" data-theme-id="{{ theme.id }}">
-            <span>
-                <span>{{ theme.name }}</span>
-                <span class="palette" style="background-color: {{ theme.colors.background }}">
-                    <span style="background-color: {{ theme.colors.primary }}">{{ theme.colors.primary }}</span>
-                    <span style="background-color: {{ theme.colors.secondary }}">{{ theme.colors.secondary }}</span>
-                    <span style="background-color: {{ theme.colors.border }}">{{ theme.colors.border }}</span>
-                    <span style="background-color: {{ theme.colors.text }}">{{ theme.colors.text }}</span>
+<aside class="themepicker" role="complementary">
+    <ul class="themepicker__list" id="theme-menu">
+    {% for theme in themes %}
+        <li class="themepicker__item">
+            <button class="themepicker__btn js-theme-select" data-theme-id="{{ theme.id }}">
+                <span class="themepicker__btn__inner">
+                    <span class="themepicker__name">{{ theme.name }}</span>
+                    <span class="themepicker__palette" style="background-color: {{ theme.colors.background }}">
+                        <span class="themepicker__hue" style="background-color: {{ theme.colors.primary }}">{{ theme.colors.primary }}</span>
+                        <span class="themepicker__hue" style="background-color: {{ theme.colors.secondary }}">{{ theme.colors.secondary }}</span>
+                        <span class="themepicker__hue" style="background-color: {{ theme.colors.border }}">{{ theme.colors.border }}</span>
+                        <span class="themepicker__hue" style="background-color: {{ theme.colors.text }}">{{ theme.colors.text }}</span>
+                    </span>
                 </span>
-            </span>
-        </button>
-    </li>
-{% endfor %}
-</ul>
+            </button>
+        </li>
+    {% endfor %}
+    </ul>
+</aside>
