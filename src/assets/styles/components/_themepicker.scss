@@ -2,8 +2,7 @@
     display: none;
     width: 100%;
     font-size: 0.875rem;
-    color: #373a3c;
-    background-color: #fff;
+    background-color: var(--color-bg-offset);
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 
     &.is-open {
@@ -16,7 +15,7 @@
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
-        padding: 2rem 2rem 0;
+        padding: 2rem 1.5rem 0;
     }
 
     &__list {
@@ -25,7 +24,7 @@
         white-space: nowrap;
         overflow-y: hidden;
         overflow-x: auto;
-        padding: 1rem 2rem 2rem;
+        padding: 1rem 1.5rem 2rem;
     }
 
     &__item {
@@ -54,8 +53,9 @@
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 0 10px 14px 10px;
-            border-color: transparent transparent black transparent;
+            border-width: 0 10px 12px 10px;
+            border-color: transparent transparent var(--color-primary)
+                transparent;
             transform: translate(-50%, 1rem);
         }
     }
