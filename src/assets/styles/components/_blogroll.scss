@@ -8,7 +8,7 @@
         position: relative;
         padding: 1.5rem;
         border-radius: 0.25rem;
-        background-color: var(--bg-color);
+        background-color: var(--color-bg);
 
         &::after {
             @include coverall;

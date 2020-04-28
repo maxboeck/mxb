@@ -16,7 +16,7 @@
             content: '';
             display: block;
             height: 5px;
-            background-color: var(--border-color);
+            background-color: var(--color-border);
             position: absolute;
             left: 1.25rem;
             right: 1.25rem;
@@ -34,11 +34,11 @@
         // Current Page Active Item
         &--active {
             &::after {
-                background-color: var(--brand-color-primary) !important;
+                background-color: var(--color-primary) !important;
                 transform: none;
             }
             > a {
-                color: var(--text-color);
+                color: var(--color-text);
             }
         }
     }
@@ -53,11 +53,11 @@
         line-height: 1;
         white-space: nowrap;
         text-transform: lowercase;
-        color: var(--text-color);
+        color: var(--color-text);
         transition: color 0.2s linear;
 
         @include hover-focus {
-            color: var(--text-color);
+            color: var(--color-text);
         }
     }
 
@@ -82,7 +82,7 @@
         border: 0;
         padding: 0;
         border-radius: 50%;
-        background-color: var(--bg-color-semitransparent);
+        background-color: var(--color-bg);
     }
 
     // Darkmode Button
@@ -94,7 +94,7 @@
         width: 1.75;
         height: 1.75;
         margin-left: 2rem;
-        color: var(--text-color);
+        color: var(--color-text);
 
         @supports (color: var(--fake-var)) {
             display: flex;
@@ -158,21 +158,21 @@
                 right: 70%;
                 height: 10px;
                 bottom: 15%;
-                background-color: $gray;
+                background-color: var(--color-text-offset);
             }
 
             &--active > a {
                 color: #fff;
             }
             &--active .nav__num {
-                color: $gray;
+                color: var(--color-text-offset);
             }
         }
 
         &__link {
             padding: 1.5rem;
             text-transform: none;
-            color: $gray-light;
+            color: var(--color-bg-offset);
 
             @include hover-focus {
                 color: #fff;
@@ -184,7 +184,7 @@
             font-family: $font-family-base;
             font-weight: 300;
             font-size: 0.5em;
-            color: $gray;
+            color: var(--color-text-offset);
         }
 
         &__togglebtn {
@@ -269,7 +269,7 @@
 
         border-radius: 50%;
         backface-visibility: hidden;
-        background-color: darken($gray-darkest, 5%);
+        background-color: #000;
 
         transform: scale(0);
         transform-origin: 50% 50%;

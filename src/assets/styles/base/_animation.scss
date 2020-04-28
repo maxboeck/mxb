@@ -1,7 +1,7 @@
 .fade-in {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-    perspective: 1000;
+    perspective: 1000px;
     animation: fadeInUp 0.5s ease;
 }
 

@@ -80,8 +80,8 @@ body {
     font-size: $font-size-base;
     line-height: $line-height;
 
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    color: var(--color-text);
+    background-color: var(--color-bg);
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -233,10 +233,10 @@ input[type='search'] {
 }
 
 ::selection {
-    background: var(--brand-color-secondary);
+    background: var(--color-secondary);
     color: #fff;
 }
 ::-moz-selection {
-    background: var(--brand-color-secondary);
+    background: var(--color-secondary);
     color: #fff;
 }

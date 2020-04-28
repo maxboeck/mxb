@@ -54,11 +54,11 @@ p {
 }
 
 a {
-    color: var(--brand-color-primary);
+    color: var(--color-primary);
     text-decoration: none;
 
     @include hover-focus {
-        color: var(--brand-color-primary-offset);
+        color: var(--color-primary-offset);
     }
 }
 
@@ -66,7 +66,7 @@ blockquote {
     font-family: $font-family-serif;
     font-style: italic;
     padding-left: 2.25em;
-    border-left: 10px solid var(--border-color);
+    border-left: 10px solid var(--color-border);
 
     footer {
         font-family: $font-family-sans-serif;
@@ -80,18 +80,12 @@ blockquote {
     font-size: 0.875rem;
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
-    border: 1px solid $brand-color-secondary !important;
-    background-color: rgba($brand-color-secondary, 0.25);
-    color: $brand-color-secondary;
+    border: 1px solid #43a9a3 !important;
+    background-color: rgba(#43a9a3, 0.25);
+    color: #43a9a3;
     box-shadow: none !important;
     cursor: -moz-grab;
     cursor: -webkit-grab;
-
-    @include hover-focus {
-        color: darken($brand-color-secondary, 10%) !important;
-        background-color: rgba($brand-color-secondary, 0.3);
-        outline: 0;
-    }
 
     &:active {
         cursor: -moz-grabbing;

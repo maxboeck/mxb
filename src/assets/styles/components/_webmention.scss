@@ -5,7 +5,7 @@
     padding: 1rem 0 1rem 60px;
 
     &--own {
-        background-color: var(--bg-color-secondary);
+        background-color: var(--color-bg-offset);
         border-radius: 0.5rem;
     }
 
@@ -41,7 +41,7 @@
         }
     }
     &__pubdate {
-        color: $gray;
+        color: var(--color-text-offset);
     }
 
     a.u-mention,
@@ -66,10 +66,10 @@
         margin-right: 1.5rem;
     }
     &__info {
-        color: var(--text-color-secondary);
+        color: var(--color-text-offset);
 
         @include hover-focus {
-            color: var(--text-color);
+            color: var(--color-text);
         }
     }
     &__content {
@@ -103,7 +103,7 @@
             font-size: 0.75rem;
             line-height: 2rem;
             text-align: center;
-            background-color: var(--bg-color-secondary);
+            background-color: var(--color-bg-offset);
         }
     }
     &__item:not(:last-child) {

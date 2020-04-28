@@ -10,7 +10,7 @@
         color: inherit;
 
         &--draft {
-            color: var(--brand-color-secondary);
+            color: var(--color-secondary);
 
             .otherposts__title::after {
                 content: '(Draft)';
@@ -37,7 +37,7 @@
 
     &__date {
         display: block;
-        color: var(--text-color-secondary);
+        color: var(--color-text-offset);
         font-size: 0.75em;
         white-space: nowrap;
 

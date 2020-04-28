@@ -2,8 +2,8 @@
     @include container-narrow;
     position: relative;
     min-height: 100px;
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-color);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
 
     &--detail {
         margin: 2rem auto 4rem;
@@ -27,7 +27,7 @@
         }
     }
     &__date {
-        color: var(--text-color-secondary);
+        color: var(--color-text-offset);
     }
     &__tags {
         position: absolute;
@@ -46,7 +46,7 @@
         font-size: 0.875rem;
         padding: 0.25em 0.5em;
         border-radius: 0.25rem;
-        background-color: var(--brand-color-secondary);
+        background-color: var(--color-secondary);
         color: #fff;
     }
     &__author {
@@ -98,11 +98,11 @@
     }
     &__footer {
         display: flex;
-        color: var(--text-color-secondary);
+        color: var(--color-text-offset);
         font-size: 0.875rem;
         padding: 1rem;
-        background-color: var(--bg-color-secondary);
-        border-top: 1px solid var(--border-color);
+        background-color: var(--color-bg-offset);
+        border-top: 1px solid var(--color-border);
     }
     &__stats {
         display: flex;
@@ -135,7 +135,7 @@
     }
     &__webmentions {
         padding: 1rem;
-        border-top: 1px solid var(--border-color);
+        border-top: 1px solid var(--color-border);
 
         .webmentions__header {
             display: none;
@@ -176,7 +176,7 @@
         content: '';
         display: block;
         width: 1px;
-        background-color: var(--border-color);
+        background-color: var(--color-border);
         position: absolute;
         top: 0;
         bottom: 0;

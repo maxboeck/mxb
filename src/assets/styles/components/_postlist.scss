@@ -12,7 +12,7 @@
         display: block;
 
         .postlist__item--draft & {
-            color: var(--brand-color-secondary);
+            color: var(--color-secondary);
         }
     }
     &__title {
@@ -21,7 +21,7 @@
     &__meta {
         font-size: 1.125rem;
         margin-bottom: 1rem;
-        color: var(--text-color-secondary);
+        color: var(--color-text-offset);
     }
     &__tags {
         font-family: Georgia, Times, serif;
@@ -31,7 +31,7 @@
     }
     &__status {
         font-weight: 700;
-        color: var(--brand-color-secondary);
+        color: var(--color-secondary);
     }
     &__excerpt {
         @include body-text();
