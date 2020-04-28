@@ -28,6 +28,7 @@ class ThemePicker {
             this.activeTheme = systemPreference
         }
 
+        this.setActiveBtn()
         this.bindEvents()
     }
 
@@ -54,6 +55,16 @@ class ThemePicker {
         return false
     }
 
+    setActiveBtn() {
+        Array.from(this.themeSelectBtns).forEach((btn) => {
+            btn.classList.remove(CLASSES.active)
+
+            if (btn.dataset.themeId === this.activeTheme) {
+                btn.classList.add(CLASSES.active)
+            }
+        })
+    }
+
     setTheme(id) {
         this.activeTheme = id
         document.documentElement.setAttribute('data-theme', id)
@@ -61,6 +72,8 @@ class ThemePicker {
         if (this.hasLocalStorage) {
             localStorage.setItem(THEME_STORAGE_KEY, id)
         }
+
+        this.setActiveBtn()
     }
 }
 
