@@ -9,11 +9,15 @@
         }
     }
     &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         font-size: 1rem;
         margin: 1rem 0;
         color: var(--color-text-offset);
 
         @include mq(md) {
+            justify-content: center;
             font-size: 1.25rem;
         }
     }
@@ -25,9 +29,6 @@
     &__status {
         font-weight: 700;
         color: var(--color-secondary);
-    }
-    &__demo {
-        margin-left: 2rem;
     }
     &__content {
         @include container-narrow;

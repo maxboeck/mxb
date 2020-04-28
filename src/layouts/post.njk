@@ -13,15 +13,15 @@ layout: base
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
-            <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
-
-            {% if tags %}
-            &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
-            {% endif %}
-
-            {% if draft %}
-            &sdot; <span class="post__status">(Draft)</span>
-            {% endif %}
+            <p {% if demo %}class="u-mr2"{% endif %}>
+                <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
+                {% if tags %}
+                &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
+                {% endif %}
+                {% if draft %}
+                &sdot; <span class="post__status">(Draft)</span>
+                {% endif %}
+            </p>
 
             {% if demo %}
             <a href="{{ demo }}" class="btn btn--primary post__demo" target="_blank" rel="noopener noreferrer">
