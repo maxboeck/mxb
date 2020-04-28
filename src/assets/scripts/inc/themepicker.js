@@ -28,7 +28,7 @@ class ThemePicker {
             this.activeTheme = systemPreference
         }
 
-        this.setActiveBtn()
+        this.setActiveItem()
         this.bindEvents()
     }
 
@@ -55,12 +55,14 @@ class ThemePicker {
         return false
     }
 
-    setActiveBtn() {
+    setActiveItem() {
         Array.from(this.themeSelectBtns).forEach((btn) => {
-            btn.classList.remove(CLASSES.active)
+            btn.parentNode.classList.remove(CLASSES.active)
+            btn.removeAttribute('aria-checked')
 
             if (btn.dataset.themeId === this.activeTheme) {
-                btn.classList.add(CLASSES.active)
+                btn.parentNode.classList.add(CLASSES.active)
+                btn.setAttribute('aria-checked', 'true')
             }
         })
     }
@@ -73,7 +75,7 @@ class ThemePicker {
             localStorage.setItem(THEME_STORAGE_KEY, id)
         }
 
-        this.setActiveBtn()
+        this.setActiveItem()
     }
 }
 

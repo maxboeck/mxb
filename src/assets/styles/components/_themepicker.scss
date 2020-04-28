@@ -1,0 +1,91 @@
+.themepicker {
+    display: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: z('modal');
+    width: 300px;
+    color: #373a3c;
+    background-color: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+    @supports (color: var(--fake-var)) {
+        display: flex;
+    }
+
+    &__title {
+        font-family: $font-family-sans-serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 1rem 3rem;
+        margin: 3.125rem 0 2rem;
+    }
+
+    &__list {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__item {
+        position: relative;
+        transform: scale(1);
+        transform-origin: right center;
+        transition: transform 0.2s $animation-curve-default;
+
+        &.is-active,
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: $box-shadow;
+            z-index: 1;
+        }
+
+        &.is-active::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent var(--color-text);
+            transform: translateY(-50%);
+        }
+    }
+
+    &__btn {
+        @include button-reset;
+        padding: 1rem 1rem 1rem 3rem;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    &__name {
+        display: block;
+    }
+    &__palette {
+        display: block;
+        padding: 0.125em 0;
+    }
+    &__hue {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        white-space: nowrap;
+        text-indent: 100%;
+        text-align: left;
+        overflow: hidden;
+        vertical-align: bottom;
+        box-shadow: 0 0 0 2px #ffffff;
+
+        & + & {
+            margin-left: -0.3125em;
+        }
+    }
+}
