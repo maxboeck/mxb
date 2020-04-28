@@ -37,14 +37,12 @@
 
     {# Dark Mode Switch #}
     <button
-        class="nav__darkmodebtn js-darkmode-toggle"
-        title="Toggle Dark Mode"
-        role="switch"
-        aria-checked="false"
+        class="nav__themebtn js-theme-toggle"
+        aria-expanded="false"
+        aria-controls="theme-menu"
+        aria-label="toggle theme panel"
     >
-        {% icon "moon" %}
-        {% icon "sun" %}
-        <span class="sr-only">Toggle Dark Mode</span>
+        {% icon "theme" %}
     </button>
 
     {# Menu BG Animation #}

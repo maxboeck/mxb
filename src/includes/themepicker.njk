@@ -1,0 +1,17 @@
+<ul>
+{% for theme in themes %}
+    <li>
+        <button class="js-theme-select" data-theme-id="{{ theme.id }}">
+            <span>
+                <span>{{ theme.name }}</span>
+                <span class="palette" style="background-color: {{ theme.colors.background }}">
+                    <span style="background-color: {{ theme.colors.primary }}">{{ theme.colors.primary }}</span>
+                    <span style="background-color: {{ theme.colors.secondary }}">{{ theme.colors.secondary }}</span>
+                    <span style="background-color: {{ theme.colors.border }}">{{ theme.colors.border }}</span>
+                    <span style="background-color: {{ theme.colors.text }}">{{ theme.colors.text }}</span>
+                </span>
+            </span>
+        </button>
+    </li>
+{% endfor %}
+</ul>

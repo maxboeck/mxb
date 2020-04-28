@@ -1,7 +1,7 @@
 // GLOBAL COLORS (THEMING)
 
 // Light Color Scheme
-@mixin light-color-scheme() {
+@mixin color-scheme-default() {
     --color-bg: #ffffff;
     --color-bg-offset: #f7f7f9;
     --color-text: #373a3c;
@@ -13,7 +13,7 @@
 }
 
 // Dark Color Scheme
-@mixin dark-color-scheme() {
+@mixin color-scheme-dark() {
     --color-bg: #1d1f21;
     --color-bg-offset: #252526;
     --color-text: #ffffff;
@@ -25,17 +25,9 @@
 }
 
 :root {
-    --color-scheme: 'light';
-    @include light-color-scheme();
+    @include color-scheme-default();
 
-    &.theme-dark {
-        --color-scheme: 'dark';
-        @include dark-color-scheme();
-    }
-}
-
-html {
-    @media (prefers-color-scheme: dark) {
-        --color-scheme: 'dark';
+    &[data-theme='dark'] {
+        @include color-scheme-dark();
     }
 }

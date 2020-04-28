@@ -85,36 +85,21 @@
         background-color: var(--color-bg);
     }
 
-    // Darkmode Button
-    &__darkmodebtn {
+    // Theme Button
+    &__themebtn {
         @include button-reset;
         display: none;
         justify-content: center;
         align-items: center;
-        width: 1.75;
-        height: 1.75;
-        margin-left: 2rem;
+        width: 3rem;
+        height: 3rem;
+        margin-left: 1rem;
+        border-radius: 50%;
         color: var(--color-text);
+        background-color: var(--color-bg-offset);
 
         @supports (color: var(--fake-var)) {
             display: flex;
-        }
-
-        .icon--sun {
-            display: none;
-            transform: scale(1.1);
-        }
-        .icon--moon {
-            display: block;
-        }
-
-        .theme-dark & {
-            .icon--sun {
-                display: block;
-            }
-            .icon--moon {
-                display: none;
-            }
         }
     }
 
@@ -192,7 +177,7 @@
             top: 3rem;
         }
 
-        &__darkmodebtn {
+        &__themebtn {
             margin-left: 0;
             margin-right: 5rem;
         }

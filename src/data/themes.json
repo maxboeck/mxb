@@ -1,0 +1,58 @@
+[
+    {
+        "id": "default",
+        "name": "Default",
+        "colors": {
+            "primary": "#ff335f",
+            "secondary": "#43a9a3",
+            "text": "#373a3c",
+            "border": "#eceeef",
+            "background": "#ffffff",
+            "primaryOffset": "#ff1447",
+            "textOffset": "#818a91",
+            "backgroundOffset": "#f7f7f9"
+        }
+    },
+    {
+        "id": "default-dark",
+        "name": "Dark",
+        "colors": {
+            "primary": "#ff5277",
+            "secondary": "#43a9a3",
+            "text": "#ffffff",
+            "border": "#2d2d2d",
+            "background": "#1d1f21",
+            "primaryOffset": "#ff2957",
+            "textOffset": "#818a91",
+            "backgroundOffset": "#252526"
+        }
+    },
+    {
+        "id": "beach",
+        "name": "Koopa Beach",
+        "colors": {
+            "primary": "#ffd803",
+            "secondary": "#bae8e8",
+            "text": "#272343",
+            "border": "#e3f6f5",
+            "background": "#fffffe",
+            "primaryOffset": "#ffd803",
+            "textOffset": "#2d334a",
+            "backgroundOffset": "#e3f6f5"
+        }
+    },
+    {
+        "id": "choco",
+        "name": "Choco Mountain",
+        "colors": {
+            "primary": "#ffc0ad",
+            "secondary": "#e78fb3",
+            "text": "#fffffe",
+            "border": "#271c19",
+            "background": "#55423d",
+            "primaryOffset": "#ffc0ad",
+            "textOffset": "#e78fb3",
+            "backgroundOffset": "#41312E"
+        }
+    }
+]

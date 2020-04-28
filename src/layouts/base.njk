@@ -11,10 +11,11 @@
 
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="{{ '/assets/css/theme.css' | url }}">
         <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
 
         {% include "meta.njk" %}
-        <script>(localStorage.getItem('darkMode') === 'true') && document.documentElement.classList.add('theme-dark');</script>
+        <script>(localStorage.getItem('theme')) && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
     </head>
     <body>
         <a href="#main" class="sr-skip-link">skip to main content</a>
@@ -28,6 +29,8 @@
 
             {% include "footer.njk" %}
         </div>
+
+        {% include "themepicker.njk" %}
 
         {# Main JS Bundle #}
         <script src="{{ '/assets/js/main.js' | url }}" defer></script>
