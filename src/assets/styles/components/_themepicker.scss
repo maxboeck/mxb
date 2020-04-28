@@ -1,42 +1,42 @@
 .themepicker {
     display: none;
-    flex-direction: column;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: z('modal');
-    width: $themepicker-width;
+    width: 100%;
+    font-size: 0.875rem;
     color: #373a3c;
     background-color: #fff;
-    box-shadow: -1px 0 0 0 rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s $animation-curve-default;
-    transform: translateX($themepicker-width + 50);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 
-    @supports (color: var(--fake-var)) {
-        display: flex;
+    &.is-open {
+        display: block;
     }
 
     &__title {
         font-family: $font-family-sans-serif;
-        font-size: 1rem;
+        font-size: 1em;
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 1px;
-        padding: 1rem 2.5rem;
-        margin: 3.125rem 0 2rem;
+        padding: 2rem 2rem 0;
     }
 
     &__list {
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 1rem 2rem 2rem;
     }
 
     &__item {
+        display: inline-block;
         position: relative;
         transform: scale(1);
-        transform-origin: right center;
         transition: transform 0.2s $animation-curve-default;
+
+        & + & {
+            margin-left: 1rem;
+        }
 
         &.is-active,
         &:hover {
@@ -45,25 +45,26 @@
             z-index: 1;
         }
 
-        &.is-active::before {
+        &.is-active::after {
             content: '';
             display: block;
             position: absolute;
-            top: 50%;
-            left: 0;
+            top: 100%;
+            left: 50%;
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 10px 0 10px 16px;
-            border-color: transparent transparent transparent var(--color-text);
-            transform: translateY(-50%);
+            border-width: 0 10px 14px 10px;
+            border-color: transparent transparent black transparent;
+            transform: translate(-50%, 1rem);
         }
     }
 
     &__btn {
-        @include button-reset;
-        padding: 1rem 1rem 1rem 2.5rem;
         display: block;
+        padding: 1em;
+        border-radius: 0.5em;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         width: 100%;
         text-align: left;
     }
@@ -76,8 +77,8 @@
     }
     &__hue {
         display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.5em;
+        height: 1.5em;
         border-radius: 50%;
         white-space: nowrap;
         text-indent: 100%;
@@ -89,14 +90,5 @@
         & + & {
             margin-left: -0.3125em;
         }
-    }
-}
-
-.js-themepicker-open {
-    .themepicker {
-        transform: translateX(0);
-    }
-    .layout {
-        transform: translateX($themepicker-width * -1);
     }
 }

@@ -1,16 +1,22 @@
 const SELECTORS = {
-    togglePickerBtn: '.js-theme-toggle',
+    picker: '.js-themepicker',
+    toggleBtn: '.js-themepicker-toggle',
     themeSelectBtn: '.js-theme-select'
 }
 const CLASSES = {
+    open: 'is-open',
     active: 'is-active'
 }
 const THEME_STORAGE_KEY = 'theme'
 
 class ThemePicker {
     constructor() {
+        this.isOpen = false
         this.activeTheme = 'default'
         this.hasLocalStorage = typeof Storage !== 'undefined'
+
+        this.picker = document.querySelector(SELECTORS.picker)
+        this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
         this.themeSelectBtns = document.querySelectorAll(
             SELECTORS.themeSelectBtn
         )
@@ -33,6 +39,8 @@ class ThemePicker {
     }
 
     bindEvents() {
+        this.toggleBtn.addEventListener('click', () => this.togglePicker())
+
         Array.from(this.themeSelectBtns).forEach((btn) => {
             const id = btn.dataset.themeId
             if (id) {
@@ -76,6 +84,19 @@ class ThemePicker {
         }
 
         this.setActiveItem()
+    }
+
+    togglePicker() {
+        this.isOpen = typeof force === 'boolean' ? force : !this.isOpen
+
+        this.picker.classList.toggle(CLASSES.open, this.isOpen)
+        this.toggleBtn.setAttribute('aria-expanded', String(this.isOpen))
+
+        // if (this.isOpen) {
+        //     this.focusTrap.activate()
+        // } else {
+        //     this.focusTrap.deactivate()
+        // }
     }
 }
 
