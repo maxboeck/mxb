@@ -6,6 +6,7 @@
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
+    position: relative;
     transition: max-height 0.4s $animation-curve-default;
 
     &.is-open {
@@ -93,5 +94,12 @@
         & + & {
             margin-left: -0.3125em;
         }
+    }
+
+    &__close {
+        @include button-reset;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
     }
 }

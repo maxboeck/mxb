@@ -1,7 +1,8 @@
 const SELECTORS = {
     picker: '.js-themepicker',
     toggleBtn: '.js-themepicker-toggle',
-    themeSelectBtn: '.js-theme-select'
+    themeSelectBtn: '.js-themepicker-themeselect',
+    closeBtn: '.js-themepicker-close'
 }
 const CLASSES = {
     open: 'is-open',
@@ -17,6 +18,7 @@ class ThemePicker {
 
         this.picker = document.querySelector(SELECTORS.picker)
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
+        this.closeBtn = document.querySelector(SELECTORS.closeBtn)
         this.themeSelectBtns = document.querySelectorAll(
             SELECTORS.themeSelectBtn
         )
@@ -40,6 +42,7 @@ class ThemePicker {
 
     bindEvents() {
         this.toggleBtn.addEventListener('click', () => this.togglePicker())
+        this.closeBtn.addEventListener('click', () => this.togglePicker(false))
 
         Array.from(this.themeSelectBtns).forEach((btn) => {
             const id = btn.dataset.themeId
@@ -86,17 +89,30 @@ class ThemePicker {
         this.setActiveItem()
     }
 
-    togglePicker() {
+    togglePicker(force) {
         this.isOpen = typeof force === 'boolean' ? force : !this.isOpen
 
-        this.picker.classList.toggle(CLASSES.open, this.isOpen)
         this.toggleBtn.setAttribute('aria-expanded', String(this.isOpen))
 
-        // if (this.isOpen) {
-        //     this.focusTrap.activate()
-        // } else {
-        //     this.focusTrap.deactivate()
-        // }
+        if (this.isOpen) {
+            this.picker.removeAttribute('hidden')
+            window.setTimeout(() => {
+                this.picker.classList.add(CLASSES.open)
+            }, 1)
+            // this.focusTrap.activate()
+        } else {
+            const transitionHandler = () => {
+                this.picker.removeEventListener(
+                    'transitionend',
+                    transitionHandler
+                )
+                this.picker.setAttribute('hidden', true)
+            }
+
+            // this.focusTrap.deactivate()
+            this.picker.addEventListener('transitionend', transitionHandler)
+            this.picker.classList.remove(CLASSES.open)
+        }
     }
 }
 

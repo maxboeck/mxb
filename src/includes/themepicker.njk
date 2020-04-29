@@ -1,9 +1,9 @@
-<aside class="themepicker js-themepicker" role="complementary">
+<aside class="themepicker js-themepicker" role="complementary" hidden>
     <h3 class="themepicker__title">Select Theme</h3>
     <ul class="themepicker__list" id="theme-menu">
     {% for theme in themes %}
         <li class="themepicker__item">
-            <button class="themepicker__btn js-theme-select" data-theme-id="{{ theme.id }}" style="background-color: {{ theme.colors.background }}">
+            <button class="themepicker__btn js-themepicker-themeselect" data-theme-id="{{ theme.id }}" style="background-color: {{ theme.colors.background }}">
                 <span class="themepicker__name" style="color: {{ theme.colors.text }}">{{ theme.name }}</span>
                 <span class="themepicker__palette">
                     <span class="themepicker__hue" style="background-color: {{ theme.colors.primary }}">{{ theme.colors.primary }}</span>
@@ -16,4 +16,8 @@
         </li>
     {% endfor %}
     </ul>
+    <button class="themepicker__close js-themepicker-close">
+        <span class="sr-only">close themepicker</span>
+        {% icon "close" %}
+    </button>
 </aside>
