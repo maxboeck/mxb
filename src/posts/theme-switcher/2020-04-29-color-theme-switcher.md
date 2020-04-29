@@ -2,6 +2,7 @@
 title: Color Theme Switcher
 tags: code, design
 image: cover.jpg
+demo: https://mxb.dev
 ---
 
 <p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
@@ -12,7 +13,14 @@ There's a thousand tutorials on how to build dark modes already, but why limit y
 
 That's why I took some time to build a new feature on my site: __dynamic color themes!__ Yes, instead of two color schemes, I now have ten! Go ahead and try it, hit the paintroller-button in the header. I'll wait.
 
-&hellip;
+*If you're reading this somewhere else, the effect would look something like this:*
+
+<div class="extend">
+  <video poster="{{ 'theme-switcher-still.png' | media(page) }}" width="752" height="452" preload="metadata" style="border: 1px solid var(--color-border)" muted controls>
+    <source src="{{ 'theme-switcher.webm' | media(page) }}" type="video/webm" />
+    <source src="{{ 'theme-switcher.mp4' | media(page) }}" type="video/mp4" />
+  </video>
+</div>
 
 Nice, right? Let's look at how to do that!
 
@@ -140,9 +148,7 @@ Now do this for every instance of `color`, `background`, `border`, `fill` ... yo
 
 ## Building the Theme Switcher
 
-If you made it this far, congratulations! Your website is already themeable (in theory). We still need a way for people to switch themes without manually editing the markup though, that's not very user-friendly.
-
-What we need is some sort of UI component for this. There's two parts involved here: Markup and Javascript.
+If you made it this far, congratulations! Your website is already themeable (in theory). We still need a way for people to switch themes without manually editing the markup though, that's not very user-friendly. We need some sort of UI component for this - a theme switcher.
 
 ### Generating the Switcher Markup
 
@@ -175,7 +181,11 @@ Here's the template to generate that markup. We'll use inline style attributes h
 {% endraw %}
 ```
 
+There's some styling involved as well, but I'll leave that out for brevity here. If you're interested in the extended version, you can find all the code in [my site's github repo](https://github.com/maxboeck/mxb).
+
 ### Setting the Theme
+
+The last missing piece is some Javascript to handle the switcher functionality.
 
 ```js
 // let's make this a new class
@@ -202,6 +212,9 @@ if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
 }
 ```
 
+When somebody switches themes, we'll take the theme id and set is as the `data-theme` attribute on the document. That will trigger the corresponding selector in our `theme.css` file, and the chosen color scheme will be applied.
+
+Since we want the theme to persist, even when the user reloads the page or navigates away, we'll save the selected id in `localStorage`.
 
 ```js
 setTheme(id) {
