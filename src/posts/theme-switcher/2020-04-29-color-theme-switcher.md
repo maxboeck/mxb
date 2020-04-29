@@ -7,13 +7,14 @@ demo: https://mxb.dev
 
 <p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
 
-And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode setting. This coincided nicely with widespread support for CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*), and the introduction of a new `prefers-color-scheme` media query.
+And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode. Fortunately though, this coincided nicely with widespread support for CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) and the introduction of a new `prefers-color-scheme` media query.
 
 There's lots of tutorials on [how to build dark modes](https://css-tricks.com/dark-modes-with-css/) already, but why limit yourself to light and dark? Only a Sith deals in absolutes. 
 
-That's why I decided to build a new feature on my site: __dynamic color themes!__ Yes, instead of two color schemes, I now have ten! That's eight better than the average website! 
+That's why I decided to build a new feature on my site: 
+__dynamic color themes!__ Yes, instead of two color schemes, I now have ten! That's eight better than the previous website! 
 
-Go ahead and try it, hit the paintroller-button in the header. 
+Go ahead and try it, hit that __paintroller-button__ in the header. 
 I'll wait.
 
 *If you're reading this somewhere else, the effect would look something like this:*
