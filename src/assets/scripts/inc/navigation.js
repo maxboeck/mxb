@@ -1,5 +1,6 @@
 import debounce from 'lodash/debounce'
-import { getWindowDimensions, createFocusTrap } from './utils'
+import createFocusTrap from 'focus-trap'
+import { getWindowDimensions } from './utils'
 
 const SELECTORS = {
     nav: '.js-nav',
@@ -21,8 +22,7 @@ class Navigation {
         this.toggleBtn = this.nav.querySelector(SELECTORS.toggleBtn)
 
         this.focusTrap = createFocusTrap(this.nav, {
-            toggleElement: this.toggleBtn,
-            onEscape: () => this.toggleMenu(false)
+            onDeactivate: () => this.toggleMenu(false)
         })
 
         this.bindEvents()

@@ -1,3 +1,5 @@
+import createFocusTrap from 'focus-trap'
+
 const SELECTORS = {
     picker: '.js-themepicker',
     toggleBtn: '.js-themepicker-toggle',
@@ -22,6 +24,10 @@ class ThemePicker {
         this.themeSelectBtns = document.querySelectorAll(
             SELECTORS.themeSelectBtn
         )
+
+        this.focusTrap = createFocusTrap(this.picker, {
+            onDeactivate: () => this.togglePicker(false)
+        })
 
         this.init()
     }
@@ -99,7 +105,7 @@ class ThemePicker {
             window.setTimeout(() => {
                 this.picker.classList.add(CLASSES.open)
             }, 1)
-            // this.focusTrap.activate()
+            this.focusTrap.activate()
         } else {
             const transitionHandler = () => {
                 this.picker.removeEventListener(
@@ -109,7 +115,7 @@ class ThemePicker {
                 this.picker.setAttribute('hidden', true)
             }
 
-            // this.focusTrap.deactivate()
+            this.focusTrap.deactivate()
             this.picker.addEventListener('transitionend', transitionHandler)
             this.picker.classList.remove(CLASSES.open)
         }

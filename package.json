@@ -21,6 +21,7 @@
   ],
   "dependencies": {
     "dompurify": "^2.0.7",
+    "focus-trap": "^5.1.0",
     "focus-visible": "^5.0.2",
     "infinite-scroll": "^3.0.5",
     "leaflet": "^1.5.1",
