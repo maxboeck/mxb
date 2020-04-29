@@ -115,23 +115,12 @@
                 bottom: 15%;
                 background-color: var(--color-text-offset);
             }
-
-            &--active > a {
-                color: #fff;
-            }
-            &--active .nav__num {
-                color: var(--color-text-offset);
-            }
         }
 
         &__link {
             padding: 1.5rem;
             text-transform: none;
-            color: var(--color-bg-offset);
-
-            @include hover-focus {
-                color: #fff;
-            }
+            color: #fff !important;
         }
 
         &__num {
