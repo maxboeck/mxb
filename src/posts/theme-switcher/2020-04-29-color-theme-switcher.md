@@ -7,11 +7,14 @@ demo: https://mxb.dev
 
 <p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
 
-And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode setting. This coincided nicely with widespread support for CSS [custom properties](), and the introduction of a new `prefers-color-scheme` media query.
+And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode setting. This coincided nicely with widespread support for CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*), and the introduction of a new `prefers-color-scheme` media query.
 
-There's a thousand tutorials on how to build dark modes already, but why limit yourself to light and dark? Only a Sith deals in absolutes. 
+There's lots of tutorials on [how to build dark modes](https://css-tricks.com/dark-modes-with-css/) already, but why limit yourself to light and dark? Only a Sith deals in absolutes. 
 
-That's why I took some time to build a new feature on my site: __dynamic color themes!__ Yes, instead of two color schemes, I now have ten! Go ahead and try it, hit the paintroller-button in the header. I'll wait.
+That's why I decided to build a new feature on my site: __dynamic color themes!__ Yes, instead of two color schemes, I now have ten! That's eight better than the average website! 
+
+Go ahead and try it, hit the paintroller-button in the header. 
+I'll wait.
 
 *If you're reading this somewhere else, the effect would look something like this:*
 
@@ -49,19 +52,19 @@ First up, we need some data. We need to define our themes in a central location,
 ]
 ```
 
-Our color schemes are objects in an array. Each theme gets a name, id and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I found it useful to assign these eight colors. 
+Our color schemes are objects in an array, which is now available during build. Each theme gets a `name`, `id` and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I assigned each theme eight properties. 
 
-It's a good idea to give these properties logical names instead of visual onces like "light" or "muted". I've also found it necessary to define a couple of `offset` colors - these are used to adjust i.e. the primary color on interactions like hover and such. 
+It's a good idea to give these properties logical names instead of visual onces like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust i.e. the primary color on interactions like hover and such. 
 
-In addition to my "default" and "dark" themes that I had before, I created eight more themes this way. I used a couple of different sources for inspiration; good ones are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
+In addition to the "default" and "dark" themes I already had before, I created eight more themes this way. I used a couple of different sources for inspiration; the ones I liked best are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
 
 *(All my themes are named after Mario Kart 64 race tracks by the way, because why not.)*
 
 ## Transform to Custom CSS Properties
 
-To actually use our colors in CSS, we need them in a different format. Let's create a stylesheet and make custom properties out of them. Using Eleventy's template rendering, we can do that by generating a `theme.css` file from the data, looping over the color schemes. We'll use a macro to output the color definitions for each.
+To actually use our colors in CSS, we need them in a different format. Let's create a stylesheet and make custom properties out of them. Using Eleventy's template rendering, we can do that by generating a `theme.css` file from the data, looping over all themes. We'll use a macro to output the color definitions for each.
 
-I wrote this in Nunjucks, the templating engine of my site - but you can do it in any other language as well.
+I wrote this in Nunjucks, the templating engine of my choice - but you can do it in any other language as well.
 
 ```css{% raw %}
 /* theme.css.njk */
@@ -142,20 +145,22 @@ body {
 }
 ```
 
+👉 __Attention:__ Custom Properties are supported in [all modern browsers](https://caniuse.com/#search=custom%20properties), but if you need to support IE11 or Opera Mini, be sure to provide a fallback.
+
 It's fine to mix static preprocessor variables and custom properties by the way - they do different things. Our line height is not going to change dynamically.
 
 Now do this for every instance of `color`, `background`, `border`, `fill` ... you get the idea. Told you it was gonna be tedious.
 
 ## Building the Theme Switcher
 
-If you made it this far, congratulations! Your website is already themeable (in theory). We still need a way for people to switch themes without manually editing the markup though, that's not very user-friendly. We need some sort of UI component for this - a theme switcher.
+If you made it this far, congratulations! Your website is now themeable (in theory). We still need a way for people to switch themes without manually editing the markup though, that's not very user-friendly. We need some sort of UI component for this - a theme switcher.
 
-### Generating the Switcher Markup
+### Generating the Markup
 
-The switcher structure is pretty straightforward: it's essentially a list of buttons, one for each theme. When a button is pressed, we'll switch colors. Let's give the user an idea what to expect by showing the theme colors as little swatches on the button.
+The switcher structure is pretty straightforward: it's essentially a list of buttons, one for each theme. When a button is pressed, we'll switch colors. Let's give the user an idea what to expect by showing the theme colors as little swatches on the button:
 
 <figure class="extend">
-    <img src="{{ 'theme-buttons.jpg' | media(page) }}">
+    <img src="{{ 'theme-buttons.jpg' | media(page) }}" loading="lazy" alt="a row of buttons, showing the theme name and color swatches">
     <figcaption>Fact: All good design is inspired by Mario Kart</figcaption>
 </figure>
 
@@ -214,7 +219,7 @@ if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
 
 When somebody switches themes, we'll take the theme id and set is as the `data-theme` attribute on the document. That will trigger the corresponding selector in our `theme.css` file, and the chosen color scheme will be applied.
 
-Since we want the theme to persist, even when the user reloads the page or navigates away, we'll save the selected id in `localStorage`.
+Since we want the theme to persist even when the user reloads the page or navigates away, we'll save the selected id in `localStorage`.
 
 ```js
 setTheme(id) {
@@ -229,12 +234,28 @@ setTheme(id) {
 }
 ```
 
+On a server-rendered site, we could store that piece of data in a cookie instead and apply the theme id to the html element before serving the page. Since we're dealing with a static site here though, there is no server-side processing - so we have to do a small workaround.
+
+We'll retrieve the theme from `localStorage` in a tiny additional script in the head, right after the stylesheet is loaded. Contrary to the rest of the Javascript, we want this to execute as early as possible to avoid a FODT ("flash of default theme"). 
+
+OK that's not actually a real term. I made that up.
+
 ```html
-<link rel="stylesheet" href="/assets/css/main.css">
-<script>
-    // if there's a theme id in localstorage, use it on the <html>
-    localStorage.getItem('theme') && 
-    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
-</script>
+<head>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script>
+        // if there's a theme id in localstorage, use it on the <html>
+        localStorage.getItem('theme') && 
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+    </script>
+</head>
 ```
+
+If no stored theme is found, the site uses the default color scheme (either light or dark, depending on the users [system preference](https://web.dev/prefers-color-scheme/)).
+
+## Get creative
+
+You can have an unlimited number of themes this way, and they're not limited to flat colors either - with some extra effort you can have patterns, gradients or even GIFs in your design. Although arguably just because you can doesn't mean you should, as evidenced by my site's new *Rainbow Road* theme.
+
+Please don't use that.
 
