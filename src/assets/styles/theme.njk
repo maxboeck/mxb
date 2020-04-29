@@ -14,7 +14,7 @@ excludeFromSitemap: true
 {% endmacro %}
 
 {%- set default = themes|getTheme('default') -%}
-{%- set dark = themes|getTheme('default-dark') -%}
+{%- set dark = themes|getTheme('dark') -%}
 
 :root {
     {{ colorscheme(default.colors) }}
