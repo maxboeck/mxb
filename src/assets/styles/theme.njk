@@ -31,3 +31,7 @@ html[data-theme='{{ theme.id }}'] {
     {{ colorscheme(theme.colors) }}
 }
 {% endfor %}
+
+html[data-theme='rainbow'] body {
+    background-image: url("/assets/images/stars.gif");
+}
