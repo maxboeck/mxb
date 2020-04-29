@@ -54,4 +54,8 @@
     border-radius: 50%;
     color: var(--color-text);
     background-color: var(--color-bg-offset);
+
+    @include hover-focus {
+        filter: brightness(0.95) saturate(140%);
+    }
 }
