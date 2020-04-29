@@ -26,7 +26,8 @@ class ThemePicker {
         )
 
         this.focusTrap = createFocusTrap(this.picker, {
-            onDeactivate: () => this.togglePicker(false)
+            onDeactivate: () => this.togglePicker(false),
+            allowOutsideClick: () => true
         })
 
         this.init()

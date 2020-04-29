@@ -44,3 +44,14 @@
         background-color: transparent;
     }
 }
+
+.iconbtn {
+    @include button-reset;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    color: var(--color-text);
+    background-color: var(--color-bg-offset);
+}

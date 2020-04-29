@@ -28,6 +28,30 @@
         }
     }
 
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    // Theme Button
+    &__themebtn {
+        display: none;
+        order: -1;
+        margin-right: 1rem;
+
+        @supports (color: var(--fake-var)) {
+            display: flex;
+        }
+        @include mq(md) {
+            margin-right: 2rem;
+        }
+        @include mq(lg) {
+            order: initial;
+            margin-left: 1rem;
+            margin-right: 0;
+        }
+    }
+
     @include mq(md) {
         padding: 3.125rem 0;
     }

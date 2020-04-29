@@ -2,7 +2,7 @@
 
     {# Menu Toggle Button #}
     <button
-        class="nav__togglebtn js-nav-toggle"
+        class="iconbtn nav__togglebtn js-nav-toggle"
         aria-expanded="false"
         aria-controls="nav-menu"
         aria-label="toggle menu"
@@ -34,19 +34,9 @@
         {%- endfor -%}
         </ul>
     </div>
-
-    {# Dark Mode Switch #}
-    <button
-        class="nav__themebtn js-themepicker-toggle"
-        aria-expanded="false"
-        aria-controls="theme-menu"
-        aria-label="toggle theme panel"
-    >
-        {% icon "theme" %}
-    </button>
-
+    
     {# Menu BG Animation #}
-    <div class="nav__bg theme-dark">
+    <div class="nav__bg">
         <div class="nav__bg__circle"></div>
     </div>
 

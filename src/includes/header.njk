@@ -9,6 +9,15 @@
 
         <div class="header__nav">
             {% include "navigation.njk" %}
+
+            <button
+                class="iconbtn header__themebtn js-themepicker-toggle"
+                aria-expanded="false"
+                aria-controls="theme-menu"
+                aria-label="toggle theme panel"
+            >
+                {% icon "theme" %}
+            </button>
         </div>
 
     </div>

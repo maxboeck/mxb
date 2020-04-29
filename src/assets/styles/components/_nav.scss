@@ -71,36 +71,6 @@
     // Toggle Button
     &__togglebtn {
         display: none;
-        align-items: center;
-        width: 3rem;
-        height: 3rem;
-
-        position: fixed;
-        z-index: z('nav') + 1;
-        right: 5%;
-
-        border: 0;
-        padding: 0;
-        border-radius: 50%;
-        background-color: var(--color-bg);
-    }
-
-    // Theme Button
-    &__themebtn {
-        @include button-reset;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        width: 3rem;
-        height: 3rem;
-        margin-left: 1rem;
-        border-radius: 50%;
-        color: var(--color-text);
-        background-color: var(--color-bg-offset);
-
-        @supports (color: var(--fake-var)) {
-            display: flex;
-        }
     }
 
     // ==================================
@@ -174,22 +144,8 @@
 
         &__togglebtn {
             display: flex;
-            top: 3rem;
-        }
-
-        &__themebtn {
-            margin-left: 0;
-            margin-right: 4rem;
-        }
-    }
-
-    // ==================================
-    // MOBILE VERSION (PHONE ONLY)
-    // ==================================
-
-    @include mq-down(md) {
-        &__togglebtn {
-            top: 0.875rem;
+            position: relative;
+            z-index: z('nav') + 1;
         }
     }
 }
@@ -231,7 +187,7 @@
 .nav__bg {
     position: fixed;
     z-index: z('nav') - 1;
-    top: 25px;
+    top: 16px;
     right: 5%;
     height: 4px;
     width: 4px;
@@ -263,7 +219,7 @@
     }
 
     @include mq(md) {
-        top: 42px;
+        top: 50px;
     }
     @include mq(lg) {
         display: none;
@@ -279,10 +235,10 @@
     width: 24px;
     height: 16px;
     position: relative;
-    transform: rotate(0deg);
-    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
     margin: 0 auto;
+    transform: translate(0, -1px) rotate(0deg);
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     &__bar {
         display: block;
@@ -308,7 +264,7 @@
 
     // Animate to "X" when Nav is open
     .nav--open & {
-        transform: rotate(270deg);
+        transform: translate(-1px, 0) rotate(270deg);
 
         .menuicon__bar {
             &:nth-child(1),
