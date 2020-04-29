@@ -14,7 +14,7 @@
         }
     },
     {
-        "id": "default-dark",
+        "id": "dark",
         "name": "Dark",
         "colors": {
             "primary": "#ff5277",
@@ -31,12 +31,12 @@
         "id": "beach",
         "name": "Koopa Beach",
         "colors": {
-            "primary": "#ffd803",
+            "primary": "#ff9d00",
             "secondary": "#bae8e8",
             "text": "#272343",
             "border": "#e3f6f5",
             "background": "#fffffe",
-            "primaryOffset": "#ffd803",
+            "primaryOffset": "#ffca00",
             "textOffset": "#2d334a",
             "backgroundOffset": "#e3f6f5"
         }
@@ -53,6 +53,20 @@
             "primaryOffset": "#ffc0ad",
             "textOffset": "#e78fb3",
             "backgroundOffset": "#41312E"
+        }
+    },
+    {
+        "id": "bowser",
+        "name": "Bowser's Castle",
+        "colors": {
+            "primary": "#7f5af0",
+            "secondary": "#2cb67d",
+            "text": "#fffffe",
+            "border": "#383a61",
+            "background": "#16161a",
+            "primaryOffset": "#e068fd",
+            "textOffset": "#94a1b2",
+            "backgroundOffset": "#29293e"
         }
     }
 ]

@@ -61,7 +61,7 @@ class ThemePicker {
 
     getSystemPreference() {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'default-dark'
+            return 'dark'
         }
         return false
     }
