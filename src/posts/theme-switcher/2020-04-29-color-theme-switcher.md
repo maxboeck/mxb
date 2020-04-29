@@ -6,13 +6,15 @@ image: cover.jpg
 
 <p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
 
-And so every operating system, app and even some websites (mine included) suddenly had to come with a dark mode setting. This coincided nicely with widespread support for CSS [custom properties](), and the introduction of a new `prefers-color-scheme` media query.
+And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode setting. This coincided nicely with widespread support for CSS [custom properties](), and the introduction of a new `prefers-color-scheme` media query.
 
-There's a thousand tutorials on how to build dark modes already, but why limit yourself to light and dark? Only a Sith deals in absolutes. That's why I took some time to build a new feature on my site: __dynamic color themes!__
+There's a thousand tutorials on how to build dark modes already, but why limit yourself to light and dark? Only a Sith deals in absolutes. 
 
-Yes, instead of two color schemes, I now have ten! Go ahead and try it, hit the paintroller-button in the header. I'll wait.
+That's why I took some time to build a new feature on my site: __dynamic color themes!__ Yes, instead of two color schemes, I now have ten! Go ahead and try it, hit the paintroller-button in the header. I'll wait.
 
-Nice, right? Here's how to do that:
+&hellip;
+
+Nice, right? Let's look at how to do that!
 
 ## Define Color Schemes
 
@@ -140,7 +142,7 @@ Now do this for every instance of `color`, `background`, `border`, `fill` ... yo
 
 If you made it this far, congratulations! Your website is already themeable (in theory). We still need a way for people to switch themes without manually editing the markup though, that's not very user-friendly.
 
-What we need is some sort of UI component for this. There's two parts involved: Markup and Javascript.
+What we need is some sort of UI component for this. There's two parts involved here: Markup and Javascript.
 
 ### Generating the Switcher Markup
 
@@ -151,7 +153,7 @@ The switcher structure is pretty straightforward: it's essentially a list of but
     <figcaption>Fact: All good design is inspired by Mario Kart</figcaption>
 </figure>
 
-Here's the template to generate that markup. We'll use inline style attributes here to display the background, text and accent colors. The button also holds its `id` in a `data-theme-id` attribute, we need that to pick it up via Javascript later.
+Here's the template to generate that markup. We'll use inline style attributes here to display the background, text and accent colors. The button also holds its `id` in a `data-theme-id` attribute, we will pick that up via Javascript later.
 
 ```html{% raw %}
 <ul class="themeswitcher">
@@ -176,13 +178,16 @@ Here's the template to generate that markup. We'll use inline style attributes h
 ### Setting the Theme
 
 ```js
+// let's make this a new class
 class ThemeSwitcher {
     constructor() {
-        this.isOpen = false
+        // define some state variables
         this.activeTheme = 'default'
         this.hasLocalStorage = typeof Storage !== 'undefined'
 
+        // get all the theme buttons from before
         this.themeSelectBtns = document.querySelectorAll('button[data-theme-id]')
+        // when clicked, get the theme id and pass it to a function
         Array.from(this.themeSelectBtns).forEach((btn) => {
             const id = btn.dataset.themeId
             btn.addEventListener('click', () => this.setTheme(id))
@@ -190,6 +195,8 @@ class ThemeSwitcher {
     }
 }
 
+// this whole thing only makes sense if custom properties are supported -
+// so let's check for that before initializing our switcher.
 if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
     new ThemeSwitcher()
 }
@@ -198,9 +205,11 @@ if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
 
 ```js
 setTheme(id) {
+    // set the theme id on the <html> element...
     this.activeTheme = id
     document.documentElement.setAttribute('data-theme', id)
 
+    // and save the selection in localStorage for later
     if (this.hasLocalStorage) {
         localStorage.setItem("theme", id)
     }
@@ -210,6 +219,7 @@ setTheme(id) {
 ```html
 <link rel="stylesheet" href="/assets/css/main.css">
 <script>
+    // if there's a theme id in localstorage, use it on the <html>
     localStorage.getItem('theme') && 
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
 </script>
