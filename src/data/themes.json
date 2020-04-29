@@ -45,14 +45,42 @@
         "id": "choco",
         "name": "Choco Mountain",
         "colors": {
-            "primary": "#ffc0ad",
+            "primary": "#f3ab87",
             "secondary": "#e78fb3",
             "text": "#fffffe",
             "border": "#271c19",
             "background": "#55423d",
             "primaryOffset": "#ffc0ad",
-            "textOffset": "#e78fb3",
+            "textOffset": "#ffc0ad",
             "backgroundOffset": "#41312E"
+        }
+    },
+    {
+        "id": "sherbet",
+        "name": "Sherbet Land",
+        "colors": {
+            "primary": "#00ebc7",
+            "secondary": "#ff5470",
+            "text": "#1b2d45",
+            "border": "#d5e6fd",
+            "background": "#fffffe",
+            "primaryOffset": "#14ffdc",
+            "textOffset": "#3a6297",
+            "backgroundOffset": "#f2f4f6"
+        }
+    },
+    {
+        "id": "turnpike",
+        "name": "Toad's Turnpike",
+        "colors": {
+            "primary": "#ffbd03",
+            "secondary": "#e53170",
+            "text": "#fffffe",
+            "border": "#383a61",
+            "background": "#232946",
+            "primaryOffset": "#ffd803",
+            "textOffset": "#94a1b2",
+            "backgroundOffset": "#2a325a"
         }
     },
     {
@@ -84,6 +112,20 @@
         }
     },
     {
+        "id": "yoshi",
+        "name": "Yoshi Valley",
+        "colors": {
+            "primary": "#99C221",
+            "secondary": "#E55812",
+            "text": "#41474C",
+            "border": "#e8e0d9",
+            "background": "#fafbf5",
+            "primaryOffset": "#6E910A",
+            "textOffset": "#757D84",
+            "backgroundOffset": "#f2ede9"
+        }
+    },
+    {
         "id": "rainbow",
         "name": "Rainbow Road",
         "colors": {
@@ -91,10 +133,10 @@
             "secondary": "#2D95BF",
             "text": "#F0C419",
             "border": "#d846ff",
-            "background": "#6a3579",
+            "background": "#3a0f47",
             "primaryOffset": "#e068fd",
             "textOffset": "#F15A5A",
-            "backgroundOffset": "#955BA5"
+            "backgroundOffset": "#6a3579"
         }
     }
 ]
