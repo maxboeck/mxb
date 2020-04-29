@@ -4,7 +4,8 @@ const SELECTORS = {
     picker: '.js-themepicker',
     toggleBtn: '.js-themepicker-toggle',
     themeSelectBtn: '.js-themepicker-themeselect',
-    closeBtn: '.js-themepicker-close'
+    closeBtn: '.js-themepicker-close',
+    navToggleBtn: '.js-nav-toggle'
 }
 const CLASSES = {
     open: 'is-open',
@@ -20,6 +21,7 @@ class ThemePicker {
 
         this.picker = document.querySelector(SELECTORS.picker)
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
+        this.navToggleBtn = document.querySelector(SELECTORS.navToggleBtn)
         this.closeBtn = document.querySelector(SELECTORS.closeBtn)
         this.themeSelectBtns = document.querySelectorAll(
             SELECTORS.themeSelectBtn
@@ -50,6 +52,12 @@ class ThemePicker {
     bindEvents() {
         this.toggleBtn.addEventListener('click', () => this.togglePicker())
         this.closeBtn.addEventListener('click', () => this.togglePicker(false))
+
+        this.navToggleBtn.addEventListener('click', () => {
+            if (this.isOpen) {
+                this.togglePicker(false)
+            }
+        })
 
         Array.from(this.themeSelectBtns).forEach((btn) => {
             const id = btn.dataset.themeId
