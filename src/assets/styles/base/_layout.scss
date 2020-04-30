@@ -3,6 +3,13 @@
 body {
     overflow-x: hidden;
     transition: color 0.15s, background-color 0.15s;
+
+    @include mq-down(lg) {
+        &.no-scroll {
+            height: 100vh;
+            overflow: hidden;
+        }
+    }
 }
 
 .layout {

@@ -9,6 +9,7 @@ const SELECTORS = {
 }
 
 const CLASSES = {
+    noScroll: 'no-scroll',
     navOpen: 'nav--open',
     navMenuVisible: 'nav__menu--visible'
 }
@@ -41,6 +42,7 @@ class Navigation {
     toggleMenu(force) {
         this.isOpen = typeof force === 'boolean' ? force : !this.isOpen
 
+        document.body.classList.toggle(CLASSES.noScroll, this.isOpen)
         this.nav.classList.toggle(CLASSES.navOpen, this.isOpen)
         this.toggleBtn.setAttribute('aria-expanded', String(this.isOpen))
 
