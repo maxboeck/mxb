@@ -2,7 +2,6 @@
 title: Color Theme Switcher
 tags: code, design
 image: cover.jpg
-demo: https://mxb.dev
 ---
 
 <p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
