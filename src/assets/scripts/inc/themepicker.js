@@ -1,5 +1,3 @@
-import createFocusTrap from 'focus-trap'
-
 const SELECTORS = {
     picker: '.js-themepicker',
     toggleBtn: '.js-themepicker-toggle',
@@ -23,15 +21,9 @@ class ThemePicker {
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
         this.navToggleBtn = document.querySelector(SELECTORS.navToggleBtn)
         this.closeBtn = document.querySelector(SELECTORS.closeBtn)
-        this.themeSelectBtns = document.querySelectorAll(
-            SELECTORS.themeSelectBtn
+        this.themeSelectBtns = Array.from(
+            document.querySelectorAll(SELECTORS.themeSelectBtn)
         )
-
-        this.focusTrap = createFocusTrap(this.picker, {
-            onDeactivate: () => this.togglePicker(false),
-            allowOutsideClick: () => true,
-            clickOutsideDeactivates: true
-        })
 
         this.init()
     }
@@ -60,7 +52,7 @@ class ThemePicker {
             }
         })
 
-        Array.from(this.themeSelectBtns).forEach((btn) => {
+        this.themeSelectBtns.forEach((btn) => {
             const id = btn.dataset.themeId
             if (id) {
                 btn.addEventListener('click', () => this.setTheme(id))
@@ -83,7 +75,7 @@ class ThemePicker {
     }
 
     setActiveItem() {
-        Array.from(this.themeSelectBtns).forEach((btn) => {
+        this.themeSelectBtns.forEach((btn) => {
             btn.parentNode.classList.remove(CLASSES.active)
             btn.removeAttribute('aria-checked')
 
@@ -115,7 +107,7 @@ class ThemePicker {
             window.setTimeout(() => {
                 this.picker.classList.add(CLASSES.open)
             }, 1)
-            this.focusTrap.activate()
+            this.themeSelectBtns[0].focus()
         } else {
             const transitionHandler = () => {
                 this.picker.removeEventListener(
@@ -124,10 +116,9 @@ class ThemePicker {
                 )
                 this.picker.setAttribute('hidden', true)
             }
-
-            this.focusTrap.deactivate()
             this.picker.addEventListener('transitionend', transitionHandler)
             this.picker.classList.remove(CLASSES.open)
+            this.toggleBtn.focus()
         }
     }
 }
