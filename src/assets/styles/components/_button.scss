@@ -49,11 +49,16 @@
     @include button-reset;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
     color: var(--color-text);
     background-color: var(--color-bg-offset);
+
+    .icon {
+        margin: auto; // iOS Safari compat
+    }
 
     @include hover-focus {
         filter: brightness(0.95) saturate(140%);
