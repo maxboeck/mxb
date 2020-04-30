@@ -232,6 +232,16 @@ input[type='search'] {
     -webkit-appearance: none;
 }
 
+// ::-webkit-scrollbar {
+//     height: 0.875rem;
+// }
+// ::-webkit-scrollbar-thumb {
+//     background-color: var(--color-primary);
+// }
+// ::-webkit-scrollbar-track {
+//     background-color: var(--color-bg-offset);
+// }
+
 ::selection {
     background: var(--color-secondary);
     color: #fff;
