@@ -59,12 +59,12 @@
         "id": "sherbet",
         "name": "Sherbet Land",
         "colors": {
-            "primary": "#00ebc7",
+            "primary": "#00bfa2",
             "secondary": "#ff5470",
             "text": "#1b2d45",
             "border": "#d5e6fd",
             "background": "#fffffe",
-            "primaryOffset": "#14ffdc",
+            "primaryOffset": "#00ebc7",
             "textOffset": "#3a6297",
             "backgroundOffset": "#f2f4f6"
         }
@@ -135,8 +135,8 @@
             "border": "#d846ff",
             "background": "#130429",
             "primaryOffset": "#e068fd",
-            "textOffset": "#F15A5A",
-            "backgroundOffset": "#6a3579"
+            "textOffset": "#ff4141",
+            "backgroundOffset": "#390a46"
         }
     }
 ]

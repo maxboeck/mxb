@@ -162,7 +162,7 @@ The switcher structure is pretty straightforward: it's essentially a list of but
 
 <figure class="extend">
     <img src="{{ 'theme-buttons.jpg' | media(page) }}" loading="lazy" alt="a row of buttons, showing the theme name and color swatches">
-    <figcaption>Fact: All good design is inspired by Mario Kart</figcaption>
+    <figcaption>Fact: All good design is derivative of Mario Kart</figcaption>
 </figure>
 
 Here's the template to generate that markup. We'll use inline style attributes here to display the background, text and accent colors. The button also holds its `id` in a `data-theme-id` attribute, we will pick that up via Javascript later.
@@ -256,7 +256,7 @@ If no stored theme is found, the site uses the default color scheme (either ligh
 
 ## Get creative
 
-You can have an unlimited number of themes this way, and they're not limited to flat colors either - with some extra effort you can have patterns, gradients or even GIFs in your design. Although arguably just because you can doesn't mean you should, as evidenced by my site's new *Rainbow Road* theme.
+You can have an unlimited number of themes this way, and they're not limited to flat colors either - with some extra effort you can have patterns, gradients or even GIFs in your design. Although just because you can doesn't always mean you should, as is evidenced by my site's new *Rainbow Road* theme.
 
-Please don't use that.
+Please don't use that one.
 
