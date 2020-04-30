@@ -234,5 +234,12 @@
         "feed": "http://dracos.co.uk/feed/",
         "description": "Matthew is a programmer based in Birmingham, UK, where he sings, plays, and is guarded by a inquisitive toddler. His case studies on how to make websites smaller and more resilient are brilliant reads.",
         "twitter": "dracos"
+    },
+    {
+        "title": "Tantek Çelik",
+        "url": "https://tantek.com/",
+        "feed": "https://tantek.com/updates.atom",
+        "description": "Tantek is the co-founder of IndieWebCamp and currently works on open web standards at Mozilla. Responsible for many CSS and microformat specs, his blog is an absolute treasure trove of knowledge.",
+        "twitter": "t"
     }
 ]
