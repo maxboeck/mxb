@@ -2,9 +2,10 @@
 title: Color Theme Switcher
 tags: code, design
 image: cover.jpg
+description: "How to let users customize your website with their favorite color scheme. Your site has a dark mode? That's cute. Mine has ten different themes now, and they're all named after Mario Kart race tracks."
 ---
 
-<p class="lead">Last year, the design gods decided that dark modes where the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
+<p class="lead">Last year, the design gods decided that dark modes were the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>
 
 And so every operating system, app and even some websites (mine included) suddenly had to come up with a dark mode. Fortunately though, this coincided nicely with widespread support for CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) and the introduction of a new `prefers-color-scheme` media query.
 
@@ -54,7 +55,7 @@ First up, we need some data. We need to define our themes in a central location,
 
 Our color schemes are objects in an array, which is now available during build. Each theme gets a `name`, `id` and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I assigned each theme eight properties. 
 
-It's a good idea to give these properties logical names instead of visual onces like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust i.e. the primary color on interactions like hover and such. 
+It's a good idea to give these properties logical names instead of visual onces like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust another color on interactions like hover and such. 
 
 In addition to the "default" and "dark" themes I already had before, I created eight more themes this way. I used a couple of different sources for inspiration; the ones I liked best are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
 
@@ -164,7 +165,7 @@ The switcher structure is pretty straightforward: it's essentially a list of but
     <figcaption>Fact: All good design is derivative of Mario Kart</figcaption>
 </figure>
 
-Here's the template to generate that markup. We'll use inline style attributes here to display the background, text and accent colors. The button also holds its `id` in a `data-theme-id` attribute, we will pick that up via Javascript later.
+Here's the template to generate that markup. We'll use inline style attributes here to display the background, text and accent colors. The button also holds its `id` in a `data-theme-id` attribute, we will pick that up with Javascript later.
 
 ```html{% raw %}
 <ul class="themeswitcher">
@@ -255,7 +256,7 @@ If no stored theme is found, the site uses the default color scheme (either ligh
 
 ## Get creative
 
-You can have an unlimited number of themes this way, and they're not limited to flat colors either - with some extra effort you can have patterns, gradients or even GIFs in your design. Although just because you can doesn't always mean you should, as is evidenced by my site's new *Rainbow Road* theme.
+You can create any number of themes this way, and they're not limited to flat colors either - with some extra effort you can have patterns, gradients or even GIFs in your design. Although just because you can doesn't always mean you should, as is evidenced by my site's new *Rainbow Road* theme.
 
 Please don't use that one.
 
