@@ -241,5 +241,12 @@
         "feed": "https://tantek.com/updates.atom",
         "description": "Tantek is the co-founder of IndieWebCamp and currently works on open web standards at Mozilla. Responsible for many CSS and microformat specs, his blog is an absolute treasure trove of knowledge.",
         "twitter": "t"
+    },
+    {
+        "title": "Tatiana Mac",
+        "url": "https://tatianamac.com/",
+        "feed": "https://tatianamac.com/feed/feed.xml",
+        "description": "Tatiana is an American designer who builds inclusive, accessible, and ethical products with thoughtful practices. She's a wonderful speaker on the topic of ethics in technology, which is increasingly important.",
+        "twitter": "TatianaTMac"
     }
 ]
