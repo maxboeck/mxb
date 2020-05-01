@@ -129,12 +129,12 @@
         "id": "rainbow",
         "name": "Rainbow Road",
         "colors": {
-            "primary": "#55d022",
-            "secondary": "#2D95BF",
+            "primary": "#24bbf8",
+            "secondary": "#55d022",
             "text": "#ffe81b",
             "border": "#d846ff",
             "background": "#130429",
-            "primaryOffset": "#e068fd",
+            "primaryOffset": "#5dccf8",
             "textOffset": "#ff4141",
             "backgroundOffset": "#390a46"
         }
