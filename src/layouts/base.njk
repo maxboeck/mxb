@@ -21,13 +21,13 @@
         <a href="#main" class="sr-skip-link">skip to main content</a>
 
         <div class="hfeed layout" role="document">
+            {% include "themepicker.njk" %}
             {% include "header.njk" %}
 
             <main class="main container" role="main" id="main" tabindex="-1">
                 {{ content | safe }}
             </main>
 
-            {% include "themepicker.njk" %}
             {% include "footer.njk" %}
         </div>
 
