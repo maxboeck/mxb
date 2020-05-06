@@ -1,162 +1,123 @@
-/*! instant.page v1.2.1 - (C) 2019 Alexandre Dieulot - https://instant.page/license */
-
-let urlToPreload
-let mouseoverTimer
-let lastTouchTimestamp
-
-const prefetcher = document.createElement('link')
-const isSupported =
-    prefetcher.relList &&
-    prefetcher.relList.supports &&
-    prefetcher.relList.supports('prefetch')
-const allowQueryString = 'instantAllowQueryString' in document.body.dataset
-const allowExternalLinks = 'instantAllowExternalLinks' in document.body.dataset
-
-if (isSupported) {
-    prefetcher.rel = 'prefetch'
-    document.head.appendChild(prefetcher)
-
-    const eventListenersOptions = {
-        capture: true,
-        passive: true
+/*! instant.page v3.0.0 - (C) 2019 Alexandre Dieulot - https://instant.page/license */
+let t, e
+const n = new Set(),
+    o = document.createElement('link'),
+    s =
+        o.relList &&
+        o.relList.supports &&
+        o.relList.supports('prefetch') &&
+        window.IntersectionObserver &&
+        'isIntersecting' in IntersectionObserverEntry.prototype,
+    i = 'instantAllowQueryString' in document.body.dataset,
+    r = 'instantAllowExternalLinks' in document.body.dataset,
+    a = 'instantWhitelist' in document.body.dataset
+let c = 65,
+    d = !1,
+    l = !1,
+    u = !1
+if ('instantIntensity' in document.body.dataset) {
+    const t = document.body.dataset.instantIntensity
+    if ('mousedown' == t.substr(0, 'mousedown'.length))
+        (d = !0), 'mousedown-only' == t && (l = !0)
+    else if ('viewport' == t.substr(0, 'viewport'.length))
+        (navigator.connection &&
+            (navigator.connection.saveData ||
+                navigator.connection.effectiveType.includes('2g'))) ||
+            ('viewport' == t
+                ? document.documentElement.clientWidth *
+                      document.documentElement.clientHeight <
+                      45e4 && (u = !0)
+                : 'viewport-all' == t && (u = !0))
+    else {
+        const e = parseInt(t)
+        isNaN(e) || (c = e)
     }
-    document.addEventListener(
-        'touchstart',
-        touchstartListener,
-        eventListenersOptions
+}
+if (s) {
+    const n = { capture: !0, passive: !0 }
+    if (
+        (l ||
+            document.addEventListener(
+                'touchstart',
+                function (t) {
+                    e = performance.now()
+                    const n = t.target.closest('a')
+                    if (!f(n)) return
+                    h(n.href)
+                },
+                n
+            ),
+        d
+            ? document.addEventListener(
+                  'mousedown',
+                  function (t) {
+                      const e = t.target.closest('a')
+                      if (!f(e)) return
+                      h(e.href)
+                  },
+                  n
+              )
+            : document.addEventListener(
+                  'mouseover',
+                  function (n) {
+                      if (performance.now() - e < 1100) return
+                      const o = n.target.closest('a')
+                      if (!f(o)) return
+                      o.addEventListener('mouseout', m, { passive: !0 }),
+                          (t = setTimeout(() => {
+                              h(o.href), (t = void 0)
+                          }, c))
+                  },
+                  n
+              ),
+        u)
+    ) {
+        let t
+        ;(t = window.requestIdleCallback
+            ? (t) => {
+                  requestIdleCallback(t, { timeout: 1500 })
+              }
+            : (t) => {
+                  t()
+              })(() => {
+            const t = new IntersectionObserver((e) => {
+                e.forEach((e) => {
+                    if (e.isIntersecting) {
+                        const n = e.target
+                        t.unobserve(n), h(n.href)
+                    }
+                })
+            })
+            document.querySelectorAll('a').forEach((e) => {
+                f(e) && t.observe(e)
+            })
+        })
+    }
+}
+function m(e) {
+    ;(e.relatedTarget &&
+        e.target.closest('a') == e.relatedTarget.closest('a')) ||
+        (t && (clearTimeout(t), (t = void 0)))
+}
+function f(t) {
+    if (
+        t &&
+        t.href &&
+        (!a || 'instant' in t.dataset) &&
+        (r || t.origin == location.origin || 'instant' in t.dataset) &&
+        ['http:', 'https:'].includes(t.protocol) &&
+        ('http:' != t.protocol || 'https:' != location.protocol) &&
+        (i || !t.search || 'instant' in t.dataset) &&
+        !(
+            (t.hash &&
+                t.pathname + t.search == location.pathname + location.search) ||
+            'noInstant' in t.dataset
+        )
     )
-    document.addEventListener(
-        'mouseover',
-        mouseoverListener,
-        eventListenersOptions
-    )
+        return !0
 }
-
-function touchstartListener(event) {
-    /* Chrome on Android calls mouseover before touchcancel so `lastTouchTimestamp`
-     * must be assigned on touchstart to be measured on mouseover. */
-    lastTouchTimestamp = performance.now()
-
-    const linkElement = event.target.closest('a')
-
-    if (!isPreloadable(linkElement)) {
-        return
-    }
-
-    linkElement.addEventListener(
-        'touchcancel',
-        touchendAndTouchcancelListener,
-        { passive: true }
-    )
-    linkElement.addEventListener('touchend', touchendAndTouchcancelListener, {
-        passive: true
-    })
-
-    urlToPreload = linkElement.href
-    preload(linkElement.href)
-}
-
-function touchendAndTouchcancelListener() {
-    urlToPreload = undefined
-    stopPreloading()
-}
-
-function mouseoverListener(event) {
-    if (performance.now() - lastTouchTimestamp < 1100) {
-        return
-    }
-
-    const linkElement = event.target.closest('a')
-
-    if (!isPreloadable(linkElement)) {
-        return
-    }
-
-    linkElement.addEventListener('mouseout', mouseoutListener, {
-        passive: true
-    })
-
-    urlToPreload = linkElement.href
-
-    mouseoverTimer = setTimeout(() => {
-        preload(linkElement.href)
-        mouseoverTimer = undefined
-    }, 65)
-}
-
-function mouseoutListener(event) {
-    if (
-        event.relatedTarget &&
-        event.target.closest('a') == event.relatedTarget.closest('a')
-    ) {
-        return
-    }
-
-    if (mouseoverTimer) {
-        clearTimeout(mouseoverTimer)
-        mouseoverTimer = undefined
-    } else {
-        urlToPreload = undefined
-        stopPreloading()
-    }
-}
-
-function isPreloadable(linkElement) {
-    if (!linkElement || !linkElement.href) {
-        return
-    }
-
-    if (urlToPreload == linkElement.href) {
-        return
-    }
-
-    const preloadLocation = new URL(linkElement.href)
-
-    if (
-        !allowExternalLinks &&
-        preloadLocation.origin != location.origin &&
-        !('instant' in linkElement.dataset)
-    ) {
-        return
-    }
-
-    if (!['http:', 'https:'].includes(preloadLocation.protocol)) {
-        return
-    }
-
-    if (preloadLocation.protocol == 'http:' && location.protocol == 'https:') {
-        return
-    }
-
-    if (
-        !allowQueryString &&
-        preloadLocation.search &&
-        !('instant' in linkElement.dataset)
-    ) {
-        return
-    }
-
-    if (
-        preloadLocation.hash &&
-        preloadLocation.pathname + preloadLocation.search ==
-            location.pathname + location.search
-    ) {
-        return
-    }
-
-    if ('noInstant' in linkElement.dataset) {
-        return
-    }
-
-    return true
-}
-
-function preload(url) {
-    prefetcher.href = url
-}
-
-function stopPreloading() {
-    /* The spec says an empty string should abort the prefetching
-     * but Firefox 64 interprets it as a relative URL to prefetch. */
-    prefetcher.removeAttribute('href')
+function h(t) {
+    if (n.has(t)) return
+    const e = document.createElement('link')
+    ;(e.rel = 'prefetch'), (e.href = t), document.head.appendChild(e), n.add(t)
 }
