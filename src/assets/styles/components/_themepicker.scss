@@ -17,6 +17,7 @@
         font-family: $font-family-sans-serif;
         font-size: 1em;
         text-transform: uppercase;
+        text-align: center;
         font-weight: 700;
         letter-spacing: 1px;
         padding: 2rem 1.5rem 0;
@@ -28,6 +29,7 @@
         white-space: nowrap;
         overflow-y: hidden;
         overflow-x: auto;
+        text-align: center;
         -webkit-overflow-scrolling: touch;
         padding: 1rem 1.5rem 2rem;
     }
