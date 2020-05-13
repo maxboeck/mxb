@@ -37,6 +37,7 @@
     &__item {
         display: inline-block;
         position: relative;
+        border-radius: 0.5em;
         transform: scale(1);
         transition: transform 0.2s $animation-curve-default;
 
@@ -44,7 +45,10 @@
             margin-left: 1rem;
         }
 
-        &.is-active,
+        &.is-active {
+            z-index: 1;
+            box-shadow: 0 0 0 2px var(--color-primary);
+        }
         &:hover {
             transform: scale(1.05);
             box-shadow: $box-shadow;
