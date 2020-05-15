@@ -1,4 +1,5 @@
 import { h, render } from 'preact'
+import { DateTime } from 'luxon'
 import DOMPurify from 'dompurify'
 import App from './App'
 
@@ -7,6 +8,7 @@ const BASE_URLS = ['https://mxb.at', 'https://mxb.dev']
 
 const webmentionsElement = document.getElementById('webmentions')
 const replaceElement = webmentionsElement.querySelector('[data-render-root]')
+const lastFetchedTimestamp = webmentionsElement.dataset.lastFetched
 
 const fetchMentions = () => {
     const targetUrls = BASE_URLS.map(
@@ -58,7 +60,24 @@ const getLikeCount = (webmentions) => {
         .length
 }
 
-if (webmentionsElement) {
+// initialize webmentions
+;(function () {
+    // if there's no root node on the page, abort
+    if (!webmentionsElement) {
+        return false
+    }
+
+    // if it's been less than 24 hours since the serverside fetch, abort
+    if (lastFetchedTimestamp) {
+        const now = DateTime.utc()
+        const lastFetched = DateTime.fromISO(lastFetchedTimestamp, {
+            zone: 'utc'
+        })
+        if (lastFetched.plus({ hours: 24 }) > now) {
+            return false
+        }
+    }
+
     fetchMentions()
         .then((data) => {
             const likeCount = getLikeCount(data)
@@ -75,4 +94,4 @@ if (webmentionsElement) {
         .catch((err) => {
             console.error(err)
         })
-}
+})()
