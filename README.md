@@ -12,7 +12,7 @@ This version is built with [Eleventy](https://www.11ty.io). If you're looking fo
 * Static Files
 * BEM-flavoured Sass (w/ Embedded Critical CSS)
 * Vanilla JS (ES6 / Babel)
-* System Fonts & FOUT
+* System Fonts
 * Offline Support w/ Service Worker
 * Webmention.io Support
 * Auto-publish notes on twitter via AWS Lambda Function
