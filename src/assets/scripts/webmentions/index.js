@@ -4,17 +4,15 @@ import DOMPurify from 'dompurify'
 import App from './App'
 
 const API_ORIGIN = 'https://webmention.io/api/mentions.jf2'
-const BASE_URLS = ['https://mxb.at', 'https://mxb.dev']
+const BASE_URL = 'https://mxb.dev'
 
 const webmentionsElement = document.getElementById('webmentions')
 const replaceElement = webmentionsElement.querySelector('[data-render-root]')
 const lastFetchedTimestamp = webmentionsElement.dataset.lastFetched
 
 const fetchMentions = () => {
-    const targetUrls = BASE_URLS.map(
-        (domain) => `target[]=${domain + window.location.pathname}`
-    ).join('&')
-    let url = `${API_ORIGIN}?per-page=1000&${targetUrls}`
+    const target = BASE_URL + window.location.pathname
+    const url = `${API_ORIGIN}?per-page=1000&target=${target}`
 
     return fetch(url)
         .then((response) => response.json())
