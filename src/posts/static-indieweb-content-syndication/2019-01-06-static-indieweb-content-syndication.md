@@ -1,5 +1,5 @@
 ---
-title: "Static Indieweb pt1: Syndicating Content"
+title: "Indieweb pt1: Syndicating Content to Twitter"
 slug: "syndicating-content-to-twitter-with-netlify-functions"
 tags: code
 description: "How to automatically publish content from a static site on Twitter, using Eleventy and Netlify's lambda functions."
