@@ -8,7 +8,7 @@ excludeFromSitemap: true
     <subtitle>{{ site.description }}</subtitle>
     <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
     <link href="{{ site.url }}" rel="alternate" type="text/html"/>
-    {% if collections.posts %}
+    {% if collections.posts.length %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
     <id>{{ site.url }}/</id>

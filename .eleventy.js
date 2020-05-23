@@ -83,6 +83,16 @@ module.exports = function (config) {
             .filter((item) => !(item.data.draft && isProduction))
     })
 
+    // Collections: Featured Posts
+    config.addCollection('featured', function (collection) {
+        const pathsRegex = /\/posts\//
+        return collection
+            .getAllSorted()
+            .filter((item) => item.inputPath.match(pathsRegex) !== null)
+            .filter((item) => item.data.featured)
+            .sort((a, b) => b.date - a.date)
+    })
+
     // Collections: Notes
     config.addCollection('notes', function (collection) {
         return collection

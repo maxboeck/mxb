@@ -1,0 +1,18 @@
+<ul class="featuredposts">
+    {% for post in collections.featured %}
+    <li class="featuredposts__item">
+        <div class="featuredpost" {% if post.data.featuredImage %}style="background-image: url(/assets/images/featured/{{ post.data.featuredImage }});"{% endif %}>
+            <a href="{{ post.url | url }}" class="featuredpost__link">
+                <span class="featuredpost__title">{{ post.data.title }}</span>
+            </a>
+            <p class="featuredpost__description">
+                {% if post.data.description %}
+                    {{ post.data.description }}
+                {% else %}
+                    {{ post.templateContent | excerpt | striptags }}
+                {% endif %}
+            </p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

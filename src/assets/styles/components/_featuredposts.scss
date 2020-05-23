@@ -1,0 +1,79 @@
+.featuredposts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 3rem;
+    margin: 2rem 0;
+
+    &__item {
+        //empty
+    }
+}
+
+.featuredpost {
+    display: block;
+    height: 300px;
+    position: relative;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    background-color: var(--color-bg-offset);
+    padding: 1rem;
+    box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
+
+    &__link {
+        @include stretched-link;
+        display: block;
+        color: inherit;
+
+        &::after {
+            border-radius: 0.5rem;
+            background-image: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.15) 50%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+        }
+
+        @include hover-focus {
+            color: inherit;
+            &::after {
+                background-image: linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.33) 0%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
+            }
+        }
+    }
+
+    &__title,
+    &__description {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title {
+        @include hyphenate;
+        display: block;
+        font-family: $font-family-serif;
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+    &__description {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.2s $animation-curve-default,
+            transform 0.2s $animation-curve-default;
+    }
+
+    &:hover &__description,
+    &__link:focus + &__description {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

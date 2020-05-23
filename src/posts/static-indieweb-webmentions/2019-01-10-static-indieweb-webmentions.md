@@ -5,6 +5,7 @@ tags: code
 description: "How to pull interactions from social media platforms like Twitter back to your own site, using Webmentions, webmention.io and Bridgy."
 demo: https://github.com/maxboeck/eleventy-webmentions
 image: cover.jpg
+featured: true
 ---
 
 <p class="lead">In last week's post, I talked about syndicating content from a static site to Twitter. But getting content out is only half the challenge.</p>
