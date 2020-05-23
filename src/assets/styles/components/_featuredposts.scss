@@ -1,11 +1,37 @@
+$featuredposts-gap: 3rem;
+
 .featuredposts {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem -$featuredposts-gap/2;
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 3rem;
-    margin: 2rem 0;
+    grid-gap: $featuredposts-gap;
 
     &__item {
-        //empty
+        display: block;
+        padding: $featuredposts-gap/2;
+        flex-basis: 100%;
+
+        @include mq(md) {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        @include mq(lg) {
+            flex-basis: 25%;
+            max-width: 25%;
+        }
+    }
+
+    @supports (display: grid) {
+        margin: 2rem 0;
+
+        &__item {
+            padding: 0;
+            flex: none;
+            max-width: none;
+        }
     }
 }
 
@@ -17,50 +43,35 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: #fff;
     background-color: var(--color-bg-offset);
-    padding: 1rem;
     box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
 
     @include mq(lg) {
         background-position: center top;
     }
 
-    &__link {
-        @include stretched-link;
-        display: block;
-        color: inherit;
-
-        &::after {
-            border-radius: 0.5rem;
-            background-image: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0) 0%,
-                rgba(0, 0, 0, 0.15) 50%,
-                rgba(0, 0, 0, 0.4) 100%
-            );
-        }
-
-        @include hover-focus {
-            color: inherit;
-            &::after {
-                background-image: linear-gradient(
-                    0deg,
-                    rgba(0, 0, 0, 0.5) 0%,
-                    rgba(0, 0, 0, 0.4) 100%
-                );
-            }
-        }
+    &__inner {
+        @include coverall;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 1rem;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.15) 50%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
     }
 
-    &__title,
-    &__description {
-        position: relative;
-        z-index: 10;
+    &__link {
+        @include stretched-link;
+        @include hyphenate;
+        display: block;
+        color: inherit !important;
     }
 
     &__title {
-        @include hyphenate;
         display: block;
         font-family: $font-family-serif;
         font-weight: 500;
@@ -81,7 +92,6 @@
         position: absolute;
         bottom: 1rem;
         left: 1rem;
-        z-index: 10;
 
         .icon {
             margin-right: 0.25rem;
@@ -97,5 +107,14 @@
     &:hover &__likecount,
     &__link:focus ~ &__likecount {
         display: none;
+    }
+
+    &:hover &__inner,
+    &:focus-within &__inner {
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
     }
 }
