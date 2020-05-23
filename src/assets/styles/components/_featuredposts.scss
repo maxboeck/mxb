@@ -75,10 +75,29 @@
         transition: opacity 0.2s $animation-curve-default,
             transform 0.2s $animation-curve-default;
     }
+    &__likecount {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 10;
+        opacity: 1;
+        transition: opacity 0.1s;
+
+        .icon {
+            margin-right: 0.25rem;
+        }
+    }
 
     &:hover &__description,
     &__link:focus + &__description {
         transform: translateY(0);
         opacity: 1;
+    }
+
+    &:hover &__likecount,
+    &__link:focus ~ &__likecount {
+        opacity: 0;
     }
 }

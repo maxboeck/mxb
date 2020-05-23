@@ -1,5 +1,7 @@
 <ul class="featuredposts">
     {% for post in collections.featured %}
+    {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%}
+    {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
     <li class="featuredposts__item">
         <div class="featuredpost" {% if post.data.featuredImage %}style="background-image: url(/assets/images/featured/{{ post.data.featuredImage }});"{% endif %}>
             <a href="{{ post.url | url }}" class="featuredpost__link">
@@ -12,6 +14,9 @@
                     {{ post.templateContent | excerpt | striptags }}
                 {% endif %}
             </p>
+            <span class="featuredpost__likecount" aria-label="{{ likeCount }} Likes">
+                {% icon "heart" %} {{ likeCount }}
+            </span>
         </div>
     </li>
     {% endfor %}
