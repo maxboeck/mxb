@@ -3,7 +3,7 @@ $featuredposts-gap: 3rem;
 .featuredposts {
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem -$featuredposts-gap/2;
+    margin: 2rem ($featuredposts-gap/2) * -1;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
