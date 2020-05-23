@@ -1,5 +1,6 @@
 ---
 title: The Emergency Website Kit
+slug: emergency-website-kit
 tags: code
 image: cover.jpg
 demo: https://emergency-site.dev/
