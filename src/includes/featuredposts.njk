@@ -1,5 +1,5 @@
 <ul class="featuredposts">
-    {% for post in collections.featured %}
+    {% for post in collections.featured | slice(4) %}
     {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%}
     {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
     <li class="featuredposts__item">
