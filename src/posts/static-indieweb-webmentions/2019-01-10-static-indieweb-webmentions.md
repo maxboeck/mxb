@@ -6,6 +6,7 @@ description: "How to pull interactions from social media platforms like Twitter 
 demo: https://github.com/maxboeck/eleventy-webmentions
 image: cover.jpg
 featured: true
+featuredImage: chat.jpg
 ---
 
 <p class="lead">In last week's post, I talked about syndicating content from a static site to Twitter. But getting content out is only half the challenge.</p>

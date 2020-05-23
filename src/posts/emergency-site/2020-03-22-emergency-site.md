@@ -1,9 +1,10 @@
 ---
-title: Emergency Website Kit
+title: The Emergency Website Kit
 tags: code
 image: cover.jpg
 demo: https://emergency-site.dev/
 featured: true
+featuredImage: emergency.jpg
 ---
 
 <p class="lead">In cases of emergency, many organizations need a quick way to publish critical information. But existing (CMS) websites are often unable to handle sudden spikes in traffic.</p>

@@ -4,6 +4,7 @@ tags: code, design
 image: cover.jpg
 description: "Let users customize your website with their favorite color scheme! Your site has a dark mode? That's cute. Mine has ten different themes now, and they're all named after Mario Kart race tracks."
 featured: true
+featuredImage: colors.jpg
 ---
 
 <p class="lead">Last year, the design gods decided that dark modes were the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>

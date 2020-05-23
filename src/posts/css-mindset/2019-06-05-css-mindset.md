@@ -4,6 +4,7 @@ tags: code
 image: cover.jpg
 description: 'CSS can be difficult to grasp if you think about it in terms of a "traditional" programming language. There is a certain mindset involved that helps to understand why it works the way it does.'
 featured: true
+featuredImage: mindset.jpg
 ---
 
 Ah yes, CSS. Hardly a week passes without it being the topic of a heated online discussion. It's too hard. It's too simple. It's unpredictable. It's outdated. Peter Griffin struggles with blinds dot gif.
