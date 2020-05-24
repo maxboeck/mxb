@@ -41,7 +41,7 @@
     "del": "^3.0.0",
     "dotenv": "^6.2.0",
     "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^5.0.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
