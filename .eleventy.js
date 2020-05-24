@@ -9,6 +9,11 @@ const markdownItAnchor = require('markdown-it-anchor')
 const filters = require('./_eleventy/filters.js')
 const shortcodes = require('./_eleventy/shortcodes.js')
 const isProduction = process.env.NODE_ENV === 'production'
+const globs = {
+    posts: 'src/posts/**/*.md',
+    drafts: 'src/drafts/**/*.md',
+    notes: 'src/notes/*.md'
+}
 
 const anchorSlugify = (s) =>
     encodeURIComponent(
@@ -75,30 +80,23 @@ module.exports = function (config) {
 
     // Collections: Posts
     config.addCollection('posts', function (collection) {
-        const pathsRegex = /\/posts\/|\/drafts\//
         return collection
-            .getAllSorted()
-            .filter((item) => item.inputPath.match(pathsRegex) !== null)
+            .getFilteredByGlob([globs.posts, globs.drafts])
             .filter((item) => item.data.permalink !== false)
             .filter((item) => !(item.data.draft && isProduction))
     })
 
     // Collections: Featured Posts
     config.addCollection('featured', function (collection) {
-        const pathsRegex = /\/posts\//
         return collection
-            .getAllSorted()
-            .filter((item) => item.inputPath.match(pathsRegex) !== null)
+            .getFilteredByGlob(globs.posts)
             .filter((item) => item.data.featured)
             .sort((a, b) => b.date - a.date)
     })
 
     // Collections: Notes
     config.addCollection('notes', function (collection) {
-        return collection
-            .getAllSorted()
-            .filter((item) => item.inputPath.match(/\/notes\//) !== null)
-            .reverse()
+        return collection.getFilteredByGlob(globs.notes).reverse()
     })
 
     // Minify HTML Output
