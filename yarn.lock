@@ -4733,10 +4733,10 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-infinite-scroll@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/infinite-scroll/-/infinite-scroll-3.0.5.tgz#a50113ba4b44d7fe358df1812d6093d89c4b3888"
-  integrity sha512-O4nZUn+eXx+O/9ffVZtiHJBaR0D3COqChsl3rt4OO1VgKaTR/aHucNe58fCkf49mPcw78uBGWY3d87IW8qLVHQ==
+infinite-scroll@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/infinite-scroll/-/infinite-scroll-3.0.6.tgz#f30b20f5a9ff8769b561a169f6e69938f38dc835"
+  integrity sha512-679gpKlS/XuAnA+spIRNFSel1dsZ44ljKVlkWHVNTtibJR0cUIC3jwZaBQUsaR1TvPFnaQijRlS8Q/lPgx1VAA==
   dependencies:
     ev-emitter "^1.1.0"
     fizzy-ui-utils "^2.0.5"
