@@ -57,7 +57,7 @@
     "require-dir": "^1.2.0",
     "sanitize-html": "^1.24.0",
     "twitter": "^1.7.1",
-    "webpack-stream": "^4.0.3",
+    "webpack-stream": "^5.2.1",
     "workbox-build": "^5.1.3"
   }
 }
