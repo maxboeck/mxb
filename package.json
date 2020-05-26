@@ -51,7 +51,7 @@
     "gulp-uglify": "^3.0.1",
     "html-entities": "^1.2.1",
     "html-minifier": "^3.5.20",
-    "luxon": "^1.8.2",
+    "luxon": "^1.24.1",
     "netlify-lambda": "^1.6.3",
     "node-fetch": "^2.3.0",
     "require-dir": "^1.2.0",
