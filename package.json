@@ -58,6 +58,6 @@
     "sanitize-html": "^1.24.0",
     "twitter": "^1.7.1",
     "webpack-stream": "^4.0.3",
-    "workbox-build": "^3.6.3"
+    "workbox-build": "^5.1.3"
   }
 }
