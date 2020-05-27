@@ -21,7 +21,7 @@
     "not dead"
   ],
   "dependencies": {
-    "focus-visible": "^4.1.5",
+    "focus-visible": "^5.1.0",
     "infinite-scroll": "^3.0.6",
     "lodash": "^4.17.15",
     "markdown-it-anchor": "^5.0.2",
