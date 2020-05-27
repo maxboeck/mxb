@@ -7,6 +7,7 @@ demo: https://github.com/maxboeck/eleventy-webmentions
 image: cover.jpg
 featured: true
 featuredImage: chat.jpg
+featuredImageColor: "#FFC754"
 ---
 
 <p class="lead">In last week's post, I talked about syndicating content from a static site to Twitter. But getting content out is only half the challenge.</p>

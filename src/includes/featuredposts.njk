@@ -3,7 +3,7 @@
     {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%}
     {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
     <li class="featuredposts__item">
-        <div class="featuredpost" {% if post.data.featuredImage %}style="background-image: url(/assets/images/featured/{{ post.data.featuredImage }});"{% endif %}>
+        <div class="featuredpost" style="{% if post.data.featuredImageColor %}background-color: {{ post.data.featuredImageColor }};{% endif %}{% if post.data.featuredImage %}background-image: url(/assets/images/featured/{{ post.data.featuredImage }});{% endif %}">
             <div class="featuredpost__inner">
                 <a href="{{ post.url | url }}" class="featuredpost__link">
                     <span class="featuredpost__title">{{ post.data.title }}</span>
