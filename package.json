@@ -48,7 +48,7 @@
     "gulp-shell": "^0.8.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svg-sprite": "^1.4.0",
-    "gulp-uglify": "^3.0.1",
+    "gulp-uglify": "^3.0.2",
     "html-entities": "^1.2.1",
     "html-minifier": "^3.5.20",
     "luxon": "^1.24.1",
