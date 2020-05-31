@@ -112,3 +112,12 @@
         z-index: 1;
     }
 }
+
+@mixin invert-on-dark() {
+    html[data-theme='dark'] &,
+    html[data-theme='turnpike'] &,
+    html[data-theme='bowser'] &,
+    html[data-theme='rainbow'] & {
+        filter: invert(1);
+    }
+}

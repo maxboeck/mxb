@@ -1,11 +1,18 @@
+const generators = require('./generators.js')
+
 module.exports = {
     icon: function (iconName, useInline) {
-        const spriteUrl = '/assets/icons/icons.sprite.svg'
-        const iconId = `#icon-${iconName}`
-        const href = useInline ? iconId : spriteUrl + iconId
+        return generators.icon(iconName, useInline)
+    },
 
-        return `<svg class="icon icon--${iconName}" role="img" aria-hidden="true" width="24" height="24">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="${href}"></use>
-                </svg>`
+    signup: function (content, title = 'Join the Email List') {
+        const source = this.page.url
+        const defaultText = `
+        Join the email list to be notified first when new posts are published!
+        I'll send emails once a month tops, and you can unsubscribe at any time. 
+        No corporate bullshit here.`
+
+        const text = content.length ? content.trim() : defaultText.trim()
+        return generators.signupSection(title, text, source)
     }
 }

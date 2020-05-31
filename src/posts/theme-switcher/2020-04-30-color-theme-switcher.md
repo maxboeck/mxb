@@ -192,6 +192,11 @@ Here's the template to generate that markup. We'll use inline style attributes h
 
 There's some styling involved as well, but I'll leave that out for brevity here. If you're interested in the extended version, you can find all the code in [my site's github repo](https://github.com/maxboeck/mxb).
 
+{% signup "By the way..." %}
+I'm starting an email list for people interested in CSS and design experiments!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ### Setting the Theme
 
 The last missing piece is some Javascript to handle the switcher functionality.

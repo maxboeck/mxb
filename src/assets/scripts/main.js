@@ -2,6 +2,7 @@ import 'focus-visible'
 
 import './inc/polyfills'
 import './inc/navigation'
+import './inc/signup'
 import './inc/responsiveImage'
 import './inc/lazyload'
 import './inc/themepicker'

@@ -175,6 +175,11 @@ Since these fallback gaps will mess with our layout if we **do** have grid suppo
 
 👉 *Check out the [full demo on Codepen!](https://codepen.io/mxbck/pen/5be32fd8e3ca7b6b2f5108ba7d22debd)*
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in CSS and front-end development techniques.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Further Reading
 
 * Rachel Andrew: ["The New CSS Layout"](https://abookapart.com/products/the-new-css-layout) (A book apart)

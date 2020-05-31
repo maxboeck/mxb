@@ -32,9 +32,8 @@ module.exports = function (config) {
     })
 
     // Shortcodes
-    Object.keys(shortcodes).forEach((shortCodeName) => {
-        config.addShortcode(shortCodeName, shortcodes[shortCodeName])
-    })
+    config.addShortcode('icon', shortcodes.icon)
+    config.addPairedShortcode('signup', shortcodes.signup)
 
     // Plugins
     config.addPlugin(pluginRss)

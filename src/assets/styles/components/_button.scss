@@ -11,6 +11,9 @@
     padding: 0.75rem 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: $border-radius;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
 
     &:disabled {
         cursor: not-allowed;
@@ -23,10 +26,23 @@
     background-color: var(--color-primary);
     border-color: transparent;
     color: #fff;
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: all 0.15s ease;
 
     @include hover-focus {
         color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 7px 14px rgba(50, 50, 50, 0.1),
+            0 3px 6px rgba(0, 0, 0, 0.08);
         background-color: var(--color-primary-offset);
+    }
+
+    &:active {
+        background-color: var(--color-primary-offset);
+        transform: translateY(1px);
+        box-shadow: 0 3px 12px -2px inset rgba(50, 50, 50, 0.25);
     }
 }
 

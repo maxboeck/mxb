@@ -24,11 +24,12 @@
         display: block;
         font-weight: 700;
         font-size: 0.875rem;
+        margin-bottom: 0.25rem;
     }
     &__input {
         display: block;
         width: 100%;
-        background-color: var(--color-bg-offset);
+        background-color: var(--color-bg);
         border: 1px solid var(--color-text-offset);
         font-size: 1rem;
         font-weight: 500;
@@ -42,7 +43,32 @@
         margin: 1rem 0;
     }
     &__actions {
+        margin: 1rem 0;
         text-align: right;
-        overflow: hidden;
+    }
+    &__feedback {
+        margin-top: 1rem;
+    }
+
+    ::placeholder {
+        color: var(--color-text-offset);
+    }
+    ::-moz-placeholder {
+        color: var(--color-text-offset);
+    }
+}
+
+.form--signup {
+    .form__actions {
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .form__feedback {
+        @include mq(md) {
+            margin: 0 0 0 2rem;
+            flex: 1 0 0%;
+        }
     }
 }

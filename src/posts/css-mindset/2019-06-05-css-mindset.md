@@ -106,6 +106,11 @@ A surprisingly large part of programming in general is coming up with good names
 👉 __DISCLAIMER__
 All these things were important for me to understand, but your personal experience as to what matters most might be different. Did you have another "aha" moment that made you understand CSS better? Let me know!
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in CSS and front-end development!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Further Reading
 
 * [How to learn CSS](https://www.smashingmagazine.com/2019/01/how-to-learn-css/) by Rachel Andrews

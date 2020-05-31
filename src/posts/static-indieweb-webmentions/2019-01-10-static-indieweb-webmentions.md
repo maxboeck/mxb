@@ -161,6 +161,11 @@ Each post will then loop over its webmentions and output them underneath.
 
 You can see the result by scrolling down to the [end of this post](#webmentions) (if there are any replies 😉).
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in personal websites and the IndieWeb.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Client-Side Rendering
 
 Because static sites are, well, static - it's possible that new mentions have happened since the last build. To keep the webmention section up-to-date, there's an extra step we can take: client side rendering.

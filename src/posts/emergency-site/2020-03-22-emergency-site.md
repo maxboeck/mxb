@@ -36,6 +36,11 @@ The end result is just a set of static files that can be easily hosted on cloud 
 
 You can find the [project source on Github](https://github.com/maxboeck/emergency-site) as well as a [demo site here](https://emergency-site.dev/).
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in front-end development and static sites!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Not Everyone is a Developer
 
 I'm aware that not everyone, especially the people in charge of setting up websites like this, is familiar with things like `Node` or the command line. I want to keep the barrier to entry as low as possible.

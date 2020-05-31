@@ -58,6 +58,11 @@ I know of some people doing this in web development, for example in [open redesi
 
 But for now, I like it.
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in front-end development and design.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Further Reading
 
 * [Just write](https://www.sarasoueidan.com/desk/just-write/) by Sara Soueidan

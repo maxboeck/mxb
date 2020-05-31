@@ -1,0 +1,72 @@
+.signup {
+    position: relative;
+    max-width: 750px;
+
+    @include mq(md) {
+        font-size: 1.125rem;
+    }
+
+    &__front,
+    &__back {
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 2px solid var(--color-border);
+        background-color: var(--color-bg-offset);
+        box-shadow: 14px 14px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    &__front {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__back {
+        @include coverall;
+        visibility: hidden;
+        z-index: 0;
+
+        @include mq(md) {
+            padding-right: calc(40% + 2rem);
+
+            &::after {
+                @include coverall;
+                content: '';
+                display: block;
+                border-radius: 0 0.5rem 0.5rem 0;
+                overflow: hidden;
+                left: 60%;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+    &__desc {
+        margin-bottom: 2rem;
+
+        > * + * {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.signup--success {
+    .signup__front {
+        visibility: hidden;
+        z-index: 0;
+    }
+    .signup__back {
+        visibility: visible;
+        z-index: 1;
+    }
+
+    @include mq(md) {
+        .signup__back::after {
+            @include invert-on-dark();
+            background: #fff url('/assets/images/confetti.gif') no-repeat 0 0;
+        }
+    }
+}

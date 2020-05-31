@@ -4,6 +4,13 @@
         <div hidden>
             <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" />
             <p class="p-note">{{ site.description }}</p>
+            <a
+                href="mailto:{{ author.email | obfuscate | safe }}"
+                rel="me"
+                class="u-email"
+            >
+                {{ author.email | obfuscate | safe }}
+            </a>
         </div>
 
         <p class="footer__item">
@@ -12,14 +19,8 @@
         </p>
 
         <p class="footer__item">
-            <strong>Contact</strong><br />
-            <a
-                href="mailto:{{ author.email | obfuscate | safe }}"
-                rel="me"
-                class="u-email"
-            >
-                {{ author.email | obfuscate | safe }}
-            </a>
+            <strong>Subscribe</strong><br />
+            <a href="/mailinglist">Mailing List</a>
         </p>
 
         <p class="footer__item">

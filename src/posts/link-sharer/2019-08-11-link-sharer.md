@@ -152,3 +152,8 @@ That little bit of JSON registers your site as an application that can share thi
 Selecting the "MXB" option will grab the current page title and URL and send them as GET args to my sharing form, just like the bookmarklet would on desktop. There's still a small bug in there where the URL will be sent as the `text` parameter, but that can be corrected with a bit of Javascript in the form app.
 
 I'm quite happy with how this turned out, as it feels really simple and straightforward. One step closer to IndieWeb bliss!
+
+{% signup "By the way..." %}
+I'm running an email list for people interested in personal websites and the IndieWeb.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
