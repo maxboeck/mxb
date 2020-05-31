@@ -33,7 +33,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@babel/core": "^7.10.1",
-    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
