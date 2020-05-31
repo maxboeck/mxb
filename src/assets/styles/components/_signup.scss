@@ -2,6 +2,10 @@
     position: relative;
     max-width: 750px;
 
+    .spinner {
+        display: none;
+    }
+
     @include mq(md) {
         font-size: 1.125rem;
     }
@@ -51,6 +55,24 @@
             margin-top: 1rem;
         }
     }
+
+    &__icon {
+        position: absolute;
+        top: 1.25rem;
+        left: -1.5rem;
+        font-size: 2rem;
+        z-index: 2;
+        color: $state-success;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.2s $animation-curve-default;
+    }
+}
+
+.signup--loading {
+    .spinner {
+        display: inline-block;
+    }
 }
 
 .signup--success {
@@ -61,6 +83,10 @@
     .signup__back {
         visibility: visible;
         z-index: 1;
+    }
+    .signup__icon {
+        opacity: 1;
+        transform: scale(1);
     }
 
     @include mq(md) {

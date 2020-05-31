@@ -65,10 +65,13 @@
         align-items: flex-start;
         flex-wrap: wrap;
     }
-    .form__feedback {
-        @include mq(md) {
-            margin: 0 0 0 2rem;
+    @include mq(md) {
+        .form__feedback {
+            margin-top: 0;
             flex: 1 0 0%;
+        }
+        .btn--primary {
+            margin-right: 2rem;
         }
     }
 }

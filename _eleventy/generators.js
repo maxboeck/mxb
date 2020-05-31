@@ -7,6 +7,32 @@ const minify = (content) =>
         collapseWhitespace: true
     })
 
+const generateSpinner = () => {
+    const layer = (
+        index
+    ) => `<div class="spinner__layer spinner__layer--${index}">
+        <div class="spinner__circle-clipper spinner__left">
+            <div class="spinner__circle"></div>
+        </div>
+        <div class="spinner__gap-patch">
+            <div class="spinner__circle"></div>
+        </div>
+        <div class="spinner__circle-clipper spinner__right">
+            <div class="spinner__circle"></div>
+        </div>
+    </div>`
+
+    const layers = []
+    for (let i = 1; i <= 4; i++) {
+        layers.push(layer(i))
+    }
+    const output = `<div class="spinner">
+        <div class="spinner__layercontainer">${layers.join('')}</div>
+    </div>`
+
+    return minify(output)
+}
+
 const generateIcon = (iconName, useInline) => {
     const spriteUrl = '/assets/icons/icons.sprite.svg'
     const iconId = `#icon-${iconName}`
@@ -52,6 +78,7 @@ const generateSignupForm = (source) => {
         }
     ]
     const placeholder = examples[random(examples.length - 1)]
+    const spinner = generateSpinner()
 
     const output = `<form 
         action="${MC.url}" 
@@ -83,6 +110,7 @@ const generateSignupForm = (source) => {
         <div class="form__actions">
             <button type="submit" class="btn btn--primary" name="subscribe">Subscribe</button>
             <div class="form__feedback js-signup-widget-feedback" hidden></div>
+            ${spinner}
         </div>
     </form>`
 
@@ -91,6 +119,7 @@ const generateSignupForm = (source) => {
 
 const generateSignupSection = (title, text, source) => {
     const form = generateSignupForm(source)
+    const icon = generateIcon('check')
     const output = `
         <div class="signup js-signup-widget" data-nosnippet>
             <div class="signup__front">
@@ -103,6 +132,7 @@ const generateSignupSection = (title, text, source) => {
                 </div>
             </div>
             <div class="signup__back js-signup-backside"></div>
+            <div class="signup__icon">${icon}</div>
         </div>
     `
 
