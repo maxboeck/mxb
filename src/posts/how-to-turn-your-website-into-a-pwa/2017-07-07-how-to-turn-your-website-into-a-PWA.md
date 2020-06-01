@@ -166,6 +166,11 @@ For smaller, mostly static sites, you can have it precache every image, HTML, Ja
 
 *PS: For a deeper look into the subject of offline support, be sure to check out ["The Offline Cookbook"](https://jakearchibald.com/2014/offline-cookbook/) by Jake Archibald.*
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in modern front-end development!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Testing your PWA
 
 The Chrome [Lighthouse Extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) is a testing tool to check Progressive Web Apps for their Performance, Accessibility and compliance with the PWA spec.

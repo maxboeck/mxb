@@ -171,6 +171,11 @@ Hopefully that all worked, and you should end up with something like this in you
 
 🎉 You can find the [finished lambda function](https://github.com/maxboeck/mxb/blob/master/_lambda/deploy-succeeded.js) along with the rest of the source code for this site on Github.
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in personal websites and the IndieWeb!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Further Resources
 
 * [Indieweb Notes](https://indieweb.org/note) The concept behind this.

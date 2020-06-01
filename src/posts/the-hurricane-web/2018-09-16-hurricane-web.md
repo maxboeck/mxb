@@ -62,6 +62,11 @@ That's why websites built for a storm do not rely on Javascript. The benefit sim
 
 That NPR site is a very useful thing that serves a purpose, and it does so in the simplest, most efficient way possible. Personally, I'd love to see more distilled experiences like this on the web.
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in resilient front-end development.
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ... "Well, this might work for a news site - but not every usecase is that simple.", I hear you say.
 
 True. The web is a text-based medium, and it works best with that type of content. But the basic approach is still valid in any other scenario: 

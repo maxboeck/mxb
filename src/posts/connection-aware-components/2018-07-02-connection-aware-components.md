@@ -221,6 +221,11 @@ const ConnectionAwareMedia = withConnectionType(Media)
 
 👉  This small proof-of concept is also <a href="https://codepen.io/mxbck/pen/5e897c9cd7c75d130d1f86bc5b87a1d2?editors=0010" target="_blank" rel="noopener noreferrer">available on CodePen</a>, if you want to play around.
 
+{% signup "By the way..." %}
+I'm running an email list for people interested in modern front-end development!
+If you enjoy that kind of stuff, you can join here and I'll notify you whenever I publish a new post. No strings attached, unsubscribe anytime.
+{% endsignup %}
+
 ## Further Reading
 
 * [Network Information API Draft](https://wicg.github.io/netinfo/) - WICG
