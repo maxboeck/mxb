@@ -34,6 +34,7 @@ module.exports = function (config) {
     // Shortcodes
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
+    config.addPairedShortcode('callout', shortcodes.callout)
 
     // Plugins
     config.addPlugin(pluginRss)

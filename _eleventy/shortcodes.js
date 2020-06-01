@@ -14,5 +14,9 @@ module.exports = {
 
         const text = content.length ? content.trim() : defaultText.trim()
         return generators.signupSection(title, text, source)
+    },
+
+    callout: function (content) {
+        return generators.callout(content)
     }
 }

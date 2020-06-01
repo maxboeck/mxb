@@ -139,7 +139,18 @@ const generateSignupSection = (title, text, source) => {
     return minify(output)
 }
 
+const generateCallout = (content, type) => {
+    const icon = generateIcon('check')
+    const output = `<div class="callout">
+        <span class="callout__icon">${icon}</span>
+        ${content}
+    </div>`
+
+    return minify(output)
+}
+
 module.exports = {
     icon: generateIcon,
-    signupSection: generateSignupSection
+    signupSection: generateSignupSection,
+    callout: generateCallout
 }
