@@ -140,10 +140,30 @@ const generateSignupSection = (title, text, source) => {
 }
 
 const generateCallout = (content, type) => {
-    const icon = generateIcon('check')
-    const output = `<div class="callout">
-        <span class="callout__icon">${icon}</span>
-        ${content}
+    let icon
+
+    switch (type) {
+        case 'action':
+            icon = 'check'
+            break
+
+        case 'warning':
+            icon = 'warning'
+            break
+
+        case 'tip':
+            icon = 'lightbulb'
+            break
+
+        case 'info':
+        default:
+            icon = 'info'
+            break
+    }
+
+    const output = `<div class="callout callout--${type}">
+        <span class="callout__icon">${generateIcon(icon)}</span>
+        <div class="callout__content">${content}</div>
     </div>`
 
     return minify(output)

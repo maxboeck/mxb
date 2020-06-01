@@ -1,0 +1,30 @@
+.callout {
+    position: relative;
+    border-radius: 0.5rem;
+    background-color: var(--color-bg-offset);
+    --callout-color: currentColor;
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        padding: 0.5rem;
+        color: var(--callout-color);
+        background-color: var(--color-bg);
+    }
+    &__content {
+        padding: 1rem;
+        border-left: 4px solid var(--callout-color);
+    }
+
+    &--info,
+    &--action {
+        --callout-color: var(--color-secondary);
+    }
+    &--tip,
+    &--warning {
+        --callout-color: var(--color-primary);
+    }
+}

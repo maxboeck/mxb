@@ -16,7 +16,7 @@ module.exports = {
         return generators.signupSection(title, text, source)
     },
 
-    callout: function (content) {
-        return generators.callout(content)
+    callout: function (content, type = 'info') {
+        return generators.callout(content, type)
     }
 }
