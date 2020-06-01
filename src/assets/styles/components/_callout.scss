@@ -17,6 +17,10 @@
     &__content {
         padding: 1rem;
         border-left: 4px solid var(--callout-color);
+
+        @include mq(md) {
+            padding-left: 2rem;
+        }
     }
 
     &--info,
