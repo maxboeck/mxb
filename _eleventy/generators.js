@@ -1,4 +1,5 @@
 const htmlmin = require('html-minifier')
+const markdownIt = require('markdown-it')()
 const random = require('lodash/random')
 
 const minify = (content) =>
@@ -163,7 +164,7 @@ const generateCallout = (content, type) => {
 
     const output = `<div class="callout callout--${type}">
         <span class="callout__icon">${generateIcon(icon)}</span>
-        <div class="callout__content">${content}</div>
+        <div class="callout__content">${markdownIt.render(content)}</div>
     </div>`
 
     return minify(output)

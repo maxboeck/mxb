@@ -34,7 +34,9 @@ The site contains only the bare minimum - no webfonts, no tracking, no unnecessa
 
 The end result is just a set of static files that can be easily hosted on cloud infrastructure and put on a CDN. Netlify does this out of the box, but other providers or privately owned servers are possible as well.
 
-You can find the [project source on Github](https://github.com/maxboeck/emergency-site) as well as a [demo site here](https://emergency-site.dev/).
+{% callout "info" %}
+You can find the full [project source on Github](https://github.com/maxboeck/emergency-site) as well as a [demo site here](https://emergency-site.dev/).
+{% endcallout %}
 
 {% signup "By the way..." %}
 I'm running an email list for people interested in front-end development and static sites!
@@ -48,8 +50,6 @@ I'm aware that not everyone, especially the people in charge of setting up websi
 Taking a hint from the excellent [servicerelief.us](https://www.servicerelief.us/start) project, it is possible to configure the template in such a way that all configuration can be done via environment variables.
 
 These are set in the Netlify UI when the site is first deployed, meaning a user would only need a free Github and Netlify account to get started - without ever touching a line of code or having to mess around with npm or Eleventy itself. The content editing can all be done through Netlify CMS, which offers a much more useable graphical interface.
-
-## Get in Touch!
 
 In the meantime, if you want to set up an emergency website and need help to get started, [let me know](mailto:hello@mxb.dev)!
 

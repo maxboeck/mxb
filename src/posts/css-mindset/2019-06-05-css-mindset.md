@@ -26,7 +26,9 @@ I tried to list some of these here.
 
 This seems obvious, given that the box model is probably one of the first things people learn about CSS. But picturing each DOM element as a box is crucial to understanding why things layout the way they do. Is it inline or block level? Is it a flex item? How will it grow/shrink/wrap in different contexts?
 
+{% callout "tip" %}
 Open your devtools and hover over elements to see the boxes they're drawing, or use a utility style like `outline: 2px dotted hotpink` to visualize its hidden boundaries.
+{% endcallout %}
 
 ## The Cascade is your Friend
 
@@ -34,13 +36,17 @@ The Cascade - a scary concept, I know. Say "Cascade" three times in front of a m
 
 While there are legitimate reasons to avoid the cascade, it doesn't mean that it's all bad. In fact, when used correctly, it can make your life a lot easier.
 
+{% callout "tip" %}
 The important part is to know which styles belong on the global scope and which are better restricted to a component. It also helps to know the defaults that are passed down, to avoid declaring unnecessary rules.
+{% endcallout %}
 
 ## As much as necessary, as little as possible
 
 Aim to write the minimal amount of rules necessary to achieve a design. Fewer properties mean less inheritance, less restriction and less trouble with overrides down the line. Think about what your selector should essentially do, then try to express just that. There's no point in declaring `width: 100%` on an element that's already block-level. There's no need to set `position: relative` if you don't need a new stacking context.
 
+{% callout "tip" %}
 Avoid unnecessary styles, and you avoid unintended consequences.
+{% endcallout %}
 
 ## Shorthands have long effects
 
@@ -57,7 +63,9 @@ background-clip: border-box;
 background-attachment: scroll;
 ```
 
+{% callout "tip" %}
 It's better to be explicit. If you want to change the background color, use `background-color`.
+{% endcallout %}
 
 ## Always Be Flexible
 
@@ -75,13 +83,19 @@ Magic numbers are random hard values. Something like:
 
 Whenever you find yourself tapping the arrow key in your devtools, adjusting a pixel value to make something fit - that's probably a magic number. These are rarely the solution to a CSS problem, because they restrict styles to a very specific usecase. If the constraints change, that number will be off. 
 
-Instead, think about what you actually want to achieve in that situation. Alignment? An aspect ratio? Distributing equal amounts of space? All of these have flexible solutions. In most cases, it's better to define a rule for the intent, rather than hard-code the computed solution to it.
+Instead, think about what you actually want to achieve in that situation. Alignment? An aspect ratio? Distributing equal amounts of space? All of these have flexible solutions. 
+
+{% callout "tip" %}
+In most cases, it's better to define a rule for the intent, rather than hard-code the computed solution to it.
+{% endcallout %}
 
 ## Context is Key
 
 For many layout concepts it's imperative to understand the relationship between elements and their container. Most components are sets of parent and child nodes. Styles applied to the parent can affect the descendants, which might make them ignore other rules. Flexbox, Grid and `position:absolute` are common sources of such errors. 
 
+{% callout "tip" %}
 When in doubt about a particular element behaving different than you'd want it to, look at the context it's in. Chances are something in its ancestry is affecting it. 
+{% endcallout %}
 
 ## Content will change
 
@@ -89,13 +103,17 @@ Always be aware that what you see is just one UI state in a bigger spectrum. Ins
 
 Strings may be longer than intended or contain special characters, images might be missing or have weird dimensions. Displays may be very narrow or extremely wide. Those are all states you need to anticipate.
 
+{% callout "tip" %}
 The number one mistake made by designers and developers alike is assuming that things will always look like they do in the static mockup. I can assure you, they will not. 
+{% endcallout %}
 
 ## Find Patterns and re-use them
 
-When you set out to turn a design mockup into code, it's often helpful to take inventory of the different patterns included first. Analyse each screen and take note of any concept that occurs more than one. It might be something small like a typographic style, or large like a certain layout pattern.
+When you set out to turn a design mockup into code, it's often helpful to take inventory of the different patterns included first. Analyse each screen and take note of any concept that occurs more than one. It might be something small like a typographic style, or large like a certain layout pattern. What can be abstracted? What's unique? 
 
-What can be abstracted? What's unique? Thinking of pieces in a design as standalone things makes them easier to reason about, and helps to draw the boundaries between components.
+{% callout "tip" %}
+Thinking of pieces in a design as standalone things makes them easier to reason about, and helps to draw the boundaries between components.
+{% endcallout %}
 
 ## Use consistent Names
 
@@ -103,8 +121,9 @@ A surprisingly large part of programming in general is coming up with good names
 
 ------
 
-👉 __DISCLAIMER__
+{% callout "warning" %}
 All these things were important for me to understand, but your personal experience as to what matters most might be different. Did you have another "aha" moment that made you understand CSS better? Let me know!
+{% endcallout %}
 
 {% signup "By the way..." %}
 I'm running an email list for people interested in CSS and front-end development!

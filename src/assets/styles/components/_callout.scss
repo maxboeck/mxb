@@ -21,6 +21,10 @@
         padding: 1rem;
         border-left: 4px solid var(--callout-color);
 
+        > * + * {
+            margin-top: 2rem;
+        }
+
         @include mq(md) {
             padding-left: 2rem;
         }

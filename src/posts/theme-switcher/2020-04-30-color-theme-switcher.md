@@ -62,7 +62,9 @@ It's a good idea to give these properties logical names instead of visual onces 
 
 In addition to the "default" and "dark" themes I already had before, I created eight more themes this way. I used a couple of different sources for inspiration; the ones I liked best are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
 
-*(All my themes are named after Mario Kart 64 race tracks by the way, because why not.)*
+{% callout "info" %}
+All my themes are named after Mario Kart 64 race tracks by the way, because why not.
+{% endcallout %}
 
 ## Transform to Custom CSS Properties
 
@@ -149,7 +151,9 @@ body {
 }
 ```
 
-👉 __Attention:__ Custom Properties are supported in [all modern browsers](https://caniuse.com/#search=custom%20properties), but if you need to support IE11 or Opera Mini, be sure to provide a fallback.
+{% callout "warning" %}
+__Attention:__ Custom Properties are supported in [all modern browsers](https://caniuse.com/#search=custom%20properties), but if you need to support IE11 or Opera Mini, be sure to provide a fallback.
+{% endcallout %}
 
 It's fine to mix static preprocessor variables and custom properties by the way - they do different things. Our line height is not going to change dynamically.
 
