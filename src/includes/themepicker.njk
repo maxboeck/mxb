@@ -3,7 +3,7 @@
     <ul class="themepicker__list" id="theme-menu">
     {% for theme in themes %}
         <li class="themepicker__item">
-            <button class="themepicker__btn js-themepicker-themeselect" data-theme-id="{{ theme.id }}" style="background-color: {{ theme.colors.background }}">
+            <button class="themepicker__btn js-themepicker-themeselect" data-theme-id="{{ theme.id }}" style="background-color: {{ theme.colors.background }}" aria-label="select color theme '{{ theme.name }}'">
                 <span class="themepicker__name" style="color: {{ theme.colors.text }}">{{ theme.name }}</span>
                 <span class="themepicker__palette">
                     <span class="themepicker__hue" style="background-color: {{ theme.colors.primary }}">{{ theme.colors.primary }}</span>
