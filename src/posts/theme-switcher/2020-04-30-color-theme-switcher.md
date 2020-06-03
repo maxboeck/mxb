@@ -58,13 +58,13 @@ First up, we need some data. We need to define our themes in a central location,
 
 Our color schemes are objects in an array, which is now available during build. Each theme gets a `name`, `id` and a couple of color definitions. The parts of a color scheme depend on your specific design; In my case, I assigned each theme eight properties. 
 
+{% callout "tip" %}
 It's a good idea to give these properties logical names instead of visual onces like "light" or "muted", as colors vary from theme to theme. I've also found it helpful to define a couple of "offset" colors - these are used to adjust another color on interactions like hover and such. 
+{% endcallout %}
 
 In addition to the "default" and "dark" themes I already had before, I created eight more themes this way. I used a couple of different sources for inspiration; the ones I liked best are [Adobe Color](https://color.adobe.com/explore) and [happyhues](https://www.happyhues.co/).
 
-{% callout "info" %}
 All my themes are named after Mario Kart 64 race tracks by the way, because why not.
-{% endcallout %}
 
 ## Transform to Custom CSS Properties
 
