@@ -121,9 +121,9 @@ const generateSignupSection = (title, text, source) => {
     const form = generateSignupForm(source)
     const icon = generateIcon('check')
     const output = `
-        <div class="signup js-signup-widget" data-nosnippet>
+        <aside class="signup js-signup-widget" data-nosnippet>
             <div class="signup__front">
-                <h3 class="signup__title">${title}</h3>
+                <h2 class="signup__title">${title}</h2>
                 <div class="signup__desc">
                     ${text}
                 </div>
@@ -133,7 +133,7 @@ const generateSignupSection = (title, text, source) => {
             </div>
             <div class="signup__back js-signup-backside"></div>
             <div class="signup__icon">${icon}</div>
-        </div>
+        </aside>
     `
 
     return minify(output)

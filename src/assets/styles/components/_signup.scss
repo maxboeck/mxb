@@ -1,6 +1,7 @@
 .signup {
     position: relative;
-    max-width: 750px;
+    max-width: 700px;
+    border-radius: 0.5rem;
 
     .spinner {
         display: none;
@@ -16,7 +17,6 @@
         border-radius: 0.5rem;
         border: 2px solid var(--color-border);
         background-color: var(--color-bg-offset);
-        box-shadow: 14px 14px 30px -10px rgba(0, 0, 0, 0.1);
     }
 
     &__front {
