@@ -71,8 +71,10 @@ This is usually called "manifest.json", and linked to from the `<head>` of your 
 <link rel="manifest" href="manifest.json">
 ```
 
-🔥 Hot Tip: You don't have to write that file yourself. There are different icon sizes for different systems, and getting everything right can be tedious. Instead, just make one 500x500 image of your app icon (probably your logo), and head over to [Real Favicon Generator](http://realfavicongenerator.net/).
+{% callout "tip" %}
+__Tip:__ You don't have to write that file yourself. There are different icon sizes for different systems, and getting everything right can be tedious. Instead, just make one 500x500 image of your app icon (probably your logo), and head over to [Real Favicon Generator](http://realfavicongenerator.net/).
 They render all common sizes, provide meta tags and generate a manifest file for you. It's awesome.
+{% endcallout %}
 
 ## Step 2: Go HTTPS.
 
@@ -139,7 +141,9 @@ self.addEventListener('install', e => {
 });
 ```
 
-🔥 Hot Tip: If you want to get started with offline-first quickly, I'd highly recommend using [sw-precache](https://github.com/GoogleChrome/sw-precache). This is a tool made by the folks at Google that integrates with your existing Gulp or Grunt build process to **generate the service worker file for you.**
+{% callout "tip" %}
+__Tip:__ If you want to get started with offline-first quickly, I'd highly recommend using [sw-precache](https://github.com/GoogleChrome/sw-precache). This is a tool made by the folks at Google that integrates with your existing Gulp or Grunt build process to **generate the service worker file for you.**
+{% endcallout %}
 
 You can simply pass it a list of files and it will automatically track all changes, and keep your Service Worker cache up to date. Because `sw-precache` integrates into your site’s build process, you can use wildcards to precache *all* of the resources that match a specific pattern, like so:
 
