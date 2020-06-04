@@ -149,7 +149,9 @@ That little bit of JSON registers your site as an application that can share thi
     <figcaption>The "Max Böck" share option is available after installing the PWA.</figcaption> 
 </figure>
 
+{% callout "info" %}
 Selecting the "MXB" option will grab the current page title and URL and send them as GET args to my sharing form, just like the bookmarklet would on desktop. There's still a small bug in there where the URL will be sent as the `text` parameter, but that can be corrected with a bit of Javascript in the form app.
+{% endcallout %}
 
 I'm quite happy with how this turned out, as it feels really simple and straightforward. One step closer to IndieWeb bliss!
 

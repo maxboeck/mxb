@@ -52,7 +52,9 @@ Now for the tricky part: we need to write a lambda function to push new notes to
 * [Build and deploy a serverless function to Netlify](https://scotch.io/tutorials/build-and-deploy-a-serverless-function-to-netlify) (scotch.io)
 * [Lambda functions playground](https://functions-playground.netlify.com/) (netlify.com)
 
-💡 _Hint: also check out the [netlify-lambda cli](https://www.npmjs.com/package/netlify-lambda), a very handy tool to test and build your functions in development._
+{% callout "tip" %}
+Be sure to also check out the [netlify-lambda cli](https://www.npmjs.com/package/netlify-lambda), a very handy tool to test and build your functions in development.
+{% endcallout %}
 
 To trigger our custom function everytime a new version of the site was successfully deployed, we just need to name it `deploy-succeeded.js`. Netlify will then automatically fire it after each new build, while also making sure it's not executable from the outside.
 

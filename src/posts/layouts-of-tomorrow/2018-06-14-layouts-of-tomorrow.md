@@ -95,7 +95,9 @@ Here's how it turned out:
 
 You can check out <a href="https://codepen.io/mxbck/live/81020404c9d5fd873a717c4612c914dd" target="_blank" rel="noopener noreferrer">the final result</a> on Codepen.
 
-👉 *Since this is just for demo purposes, I did not include fallbacks and polyfills for older browsers. My goal was to test the capabilities of modern CSS here, so not all features have cross-browser support (read below). I found that it works best in recent versions of Firefox or Chrome.*
+{% callout "warning" %}
+Since this is just for demo purposes, I did not include fallbacks and polyfills for older browsers. My goal was to test the capabilities of modern CSS here, so not all features have cross-browser support (read below). I found that it works best in recent versions of Firefox or Chrome.
+{% endcallout %}
 
 Some of the things that made this interesting:
 
