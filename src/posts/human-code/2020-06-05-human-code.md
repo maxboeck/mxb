@@ -28,7 +28,6 @@ There are examples of code being used for the greater good in this:
 - People organize on independent websites and encrypted messaging apps
 - People document police brutality online and try to hold them accountable
 - When the “black squares” campaign drowned out images of the movement on Instagram, someone [wrote a bot](https://twitter.com/blastbots/status/1267792153016709121?s=19) to reach out to posters to take them down.
-- The [#8CantWait](https://8cantwait.org/) project provides data-driven suggestions on concrete policies lawmakers can adopt.
 
 There's many more I'm sure, but they all stand back behind the actual human beings in the streets, protesting for justice.
 
