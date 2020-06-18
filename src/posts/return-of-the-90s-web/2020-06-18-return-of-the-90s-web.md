@@ -53,7 +53,7 @@ Services like [Carrd](https://carrd.co/) offer a straightforward way to create s
 Blogging is gaining popularity again as well, used as a tool for self-marketing or simply to express opinions. There are lots of good options for people who want to pick up blogging - either on their own sites or with platforms like [micro.blog](http://micro.blog/), that offer more independence than Medium & Co. 
 
 {% signup "By the way..." %}
-If you're looking to build your own personal site and are interested in things like front-end dev and the JAMStack, you can sign up for my personal email list. Get notified whenever I publish something new, unsubscribe anytime.
+If you're looking to build your own personal site and are interested in things like front-end dev and Eleventy, you can sign up for my personal email list. Get notified whenever I publish something new, unsubscribe anytime.
 {% endsignup %}
 
 ## Curated Feeds and Discovery
