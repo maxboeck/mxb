@@ -16,11 +16,11 @@ Probably not in design - I'm afraid `dancing-baby.gif` is gone for good. But som
 
 After spending the better part of the last decade shifting rendering logic to the client, it looks like the pendulum is about to swing into the other direction again.
 
-With projects like [Phoenix Liveview](https://www.phoenixframework.org/) or [hey.com](https://hey.com/how-it-works/)'s recent "it's-just-HTML" approach, it seems like server-side rendering (SSR) is stepping back into the the spotlight. 
+With projects like [Phoenix Liveview](https://www.phoenixframework.org/) or [hey.com](https://hey.com/how-it-works/)'s recent "it's-just-HTML" approach, it seems like server-side rendering (SSR) is stepping back into the spotlight. 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">If you think that sounds like the web of 25 years ago, you’re right! Except the HEY front-end stack progressively enhances the “classic web” to work like the “2020 web,” with all the fidelity you’d expect from a well-built SPA.</p>&mdash; Sam Stephenson (@sstephenson) <a href="https://twitter.com/sstephenson/status/1272608171056680960?ref_src=twsrc%5Etfw">June 15, 2020</a></blockquote>
 
-It makes sense - servers are __really good__ at this, and sending compressed HTML through the network can be lightning fast. The classic request-response cycle has evolved as well: smart techniques like [Turbolinks](https://github.com/turbolinks/turbolinks) or [just-in-time preloading](https://instant.page/) allow for a much better experience now than when you first tried to load that Michael Jordan photo on the Space Jam website over dial-up.
+It makes sense - servers are __really good__ at this, and sending compressed HTML through the network can be lightning fast. The classic request-response cycle has evolved as well: HTTP/2 and smart techniques like [Turbolinks](https://github.com/turbolinks/turbolinks) or [just-in-time preloading](https://instant.page/) allow for a much better experience now than when you first tried to load that Michael Jordan photo on the Space Jam website over dial-up.
 
 Taking the responsibility of rendering UI and all the Javascript that comes with it off users' shoulders would be a great ~~old~~ new strategy for the next generation of web apps.
 
