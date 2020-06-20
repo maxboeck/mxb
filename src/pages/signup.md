@@ -4,6 +4,6 @@ permalink: mailinglist/index.html
 title: Mailing List
 ---
 
-<p class="lead">I'm running an email list for people interested in front-end development, personal websites and design. Infrequent updates, just the best.</p>
+<p class="lead">I run an email list for people interested in front-end development, static sites and the IndieWeb. Want to join?</p>
 
-{% signup "Get First Access to New Stuff" %}{% endsignup %}
+{% signup "Never miss an article" %}{% endsignup %}

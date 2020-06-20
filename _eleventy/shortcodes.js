@@ -8,8 +8,8 @@ module.exports = {
     signup: function (content, title = 'Join the Mailing List') {
         const source = this.page.url
         const defaultText = `
-        People on the list will be notified first when new posts are published!
-        I'll send emails once a month tops, and you can unsubscribe at any time.`
+        People on the list will be notified first when new posts are published.
+        I'll send emails about once a month and you can unsubscribe at any time.`
 
         const text = content.length ? content.trim() : defaultText.trim()
         return generators.signupSection(title, text, source)
