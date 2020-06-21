@@ -27,12 +27,12 @@ excludeFromSitemap: true
 }
 
 {% for theme in themes %}
-html[data-theme='{{ theme.id }}'] {
+[data-theme='{{ theme.id }}'] {
     {{ colorscheme(theme.colors) }}
 }
 {% endfor %}
 
-html[data-theme='rainbow'] body {
+[data-theme='rainbow'] body {
     background-image: url("/assets/images/stars.gif");
     text-shadow: 0 0 2px;
 }

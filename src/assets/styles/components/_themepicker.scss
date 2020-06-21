@@ -79,9 +79,11 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
         width: 100%;
         text-align: center;
+        background-color: var(--color-bg);
     }
     &__name {
         display: block;
+        color: var(--color-text);
     }
     &__palette {
         display: block;
@@ -98,6 +100,22 @@
         overflow: hidden;
         vertical-align: bottom;
         box-shadow: 0 0 0 2px #ffffff;
+
+        &--primary {
+            background-color: var(--color-primary);
+        }
+        &--secondary {
+            background-color: var(--color-secondary);
+        }
+        &--border {
+            background-color: var(--color-border);
+        }
+        &--textoffset {
+            background-color: var(--color-text-offset);
+        }
+        &--text {
+            background-color: var(--color-text);
+        }
 
         & + & {
             margin-left: -0.3125em;

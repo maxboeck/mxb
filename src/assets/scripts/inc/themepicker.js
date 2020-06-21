@@ -53,7 +53,7 @@ class ThemePicker {
         })
 
         this.themeSelectBtns.forEach((btn) => {
-            const id = btn.dataset.themeId
+            const id = btn.dataset.theme
             if (id) {
                 btn.addEventListener('click', () => this.setTheme(id))
             }
@@ -79,7 +79,7 @@ class ThemePicker {
             btn.parentNode.classList.remove(CLASSES.active)
             btn.removeAttribute('aria-checked')
 
-            if (btn.dataset.themeId === this.activeTheme) {
+            if (btn.dataset.theme === this.activeTheme) {
                 btn.parentNode.classList.add(CLASSES.active)
                 btn.setAttribute('aria-checked', 'true')
             }
