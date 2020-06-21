@@ -138,5 +138,19 @@
             "textOffset": "#ff464d",
             "backgroundOffset": "#311b46"
         }
+    },
+    {
+        "id": "lobster",
+        "name": "Lobster Life",
+        "colors": {
+            "primary": "#731702",
+            "secondary": "#43a9a3",
+            "text": "#373a3c",
+            "border": "#eceeef",
+            "background": "#f9bca9",
+            "primaryOffset": "#ff1447",
+            "textOffset": "#818a91",
+            "backgroundOffset": "#F08673"
+        }
     }
 ]

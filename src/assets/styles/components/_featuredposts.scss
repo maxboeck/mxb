@@ -73,7 +73,7 @@ $featuredposts-gap: 3rem;
 
     &__title {
         display: block;
-        font-family: $font-family-serif;
+        font-family: var(--font-family-display);
         font-weight: 500;
         font-size: 1.75rem;
         line-height: 1.4;

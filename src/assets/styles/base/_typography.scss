@@ -11,7 +11,7 @@ h6 {
 h1,
 h2,
 h3 {
-    font-family: $font-family-serif;
+    font-family: var(--font-family-display);
     font-weight: 500;
     text-rendering: optimizeLegibility;
 }
@@ -63,13 +63,11 @@ a {
 }
 
 blockquote {
-    font-family: $font-family-serif;
     font-style: italic;
     padding-left: 2.25em;
     border-left: 10px solid var(--color-border);
 
     footer {
-        font-family: $font-family-sans-serif;
         text-align: right;
         font-size: 0.875em;
     }
