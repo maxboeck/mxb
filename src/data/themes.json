@@ -143,14 +143,14 @@
         "id": "lobster",
         "name": "Lobster Life",
         "colors": {
-            "primary": "#731702",
-            "secondary": "#43a9a3",
-            "text": "#373a3c",
-            "border": "#eceeef",
-            "background": "#f9bca9",
-            "primaryOffset": "#ff1447",
-            "textOffset": "#818a91",
-            "backgroundOffset": "#F08673"
+            "primary": "#b62b2b",
+            "secondary": "#fb9f13",
+            "text": "#4b1313",
+            "border": "#f1797c",
+            "background": "#fbd2c6",
+            "primaryOffset": "#FF0030",
+            "textOffset": "#007278",
+            "backgroundOffset": "#ffb9ad"
         }
     }
 ]
