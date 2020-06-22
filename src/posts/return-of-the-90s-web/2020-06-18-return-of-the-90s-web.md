@@ -3,6 +3,9 @@ title: The Return of the 90s Web
 tags: code
 image: cover.jpg
 description: "Are we ready to revisit some of the ideas of the early web again? There are trends that suggest we might just have come full circle - and I like it."
+featured: true
+featuredImage: retro.jpg
+featuredImageColor: "#1E2C54"
 ---
 
 <p class="lead">In big cultural concepts like music or fashion, things have a way of coming around full circle.
