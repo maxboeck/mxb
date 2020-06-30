@@ -2,6 +2,7 @@
 title: The Whimsical Web
 tags: design
 image: cover.jpg
+description: "The web needs to take itself less seriously. It's barely out of its twenties and suddenly it's all like I can't make fansites for hippos anymore, I have businesses to run."
 demo: https://whimsical.club
 ---
 
