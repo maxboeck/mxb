@@ -45,9 +45,9 @@ These tools will probably not be a replacement for developers as a whole - compl
 
 ## Personal Websites
 
-It might just be my IndieWeb filter bubble talking, but I think there is a renewed interest in personal websites. A lot of big social media giants are falling out of favor, and it becomes cool again to __own a space__ on the web rather then being one of a billion usernames.
+It might just be my IndieWeb filter bubble talking, but I think there is a renewed interest in personal websites. A lot of big social media giants are falling out of favor, and it becomes cool again to __own a space__ on the web rather than being one of a billion usernames.
 
-Our digitial identities are becoming increasingly more important, and people become aware that they're not in control of their data. Personal sites were very popular in the era before Myspace and Facebook, and it's now easier than ever to build one.
+Our digital identities are becoming increasingly more important, and people become aware that they're not in control of their data. Personal sites were very popular in the era before Myspace and Facebook, and it's now easier than ever to build one.
 
 Services like [Carrd](https://carrd.co/) offer a straightforward way to create simple one-pagers, and their numbers show a lot of interest:
 
