@@ -1,13 +1,15 @@
 $featuredposts-gap: 3rem;
 
 .featuredposts {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem ($featuredposts-gap/2) * -1;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem ($featuredposts-gap/2) * -1;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-    grid-gap: $featuredposts-gap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+        grid-gap: $featuredposts-gap;
+    }
 
     &__item {
         display: block;
@@ -25,12 +27,35 @@ $featuredposts-gap: 3rem;
     }
 
     @supports (display: grid) {
-        margin: 2rem 0;
+        &__list {
+            margin: 2rem 0;
+        }
 
         &__item {
             padding: 0;
             flex: none;
             max-width: none;
+        }
+    }
+
+    &__footer {
+        text-align: right;
+    }
+    &__see-all {
+        font-size: 1.125rem;
+        display: inline-flex;
+        align-items: center;
+
+        .icon {
+            margin-left: 0.25rem;
+            transform: translateX(0);
+            transition: transform 0.2s;
+        }
+
+        @include hover-focus {
+            .icon {
+                transform: translateX(30%);
+            }
         }
     }
 }
