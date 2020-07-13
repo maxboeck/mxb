@@ -10,7 +10,6 @@ const workboxConfig = {
         'assets/{css,icons}/*',
         'assets/fonts/noe-display*',
         'assets/images/avatar-default.jpg',
-        'assets/images/avatar2.jpg',
         'assets/js/main.js',
         'assets/js/webmentions.js'
     ],
