@@ -27,6 +27,12 @@
     <meta property="article:published_time" content="{{ page.date | iso }}">
 {%- endif -%}
 
+{%- if isPost -%}
+    {% for tag in tags -%}
+      <meta property="article:tag" content="{{ tag }}">
+    {%- endfor %}
+{%- endif -%}
+
 {# General #}
 <meta name="author" content="{{ author.name }}">
 <meta property="og:site_name" content="{{ site.title }}">
@@ -38,23 +44,214 @@
 <link rel="canonical" href="{{ absolutePageUrl }}">
 
 {# JSON LD #}
-<script type="application/ld+json">
+{%- if isPost -%}
+    <script type="application/ld+json">
     {
-        "name":"{{ author.name }}",
-        "description":"{{ site.description }}",
-        "author": {
-            "@type":"Person",
-            "name":"{{ author.name }}"
-        },
-        "@type":"WebSite",
-        "url":"{{ site.url }}",
-        "image":"{{ site.url }}/assets/images/logo.jpg",
-        "headline":"{{ site.title }}",
-        "sameAs":[
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization",
+          "name": "{{ site.title }}",
+          "url": "{{ site.url }}",
+          "sameAs": [
             "{{ author.social.twitter.url }}",
             "{{ author.social.github.url }}",
+            "{{ author.social.linkedin.url }}",
+            "{{ author.social.dev.url }}",
             "{{ author.social.keybase.url }}"
-        ],
-        "@context":"http://schema.org"
+          ],
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "{{ site.url }}/#logo",
+            "inLanguage": "en-US",
+            "url": "{{ site.url }}/assets/images/logo.jpg",
+            "width": 1200,
+            "height": 630,
+            "caption": "{{ site.title }}"
+          },
+          "image": {
+            "@id": "{{ site.url }}/#logo"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ site.url }}/#website",
+          "url": "{{ site.url }}",
+          "name": "{{ site.title }}",
+          "description": "{{ site.description }}",
+          "publisher": {
+            "@id": "{{ site.url }}/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "{{ absolutePageUrl }}#primaryimage",
+          "inLanguage": "en-US",
+          "url": "{{ image | media(page) | url | absoluteUrl(site.url) }}",
+          "width": 1200,
+          "height": 628
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "{{ absolutePageUrl }}#blogposting",
+          "isPartOf": {
+            "@id": "{{ absolutePageUrl }}#webpage"
+          },
+          "author": {
+            "@id": "{{ absolutePageUrl }}#person"
+          },
+          "headline": "{{ title }}",
+          "datePublished": "{{ page.date | iso }}",
+          "mainEntityOfPage": {
+            "@id": "{{ absolutePageUrl }}#webpage"
+          },
+          "publisher": {
+            "@id": "{{ site.url }}/#organization"
+          },
+          "image": {
+            "@id": "{{ absolutePageUrl }}#primaryimage"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": [
+            "WebPage"
+          ],
+          "@id": "{{ absolutePageUrl }}#webpage",
+          "url": "{{ absolutePageUrl }}",
+          "name": "{{ title }}",
+          "isPartOf": {
+            "@id": "{{ site.url }}/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "{{ absolutePageUrl }}#primaryimage"
+          },
+          "datePublished": "{{ page.date | iso }}",
+          "description": "{{ description }}",
+          "breadcrumb": {
+            "@id": "{{ absolutePageUrl }}#breadcrumb"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": [
+            "Person"
+          ],
+          "@id": "{{ absolutePageUrl }}#person",
+          "name": "{{ author.name }}",
+          "url": "{{ site.url }}",
+          "image": {
+            "@type": "ImageObject",
+            "@id": "{{ site.url }}/#personlogo",
+            "inLanguage": "en-US",
+            "caption": "{{ author.name }}"
+          },
+          "description": "{{ site.description }}",
+          "sameAs": [
+            "{{ author.social.twitter.url }}",
+            "{{ author.social.github.url }}",
+            "{{ author.social.linkedin.url }}",
+            "{{ author.social.dev.url }}",
+            "{{ author.social.keybase.url }}"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "{{ absolutePageUrl }}#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "WebPage",
+                "@id": "{{ site.url }}",
+                "url": "{{ site.url }}",
+                "name": "Home"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "WebPage",
+                "@id": "{{ site.url }}/blog",
+                "url": "{{ site.url }}/blog",
+                "name": "Blog"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "BlogPosting",
+                "@id": "{{ absolutePageUrl }}#blogposting",
+                "url": "{{ absolutePageUrl }}",
+                "name": "{{ title }}"
+              }
+            }
+          ],
+          "name": "Breadcrumbs"
+        }
+      ]
     }
-</script>
+    </script>
+{%- else -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "{{ site.url }}/#organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}",
+            "sameAs": [
+              "{{ author.social.twitter.url }}",
+              "{{ author.social.github.url }}",
+              "{{ author.social.linkedin.url }}",
+              "{{ author.social.dev.url }}",
+              "{{ author.social.keybase.url }}"
+            ],
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "{{ site.url }}/#logo",
+              "inLanguage": "en-US",
+              "url": "{{ site.url }}/assets/images/logo.jpg",
+              "width": 1200,
+              "height": 630,
+              "caption": "{{ site.title }}"
+            },
+            "image": {
+              "@id": "{{ site.url }}/#logo"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "{{ site.url }}/#website",
+            "url": "{{ site.url }}",
+            "name": "{{ site.title }}",
+            "description": "{{ site.description }}",
+            "publisher": {
+              "@id": "{{ site.url }}/#organization"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "description": "Breadcrumbs list",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "item": "{{ site.url }}",
+                "name": "Homepage",
+                "position": "1"
+              }
+            ],
+            "name": "Breadcrumbs"
+          }
+        ]
+    }
+    </script>
+{%- endif -%}
