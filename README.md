@@ -14,3 +14,7 @@ Source code for [mxb.dev](https://mxb.dev), my personal website, built with [Ele
 * Webmention.io Support
 * Auto-publish notes on twitter via AWS Lambda Function
 * Focus on Speed and Accessibility
+
+## License
+
+This is my personal website. I'm keeping its source code open as a learning resource, but this is not a template. You're free to re-use __parts of this codebase__ in your own site, with attribution. Just __don't copy the entire thing__, replace the content and publish it. You know - be nice about it.
