@@ -1,4 +1,5 @@
 import 'focus-visible'
+import 'speedlify-score'
 
 import './inc/polyfills'
 import './inc/navigation'
