@@ -7,7 +7,7 @@ Source code for [mxb.dev](https://mxb.dev), my personal website, built with [Ele
 ## Features
 
 * Static Files
-* BEM-flavoured Sass (w/ Embedded Critical CSS)
+* BEM-flavoured Sass (with Embedded Critical CSS)
 * Vanilla JS (ES6 / Babel)
 * System Fonts
 * Offline Support w/ Service Worker
