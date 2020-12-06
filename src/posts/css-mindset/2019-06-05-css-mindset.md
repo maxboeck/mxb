@@ -8,11 +8,18 @@ featuredImage: mindset.jpg
 featuredImageColor: "#000000"
 ---
 
-Ah yes, CSS. Hardly a week passes without it being the topic of a heated online discussion. It's too hard. It's too simple. It's unpredictable. It's outdated. Peter Griffin struggles with blinds dot gif.
+<p class="lead">Ah yes, CSS. Hardly a week passes without it being the topic of a heated online discussion. It's too hard. It's too simple. It's unpredictable. It's not a real prgramming language. Peter Griffin struggles with blinds dot gif.</p>
 
 I don't know why CSS sparks so many different emotions in developers, but I have a hunch as to why it can sometimes seem illogical or frustrating: You need a certain __mindset__ to write good CSS.
 
 Now, you probably need a mindset for coding in general, but the declarative nature of CSS makes it particularly difficult to grasp, especially if you think about it in terms of a "traditional" programming language. 
+
+Robin Rendle makes a very good point in this [CSS-Tricks Newsletter](https://css-tricks.com/newsletter/151/) where he finds that CSS lives somewhere between rigid, logical systems like Math and flexible, adaptive systems like natural languages:
+
+<figure>
+    <img src="{{ 'css-math-language.jpg' | media(page) }}" alt="a diagram with three boxes on an axis. the first box lists properties of mathematics: rigid; emperical; logical. The last says natural language is flexible; adaptive; illogical. CSS sits in between.">
+    <figcaption>Comparison of Math, CSS and Language by <a href="https://www.robinrendle.com/">Robin Rendle</a>, 2019</figcaption>
+</figure>
 
 Other programming languages often work in controlled environments, like servers. They expect certain conditions to be true at all times, and can therefore be understood as concrete instructions as to how a program should execute. 
 
@@ -20,7 +27,7 @@ CSS on the other hand works in a place that can never be fully controlled, so it
 
 For most people who write CSS professionally, the mindset just comes naturally after a while. Many developers have that "aha!" moment when things finally start to click. It's not just about knowing all the technical details, it's more about a general sense of the ideas behind the language. 
 
-This is true whether you write CSS-in-JS, Sass or plain vanilla stylesheets. The output will always be CSS - so knowing these concepts will help you regardless of your tooling choice.
+This is true whether you write CSS-in-JS, Sass or plain vanilla stylesheets. The output will always be CSS - so knowing these concepts will be helpful regardless of your tooling choice.
 
 I tried to list some of them here.
 
