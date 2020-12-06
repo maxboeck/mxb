@@ -8,7 +8,7 @@ featuredImage: mindset.jpg
 featuredImageColor: "#000000"
 ---
 
-<p class="lead">Ah yes, CSS. Hardly a week passes without it being the topic of a heated online discussion. It's too hard. It's too simple. It's unpredictable. It's not a real prgramming language. Peter Griffin struggles with blinds dot gif.</p>
+<p class="lead">Ah yes, CSS. Hardly a week passes without it being the topic of a heated online discussion. It's too hard. It's too simple. It's unpredictable. It's not a real programming language. Peter Griffin struggles with blinds dot gif.</p>
 
 I don't know why CSS sparks so many different emotions in developers, but I have a hunch as to why it can sometimes seem illogical or frustrating: You need a certain __mindset__ to write good CSS.
 
