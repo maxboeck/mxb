@@ -3,7 +3,7 @@ import { DateTime } from 'luxon'
 
 const readableDate = (iso) => {
     const date = new Date(iso)
-    return DateTime.fromJSDate(date).toFormat('dd LLL yyyy - HH:mm')
+    return DateTime.fromJSDate(date).toFormat('dd LLL yyyy')
 }
 
 export default class Webmention extends Component {

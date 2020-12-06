@@ -31,7 +31,7 @@
         {% if webmention.published %}
             <span class="webmention__meta__divider" aria-hidden="true">&sdot;</span>
             <time class="webmention__pubdate dt-published" datetime="{{ webmention.published }}">
-                {{ webmention.published | fromIso | readableDate("dd LLL yyyy - HH:mm") }}
+                {{ webmention.published | fromIso | readableDate("dd LLL yyyy") }}
             </time>
         {% endif %}
     </div>

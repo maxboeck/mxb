@@ -53,11 +53,6 @@ const cleanMentions = (entry) => {
     return entry
 }
 
-const getLikeCount = (webmentions) => {
-    return webmentions.filter((entry) => entry['wm-property'] === 'like-of')
-        .length
-}
-
 // initialize webmentions
 ;(function () {
     // if there's no root node on the page, abort
@@ -78,12 +73,11 @@ const getLikeCount = (webmentions) => {
 
     fetchMentions()
         .then((data) => {
-            const likeCount = getLikeCount(data)
             const webmentions = processMentions(data)
 
             if (data.length) {
                 render(
-                    <App webmentions={webmentions} likeCount={likeCount} />,
+                    <App webmentions={webmentions} />,
                     webmentionsElement,
                     replaceElement
                 )

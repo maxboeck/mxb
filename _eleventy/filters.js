@@ -36,8 +36,8 @@ module.exports = {
         return chars.join('')
     },
 
-    slice: function (array, limit) {
-        return limit > 0 ? array.slice(0, limit) : array.slice(limit)
+    slice: function (array, start, end) {
+        return end ? array.slice(start, end) : array.slice(start)
     },
 
     stringify: function (json) {
