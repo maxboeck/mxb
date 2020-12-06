@@ -20,7 +20,9 @@ CSS on the other hand works in a place that can never be fully controlled, so it
 
 For most people who write CSS professionally, the mindset just comes naturally after a while. Many developers have that "aha!" moment when things finally start to click. It's not just about knowing all the technical details, it's more about a general sense of the ideas behind the language. 
 
-I tried to list some of these here.
+This is true whether you write CSS-in-JS, Sass or plain vanilla stylesheets. The output will always be CSS - so knowing these concepts will help you regardless of your tooling choice.
+
+I tried to list some of them here.
 
 ## Everything is a Rectangle
 
@@ -99,12 +101,12 @@ When in doubt about a particular element behaving different than you'd want it t
 
 ## Content will change
 
-Always be aware that what you see is just one UI state in a bigger spectrum. Instead of styling the thing on your screen, try to build a "blueprint" of the component. Then make sure that whatever you throw at it won't break your styling. 
+The number one mistake made by designers and developers alike is assuming that things will always look like they do in the static mockup. I can assure you, they will not. 
 
 Strings may be longer than intended or contain special characters, images might be missing or have weird dimensions. Displays may be very narrow or extremely wide. Those are all states you need to anticipate.
 
 {% callout "tip" %}
-The number one mistake made by designers and developers alike is assuming that things will always look like they do in the static mockup. I can assure you, they will not. 
+Always be aware that what you see is just one UI state in a bigger spectrum. Instead of styling the thing on your screen, try to build a "blueprint" of the component. Then make sure that whatever you throw at it won't break your styling. 
 {% endcallout %}
 
 ## Find Patterns and re-use them
@@ -117,13 +119,17 @@ Thinking of pieces in a design as standalone things makes them easier to reason 
 
 ## Use consistent Names
 
-A surprisingly large part of programming in general is coming up with good names for stuff. In CSS, it helps to stick to a convention. Naming schemes like [BEM](http://getbem.com) or [SMACSS](http://smacss.com/) can be very helpful; but even if you don't use them, stick to a certain vocabulary. 
+A surprisingly large part of programming in general is coming up with good names for stuff. In CSS, it helps to stick to a convention. Naming schemes like [BEM](http://getbem.com) or [SMACSS](http://smacss.com/) can be very helpful; but even if you don't use them, stick to a certain vocabulary. You'll find that certain component patterns come up over and over - but is it called a "hero" or a "stage"? Is it "slider" or "carousel"? 
+
+{% callout "tip" %}
+Establish a routine in how you name parts of your UI, then stick to that convention in all your projects. When working in a team, it can be helpful to agree on component names early on and document them somewhere for new team members.
+{% endcallout %}
 
 ------
 
-{% callout "warning" %}
 All these things were important for me to understand, but your personal experience as to what matters most might be different. Did you have another "aha" moment that made you understand CSS better? Let me know!
-{% endcallout %}
+
+**Update:** I did [a talk about the CSS Mindset](https://noti.st/mxb/MxkoVi/the-css-mindset) at CSS-Minsk-JS in September. There's also a video recording available, if you prefer that.
 
 {% signup "By the way..." %}
 I'm running an email list for people interested in CSS and front-end development!
