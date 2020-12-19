@@ -2,6 +2,7 @@
 title: "A year in review: 2020"
 slug: year-in-review-2020
 tags: general
+image: 2020.jpg
 description: "I don't think I have to tell anyone why this year sucked. I still want to continue the end-of-the-year blogpost tradition, but focus on the good things that happened instead."
 ---
 
