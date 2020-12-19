@@ -207,6 +207,28 @@
         }
     }
 
+    /* iframe container */
+    .embed {
+        height: 0;
+        position: relative;
+
+        &--16-9 {
+            padding-bottom: 56.25% !important;
+        }
+
+        &--4-3 {
+            padding-bottom: 75% !important;
+        }
+
+        video,
+        iframe {
+            @include coverall;
+            width: 100% !important;
+            height: 100%;
+            z-index: 2;
+        }
+    }
+
     /* Signup Form */
     .signup {
         box-shadow: 14px 14px 30px -10px rgba(0, 0, 0, 0.1);
