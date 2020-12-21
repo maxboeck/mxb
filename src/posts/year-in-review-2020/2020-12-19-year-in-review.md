@@ -78,3 +78,10 @@ The web has become such an integral part of our lives that we sometimes take it 
 I'm not going to compare my goals from last year with what I've accomplished in 2020. I don't think it matters. Give yourself a break this year - it's OK if things didn't turn out the way you wanted.
 
 I'll see you all in 2021. And hopefully we'll all have a vaccine in our system and a better year ahead of us.
+
+## Other Year-in-Review Posts
+
+Have you written one of these yourself? Let me know and get added here.
+
+* [Hidde de Vries](https://hiddedevries.nl/en/blog/2020-12-17-2020-in-review/)
+* [Marcus Herrmann](https://marcus.io/blog/my-2020)
