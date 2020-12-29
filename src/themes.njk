@@ -1,8 +1,8 @@
 ---
-permalink: '/assets/css/theme.css'
-excludeFromSitemap: true
+permalink: '/assets/styles/themes.css'
+eleventyExcludeFromCollections: true
 ---
-{% macro colorscheme(colors) %}
+{%- macro colorscheme(colors) -%}
     --color-bg: {{ colors.background }};
     --color-bg-offset: {{ colors.backgroundOffset }};
     --color-text: {{ colors.text }};
@@ -11,10 +11,10 @@ excludeFromSitemap: true
     --color-primary: {{ colors.primary }};
     --color-primary-offset: {{ colors.primaryOffset }};
     --color-secondary: {{ colors.secondary }};
-{% endmacro %}
+{%- endmacro -%}
 
-{%- set default = themes|getTheme('default') -%}
-{%- set dark = themes|getTheme('dark') -%}
+{%- set default = themes|findById('default') -%}
+{%- set dark = themes|findById('dark') -%}
 
 :root {
     {{ colorscheme(default.colors) }}

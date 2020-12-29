@@ -6,8 +6,8 @@ if ('serviceWorker' in navigator) {
     } else {
         window.addEventListener('load', () => {
             navigator.serviceWorker
-                .register('/sw.js')
-                .catch(registrationError => {
+                .register('/serviceworker.js')
+                .catch((registrationError) => {
                     console.error('SW registration failed: ', registrationError)
                 })
         })
@@ -15,4 +15,4 @@ if ('serviceWorker' in navigator) {
 }
 
 // disable PWA install prompt
-window.addEventListener('beforeinstallprompt', e => e.preventDefault())
+window.addEventListener('beforeinstallprompt', (e) => e.preventDefault())

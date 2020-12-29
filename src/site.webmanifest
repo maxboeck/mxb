@@ -1,17 +1,17 @@
 {
     "lang": "en",
     "dir": "ltr",
-    "name": "Max Böck",
-    "short_name": "MXB",
+    "name": "Eleventastic",
+    "short_name": "11tstc",
     "icons": [
         {
-            "src": "/assets/images/favicon/android-chrome-192x192.png?v=1",
+            "src": "/assets/images/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/assets/images/favicon/android-chrome-512x512.png?v=1",
-            "sizes": "512x512",
+            "src": "/assets/images/favicon/android-chrome-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         }
     ],
@@ -19,15 +19,5 @@
     "background_color": "#1a1a1a",
     "start_url": "/index.html",
     "display": "standalone",
-    "orientation": "natural",
-    "share_target": {
-        "action": "/share/",
-        "method": "GET",
-        "enctype": "application/x-www-form-urlencoded",
-        "params": {
-            "title": "title",
-            "text": "text",
-            "url": "url"
-        }
-    }
+    "orientation": "natural"
 }

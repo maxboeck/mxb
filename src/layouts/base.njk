@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="{{ site.lang }}">
 <!--!
   Oh so you're an inspector?
   View the source here: {{ site.repo }}
@@ -11,8 +11,8 @@
 
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-        <link rel="stylesheet" href="{{ '/assets/css/theme.css' | url }}">
-        <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/styles/themes.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 
         {% include "meta.njk" %}
         <script>(localStorage.getItem('theme')) && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
@@ -32,12 +32,6 @@
         </div>
 
         {# Main JS Bundle #}
-        <script src="{{ '/assets/js/main.js' | url }}" defer></script>
-
-        {% if layout == 'post' or layout == 'note' %}
-            <script src="//platform.twitter.com/widgets.js" async defer></script>
-            <script src="{{ '/assets/js/webmentions.js' | url }}" defer></script>
-        {% endif %}
-
+        <script src="{{ '/assets/scripts/main.js' | url }}" defer></script>
     </body>
 </html>

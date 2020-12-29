@@ -2,9 +2,10 @@
 layout: base
 tags: nav
 title: Notes
-navtitle: Notes
-navorder: 3
-permalink: notes/{% if pagination.pageNumber %}{{ pagination.pageNumber }}/{% endif %}index.html
+eleventyNavigation:
+  key: Notes
+  order: 3
+permalink: notes/{% if pagination.pageNumber %}{{ pagination.pageNumber }}/{% endif %}
 pagination:
   data: collections.notes
   size: 10

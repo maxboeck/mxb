@@ -1,12 +1,12 @@
 ---
-permalink: notes.json
+permalink: /notes.json
 excludeFromSitemap: true
 ---
 [
 {% for note in collections.notes %}
     {
         "id": {{ loop.revindex }},
-        "date": "{{ note.date | iso }}",
+        "date": "{{ note.date | dateToISO }}",
         "url": "{{ note.url | url | absoluteUrl(site.url) }}",
         "content": "{{ note.templateContent | excerpt | safe | striptags }}",
         "link": "{{ note.data.link }}",

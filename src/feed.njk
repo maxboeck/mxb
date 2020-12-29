@@ -1,23 +1,22 @@
 ---
 permalink: feed.xml
-excludeFromSitemap: true
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>{{ site.title }}</title>
-    <subtitle>{{ site.description }}</subtitle>
-    <link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
-    <link href="{{ site.url }}" rel="alternate" type="text/html"/>
-    {% if collections.posts.length %}
+    <title>{{ meta.title }}</title>
+    <subtitle>{{ meta.description }}</subtitle>
+    <link href="{{ meta.url }}/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="{{ meta.url }}" rel="alternate" type="text/html"/>
+    <author>
+        <name>{{ meta.title }}</name>
+    </author>
+    {% if collections.posts %}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
-    <id>{{ site.url }}/</id>
-    <author>
-        <name>{{ author.name }}</name>
-        <email>{{ author.email }}</email>
-    </author>
+    <id>{{ meta.url }}/</id>
     {%- for post in collections.posts | reverse -%}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
         <entry>
             <title>{{ post.data.title }}</title>
             <link href="{{ absolutePostUrl }}"/>

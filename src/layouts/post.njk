@@ -14,7 +14,7 @@ layout: base
         <div class="post__meta">
 
             <p {% if demo %}class="u-mr2"{% endif %}>
-                <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | iso }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
+                <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | dateToISO }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
                 {% if tags %}
                 &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
                 {% endif %}

@@ -3,17 +3,6 @@ const sanitizeHTML = require('sanitize-html')
 const random = require('lodash/random')
 
 module.exports = {
-    format: function (date, format) {
-        return DateTime.fromJSDate(date).toFormat(String(format))
-    },
-
-    iso: function (date) {
-        return DateTime.fromJSDate(date).toISO({
-            includeOffset: false,
-            suppressMilliseconds: true
-        })
-    },
-
     readableDate: function (date, format) {
         // default to Europe/Vienna Timezone
         const dt = DateTime.fromJSDate(date, { zone: 'UTC+2' })
@@ -24,7 +13,20 @@ module.exports = {
         return dt.toFormat(format)
     },
 
-    fromIso: function (timestamp) {
+    dateToFormat: function (date, format) {
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat(
+            String(format)
+        )
+    },
+
+    dateToISO: function (date) {
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toISO({
+            includeOffset: false,
+            suppressMilliseconds: true
+        })
+    },
+
+    dateFromISO: function (timestamp) {
         return DateTime.fromISO(timestamp, { zone: 'utc' }).toJSDate()
     },
 
@@ -160,15 +162,6 @@ module.exports = {
         return content.substring(0, excerptEnd)
     },
 
-    media: function (filename, page) {
-        const path = page.inputPath.split('/')
-        if (path.length && path.includes('posts')) {
-            const subdir = path[path.length - 2]
-            return `/assets/media/${subdir}/${filename}`
-        }
-        return filename
-    },
-
     randomItem: function (arr) {
         return arr[random(arr.length - 1)]
     },
@@ -188,7 +181,11 @@ module.exports = {
         return arr
     },
 
-    getTheme: function (themes, id) {
-        return themes.find((t) => t.id === id)
+    findById: function (array, id) {
+        return array.find((i) => i.id === id)
+    },
+
+    media: function (path) {
+        return path
     }
 }

@@ -20,7 +20,7 @@
                     <strong class="note__author__name p-name">{{ author.name }}</strong>
                 </span>
             </p>
-            <time class="note__date dt-published" datetime="{{ note.date | iso }}">
+            <time class="note__date dt-published" datetime="{{ note.date | dateToISO }}">
                 {{ note.date | readableDate('dd LLL yyyy') }}
             </time>
             {% if tags %}
