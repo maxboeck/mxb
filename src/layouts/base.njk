@@ -33,5 +33,8 @@
 
         {# Main JS Bundle #}
         <script src="{{ '/assets/scripts/main.js' | url }}" defer></script>
+        {%- if layout == 'post' or layout == 'note' -%}
+            <script src="{{ '/assets/scripts/webmentions.js' | url }}" defer></script>
+        {%- endif -%}
     </body>
 </html>
