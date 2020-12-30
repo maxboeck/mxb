@@ -11,7 +11,7 @@ module.exports = class {
             mode: {
                 inline: true,
                 symbol: {
-                    sprite: 'sprite.svg',
+                    sprite: 'icons.sprite.svg',
                     example: false
                 }
             },
@@ -28,7 +28,7 @@ module.exports = class {
         }
 
         return {
-            permalink: '/assets/icons/sprite.svg',
+            permalink: '/assets/icons/icons.sprite.svg',
             eleventyExcludeFromCollections: true,
             config
         }
