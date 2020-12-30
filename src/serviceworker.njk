@@ -3,7 +3,7 @@ permalink: /serviceworker.js
 eleventyExcludeFromCollections: true
 ---
 
-const CACHE_NAME = 'cache-{{ build.timestamp|dateToISO }}'
+const CACHE_NAME = 'mxb-{{ build.id }}'
 const OFFLINE_PAGE_URL = '/offline/'
 const PRECACHE_RESOURCES = []
 const IGNORED_HOSTS = ['localhost']
@@ -58,13 +58,18 @@ self.addEventListener('activate', (event) => {
 
 // On Request
 self.addEventListener('fetch', (event) => {
-    const { hostname } = new URL(event.request.url)
+    const { request } = event
+    const { hostname } = new URL(request.url)
+
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
+        return
+    }
+    if (request.method !== 'GET') {
         return
     }
 
     // For navigation requests (GET to a new location)
-    if (event.request.mode === 'navigate') {
+    if (request.mode === 'navigate') {
         event.respondWith(
             (async () => {
                 try {
@@ -74,7 +79,7 @@ self.addEventListener('fetch', (event) => {
                         return preloadResponse
                     }
                     // Then try the network.
-                    const networkResponse = await fetch(event.request)
+                    const networkResponse = await fetch(request)
                     return networkResponse
                 } catch (error) {
                     // catch is only triggered if an exception is thrown, which is likely
@@ -87,10 +92,29 @@ self.addEventListener('fetch', (event) => {
                     )
 
                     const cache = await caches.open(CACHE_NAME)
-                    const cachedResponse = await cache.match(OFFLINE_PAGE_URL)
-                    return cachedResponse
+                    const offlineResponse = await cache.match(OFFLINE_PAGE_URL)
+                    return offlineResponse
                 }
             })()
         )
+    } else {
+        event.respondWith(
+                (async () => {
+                    // store the network request as a promise first
+                    const networkResponse = fetch(request)
+
+                    // then fulfill the network request async and put a fresh copy
+                    // of the response into the cache for later.
+                    event.waitUntil(async function () {
+                        const responseCopy = (await networkResponse).clone()
+                        const cache = await caches.open(CACHE_NAME)
+                        await cache.put(request, responseCopy)
+                    }())
+
+                    // return the response
+                    const responseFromCache = await caches.match(request)
+                    return responseFromCache || networkResponse
+                })()
+            )
     }
 })
