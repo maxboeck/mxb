@@ -183,9 +183,5 @@ module.exports = {
 
     findById: function (array, id) {
         return array.find((i) => i.id === id)
-    },
-
-    media: function (path) {
-        return path
     }
 }
