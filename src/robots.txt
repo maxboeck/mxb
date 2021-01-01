@@ -3,4 +3,4 @@
 User-agent: *
 Disallow: /build.txt
 
-Sitemap: /sitemap.xml
+Sitemap: https://mxb.dev/sitemap.xml
