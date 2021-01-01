@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 
 const CACHE_NAME = 'mxb-{{ build.id }}'
-const OFFLINE_PAGE_URL = '/offline/'
+const OFFLINE_PAGE_URL = '/index.html'
 const PRECACHE_RESOURCES = [
     '/assets/fonts/noe-display-medium.woff2'
 ]
@@ -26,7 +26,7 @@ self.addEventListener('install', (event) => {
             // Setting {cache: 'reload'} in the new request will ensure that the
             // response isn't fulfilled from the HTTP cache; i.e., it will be from
             // the network.
-            // await cache.add(new Request(OFFLINE_PAGE_URL, { cache: 'reload' }))
+            await cache.add(new Request(OFFLINE_PAGE_URL, { cache: 'reload' }))
         })()
     )
     // Force the waiting service worker to become the active service worker.
@@ -70,7 +70,7 @@ self.addEventListener('fetch', (event) => {
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
         return
     }
-    if (IGNORED_FILETYPES.indexOf(pathname) >= 0) {
+    if (IGNORED_FILETYPES.some(ext => pathname.includes(ext))) {
         return
     }
 
