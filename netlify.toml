@@ -6,6 +6,13 @@
 [build.environment]
     NODE_VERSION = "12.18"
 
+# Build Plugins
+[[plugins]]
+    package = "netlify-plugin-hashfiles"
+    [plugins.inputs]
+        staticDir = "/assets/"
+
+# Headers
 [[headers]]
     for = "/*"
     [headers.values]
