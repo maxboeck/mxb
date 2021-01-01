@@ -78,7 +78,7 @@ self.addEventListener('fetch', (event) => {
     }
 
     // For navigation requests (GET to a new location)
-    if (request.mode === 'navigate') {
+    if (request.headers.get('Accept').includes('text/html')) {
         event.respondWith(
             (async () => {
                 try {
