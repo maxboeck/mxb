@@ -73,6 +73,9 @@ self.addEventListener('fetch', (event) => {
     if (IGNORED_FILETYPES.some(ext => pathname.includes(ext))) {
         return
     }
+    if (request.cache === 'only-if-cached' && request.mode !== 'same-origin') {
+        return
+    }
 
     // For navigation requests (GET to a new location)
     if (request.mode === 'navigate') {
