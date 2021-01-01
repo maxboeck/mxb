@@ -10,7 +10,7 @@ const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const markdown = require('./utils/markdown.js')
 
-const IS_PRODUCTION = process.env.NODE_ENV === 'production'
+const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
     notes: 'src/notes/*.md',

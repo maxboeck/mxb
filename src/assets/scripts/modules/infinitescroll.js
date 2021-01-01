@@ -17,7 +17,7 @@ function infscroll() {
             append: SELECTORS.item,
             hideNav: SELECTORS.pagination
         })
-        if (process.env.NODE_ENV !== 'production') {
+        if (process.env.ELEVENTY_ENV !== 'production') {
             console.log('infinite scroll loaded', ifs)
         }
     }

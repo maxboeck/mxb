@@ -2,7 +2,7 @@ import { h, render } from 'preact'
 import Sharer from './Sharer'
 
 const SHARING_ENDPOINT =
-    process.env.NODE_ENV === 'production'
+    process.env.ELEVENTY_ENV === 'production'
         ? '/.netlify/functions/share'
         : 'http://localhost:9000/share'
 

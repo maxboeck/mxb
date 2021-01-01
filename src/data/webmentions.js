@@ -98,7 +98,7 @@ module.exports = async function () {
     }
 
     // Only fetch new mentions in production
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.ELEVENTY_ENV === 'production') {
         const feed = await fetchWebmentions(cache.lastFetched)
         if (feed) {
             const webmentions = {
