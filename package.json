@@ -35,7 +35,7 @@
     "del-cli": "^3.0.1",
     "dompurify": "^2.2.6",
     "dotenv": "^8.2.0",
-    "eleventy-plugin-page-assets": "^0.3.0",
+    "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
     "focus-trap": "^5.1.0",
     "focus-visible": "^5.2.0",
     "html-entities": "^2.0.2",
