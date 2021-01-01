@@ -19,7 +19,6 @@
     "url": "http://github.com/maxboeck/mxb"
   },
   "author": "Max Böck",
-  "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-navigation": "^0.1.6",
@@ -36,8 +35,10 @@
     "del-cli": "^3.0.1",
     "dompurify": "^2.2.6",
     "dotenv": "^8.2.0",
+    "eleventy-plugin-page-assets": "^0.3.0",
     "focus-trap": "^5.1.0",
     "focus-visible": "^5.2.0",
+    "html-entities": "^2.0.2",
     "html-minifier": "^4.0.0",
     "infinite-scroll": "^4.0.0-beta.0",
     "lodash": "^4.17.20",
@@ -51,6 +52,7 @@
     "preact": "^10.5.7",
     "sanitize-html": "^2.3.0",
     "svg-sprite": "^1.5.0",
+    "twitter": "^1.7.1",
     "webpack": "^4.44.1"
   },
   "devDependencies": {
