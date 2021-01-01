@@ -25,7 +25,8 @@ module.exports = function (config) {
     config.addPlugin(pluginPageAssets, {
         mode: 'directory',
         postsMatching: 'src/posts/*/*.md',
-        assetsMatching: CONTENT_GLOBS.media
+        assetsMatching: CONTENT_GLOBS.media,
+        silent: true
     })
 
     // Filters
