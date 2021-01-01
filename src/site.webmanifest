@@ -1,8 +1,8 @@
 {
     "lang": "en",
     "dir": "ltr",
-    "name": "Eleventastic",
-    "short_name": "11tstc",
+    "name": "Max Böck",
+    "short_name": "mxbck",
     "icons": [
         {
             "src": "/assets/images/favicon/android-chrome-192x192.png",
@@ -10,8 +10,8 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/images/favicon/android-chrome-384x384.png",
-            "sizes": "384x384",
+            "src": "/assets/images/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],

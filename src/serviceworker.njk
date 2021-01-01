@@ -9,6 +9,7 @@ const PRECACHE_RESOURCES = [
     '/assets/fonts/noe-display-medium.woff2'
 ]
 const IGNORED_HOSTS = ['localhost']
+const IGNORED_FILETYPES = ['.webmanifest', '.txt', '.ico']
 
 // On Install
 self.addEventListener('install', (event) => {
@@ -61,12 +62,15 @@ self.addEventListener('activate', (event) => {
 // On Request
 self.addEventListener('fetch', (event) => {
     const { request } = event
-    const { hostname } = new URL(request.url)
+    const { hostname, pathname } = new URL(request.url)
 
+    if (request.method !== 'GET') {
+        return
+    }
     if (IGNORED_HOSTS.indexOf(hostname) >= 0) {
         return
     }
-    if (request.method !== 'GET') {
+    if (IGNORED_FILETYPES.indexOf(pathname) >= 0) {
         return
     }
 
