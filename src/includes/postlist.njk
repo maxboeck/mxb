@@ -12,7 +12,7 @@
             </h2>
 
             <div class="postlist__meta">
-                <time class="postlist__date dt-published" datetime="{{ post.date | iso }}">
+                <time class="postlist__date dt-published" datetime="{{ post.date | dateToISO }}">
                     {{ post.date | readableDate('dd LLL yyyy') }}
                 </time>
 

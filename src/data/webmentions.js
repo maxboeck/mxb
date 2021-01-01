@@ -4,13 +4,13 @@ const unionBy = require('lodash/unionBy')
 const domain = require('./site.json').domain
 
 // Load legacy webmentions from mxb.at
-const legacyWebmentions = require('../../_cache/webmentions-mxb.at.json')
+const legacyWebmentions = require('../../cache/webmentions-mxb.at.json')
 
 // Load .env variables with dotenv
 require('dotenv').config()
 
 // Define Cache Location and API Endpoint
-const CACHE_DIR = '_cache'
+const CACHE_DIR = 'cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
@@ -60,7 +60,7 @@ function writeToCache(data) {
         fs.mkdirSync(CACHE_DIR)
     }
     // write data to cache json file
-    fs.writeFile(filePath, fileContent, err => {
+    fs.writeFile(filePath, fileContent, (err) => {
         if (err) throw err
         console.log(`>>> webmentions cached to ${filePath}`)
     })
@@ -88,7 +88,7 @@ function readFromCache() {
     }
 }
 
-module.exports = async function() {
+module.exports = async function () {
     const cache = readFromCache()
 
     if (cache.children.length) {

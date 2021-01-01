@@ -1,5 +1,4 @@
 {%- set mentions = webmentions.children | webmentionsByUrl(webmentionUrl) -%}
-{%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
 <div
     class="webmentions{% if mentions|length > 5 %} webmentions--truncated{% endif %}" 
     id="webmentions"

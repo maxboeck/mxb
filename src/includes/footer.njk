@@ -1,7 +1,7 @@
 <footer class="footer h-card" role="contentinfo">
     <div class="footer__inner container">
         <p class="footer__item">
-            <strong>&copy; 2012&ndash;{{ build.timestamp | format('yyyy') }}</strong><br />
+            <strong>&copy; 2012&ndash;{{ build.timestamp | dateToFormat('yyyy') }}</strong><br />
             <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ author.name }}</a>
         </p>
 
@@ -18,8 +18,12 @@
 
         <p class="footer__item">
             <strong>Legal</strong><br />
-            <a href="/privacy/">Privacy Policy</a> /
-            <a href="/legal/">Ownership</a>
+            <a href="/privacy/">Privacy Policy</a>
+        </p>
+
+        <p class="footer__item">
+            <strong>Links</strong><br />
+            <a href="/blogroll/">Blogroll</a>
         </p>
 
         {#

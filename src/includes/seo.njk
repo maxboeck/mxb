@@ -18,13 +18,13 @@
 <meta property="og:title" content="{{ title or site.title }}">
 <meta property="og:description" content="{{ description or autoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:image" content="{%- if image -%}{{ image | media(page) | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+<meta property="og:image" content="{%- if image -%}{{ absolutePageUrl }}{{ image }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 <meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
 
 {# Posts and Notes Get additional meta tags #}
 {%- if isPost or isNote -%}
     <meta property="og:type" content="article">
-    <meta property="article:published_time" content="{{ page.date | iso }}">
+    <meta property="article:published_time" content="{{ page.date | dateToISO }}">
 {%- endif -%}
 
 {# General #}

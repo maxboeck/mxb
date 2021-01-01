@@ -1,11 +1,10 @@
 [build]
-    command = "yarn run build"
+    command = "npm run build"
     publish = "dist"
     functions = "functions"
 
 [build.environment]
-    NODE_VERSION = "10.15"
-    YARN_VERSION = "1.21.1"
+    NODE_VERSION = "12.18"
 
 [[headers]]
     for = "/*"

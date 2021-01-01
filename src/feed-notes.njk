@@ -1,0 +1,18 @@
+---
+permalink: /notes.json
+excludeFromSitemap: true
+---
+[
+{% for note in collections.notes %}
+    {
+        "id": {{ loop.revindex }},
+        "date": "{{ note.date | dateToISO }}",
+        "url": "{{ note.url | url | absoluteUrl(site.url) }}",
+        "content": "{{ note.templateContent | excerpt | safe | striptags }}",
+        "link": "{{ note.data.link }}",
+        "tags": "{{ note.data.tags }}",
+        "syndicate": {{ note.data.syndicate | string }}
+    }
+    {%- if not loop.last -%},{%- endif -%}
+{% endfor %}
+]
