@@ -183,5 +183,12 @@ module.exports = {
 
     findById: function (array, id) {
         return array.find((i) => i.id === id)
+    },
+
+    setExt: function (path, ext) {
+        if (!ext) {
+            return path
+        }
+        return path.substr(0, path.lastIndexOf('.')) + `.${ext}`
     }
 }

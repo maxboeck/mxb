@@ -66,14 +66,21 @@ $featuredposts-gap: 3rem;
     height: 300px;
     position: relative;
     border-radius: 0.5rem;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    overflow: hidden;
     background-color: var(--color-bg-offset);
     box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
 
-    @include mq(lg) {
-        background-position: center top;
+    &__image {
+        @include coverall;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        @include mq(lg) {
+            object-position: center top;
+        }
     }
 
     &__inner {

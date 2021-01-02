@@ -4,7 +4,15 @@
         {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%}
         {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
         <li class="featuredposts__item">
-            <div class="featuredpost" style="{% if post.data.featuredImageColor %}background-color: {{ post.data.featuredImageColor }};{% endif %}{% if post.data.featuredImage %}background-image: url(/assets/images/featured/{{ post.data.featuredImage }});{% endif %}">
+            <div class="featuredpost" style="{% if post.data.featuredImageColor %}background-color: {{ post.data.featuredImageColor }};{% endif %}">
+                {% if post.data.featuredImage %}
+                    {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
+                    <picture>
+                        <source sourceset="{{ imgsrc | setExt('webp') }}" type="image/webp">
+                        <source sourceset="{{ imgsrc }}" type="image/jpeg">
+                        <img src="{{ imgsrc }}" alt="" class="featuredpost__image" />
+                    </picture>
+                {% endif %}
                 <div class="featuredpost__inner">
                     <a href="{{ post.url | url }}" class="featuredpost__link">
                         <span class="featuredpost__title">{{ post.data.title }}</span>
