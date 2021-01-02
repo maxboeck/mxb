@@ -8,9 +8,10 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "run-s clean eleventy:dev --print-label",
-    "build": "run-s clean eleventy:prod --print-label",
+    "build": "run-s clean eleventy:prod --print-label workbox",
     "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
+    "workbox": "workbox generateSW workbox.config.js",
     "clean": "del-cli dist",
     "debug": "DEBUG=Eleventy* npm start"
   },
@@ -53,7 +54,8 @@
     "sanitize-html": "^2.3.0",
     "svg-sprite": "^1.5.0",
     "twitter": "^1.7.1",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.1",
+    "workbox-cli": "^6.0.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
