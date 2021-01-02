@@ -10,7 +10,7 @@ module.exports = {
     runtimeCaching: [
         {
             urlPattern: /\.(?:png|jpg|jpeg|gif|webp|svg)$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
                 cacheName: 'mxb-images',
                 expiration: {
