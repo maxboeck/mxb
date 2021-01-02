@@ -8,8 +8,8 @@
                 {% if post.data.featuredImage %}
                     {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
                     <picture>
-                        <source sourceset="{{ imgsrc | setExt('webp') }}" type="image/webp">
-                        <source sourceset="{{ imgsrc }}" type="image/jpeg">
+                        <source srcset="{{ imgsrc | setExt('webp') }}" type="image/webp">
+                        <source srcset="{{ imgsrc }}" type="image/jpeg">
                         <img src="{{ imgsrc }}" alt="" class="featuredpost__image" />
                     </picture>
                 {% endif %}
