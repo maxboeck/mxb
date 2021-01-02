@@ -1,7 +1,6 @@
 import 'focus-visible'
 // import 'speedlify-score'
 
-import './modules/polyfills'
 import './modules/navigation'
 import './modules/signup'
 import './modules/lazyload'
