@@ -14,6 +14,11 @@
         X-Content-Type-Options = "nosniff"
         Referrer-Policy= "no-referrer-when-downgrade"
 
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    cache-control = "max-age=0,no-cache,no-store,must-revalidate"
+
 # Netlify subdomain
 [[redirects]]
     from = "https://mxb.netlify.com/*"
