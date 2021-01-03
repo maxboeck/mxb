@@ -9,8 +9,8 @@ module.exports = {
     skipWaiting: true,
     runtimeCaching: [
         {
-            urlPattern: /\.(?:png|jpg|jpeg|gif|webp|svg)$/,
-            handler: 'StaleWhileRevalidate',
+            urlPattern: /\.(?:png|jpg|jpeg|gif|webp)$/,
+            handler: 'CacheFirst',
             options: {
                 cacheName: 'images',
                 expiration: {
