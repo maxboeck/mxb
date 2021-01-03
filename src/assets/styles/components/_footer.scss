@@ -38,6 +38,10 @@
         }
     }
 
+    &__speedlify {
+        text-decoration: none !important;
+    }
+
     @include mq(md) {
         &__inner {
             flex-wrap: nowrap;

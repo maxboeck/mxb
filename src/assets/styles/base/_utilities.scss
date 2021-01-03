@@ -55,3 +55,10 @@
 .u-ml2 {
     margin-left: 2rem !important;
 }
+
+.u-desktop-only {
+    display: none;
+    @include mq(xl) {
+        display: block;
+    }
+}
