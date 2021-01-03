@@ -1,7 +1,7 @@
 module.exports = {
     cacheId: 'mxb',
     globDirectory: './dist',
-    globPatterns: ['**/*.{woff2}'],
+    globPatterns: ['**/*.{css,js,woff2}'],
     swDest: './dist/sw.js',
     sourcemap: false,
     cleanupOutdatedCaches: true,
@@ -12,7 +12,7 @@ module.exports = {
             urlPattern: /\.(?:png|jpg|jpeg|gif|webp|svg)$/,
             handler: 'StaleWhileRevalidate',
             options: {
-                cacheName: 'mxb-images',
+                cacheName: 'images',
                 expiration: {
                     maxEntries: 50,
                     maxAgeSeconds: 60 * 60 * 24 * 365
