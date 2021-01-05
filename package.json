@@ -9,10 +9,11 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "run-s clean eleventy:dev --print-label",
-    "build": "run-s clean eleventy:prod --print-label workbox",
+    "build": "run-s clean eleventy:prod --print-label workbox lambda",
     "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
     "workbox": "workbox generateSW workbox.config.js",
+    "lambda": "netlify-lambda build lambda",
     "clean": "del-cli dist",
     "debug": "DEBUG=Eleventy* npm start"
   },
@@ -58,6 +59,7 @@
     "workbox-cli": "^6.0.2"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "netlify-lambda": "^2.0.2"
   }
 }
