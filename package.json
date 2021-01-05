@@ -2,6 +2,7 @@
   "name": "mxb.dev",
   "version": "4.2.0",
   "description": "Personal Website of Max Böck",
+  "license": "CC BY-SA",
   "browserslist": [
     "defaults"
   ],
@@ -31,7 +32,6 @@
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.2.2",
     "clean-css": "^4.2.3",
-    "critical": "^2.0.3",
     "cssesc": "^3.0.0",
     "del-cli": "^3.0.1",
     "dompurify": "^2.2.6",
