@@ -15,6 +15,8 @@
 
 {# Page-Specific #}
 <meta name="description" content="{{ description or autoDescription or site.description }}">
+{%- if image -%}<meta name="image" content="{{ absolutePageUrl }}{{ image }}">{%- endif -%}
+
 <meta property="og:title" content="{{ title or site.title }}">
 <meta property="og:description" content="{{ description or autoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
@@ -48,7 +50,7 @@
         },
         "@type":"WebSite",
         "url":"{{ site.url }}",
-        "image":"{{ site.url }}/assets/images/logo.jpg",
+        "image":"{{ author.avatar | url | absoluteUrl(site.url) }}",
         "headline":"{{ site.title }}",
         "sameAs":[
             "{{ author.social.twitter.url }}",
