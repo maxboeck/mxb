@@ -6,6 +6,9 @@
 [build.environment]
     NODE_VERSION = "12.18"
 
+[[plugins]]
+    package = "./plugins/webmention-cache"
+
 [[headers]]
     for = "/*"
     [headers.values]
