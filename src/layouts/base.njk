@@ -12,18 +12,8 @@
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
         <link rel="preconnect" href="https://webmention.io">
-        
-        <style>
-        @font-face {
-            font-family: 'Noe Display';
-            font-style: normal;
-            font-display: swap;
-            font-weight: 500;
-            src: local('NoeDisplay-Medium'),
-                url('/assets/fonts/noe-display-medium.woff2') format('woff2'),
-                url('/assets/fonts/noe-display-medium.woff') format('woff');
-        }
-        </style>
+
+        <style>@font-face{font-family:'Noe Display';font-style:normal;font-display:swap;font-weight:500;src:local('NoeDisplay-Medium'),url(/assets/fonts/noe-display-medium.woff2) format('woff2'),url(/assets/fonts/noe-display-medium.woff) format('woff')}</style>
         <link rel="stylesheet" href="{{ '/assets/styles/themes.css' | url }}">
         <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 
