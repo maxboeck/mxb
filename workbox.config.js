@@ -1,7 +1,7 @@
 module.exports = {
     cacheId: 'mxb',
     globDirectory: './dist',
-    globPatterns: ['**/*.{woff2}'],
+    globPatterns: ['**/*.woff2'],
     swDest: './dist/sw.js',
     sourcemap: false,
     cleanupOutdatedCaches: true,
