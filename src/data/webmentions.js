@@ -3,9 +3,6 @@ const fetch = require('node-fetch')
 const unionBy = require('lodash/unionBy')
 const domain = require('./site.json').domain
 
-// Load legacy webmentions from mxb.at
-const legacyWebmentions = require('../../cache/webmentions-mxb.at.json')
-
 // Load .env variables with dotenv
 require('dotenv').config()
 
@@ -62,7 +59,7 @@ function writeToCache(data) {
     // write data to cache json file
     fs.writeFile(filePath, fileContent, (err) => {
         if (err) throw err
-        console.log(`>>> webmentions cached to ${filePath}`)
+        console.log(`>>> webmentions saved to ${filePath}`)
     })
 }
 
@@ -72,19 +69,13 @@ function readFromCache() {
 
     if (fs.existsSync(filePath)) {
         const cacheFile = fs.readFileSync(filePath)
-        const cachedWebmentions = JSON.parse(cacheFile)
-
-        // merge cache with wms for legacy domain
-        return {
-            lastFetched: cachedWebmentions.lastFetched,
-            children: mergeWebmentions(legacyWebmentions, cachedWebmentions)
-        }
+        return JSON.parse(cacheFile)
     }
 
     // no cache found.
     return {
         lastFetched: null,
-        children: legacyWebmentions.children
+        children: []
     }
 }
 
