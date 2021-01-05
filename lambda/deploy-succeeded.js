@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import Twitter from 'twitter'
-import { AllHtmlEntities as Entities } from 'html-entities'
+import { decode } from 'html-entities'
 
 dotenv.config()
 
@@ -70,11 +70,10 @@ const processNotes = async (notes) => {
 // Prepare the content string for tweet format
 const prepareStatusText = (note) => {
     const maxLength = 280 - 3 - 1 - 23 - 20
-    const entities = new Entities()
 
     // strip html tags and decode entities
     let text = note.content.trim().replace(/<[^>]+>/g, '')
-    text = entities.decode(text)
+    text = decode(text)
 
     // truncate note text if its too long for a tweet.
     if (text.length > maxLength) {
