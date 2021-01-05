@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
+    "encoding": "^0.1.13",
     "netlify-lambda": "^2.0.2"
   }
 }

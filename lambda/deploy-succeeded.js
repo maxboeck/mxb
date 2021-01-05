@@ -1,4 +1,3 @@
-import 'encoding'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import Twitter from 'twitter'
