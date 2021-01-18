@@ -37,6 +37,7 @@
         <script src="{{ '/assets/scripts/main.js' | url }}" defer></script>
         {%- if layout == 'post' or layout == 'note' -%}
             <script src="{{ '/assets/scripts/webmentions.js' | url }}" defer></script>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         {%- endif -%}
     </body>
 </html>
