@@ -12,7 +12,7 @@
 
     &__title {
         font-size: 2.125rem;
-        font-family: $font-family-base;
+        font-family: var(--font-family-base);
         font-weight: 700;
     }
     &__meta {

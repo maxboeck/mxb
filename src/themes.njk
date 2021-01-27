@@ -41,7 +41,20 @@ eleventyExcludeFromCollections: true
     --font-family-display: "Lobster", cursive;
     cursor: url("/assets/images/lobster-cursor.png"), auto;
 }
+
 [data-theme='lobster'] a,
 [data-theme='lobster'] button {
     cursor: url("/assets/images/lobster-cursor-hover.png"), auto;
+}
+
+[data-theme='hackernews'] {
+    --font-size-root: 12px;
+    --font-family-base: Verdana, Geneva, sans-serif;
+    --font-family-display: Verdana, Geneva, sans-serif;
+}
+
+[data-theme='hackernews'] .featuredpost__title::after,
+[data-theme='hackernews'] .postlist__link::after,
+[data-theme='hackernews'] .post__title::after {
+    content: " considered harmful";
 }

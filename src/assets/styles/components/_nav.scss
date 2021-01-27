@@ -125,7 +125,7 @@
 
         &__num {
             margin-right: 0.75rem;
-            font-family: $font-family-base;
+            font-family: var(--font-family-base);
             font-weight: 300;
             font-size: 0.5em;
             color: var(--color-text-offset);

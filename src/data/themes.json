@@ -152,5 +152,19 @@
             "textOffset": "#146caa",
             "backgroundOffset": "#ffb9ad"
         }
+    },
+    {
+        "id": "hackernews",
+        "name": "Hacker News",
+        "colors": {
+            "primary": "#FF6600",
+            "secondary": "#FF6600",
+            "text": "#000000",
+            "border": "#FF6600",
+            "background": "#F6F6EF",
+            "primaryOffset": "#F56200",
+            "textOffset": "#828282",
+            "backgroundOffset": "#F8F8EC"
+        }
     }
 ]

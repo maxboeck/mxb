@@ -47,7 +47,7 @@ p {
 
 .smalltitle {
     font-size: 0.875rem;
-    font-family: $font-family-base;
+    font-family: var(--font-family-base);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
