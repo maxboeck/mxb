@@ -56,34 +56,6 @@
         }
     },
     {
-        "id": "sherbet",
-        "name": "Sherbet Land",
-        "colors": {
-            "primary": "#00bfa2",
-            "secondary": "#ff5470",
-            "text": "#1b2d45",
-            "border": "#d5e6fd",
-            "background": "#fffffe",
-            "primaryOffset": "#00ebc7",
-            "textOffset": "#3a6297",
-            "backgroundOffset": "#f2f4f6"
-        }
-    },
-    {
-        "id": "turnpike",
-        "name": "Toad's Turnpike",
-        "colors": {
-            "primary": "#ffbd03",
-            "secondary": "#e53170",
-            "text": "#fffffe",
-            "border": "#383a61",
-            "background": "#232946",
-            "primaryOffset": "#ffd803",
-            "textOffset": "#94a1b2",
-            "backgroundOffset": "#2a325a"
-        }
-    },
-    {
         "id": "moomoo",
         "name": "Moo Moo Farm",
         "colors": {
