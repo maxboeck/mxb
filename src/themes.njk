@@ -32,10 +32,14 @@ eleventyExcludeFromCollections: true
 }
 {% endfor %}
 
+/* Rainbow Road Theme Extra Styles */
+
 [data-theme='rainbow'] body {
     background-image: url("/assets/images/stars.gif");
     text-shadow: 0 0 2px;
 }
+
+/* Lobster Theme Extra Styles */
 
 [data-theme='lobster'] {
     --font-family-display: "Lobster", cursive;
@@ -47,14 +51,23 @@ eleventyExcludeFromCollections: true
     cursor: url("/assets/images/lobster-cursor-hover.png"), auto;
 }
 
+/* HN Theme Extra Styles */
+
 [data-theme='hackernews'] {
     --font-size-root: 75%;
     --font-family-base: Verdana, Geneva, sans-serif;
     --font-family-display: Verdana, Geneva, sans-serif;
 }
 
+[data-theme='hackernews'] .page__content,
+[data-theme='hackernews'] .post__content,
+[data-theme='hackernews'] .postlist {
+    max-width: none;
+}
+
 [data-theme='hackernews'] .featuredpost__title::after,
 [data-theme='hackernews'] .postlist__link::after,
-[data-theme='hackernews'] .post__title::after {
+[data-theme='hackernews'] .post__title::after,
+[data-theme='hackernews'] .otherposts__title::after {
     content: " considered harmful";
 }
