@@ -9,7 +9,7 @@ module.exports = {
     skipWaiting: true,
     runtimeCaching: [
         {
-            urlPattern: /\.(?:png|jpg|jpeg|gif|webp)$/,
+            urlPattern: /\.(?:png|jpg|jpeg|gif|webp|avif)$/,
             handler: 'CacheFirst',
             options: {
                 cacheName: 'images',
