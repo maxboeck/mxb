@@ -43,6 +43,7 @@ module.exports = function (config) {
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
+    config.addPairedShortcode('highlight', shortcodes.highlight)
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
