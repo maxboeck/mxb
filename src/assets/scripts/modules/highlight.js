@@ -18,14 +18,10 @@ class ShareHighlight extends HTMLElement {
                 position:relative;
                 display:inline;
                 cursor:pointer;
-
-                color: var(--share-highlight-text-color);
-                background-color: var(--share-highlight-bg-color);
             }
-            :host:hover,
-            :host:focus {
-                color: var(--share-highlight-text-color-active);
-                background-color: var(--share-highlight-bg-color-active);
+            :host(:hover) .tooltip,
+            :host(:focus) .tooltip {
+                display: block;
             }
             .tooltip {
                 display:none;
@@ -62,10 +58,6 @@ class ShareHighlight extends HTMLElement {
                 top: 100%;
                 left:50%;
                 transform: translate(-50%, 0);
-            }
-            :host:hover .tooltip,
-            :host:focus .tooltip {
-                display: block;
             }
             .icon {
                 display: inline-block;
