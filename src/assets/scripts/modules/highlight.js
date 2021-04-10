@@ -2,12 +2,13 @@ class ShareHighlight extends HTMLElement {
     constructor() {
         super()
 
+        this.tooltipLabel = this.getAttribute('label') || 'Share this'
+
         this.attachShadow({ mode: 'open' })
         this.setTemplate()
 
         this.$ = {}
         this.$.tooltip = this.shadowRoot.querySelector('.tooltip')
-        this.$.tooltipLabel = this.shadowRoot.querySelector('.tooltiplabel')
     }
 
     setTemplate() {
@@ -17,13 +18,12 @@ class ShareHighlight extends HTMLElement {
                 position:relative;
                 display:inline;
                 cursor:pointer;
-            }
-            mark {
+
                 color: var(--share-highlight-text-color);
                 background-color: var(--share-highlight-bg-color);
             }
-            mark:hover,
-            mark:focus {
+            :host:hover,
+            :host:focus {
                 color: var(--share-highlight-text-color-active);
                 background-color: var(--share-highlight-bg-color-active);
             }
@@ -63,8 +63,8 @@ class ShareHighlight extends HTMLElement {
                 left:50%;
                 transform: translate(-50%, 0);
             }
-            mark:hover + .tooltip,
-            mark:focus + .tooltip {
+            :host:hover .tooltip,
+            :host:focus .tooltip {
                 display: block;
             }
             .icon {
@@ -85,10 +85,10 @@ class ShareHighlight extends HTMLElement {
 
         template.innerHTML = `
             <style>${styles}</style>
-            <mark><slot></slot></mark>
-            <span class="tooltip">${
-                !navigator.share && twitterIcon
-            }<span class="tooltiplabel">Share this</span></span>
+            <slot></slot>
+            <span class="tooltip">${!navigator.share && twitterIcon}${
+            this.tooltipLabel
+        }</span>
         `
 
         this.shadowRoot.appendChild(template.content.cloneNode(true))
@@ -117,8 +117,8 @@ class ShareHighlight extends HTMLElement {
     }
 
     connectedCallback() {
-        if (this.hasAttribute('label')) {
-            this.$.tooltipLabel.innerText = this.getAttribute('label')
+        if (!this.hasAttribute('tabindex')) {
+            this.tabIndex = 0
         }
         this.shadowRoot.addEventListener('click', () => this.share())
     }

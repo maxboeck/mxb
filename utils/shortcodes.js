@@ -17,6 +17,6 @@ module.exports = {
     },
 
     highlight: function (content) {
-        return `<share-highlight label="Teilen">${content}</share-highlight>`
+        return `<share-highlight><mark>${content}</mark></share-highlight>`
     }
 }
