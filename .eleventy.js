@@ -4,6 +4,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginPageAssets = require('eleventy-plugin-page-assets')
+const pluginShareHighlight = require('eleventy-plugin-share-highlight')
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -28,6 +29,7 @@ module.exports = function (config) {
         assetsMatching: CONTENT_GLOBS.media,
         silent: true
     })
+    config.addPlugin(pluginShareHighlight)
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
@@ -43,7 +45,6 @@ module.exports = function (config) {
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
-    config.addPairedShortcode('highlight', shortcodes.highlight)
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')

@@ -14,9 +14,5 @@ module.exports = {
 
         const text = content.length ? content.trim() : defaultText.trim()
         return SignupSection(title, text, source)
-    },
-
-    highlight: function (content) {
-        return `<share-highlight><mark>${content}</mark></share-highlight>`
     }
 }

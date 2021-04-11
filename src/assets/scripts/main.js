@@ -1,4 +1,5 @@
 import 'focus-visible'
+import 'eleventy-plugin-share-highlight/share-highlight'
 
 import './modules/navigation'
 import './modules/signup'
@@ -7,7 +8,6 @@ import './modules/themepicker'
 import './modules/infinitescroll'
 import './modules/preload'
 import './modules/speedlify'
-import './modules/share-highlight'
 import './modules/register-serviceworker'
 
 document.documentElement.classList.remove('no-js')
