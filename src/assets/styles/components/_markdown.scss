@@ -127,6 +127,11 @@
         margin-left: 0;
     }
 
+    mark {
+        color: var(--share-highlight-text-color);
+        background-color: var(--share-highlight-bg-color);
+    }
+
     /* Code blocks */
     pre[class*='language-'] {
         display: block;
