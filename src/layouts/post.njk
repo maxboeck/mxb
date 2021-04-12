@@ -16,10 +16,10 @@ layout: base
             <p {% if demo %}class="u-mr2"{% endif %}>
                 <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | dateToISO }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
                 {% if tags %}
-                &sdot; <span class="post__tags p-category">{{ tags | join(', ') }}</span>
+                <span aria-label="in category">&sdot;</span> <span class="post__tags p-category">{{ tags | join(', ') }}</span>
                 {% endif %}
                 {% if draft %}
-                &sdot; <span class="post__status">(Draft)</span>
+                <span aria-hidden="true">&sdot;</span> <span class="post__status">(Draft)</span>
                 {% endif %}
             </p>
 
