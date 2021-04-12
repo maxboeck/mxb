@@ -20,6 +20,7 @@ const markdown = markdownIt({
     permalinkSymbol: '#',
     permalinkClass: 'heading-anchor',
     permalinkBefore: true,
+    permalinkAttrs: () => ({ 'aria-hidden': true }),
     level: 2,
     slugify: anchorSlugify
 })
