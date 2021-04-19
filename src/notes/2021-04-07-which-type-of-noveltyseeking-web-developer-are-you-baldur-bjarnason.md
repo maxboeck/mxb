@@ -1,7 +1,7 @@
 ---
 title: "Which type of novelty-seeking web developer are you? Baldur Bjarnason"
 date: "2021-04-07T10:03:58.049Z"
-syndicate: true
+syndicate: false
 link: "https://www.baldurbjarnason.com/2021/which-kind-of-web-developer-are-you/"
 tags: link
 ---
