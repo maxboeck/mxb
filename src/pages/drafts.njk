@@ -1,0 +1,19 @@
+---
+layout: base
+title: Drafts
+permalink: /drafts/
+---
+<div class="page page--blog">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+    </header>
+    <div class="page__content">
+    {% if collections.drafts.length %}
+        {%- set postlist = collections.drafts -%}
+        {% include "postlist.njk" %}
+    {% else %}
+        <p class="lead u-align-center u-mb1">There currently are no drafts available.<br />Interested about something in particular?</p>
+        <p class="u-align-center"><a href="https://twitter.com/mxbck" class="btn btn--primary">Let me know</a></p>
+    {% endif %}
+    </div>
+</div>

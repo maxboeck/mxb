@@ -1,0 +1,6 @@
+{
+    "layout": "post",
+    "permalink": "drafts/{{ page.fileSlug }}/index.html",
+    "excludeFromSitemap": true,
+    "draft": true
+}

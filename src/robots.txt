@@ -2,5 +2,6 @@
 
 User-agent: *
 Disallow: /build.txt
+Disallow: /drafts
 
 Sitemap: https://mxb.dev/sitemap.xml

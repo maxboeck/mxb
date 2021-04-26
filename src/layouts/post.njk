@@ -45,23 +45,31 @@ layout: base
             </p>
         </div>
 
-        <p class="post__footer__info">
-            Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }} <br/>
-            <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Edit this Post</a>
-        </p>
+        {% if draft %}
+            <p class="post__footer__info">
+                This post is still a draft.<br/>
+                <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Suggest a change</a>
+            </p>
+        {% else %}
+            <p class="post__footer__info">
+                Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }} <br/>
+                <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Edit this Post</a>
+            </p>
 
-        <a
-            href="https://twitter.com/intent/follow?screen_name={{ author.social.twitter.name }}"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Follow {{ author.name }} on Twitter"
-            class="btn btn--twitter"
-        >
-            {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
-        </a>
+            <a
+                href="https://twitter.com/intent/follow?screen_name={{ author.social.twitter.name }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow {{ author.name }} on Twitter"
+                class="btn btn--twitter"
+            >
+                {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
+            </a>
+        {% endif %}
     </div>
 </article>
 
+{% if not draft %}
 <div class="postsection">
     <div class="postsection__header">
         <h3 class="postsection__title u-mb0">Webmentions</h3>
@@ -78,3 +86,4 @@ layout: base
     <h3 class="postsection__title">Other things I've written</h3>
     {% include 'otherposts.njk' %}
 </div>
+{% endif %}

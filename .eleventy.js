@@ -14,6 +14,7 @@ const markdown = require('./utils/markdown.js')
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
+    drafts: 'src/drafts/**/*.md',
     notes: 'src/notes/*.md',
     media: '*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm'
 }
@@ -56,6 +57,7 @@ module.exports = function (config) {
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('page', 'page.njk')
     config.addLayoutAlias('post', 'post.njk')
+    config.addLayoutAlias('draft', 'draft.njk')
     config.addLayoutAlias('note', 'note.njk')
 
     // Pass-through files
@@ -73,6 +75,13 @@ module.exports = function (config) {
             .getFilteredByGlob(CONTENT_GLOBS.posts)
             .filter((item) => item.data.permalink !== false)
             .filter((item) => !(item.data.draft && IS_PRODUCTION))
+    })
+
+    // Collections: Drafts
+    config.addCollection('drafts', function (collection) {
+        return collection
+            .getFilteredByGlob(CONTENT_GLOBS.drafts)
+            .filter((item) => item.data.permalink !== false)
     })
 
     // Collections: Notes

@@ -1,6 +1,5 @@
 node_modules
 dist
-drafts
 cache
 functions
 .env
