@@ -44,7 +44,7 @@
     "html-entities": "^2.0.2",
     "html-minifier": "^4.0.0",
     "infinite-scroll": "^4.0.0-beta.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "luxon": "^1.25.0",
     "markdown-it": "^12.0.2",
     "markdown-it-anchor": "^6.0.1",
