@@ -1,41 +1,21 @@
-$featuredposts-gap: 3rem;
-
 .featuredposts {
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 2rem ($featuredposts-gap/2) * -1;
+    --gradient-bottom: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    --gradient-full: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
 
+    &__list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-        grid-gap: $featuredposts-gap;
-    }
-
-    &__item {
-        display: block;
-        padding: $featuredposts-gap/2;
-        flex-basis: 100%;
-
-        @include mq(md) {
-            flex-basis: 50%;
-            max-width: 50%;
-        }
-        @include mq(lg) {
-            flex-basis: 25%;
-            max-width: 25%;
-        }
-    }
-
-    @supports (display: grid) {
-        &__list {
-            margin: 2rem 0;
-        }
-
-        &__item {
-            padding: 0;
-            flex: none;
-            max-width: none;
-        }
+        grid-gap: 3rem;
+        margin: 2rem 0;
     }
 
     &__footer {
@@ -77,10 +57,6 @@ $featuredposts-gap: 3rem;
         height: 100%;
         object-fit: cover;
         object-position: center;
-
-        @include mq(lg) {
-            object-position: center top;
-        }
     }
 
     &__inner {
@@ -89,12 +65,7 @@ $featuredposts-gap: 3rem;
         border-radius: 0.5rem;
         color: #fff;
         padding: 1rem;
-        background-image: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.15) 50%,
-            rgba(0, 0, 0, 0.4) 100%
-        );
+        background-image: var(--gradient-full);
     }
 
     &__link {
@@ -112,13 +83,6 @@ $featuredposts-gap: 3rem;
         line-height: 1.4;
         margin-bottom: 0.5rem;
     }
-    &__description {
-        pointer-events: none;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.2s $animation-curve-default,
-            transform 0.2s $animation-curve-default;
-    }
     &__likecount {
         display: flex;
         align-items: center;
@@ -131,23 +95,35 @@ $featuredposts-gap: 3rem;
         }
     }
 
-    &:hover &__description,
-    &__link:focus + &__description {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    @include mq(md) {
+        &__inner {
+            background-image: var(--gradient-bottom);
+        }
+        &:hover &__inner,
+        &:focus-within &__inner {
+            background-image: var(--gradient-full);
+        }
 
-    &:hover &__likecount,
-    &__link:focus ~ &__likecount {
-        display: none;
-    }
+        &__description {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s $animation-curve-default,
+                transform 0.2s $animation-curve-default;
+        }
+        &:hover &__description,
+        &__link:focus + &__description {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
-    &:hover &__inner,
-    &:focus-within &__inner {
-        background-image: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.5) 0%,
-            rgba(0, 0, 0, 0.4) 100%
-        );
+        &:hover &__likecount,
+        &__link:focus ~ &__likecount {
+            display: none;
+        }
+
+        &__image {
+            object-position: center top;
+        }
     }
 }
