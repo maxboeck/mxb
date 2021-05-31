@@ -30,6 +30,13 @@ module.exports = {
         return DateTime.fromISO(timestamp, { zone: 'utc' }).toJSDate()
     },
 
+    humanizeNumber: function (num) {
+        if (num > 999) {
+            return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K'
+        }
+        return num
+    },
+
     obfuscate: function (str) {
         const chars = []
         for (var i = str.length - 1; i >= 0; i--) {
