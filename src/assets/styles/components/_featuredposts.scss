@@ -94,8 +94,10 @@
             margin-right: 0.25rem;
         }
     }
+}
 
-    @include mq(md) {
+@media (pointer: fine) {
+    .featuredpost {
         &__inner {
             background-image: var(--gradient-bottom);
         }
