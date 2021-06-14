@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {%- for item in collections.all -%}
     {%- if not item.data.excludeFromSitemap and item.url -%}
     <url>
-        <loc>{{ item.url | url | absoluteUrl(meta.url) }}</loc>
+        <loc>{{ item.url | url | absoluteUrl(site.url) }}</loc>
         <lastmod>{{ item.date | dateToFormat('yyyy-MM-dd') }}</lastmod>
     </url>
     {%- endif -%}
