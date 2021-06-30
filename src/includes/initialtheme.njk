@@ -1,10 +1,6 @@
 var theme = localStorage.getItem('theme');
 if (theme) {
-    var metaColors = {
-    {%- for theme in themes -%}
-        '{{ theme.id }}': '{{ theme.colors.background }}'{% if not forloop.last %},{% endif %}
-    {%- endfor -%}
-    };
+    var metaColors = {{%- for theme in themes -%}'{{ theme.id }}': '{{ theme.colors.background }}'{% if not loop.last %},{% endif %}{%- endfor -%}};
     document.documentElement.setAttribute('data-theme', theme);
     document.querySelector('meta[name="theme-color"]').setAttribute('content', metaColors[theme]);
 }
