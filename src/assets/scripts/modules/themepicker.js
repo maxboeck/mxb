@@ -16,9 +16,9 @@ class ThemePicker {
         this.isOpen = false
         this.activeTheme = 'default'
         this.hasLocalStorage = typeof Storage !== 'undefined'
-        this.hasThemeColorMeta = !!document.querySelector(
-            'meta[name="theme-color"]'
-        )
+        this.hasThemeColorMeta =
+            !!document.querySelector('meta[name="theme-color"]') &&
+            window.metaColors
 
         this.picker = document.querySelector(SELECTORS.picker)
         this.toggleBtn = document.querySelector(SELECTORS.toggleBtn)
@@ -57,12 +57,9 @@ class ThemePicker {
 
         this.themeSelectBtns.forEach((btn) => {
             const id = btn.dataset.theme
-            const metaColor = btn.dataset.metaColor
 
             if (id) {
-                btn.addEventListener('click', () =>
-                    this.setTheme({ id, metaColor })
-                )
+                btn.addEventListener('click', () => this.setTheme(id))
             }
         })
     }
@@ -93,14 +90,15 @@ class ThemePicker {
         })
     }
 
-    setTheme({ id, metaColor }) {
+    setTheme(id) {
         this.activeTheme = id
         document.documentElement.setAttribute('data-theme', id)
 
         if (this.hasLocalStorage) {
             localStorage.setItem(THEME_STORAGE_KEY, id)
         }
-        if (this.hasThemeColorMeta && metaColor) {
+        if (this.hasThemeColorMeta) {
+            const metaColor = window.metaColors[id]
             const metaTag = document.querySelector('meta[name="theme-color"]')
             metaTag.setAttribute('content', metaColor)
         }
