@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
 
         {% include "meta.njk" %}
-        <script>(localStorage.getItem('theme')) && document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))</script>
+        <script>{% include "initialtheme.njk" %}</script>
     </head>
     <body>
         <a href="#main" class="sr-skip-link">skip to main content</a>
