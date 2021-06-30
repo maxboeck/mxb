@@ -1,8 +1,6 @@
 (function() {
     var theme = localStorage.getItem('theme');
-    window.metaColors = {
-        {% for theme in themes %}'{{ theme.id }}':'{{ theme.colors.backgroundOffset }}'{% if not loop.last %},{% endif %}{% endfor %}
-    };
+    window.metaColors = { {%- for theme in themes -%}'{{ theme.id }}':'{{ theme.colors.backgroundOffset }}'{% if not loop.last %},{% endif %}{%- endfor -%} };
     if (theme) {
         document.documentElement.setAttribute('data-theme', theme);
         document.querySelector('meta[name="theme-color"]').setAttribute('content', window.metaColors[theme]);
