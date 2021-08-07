@@ -45,7 +45,7 @@
     &__br {
         display: none;
 
-        @include mq(lg) {
+        @include mq(xl) {
             display: block;
         }
     }
