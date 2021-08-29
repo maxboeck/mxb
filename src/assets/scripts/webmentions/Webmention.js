@@ -36,7 +36,7 @@ export default class Webmention extends Component {
                     className="webmention__author h-card u-url"
                     href={url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="ugc nofollow"
                 >
                     {avatar}
                     <strong className="p-name">{author.name}</strong>
