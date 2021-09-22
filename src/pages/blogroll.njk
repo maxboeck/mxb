@@ -18,9 +18,12 @@ permalink: blogroll/index.html
 
             <li class="blogroll__item">
                 <div class="blogroll__profile">
+                    {# 
                     {% if item.twitter %}
                         <img src="https://res.cloudinary.com/mxb/image/twitter_name/{{ item.twitter }}.jpg" class="blogroll__avatar" width="100" height="100" alt="" loading="lazy" />
-                    {% endif %}
+                    {% endif %} 
+                    #}
+                    <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | urlencode }}/" class="blogroll__avatar" width="100" height="100" alt="" loading="lazy" decoding="async" />
                     <div>
                         <h2 class="blogroll__title">{{ item.title }}</h2>
                         <a class="blogroll__link" href="{{ item.url }}">{{ item.url }}</a>
