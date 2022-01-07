@@ -21,6 +21,9 @@
             "type": "image/png"
         }
     ],
+    "display_override": [
+        "window-controls-overlay"
+    ],
     "theme_color": "#1a1a1a",
     "background_color": "#1a1a1a",
     "start_url": "/index.html",

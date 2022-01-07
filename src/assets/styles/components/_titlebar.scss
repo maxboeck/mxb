@@ -1,0 +1,5 @@
+.titlebar {
+    width: env(titlebar-area-width, 100%);
+    height: env(titlebar-area-height, 0);
+    padding-left: env(titlebar-area-x, 0);
+}
