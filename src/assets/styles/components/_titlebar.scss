@@ -1,5 +1,16 @@
 .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    position: fixed;
     width: env(titlebar-area-width, 100%);
     height: env(titlebar-area-height, 0);
-    padding-left: env(titlebar-area-x, 0);
+    left: env(titlebar-area-x, 0);
+    top: env(titlebar-area-y, 0);
+    overflow: hidden;
+
+    background-color: var(--color-bg-offset);
+    -webkit-app-region: drag;
+    app-region: drag;
 }
