@@ -19,6 +19,7 @@ body {
     min-height: 100vh;
     position: relative;
     transition: transform 0.3s $animation-curve-default;
+    padding-top: env(titlebar-area-height, 0);
 
     .header,
     .footer {
