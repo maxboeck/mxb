@@ -20,6 +20,7 @@ $container-narrow-max-width: 41rem;
 //
 // Control the order of layers in the application
 $z-layers: (
+    'titlebar': 9999,
     'modal': 999,
     'nav': 100,
     'content-overlay': 30
