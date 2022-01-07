@@ -1,17 +1,22 @@
 .titlebar {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
     position: fixed;
     z-index: z('titlebar');
-    width: env(titlebar-area-width, 100%);
+    left: 0;
+    right: 0;
+    top: 0;
     height: env(titlebar-area-height, 0);
-    left: env(titlebar-area-x, 0);
-    top: env(titlebar-area-y, 0);
     overflow: hidden;
-
     background-color: var(--color-bg-offset);
-    -webkit-app-region: drag;
-    app-region: drag;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: absolute;
+        height: 100%;
+        width: env(titlebar-area-width, 100%);
+        left: env(titlebar-area-x, 0);
+        -webkit-app-region: drag;
+        app-region: drag;
+    }
 }
