@@ -32,16 +32,16 @@
         text-align: center;
         -webkit-overflow-scrolling: touch;
         padding: 1rem 1.5rem 2rem;
-        scrollbar-color: var(--color-bg-offset) var(--color-bg);
+        scrollbar-color: var(--color-border) var(--color-bg-offset);
 
         &::-webkit-scrollbar {
-            height: 10px;
+            height: 8px;
         }
         &::-webkit-scrollbar-thumb {
-            background: var(--color-bg-offset);
+            background: var(--color-border);
         }
         &::-webkit-scrollbar-track {
-            background: var(--color-bg);
+            background: var(--color-bg-offset);
         }
     }
 
