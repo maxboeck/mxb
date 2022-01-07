@@ -1,7 +1,7 @@
 ---
 title: "Your CSS is an interface - Eric Bailey"
 date: "2021-11-22T18:55:53.810Z"
-syndicate: true
+syndicate: false
 link: "https://ericwbailey.design/writing/your-css-is-an-interface/"
 tags: link
 ---
