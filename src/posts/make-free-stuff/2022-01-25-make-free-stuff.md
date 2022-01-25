@@ -5,13 +5,6 @@ tags: general
 image: cover.jpg
 ---
 
-{% comment %}
-<blockquote>
-<p>If we spend a certain amount of time using the Internet, we have to spend a little proportion of that time defending it.</p>
-<footer><cite>Sir Tim Berners-Lee</cite></footer>
-</blockquote>
-{% endcomment %}
-
 <p class="lead">When I first fell in love with the web, it was a radically different place. Aside from the many technical improvements that have been made, I feel like the general culture of the web has changed a lot as well.</p>
 
 Growing up with the web as a teenager meant having access to an infinite treasure chest of content. A lot of that content was spread across blogs, forums and personal websites. 
