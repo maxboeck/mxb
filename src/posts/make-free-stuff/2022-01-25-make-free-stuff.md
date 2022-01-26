@@ -34,7 +34,7 @@ In this culture, the task of the self-appointed web hustler is to build somethin
 
 web3 and NFTs are the latest evolution of this culture. The latest attempt to impose even more artificial locks and transactions on users, to extract even more money.
 
-{% highlight %}This is the web as envisioned by late-stage capitalism: a giant freemium game where absolutely everyone and everything is a "digital asset" that can be packaged, bought and sold.{% endhighlight %}
+This is the web as envisioned by late-stage capitalism: a giant freemium game where absolutely everyone and everything is a "digital asset" that can be packaged, bought and sold.
 
 ----
 
@@ -43,6 +43,8 @@ web3 and NFTs are the latest evolution of this culture. The latest attempt to im
 Sure, the web has changed since the 90s. It has "grown up".
 
 We've gotten so used to it that some can't even imagine the web working any other way - but it doesn't have to be like this. 
+
+Of course there are lots of legitimate reasons to monetize, and creators deserve to be compensated. It's not about people trying to make a buck. It's about those treating the web simply as a market to run get-rich-quick schemes in, exploiting others out of pure greed.
 
 At its very core, the rules of the web are different than those of "real" markets. The idea that ownership fundamentally means that nobody else can have the same thing you have just doesn't apply here. This is a world where anything can easily be copied a million times and distributed around the globe in a second. If that were possible in the real world, we'd call it Utopia.
 
@@ -67,6 +69,6 @@ But you can actually stand out of the crowd by simply treating the web platform 
 
 Despite what web3 claims, it's possible to "own" your content without a proof of it on the blockchain (see: [IndieWeb](https://indieweb.org/)). It's also possible to create things just for the sake of putting them out into the world. 
 
-The best growth hack is still to build something people enjoy while attaching no strings to it. 
+The best growth hack is still to build something people enjoy while attaching no strings to it. You'd be surprised how far it can get you.
 
 Make free stuff! The web is still for everyone.
