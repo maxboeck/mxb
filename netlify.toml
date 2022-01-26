@@ -43,6 +43,12 @@
     status = 301
     force = true
 
+[[redirects]]
+    from = "https://mxb.dev/blog/make-free-stuff-web3"
+    to = "https://mxb.dev/blog/make-free-stuff"
+    status = 302
+    force = true
+
 # Bots
 [[redirects]]
     from = "/wp-login.php"

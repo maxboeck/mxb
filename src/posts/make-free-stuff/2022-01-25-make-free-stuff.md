@@ -69,6 +69,6 @@ But you can actually stand out of the crowd by simply treating the web platform 
 
 Despite what web3 claims, it's possible to "own" your content without a proof of it on the blockchain (see: [IndieWeb](https://indieweb.org/)). It's also possible to create things just for the sake of putting them out into the world. 
 
-The best growth hack is still to build something people enjoy while attaching no strings to it. You'd be surprised how far it can get you.
+The best growth hack is still to build something people enjoy, then attaching no strings to it. You'd be surprised how far that can get you.
 
 Make free stuff! The web is still for everyone.
