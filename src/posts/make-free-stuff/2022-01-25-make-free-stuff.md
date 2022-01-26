@@ -64,7 +64,7 @@ Its creator, Josh Wardle, originally built the game for his partner and put it o
 
 > I think people kind of appreciate that there’s this thing online that’s just fun. It’s not trying to do anything shady with your data or your eyeballs. It’s just a game that’s fun.
 
-Because the notion that monetization is the only worthwile goal on the web is so widespread, this is somehow a very controversial take. 
+Because the notion that monetization is the only worthwhile goal on the web is so widespread, this is somehow a very controversial take. 
 But you can actually stand out of the crowd by simply treating the web platform as what it is: a way to deliver content to people.
 
 Despite what web3 claims, it's possible to "own" your content without a proof of it on the blockchain (see: [IndieWeb](https://indieweb.org/)). It's also possible to create things just for the sake of putting them out into the world. 
