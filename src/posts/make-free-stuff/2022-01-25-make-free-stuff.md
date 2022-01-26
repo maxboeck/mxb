@@ -42,9 +42,9 @@ This is the web as envisioned by late-stage capitalism: a giant freemium game wh
 
 Sure, the web has changed since the 90s. It has "grown up".
 
-We've gotten so used to it that some can't even imagine the web working any other way - but it doesn't have to be like this. 
-
 Of course there are lots of legitimate reasons to monetize, and creators deserve to be compensated. It's not about people trying to make a buck. It's about those treating the web simply as a market to run get-rich-quick schemes in, exploiting others out of pure greed.
+
+We've gotten so used to it that some can't even imagine the web working any other way - but it doesn't have to be like this. 
 
 At its very core, the rules of the web are different than those of "real" markets. The idea that ownership fundamentally means that nobody else can have the same thing you have just doesn't apply here. This is a world where anything can easily be copied a million times and distributed around the globe in a second. If that were possible in the real world, we'd call it Utopia.
 
