@@ -11,8 +11,6 @@ Growing up with the web as a teenager meant having access to an infinite treasur
 
 The overwhelming motivation behind it seemed to be *"I made something, here it is"*. Sharing things for the sake of showing them to the world. Somebody had created something, then put it online so you could see it. Visit their website (wait for the dial-up to finish), and it's yours.
 
-----
-
 Follow any link on the web today and you'll likely be met with a different scenario:
 
 <ul>
@@ -60,7 +58,7 @@ Resource Scarcity doesn't make sense on the web. Artificially creating it here s
 
 The online game *Wordle* recently took the world by storm. To the [utter shock](https://news.ycombinator.com/item?id=29916899) of many, it is just a free piece of content. A free and open web game millions can enjoy, no strings attached. 
 
-Its creator, Josh Wardle, originally built the game for his partner and put it online. Despite its success, he has no intention to monetize it - and the world is richer for it. When questioned about it, he said this:
+Its creator, Josh Wardle, originally built the game for his partner and put it online. *"I made something, here it is."* Despite its success, he has no intention to monetize it - and the world is richer for it. When questioned about it, he said this:
 
 > I think people kind of appreciate that there’s this thing online that’s just fun. It’s not trying to do anything shady with your data or your eyeballs. It’s just a game that’s fun.
 
