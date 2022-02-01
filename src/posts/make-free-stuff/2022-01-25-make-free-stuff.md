@@ -58,15 +58,16 @@ Resource Scarcity doesn't make sense on the web. Artificially creating it here s
 
 The online game *Wordle* recently took the world by storm. To the [utter shock](https://news.ycombinator.com/item?id=29916899) of many, it is just a free piece of content. A free and open web game millions can enjoy, no strings attached. 
 
-Its creator, Josh Wardle, originally built the game for his partner and put it online. *"I made something, here it is."* Despite its success, he has no intention to monetize it - and the world is richer for it. When questioned about it, he said this:
+Its creator, Josh Wardle, originally built the game for his partner and put it online. *"I made something, here it is"*. Despite its success, he had no intention to monetize it through apps or subscriptions - and the world is richer for it. When questioned about it, he said this:
 
 > I think people kind of appreciate that there’s this thing online that’s just fun. It’s not trying to do anything shady with your data or your eyeballs. It’s just a game that’s fun.
 
-Because the notion that monetization is the only worthwhile goal on the web is so widespread, this is somehow a very controversial take. 
-But you can actually stand out of the crowd by simply treating the web platform as what it is: a way to deliver content to people.
+Because the notion that monetization is the only worthwhile goal on the web is so widespread, this is somehow a very controversial take. You can actually stand out of the crowd by simply treating the web platform as what it is: a way to deliver content to people.
 
 Despite what web3 claims, it's possible to "own" your content without a proof of it on the blockchain (see: [IndieWeb](https://indieweb.org/)). It's also possible to create things just for the sake of putting them out into the world. 
 
 The best growth hack is still to build something people enjoy, then attaching no strings to it. You'd be surprised how far that can get you.
 
 Make free stuff! The web is still for everyone.
+
+👉 *Update: On Feb 1, Wordle was eventually sold to the New York Times for upwards of a million dollars. [Josh Wardle claims](https://twitter.com/powerlanguish/status/1488263944309731329/photo/1) the game will still remain free to play for all.*
