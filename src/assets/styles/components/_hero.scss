@@ -52,12 +52,8 @@
 
     &__link {
         display: inline-block;
-        color: inherit;
+        color: var(--color-text);
         position: relative;
-
-        @include hover-focus {
-            color: inherit;
-        }
 
         &::after,
         &::before {
