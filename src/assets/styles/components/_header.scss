@@ -10,11 +10,7 @@
     &__brand {
         display: flex;
         align-items: center;
-        color: inherit;
-
-        @include hover-focus {
-            color: inherit;
-        }
+        color: var(--text-color);
 
         &__avatar {
             display: block;

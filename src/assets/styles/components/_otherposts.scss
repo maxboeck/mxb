@@ -7,7 +7,7 @@
         display: block;
         padding: 0.25rem 0;
         font-size: 1.125rem;
-        color: inherit;
+        color: var(--text-color);
 
         &--draft {
             color: var(--color-secondary);
