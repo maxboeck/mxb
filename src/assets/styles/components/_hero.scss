@@ -52,7 +52,7 @@
 
     &__link {
         display: inline-block;
-        color: var(--color-text);
+        color: var(--color-text) !important;
         position: relative;
 
         &::after,
