@@ -57,9 +57,7 @@
     "svg-sprite": "^1.5.0",
     "twitter": "^1.7.1",
     "webpack": "^4.44.1",
-    "workbox-cli": "^6.0.2"
-  },
-  "devDependencies": {
+    "workbox-cli": "^6.0.2",
     "cross-env": "^7.0.2",
     "encoding": "^0.1.13",
     "netlify-lambda": "^2.0.2"
