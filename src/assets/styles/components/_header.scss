@@ -10,10 +10,15 @@
     &__brand {
         display: flex;
         align-items: center;
-        color: var(--text-color);
+        color: var(--color-text);
         font-weight: 700;
     }
 
+    &__name {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
     &__avatar {
         display: block;
         width: 3rem;
@@ -25,6 +30,19 @@
     &__verification {
         color: #1da1f2;
         padding-left: 0.25em;
+    }
+    &__official {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        color: var(--color-text-offset);
+        font-weight: 400;
+        font-size: 0.875rem;
+
+        .icon {
+            font-size: 1.125rem;
+            margin-right: 0.125em;
+        }
     }
 
     &__nav {
