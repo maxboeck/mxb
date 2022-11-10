@@ -11,17 +11,20 @@
         display: flex;
         align-items: center;
         color: var(--text-color);
+        font-weight: 700;
+    }
 
-        &__avatar {
-            display: block;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            margin-right: 0.5rem;
-        }
-        &__text {
-            font-weight: 700;
-        }
+    &__avatar {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+
+    &__verification {
+        color: #1da1f2;
+        padding-left: 0.25em;
     }
 
     &__nav {
