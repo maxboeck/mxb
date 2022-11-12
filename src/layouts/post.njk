@@ -57,13 +57,13 @@ layout: base
             </p>
 
             <a
-                href="https://twitter.com/intent/follow?screen_name={{ author.social.twitter.name }}"
+                href="{{ author.social.mastodon.url }}"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Follow {{ author.name }} on Twitter"
-                class="btn btn--twitter"
+                title="Follow {{ author.name }} on Mastodon"
+                class="btn btn--mastodon"
             >
-                {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
+                {% icon "mastodon" %} Follow @{{ author.social.mastodon.name }}
             </a>
         {% endif %}
     </div>

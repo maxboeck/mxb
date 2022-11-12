@@ -61,6 +61,21 @@
     }
 }
 
+.btn--mastodon {
+    background-color: #595aff;
+    border-color: #595aff;
+    color: #fff;
+
+    .icon {
+        transform: translateX(-50%);
+    }
+
+    @include hover-focus {
+        color: #595aff;
+        background-color: transparent;
+    }
+}
+
 .iconbtn {
     @include button-reset;
     justify-content: center;
