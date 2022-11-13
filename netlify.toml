@@ -49,6 +49,12 @@
     status = 302
     force = true
 
+[[redirects]]
+    from = "https://mxb.dev/blog/rethinking-social-media"
+    to = "https://mxb.dev/blog/the-indieweb-for-everyone"
+    status = 302
+    force = true
+
 # Bots
 [[redirects]]
     from = "/wp-login.php"
