@@ -43,7 +43,6 @@
     "encoding": "^0.1.13",
     "focus-trap": "^5.1.0",
     "focus-visible": "^5.2.0",
-    "html-entities": "^2.0.2",
     "html-minifier": "^4.0.0",
     "infinite-scroll": "^4.0.0-beta.0",
     "lodash": "^4.17.20",
@@ -57,9 +56,8 @@
     "preact": "^10.5.7",
     "sanitize-html": "^2.3.0",
     "sass": "^1.57.1",
-    "svg-sprite": "^2.0.2",
-    "twitter": "^1.7.1",
-    "webpack": "^5.75.0",
+    "svg-sprite": "^1.5.0",
+    "webpack": "^4.44.1",
     "workbox-cli": "^6.5.4"
   }
 }
