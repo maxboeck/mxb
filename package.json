@@ -56,8 +56,8 @@
     "preact": "^10.5.7",
     "sanitize-html": "^2.3.0",
     "sass": "^1.57.1",
-    "svg-sprite": "^1.5.0",
-    "webpack": "^4.44.1",
+    "svg-sprite": "^2.0.2",
+    "webpack": "^5.75.0",
     "workbox-cli": "^6.5.4"
   }
 }
