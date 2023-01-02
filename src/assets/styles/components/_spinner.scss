@@ -1,4 +1,5 @@
 // Spinner Component
+@use 'sass:math';
 
 // Configuration Variables
 // ============================================
@@ -12,8 +13,10 @@ $spinner-arc-time: 1333ms;
 // How much the start location of the arc should rotate each time.
 $spinner-arc-start-rot: 216deg;
 
-$spinner-duration: 360 * $spinner-arc-time /
-    (strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size)));
+$spinner-duration: math.div(
+    (360 * $spinner-arc-time),
+    (strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size)))
+);
 
 // Elements
 // ============================================

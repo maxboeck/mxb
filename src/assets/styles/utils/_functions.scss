@@ -1,6 +1,7 @@
 //--------------------
 // SCSS CUSTOM FUNCTIONS
 //--------------------
+@use 'sass:math';
 
 @function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
     $min: map-get($breakpoints, $name);
@@ -16,6 +17,6 @@
     @return map-get($z-layers, $layer);
 }
 
-@function strip-units($value) {
-    @return $value / ($value * 0 + 1);
+@function strip-units($number) {
+    @return math.div($number, ($number * 0 + 1));
 }

@@ -4,7 +4,7 @@
     functions = "functions"
 
 [build.environment]
-    NODE_VERSION = "12.18"
+    NODE_VERSION = "16.15"
 
 [[plugins]]
     package = "./plugins/webmention-cache"
