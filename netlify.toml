@@ -58,7 +58,7 @@
 # Bots
 [[redirects]]
     from = "/wp-login.php"
-    to = "https://www.google.com/"
+    to = "https://www.fbi.gov"
     status = 302
     force = true
 
@@ -69,14 +69,14 @@
     status = 301
     force = true
 
-# 404s
-[[redirects]]
-    from = "*"
-    to = "/404"
-    status = 404
-
 # Mastodon Webfinger
 [[redirects]]
   from = "/.well-known/webfinger"
   to = "https://front-end.social/.well-known/webfinger?resource=acct:mxbck@front-end.social"
   status = 200
+
+# 404s
+[[redirects]]
+    from = "*"
+    to = "/404"
+    status = 404
