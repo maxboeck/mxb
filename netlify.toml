@@ -74,3 +74,9 @@
     from = "*"
     to = "/404"
     status = 404
+
+# Mastodon Webfinger
+[[redirects]]
+  from = "/.well-known/webfinger"
+  to = "https://front-end.social/.well-known/webfinger?resource=acct:mxbck@front-end.social"
+  status = 200
