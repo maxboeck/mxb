@@ -19,7 +19,12 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        padding: 1rem 1rem 0.5rem 1rem;
+        padding: 1rem 1rem 0.25rem 1rem;
+
+        &__divider {
+            display: inline-block;
+            padding: 0 0.25rem;
+        }
     }
     &__date {
         color: var(--color-text-offset);
@@ -139,13 +144,23 @@
         .webmentions__item {
             margin-bottom: 0 !important;
         }
+        .webmentions__empty {
+            @include mq(md) {
+                padding-left: 4rem;
+            }
+        }
     }
 
     @include mq(md) {
         border-radius: 6px;
 
         &__meta {
+            padding-left: 5rem;
             margin-bottom: 0;
+        }
+        &__content,
+        &__footer {
+            padding-left: 5rem;
         }
         &__author__photo {
             position: absolute;

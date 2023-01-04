@@ -14,12 +14,13 @@
 <div class="note {% if isDetailView %}note--detail{% endif %} h-entry">
     <div class="note__main">
         <div class="note__meta">
-            <p class="note__author h-card p-author" rel="author" hidden>
+            <p class="note__author h-card p-author" rel="author">
                 <span class="note__author__link">
                     <img class="note__author__photo u-photo" src="{{ author.avatar | url }}" alt="">
-                    <strong class="note__author__name p-name">{{ author.name }}</strong>
+                    <strong class="note__author__name p-name">@mxbck</strong>
                 </span>
             </p>
+            <span class="note__meta__divider" aria-hidden="true">&sdot;</span>
             <time class="note__date dt-published" datetime="{{ note.date | dateToISO }}">
                 {{ note.date | readableDate('dd LLL yyyy') }}
             </time>
