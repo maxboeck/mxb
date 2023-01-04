@@ -1,18 +1,30 @@
 ---
-permalink: /notes.json
+permalink: notes/feed.xml
 excludeFromSitemap: true
 ---
-[
-{% for note in collections.notes %}
-    {
-        "id": {{ loop.revindex }},
-        "date": "{{ note.date | dateToISO }}",
-        "url": "{{ note.url | url | absoluteUrl(site.url) }}",
-        "content": "{{ note.templateContent | excerpt | safe | striptags }}",
-        "link": "{{ note.data.link }}",
-        "tags": "{{ note.data.tags }}",
-        "syndicate": {{ note.data.syndicate | string }}
-    }
-    {%- if not loop.last -%},{%- endif -%}
-{% endfor %}
-]
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ site.title }} | Notes</title>
+    <subtitle>{{ site.description }}</subtitle>
+    <link href="{{ site.url }}/notes/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="{{ site.url }}/notes" rel="alternate" type="text/html"/>
+    <author>
+        <name>{{ author.name }}</name>
+    </author>
+    {% if collections.notes %}
+    <updated>{{ collections.notes | rssLastUpdatedDate }}</updated>
+    {% endif %}
+    <id>{{ site.url }}/</id>
+    {%- for note in collections.notes -%}
+    {% set absoluteNoteUrl %}{{ note.url | url | absoluteUrl(site.url) }}{% endset %}
+        <entry>
+            <title>{% if note.data.title %}{{ note.data.title }}{% else %}{{ note.date | readableDate('dd LLL yyyy') }}{% endif %}</title>
+            <link href="{{ absoluteNoteUrl }}"/>
+            <updated>{{ note.date | rssDate }}</updated>
+            <id>{{ absoluteNoteUrl }}</id>
+            <content type="html"><![CDATA[
+                {{ note.templateContent | htmlToAbsoluteUrls(absoluteNoteUrl) | safe }}
+            ]]></content>
+        </entry>
+    {%- endfor -%}
+</feed>
