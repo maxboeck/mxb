@@ -88,5 +88,8 @@
         &--twitter::after {
             background-color: $twitter-brand-primary;
         }
+        &--mastodon::after {
+            background-color: $mastodon-brand-primary;
+        }
     }
 }
