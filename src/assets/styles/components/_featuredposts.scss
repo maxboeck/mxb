@@ -49,6 +49,11 @@
     overflow: hidden;
     background-color: var(--color-bg-offset);
     box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.033);
+    }
 
     &__image {
         @include coverall;

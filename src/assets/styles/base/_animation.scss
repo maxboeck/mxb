@@ -92,4 +92,9 @@
         animation-duration: 0s !important;
         transition-duration: 0s !important;
     }
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
 }

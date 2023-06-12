@@ -3,7 +3,7 @@
         {% for post in collections.featured | slice(0, 8) %}
         {%- set webmentionUrl -%}{{ post.url | url | absoluteUrl(site.url) }}{%- endset -%}
         {%- set likeCount = webmentions.children | webmentionCountByType(webmentionUrl, "like-of") -%}
-        <li class="featuredposts__item">
+        <li class="featuredposts__item" style="view-transition-name: post-{{ post.date | dateToFormat('yyyy-MM-dd') }}">
             <div class="featuredpost" style="{% if post.data.featuredImageColor %}background-color: {{ post.data.featuredImageColor }};{% endif %}">
                 {% if post.data.featuredImage %}
                     {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
