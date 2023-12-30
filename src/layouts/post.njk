@@ -10,7 +10,7 @@ layout: base
     aria-labelledby="{{ title | slug }}-title" 
 >
     <header class="post__header">
-        <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline" style="view-transition-name: post-{{ page.date | dateToFormat('yyyy-MM-dd') }}">{{ title }}</h1>
+        <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
 
             <p {% if demo %}class="u-mr2"{% endif %}>
