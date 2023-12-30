@@ -1,7 +1,7 @@
 <ol reversed class="postlist" start="{{ postlist.length }}">
     {% for post in postlist | reverse %}
         <li class="postlist__item h-entry {% if post.data.draft %}postlist__item--draft{% endif %}">
-            <h2 class="postlist__title p-name" style="view-transition-name: post-{{ post.date | dateToFormat('yyyy-MM-dd') }}">
+            <h2 class="postlist__title p-name">
                 <a
                     href="{{ post.url | url }}"
                     class="postlist__link u-url"
