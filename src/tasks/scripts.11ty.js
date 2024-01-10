@@ -1,8 +1,9 @@
 const fs = require('fs')
+const mfs = require('memfs')
+
 const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../../webpack.config')
-const MemoryFileSystem = require('memory-fs')
 
 const ENTRY_POINTS = {
     main: 'src/assets/scripts/main.js',
@@ -25,7 +26,6 @@ module.exports = class {
     }
 
     async compile() {
-        const mfs = new MemoryFileSystem()
         const resolveTargets = (targets) =>
             Object.keys(targets).reduce((acc, key) => {
                 acc[key] = path.resolve(__dirname, '../../', targets[key])
@@ -39,7 +39,7 @@ module.exports = class {
 
         compiler.outputFileSystem = mfs
         compiler.inputFileSystem = fs
-        compiler.resolvers.normal.fileSystem = mfs
+        compiler.intermediateFileSystem = mfs
 
         this.compiledAssets = await new Promise((resolve, reject) => {
             compiler.run((err, stats) => {
@@ -52,23 +52,24 @@ module.exports = class {
                     return
                 }
 
-                const { assets } = stats.compilation
+                const assets = stats.compilation.getAssets()
                 resolve(assets)
             })
         })
     }
 
-    async getSource(file) {
+    async getFileContents(file) {
         if (!this.compiledAssets) {
             await this.compile()
         }
-        const fileName = `${file}.js`
-        return this.compiledAssets[fileName].source()
+        const filePath = `${webpackConfig.output.path}/${file}.js`
+        const fileBuffer = mfs.readFileSync(filePath)
+        return fileBuffer
     }
 
     async render({ file }) {
         try {
-            return await this.getSource(file)
+            return await this.getFileContents(file)
         } catch (err) {
             console.error(err)
             return null
