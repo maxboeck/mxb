@@ -67,7 +67,7 @@ const getFileContent = (data: Note) => {
         tags: 'link'
     })
 
-    console.log(frontMatter)
+    console.log('\n' + frontMatter)
 
     let content = frontMatter
     if (body) {
@@ -148,8 +148,12 @@ export default async (request: Request, context: Context) => {
 
         const postFileResponse = await postFile(data)
         if (postFileResponse.ok) {
+            console.log('200 Note published!')
             return new Response('Note published!', { status: 200 })
         } else {
+            console.log(
+                `${postFileResponse.status} ${postFileResponse.statusText}`
+            )
             return new Response(postFileResponse.statusText, {
                 status: postFileResponse.status
             })
