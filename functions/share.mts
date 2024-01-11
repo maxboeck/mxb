@@ -82,7 +82,7 @@ const getFileContent = (data: Note) => {
     }
     content += '\n\n' + `[${url}](${url})`
 
-    return decodeURI(encodeURIComponent(content))
+    return content
 }
 
 // generate the new md file name
