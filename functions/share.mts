@@ -1,13 +1,31 @@
+import { Context } from '@netlify/functions'
 import fetch from 'node-fetch'
 import slugify from 'slugify'
 import { DateTime } from 'luxon'
+
+interface Note {
+    title: string
+    token: string
+    url: string
+    via: string
+    body: string
+    syndicate: boolean
+}
+
+interface FrontMatter {
+    title: string
+    date: string
+    link: string
+    tags: string
+    syndicate: boolean
+}
 
 // The place where new shared notes should go
 const API_FILE_TARGET =
     'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
 
 // Helper function to clean strings for frontmatter
-const sanitize = (str) => {
+const sanitize = (str: String) => {
     // replace endash and emdash with hyphens
     str = str.replace(/–/g, '-')
     str = str.replace(/—/g, '-')
@@ -22,8 +40,8 @@ const sanitize = (str) => {
 }
 
 // generate the frontmatter string
-const getFrontmatter = (yaml) => {
-    let fm = []
+const getFrontmatter = (yaml: FrontMatter) => {
+    let fm = new Array()
     fm.push('---')
     Object.keys(yaml).forEach((key) => {
         if (yaml[key] && yaml[key].constructor == String) {
@@ -37,7 +55,7 @@ const getFrontmatter = (yaml) => {
 }
 
 // generate the new md file content
-const getFileContent = (data) => {
+const getFileContent = (data: Note) => {
     const { title, url, via, body, syndicate } = data
     const date = DateTime.utc().toISO({ suppressMilliseconds: true })
 
@@ -64,11 +82,11 @@ const getFileContent = (data) => {
     }
     content += '\n\n' + `[${url}](${url})`
 
-    return unescape(encodeURIComponent(content))
+    return decodeURI(encodeURIComponent(content))
 }
 
 // generate the new md file name
-const getFileName = (title) => {
+const getFileName = (title: string) => {
     const date = DateTime.utc()
     const unixSeconds = date.toSeconds()
     let filename = date.toFormat('yyyy-LL-dd')
@@ -87,10 +105,10 @@ const getFileName = (title) => {
 }
 
 // create the new file via the github API
-const postFile = async (params) => {
-    const { title, token } = params
+const postFile = async (data: Note) => {
+    const { title, token } = data
     const fileName = getFileName(title)
-    const fileContent = getFileContent(params)
+    const fileContent = getFileContent(data)
     const url = API_FILE_TARGET + fileName
 
     const payload = {
@@ -114,43 +132,30 @@ const postFile = async (params) => {
     return await fetch(url, options)
 }
 
-// helper function to handle API responses
-const handleResponse = (response) => {
-    if (response.ok) {
-        return {
-            statusCode: 200,
-            body: `Note published!`
-        }
-    }
-
-    return {
-        statusCode: response.status,
-        body: `${response.statusText}`
-    }
-}
-
 // Main Lambda Function
-exports.handler = async (event) => {
+export default async (request: Request, context: Context) => {
     try {
-        const params = JSON.parse(event.body)
-
         // Only allow POST
-        if (event.httpMethod !== 'POST') {
-            return { statusCode: 405, body: 'Method Not Allowed' }
+        if (request.method !== 'POST') {
+            return new Response('Method Not Allowed', { status: 405 })
         }
 
+        const data = await request.json()
         // Token is required
-        if (!params.token) {
-            return { statusCode: 403, body: 'Missing Access Token' }
+        if (!data.token) {
+            return new Response('Missing Access Token', { status: 403 })
         }
 
-        const response = await postFile(params)
-        return handleResponse(response)
+        const postFileResponse = await postFile(data)
+        if (postFileResponse.ok) {
+            return new Response('Note published!', { status: 200 })
+        } else {
+            return new Response(postFileResponse.statusText, {
+                status: postFileResponse.status
+            })
+        }
     } catch (err) {
         console.log(err)
-        return {
-            statusCode: 400,
-            body: err.toString()
-        }
+        return new Response(err.toString(), { status: 400 })
     }
 }
