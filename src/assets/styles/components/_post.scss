@@ -4,7 +4,7 @@
     }
     &__title {
         @extend .page__title;
-        text-wrap: pretty;
+        text-wrap: balance;
         @include mq(lg) {
             font-size: 6rem !important;
         }
