@@ -6,7 +6,7 @@ layout: base
     class="post h-entry" 
     role="article" 
     itemscope 
-    itemtype="http://schema.org/BlogPosting" 
+    itemtype="http://schema.org/BlogPosting"
     aria-labelledby="{{ title | slug }}-title" 
 >
     <header class="post__header">
@@ -30,12 +30,29 @@ layout: base
             {% endif %}
 
         </div>
+
+        {% if draft %}
+        <div class="post__disclaimer">
+            <div class="callout callout--info">
+                <span class="callout__icon">{% icon "info" %}</span>
+                <div class="callout__content">
+                    <p>
+                        <strong>This post is an unfinished draft.</strong> 
+                        It might become a post someday, or maybe I'll forget it forever. It's just an idea for now. 
+                        Want to read more about this? Or maybe you want to take this topic and write something yourself? 
+                        <a href="mailto:hello@mxb.dev?subject={{ title|urlencode }}">Let me know.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </header>
 
     <div class="post__content e-content markdown" itemprop="articleBody">
         {{ content | safe }}
     </div>
 
+    
     <div class="post__footer">
         <div hidden>
             <a class="u-url" href="{{ page.url | url | absoluteUrl(site.url) }}">{{ title }}</a>
@@ -46,12 +63,9 @@ layout: base
         </div>
 
         {% if draft %}
-            <p class="post__footer__info">
-                This post is still a draft.<br/>
-                <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Suggest a change</a>
-            </p>
+            <p class="post__footer-incomplete" aria-hidden="true">&hellip;</p>
         {% else %}
-            <p class="post__footer__info">
+            <p class="post__footer-info">
                 Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }} <br/>
                 <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Edit this Post</a>
             </p>
@@ -67,6 +81,7 @@ layout: base
             </a>
         {% endif %}
     </div>
+    
 </article>
 
 {% if not draft %}

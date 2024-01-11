@@ -35,9 +35,5 @@
     }
     &__excerpt {
         @include body-text();
-
-        .postlist__item--draft & {
-            opacity: 0.5;
-        }
     }
 }
