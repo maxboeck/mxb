@@ -42,7 +42,6 @@
         "eleventy-plugin-share-highlight": "^0.1.4",
         "encoding": "^0.1.13",
         "focus-trap": "^5.1.0",
-        "focus-visible": "^5.2.0",
         "html-minifier": "^4.0.0",
         "infinite-scroll": "^4.0.0-beta.0",
         "lodash": "^4.17.20",
