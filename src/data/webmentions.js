@@ -11,7 +11,7 @@ const CACHE_DIR = 'cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
-async function fetchWebmentions(since, perPage = 10000) {
+async function fetchWebmentions(since, perPage = 100000) {
     if (!domain) {
         // If we dont have a domain name, abort
         console.warn(
