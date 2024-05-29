@@ -13,7 +13,7 @@
         "build": "run-s clean eleventy:prod --print-label workbox",
         "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
         "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
-        "workbox": "workbox generateSW workbox.config.js",
+        "workbox": "workbox generateSW workbox.config.cjs",
         "clean": "del-cli dist",
         "debug": "DEBUG=Eleventy* npm start"
     },
@@ -58,6 +58,6 @@
         "sass": "^1.69.7",
         "svg-sprite": "^2.0.2",
         "webpack": "^5.89.0",
-        "workbox-cli": "^6.5.4"
+        "workbox-cli": "^7.1.0"
     }
 }

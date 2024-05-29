@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     cacheId: 'mxb',
     globDirectory: './dist',
     globPatterns: ['**/*.woff2'],
