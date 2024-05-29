@@ -1,12 +1,10 @@
-import 'eleventy-plugin-share-highlight/share-highlight'
-
-import './modules/navigation'
-import './modules/signup'
-import './modules/lazyload'
-import './modules/themepicker'
-import './modules/infinitescroll'
-import './modules/preload'
-import './modules/speedlify'
-import './modules/register-serviceworker'
+import './common/navigation'
+import './common/signup'
+import './common/lazyload'
+import './common/themepicker'
+import './common/infinitescroll'
+import './common/preload'
+import './common/speedlify'
+import './common/register-serviceworker'
 
 document.documentElement.classList.remove('no-js')
