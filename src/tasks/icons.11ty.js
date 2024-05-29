@@ -1,11 +1,11 @@
-const fs = require('fs')
-const path = require('path')
-const util = require('util')
-const glob = require('glob')
-const File = require('vinyl')
-const SVGSpriter = require('svg-sprite')
+import fs from 'fs'
+import path from 'path'
+import util from 'util'
+import glob from 'glob'
+import File from 'vinyl'
+import SVGSpriter from 'svg-sprite'
 
-module.exports = class {
+export default class {
     async data() {
         const config = {
             mode: {

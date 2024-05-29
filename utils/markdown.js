@@ -1,5 +1,5 @@
-const markdownIt = require('markdown-it')
-const markdownItAnchor = require('markdown-it-anchor')
+import markdownIt from 'markdown-it'
+import markdownItAnchor from 'markdown-it-anchor'
 
 const anchorSlugify = (s) =>
     encodeURIComponent(
@@ -11,7 +11,7 @@ const anchorSlugify = (s) =>
                 .replace(/\s+/g, '-')
     )
 
-const markdown = markdownIt({
+export default markdownIt({
     html: true,
     breaks: true,
     typographer: true
@@ -24,5 +24,3 @@ const markdown = markdownIt({
     level: 2,
     slugify: anchorSlugify
 })
-
-module.exports = markdown

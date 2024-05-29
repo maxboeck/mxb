@@ -8,7 +8,7 @@ const timestamp = new Date()
 //     return startEpoch <= now && now <= endEpoch
 // }
 
-module.exports = {
+export default {
     env: process.env.ELEVENTY_ENV,
     timestamp: timestamp,
     id: timestamp.valueOf()

@@ -1,4 +1,4 @@
-const htmlmin = require('html-minifier')
+import htmlMinifier from 'html-minifier'
 
 const shouldTransformHTML = (outputPath) =>
     outputPath &&
@@ -6,13 +6,20 @@ const shouldTransformHTML = (outputPath) =>
     process.env.ELEVENTY_ENV === 'production'
 
 process.setMaxListeners(Infinity)
-module.exports = {
-    htmlmin: function (content, outputPath) {
+
+export default {
+    htmlmin: function (rawContent, outputPath) {
+        let content = rawContent
         if (shouldTransformHTML(outputPath)) {
-            return htmlmin.minify(content, {
-                useShortDoctype: true,
+            content = htmlMinifier.minify(content, {
+                collapseBooleanAttributes: true,
+                collapseWhitespace: true,
                 removeComments: true,
-                collapseWhitespace: true
+                sortClassName: true,
+                sortAttributes: true,
+                html5: true,
+                decodeEntities: true,
+                removeOptionalTags: true
             })
         }
         return content

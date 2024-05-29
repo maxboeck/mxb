@@ -1,9 +1,9 @@
-const fs = require('fs')
-const mfs = require('memfs')
+import fs from 'fs'
+import mfs from 'memfs'
 
-const path = require('path')
-const webpack = require('webpack')
-const webpackConfig = require('../../webpack.config')
+import path from 'path'
+import webpack from 'webpack'
+import webpackConfig from '../../webpack.config.js'
 
 const ENTRY_POINTS = {
     main: 'src/assets/scripts/main.js',
@@ -11,7 +11,7 @@ const ENTRY_POINTS = {
     sharer: 'src/assets/scripts/sharer/index.js'
 }
 
-module.exports = class {
+export default class {
     async data() {
         return {
             targets: ENTRY_POINTS,
@@ -28,7 +28,7 @@ module.exports = class {
     async compile() {
         const resolveTargets = (targets) =>
             Object.keys(targets).reduce((acc, key) => {
-                acc[key] = path.resolve(__dirname, '../../', targets[key])
+                acc[key] = path.resolve(process.cwd(), '../../', targets[key])
                 return acc
             }, {})
 

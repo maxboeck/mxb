@@ -1,20 +1,20 @@
 // This file handles the CSS build.
 // It will run Sass and compile all styles defined in the main entry file.
 
-// main entry point name
-const ENTRY_FILE_NAME = 'main.scss'
+import path from 'path'
+import * as sass from 'sass'
+import CleanCSS from 'clean-css'
+import cssesc from 'cssesc'
 
-const path = require('path')
-const sass = require('sass')
-const CleanCSS = require('clean-css')
-const cssesc = require('cssesc')
 const isProd = process.env.ELEVENTY_ENV === 'production'
 
-module.exports = class {
+// main entry point name
+const ENTRY_FILE_NAME = 'main.scss'
+export default class {
     async data() {
         const entryPath = path.join(
-            __dirname,
-            `/../assets/styles/${ENTRY_FILE_NAME}`
+            process.cwd(),
+            `src/assets/styles/${ENTRY_FILE_NAME}`
         )
         return {
             permalink: `/assets/styles/main.css`,

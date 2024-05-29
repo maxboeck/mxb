@@ -1,15 +1,13 @@
-require('dotenv').config()
+import path from 'path'
+import webpack from 'webpack'
 
-const path = require('path')
-const webpack = require('webpack')
-
-const OUTPUT_PATH = path.resolve(__dirname, './memory-fs/js/')
+const OUTPUT_PATH = path.resolve(process.cwd(), './memory-fs/js/')
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const ENV_PLUGIN = new webpack.EnvironmentPlugin({
     ELEVENTY_ENV: process.env.ELEVENTY_ENV
 })
 
-module.exports = {
+export default {
     mode: IS_PRODUCTION ? 'production' : 'development',
     output: { path: OUTPUT_PATH },
     plugins: [ENV_PLUGIN],

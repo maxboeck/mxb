@@ -1,7 +1,6 @@
-const components = require('./components.js')
-const { Icon, SignupSection, Callout } = components
+import { Icon, SignupSection, Callout } from './components.js'
 
-module.exports = {
+export default {
     icon: Icon,
 
     callout: Callout,
