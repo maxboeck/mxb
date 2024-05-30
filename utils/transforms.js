@@ -3,7 +3,7 @@ import htmlMinifier from 'html-minifier'
 const shouldTransformHTML = (outputPath) =>
     outputPath &&
     outputPath.endsWith('.html') &&
-    process.env.ELEVENTY_ENV === 'production'
+    process.env.NODE_ENV === 'production'
 
 process.setMaxListeners(Infinity)
 

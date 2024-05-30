@@ -1,5 +1,5 @@
 const timestamp = new Date()
-const env = process.env.ELEVENTY_ENV
+const env = process.env.NODE_ENV
 
 function isCSSNakedDay() {
     const now = Date.now()
@@ -11,7 +11,7 @@ function isCSSNakedDay() {
 
 export default {
     env: env,
-    dev: env === 'development',
+    dev: env !== 'production',
     timestamp: timestamp,
     id: timestamp.valueOf(),
     naked: isCSSNakedDay()

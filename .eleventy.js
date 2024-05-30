@@ -15,7 +15,7 @@ import shortcodes from './utils/shortcodes.js'
 import markdown from './utils/markdown.js'
 import viteHelpers from './utils/vite.js'
 
-const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
     drafts: 'src/drafts/**/*.md',

@@ -11,6 +11,7 @@ dotenv.config()
 const CACHE_DIR = '.cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const { domain } = settings
 
 async function fetchWebmentions(since, perPage = 100000) {
@@ -91,7 +92,7 @@ export default async function () {
     }
 
     // Only fetch new mentions in production
-    if (process.env.ELEVENTY_ENV === 'production') {
+    if (IS_PRODUCTION) {
         const feed = await fetchWebmentions(cache.lastFetched)
         if (feed) {
             const webmentions = {
