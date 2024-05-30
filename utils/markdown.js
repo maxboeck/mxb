@@ -1,5 +1,5 @@
 import markdownIt from 'markdown-it'
-import markdownItAnchor from 'markdown-it-anchor'
+import anchor from 'markdown-it-anchor'
 
 const anchorSlugify = (s) =>
     encodeURIComponent(
@@ -11,16 +11,19 @@ const anchorSlugify = (s) =>
                 .replace(/\s+/g, '-')
     )
 
+const anchorOpts = {
+    symbol: '#',
+    class: 'heading-anchor',
+    visuallyHiddenClass: 'sr-only',
+    style: 'visually-hidden',
+    assistiveText: (title) => `Permalink to “${title}”`,
+    renderHref: anchorSlugify
+}
+
 export default markdownIt({
     html: true,
     breaks: true,
     typographer: true
-}).use(markdownItAnchor, {
-    permalink: true,
-    permalinkSymbol: '#',
-    permalinkClass: 'heading-anchor',
-    permalinkBefore: true,
-    permalinkAttrs: () => ({ 'aria-hidden': true }),
-    level: 2,
-    slugify: anchorSlugify
+}).use(anchor, {
+    permalink: anchor.permalink.linkAfterHeader(anchorOpts)
 })
