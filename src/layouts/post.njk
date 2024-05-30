@@ -16,10 +16,10 @@ layout: base
             <p {% if demo %}class="u-mr2"{% endif %}>
                 <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | dateToISO }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
                 {% if tags %}
-                <span aria-label="in category">&sdot;</span> <span class="post__tags p-category">{{ tags | join(', ') }}</span>
+                <span aria-label="in category">&middot;</span> <span class="post__tags p-category">{{ tags | join(', ') }}</span>
                 {% endif %}
                 {% if draft %}
-                <span aria-hidden="true">&sdot;</span> <span class="post__status">(Draft)</span>
+                <span aria-hidden="true">&middot;</span> <span class="post__status">(Draft)</span>
                 {% endif %}
             </p>
 
@@ -66,7 +66,7 @@ layout: base
             <p class="post__footer-incomplete" aria-hidden="true">&hellip;</p>
         {% else %}
             <p class="post__footer-info">
-                Published in [{{ tags | join(', ') }}] &sdot; {{ page.date | readableDate('dd LLL yyyy') }} <br/>
+                Published in [{{ tags | join(', ') }}] &middot; {{ page.date | readableDate('dd LLL yyyy') }} <br/>
                 <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" title="suggest a change to this post by submitting a PR">Edit this Post</a>
             </p>
 
