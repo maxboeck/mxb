@@ -61,7 +61,6 @@ export default class NotePreview extends Component {
                         <img
                             className="note__author__photo"
                             src={assetUrls.avatar}
-                            eleventy:ignore
                         />
                         <strong className="note__author__name">@mxbck</strong>
                     </span>
