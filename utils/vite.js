@@ -2,8 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import memoize from 'lodash/memoize.js'
 
-const DEFAULT_ENTRY_FILE = 'src/assets/index.js'
-const DEFAULT_ENTRY_FILE_LEGACY = 'src/assets/index-legacy.js'
+const DEFAULT_ENTRY_FILE = 'src/assets/scripts/main.js'
 const PATH_PREFIX = '/'
 
 const getAssetManifest = memoize(async function () {
@@ -60,21 +59,7 @@ async function viteLinkStylesheetTags(entryFilename = DEFAULT_ENTRY_FILE) {
         .join('\n')
 }
 
-async function viteLegacyScriptTag(entryFilename = DEFAULT_ENTRY_FILE_LEGACY) {
-    const entryChunk = await getChunkInformationFor(entryFilename)
-    const polyFillChunk = await getChunkInformationFor(
-        'vite/legacy-polyfills-legacy'
-    )
-
-    const legacyBundleTag = `<script nomodule src="${PATH_PREFIX}${entryChunk.file}"></script>`
-    const polyfillBundleTag = `<script nomodule src="${PATH_PREFIX}${polyFillChunk.file}"></script>`
-
-    const legacyTags = [polyfillBundleTag, legacyBundleTag]
-    return legacyTags.join('\n')
-}
-
 export default {
     viteScriptTag,
-    viteLegacyScriptTag,
     viteLinkStylesheetTags
 }

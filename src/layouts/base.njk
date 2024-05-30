@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ site.lang }}">
+<html lang="{{ site.lang }}">
 <!--!
   Oh so you're an inspector?
   View the source here: {{ site.repo }}
 -->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
         <link rel="preload" href="{{ '/assets/fonts/noe-display-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
         <link rel="preconnect" href="https://webmention.io">
-
-        {% if not build.naked %}
-            <link rel="stylesheet" href="{{ '/assets/styles/themes.css' | url }}">
-            <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/styles/themes.css' | url }}">
+        
+        {% if not build.dev and not build.naked %}
+            {% viteLinkStylesheetTags %}
         {% endif %}
 
         {% include "meta.njk" %}
@@ -36,10 +35,14 @@
             {% include "footer.njk" %}
         </div>
 
-        {# Main JS Bundle #}
-        <script src="{{ '/assets/scripts/main.js' | url }}" defer></script>
+        {% if build.dev %}
+            <script type="module" src="http://localhost:5173/@vite/client"></script>
+            <script type="module" src="http://localhost:5173/src/assets/scripts/main.js"></script>
+        {% else %}
+            {% viteScriptTag %}
+        {% endif %}
+
         {%- if layout == 'post' or layout == 'note' -%}
-            <script src="{{ '/assets/scripts/webmentions.js' | url }}" defer></script>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         {%- endif -%}
     </body>

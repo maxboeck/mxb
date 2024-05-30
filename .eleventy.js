@@ -13,6 +13,7 @@ import filters from './utils/filters.js'
 import transforms from './utils/transforms.js'
 import shortcodes from './utils/shortcodes.js'
 import markdown from './utils/markdown.js'
+import viteHelpers from './utils/vite.js'
 
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
@@ -60,6 +61,14 @@ export default function (config) {
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
+
+    // Vite Shortcodes
+    Object.keys(viteHelpers).forEach((shortcodeName) => {
+        config.addNunjucksAsyncShortcode(
+            shortcodeName,
+            viteHelpers[shortcodeName]
+        )
+    })
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')

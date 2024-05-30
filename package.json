@@ -10,11 +10,11 @@
     "scripts": {
         "start": "npm run dev",
         "dev": "run-p dev:* --print-label",
-        "dev:vite": "vite",
         "dev:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
+        "dev:vite": "vite",
         "build": "run-s clean build:vite build:eleventy workbox clean:vite --print-label",
-        "build:vite": "vite build",
         "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
+        "build:vite": "vite build",
         "clean": "del-cli dist",
         "clean:vite": "del-cli dist/.vite",
         "workbox": "workbox generateSW workbox.config.cjs",
