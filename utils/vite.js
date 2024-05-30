@@ -37,13 +37,15 @@ async function getChunkInformationFor(entryFilename) {
     return entryChunk
 }
 
-async function viteScriptTag(entryFilename = DEFAULT_ENTRY_FILE) {
-    const entryChunk = await getChunkInformationFor(entryFilename)
+async function viteScriptTag(entryFilename) {
+    const entryFile = entryFilename || DEFAULT_ENTRY_FILE
+    const entryChunk = await getChunkInformationFor(entryFile)
     return `<script type="module" src="${PATH_PREFIX}${entryChunk.file}"></script>`
 }
 
-async function viteLinkStylesheetTags(entryFilename = DEFAULT_ENTRY_FILE) {
-    const entryChunk = await getChunkInformationFor(entryFilename)
+async function viteLinkStylesheetTags(entryFilename) {
+    const entryFile = entryFilename || DEFAULT_ENTRY_FILE
+    const entryChunk = await getChunkInformationFor(entryFile)
     if (!entryChunk.css || entryChunk.css.length === 0) {
         console.warn(
             `No css found for ${entryFilename} entry. Is that correct?`

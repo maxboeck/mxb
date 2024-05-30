@@ -92,7 +92,7 @@
     @include mq(md) {
         .signup__back::after {
             @include invert-on-dark();
-            background: #fff url('/assets/images/confetti.gif') no-repeat 0 0;
+            background: #fff url('@assets/images/confetti.gif') no-repeat 0 0;
         }
     }
 }
