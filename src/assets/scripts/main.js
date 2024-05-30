@@ -1,12 +1,20 @@
-import 'eleventy-plugin-share-highlight/share-highlight'
+// Module Preload
+import 'vite/modulepreload-polyfill'
 
-import './modules/navigation'
-import './modules/signup'
-import './modules/lazyload'
-import './modules/themepicker'
-import './modules/infinitescroll'
-import './modules/preload'
-import './modules/speedlify'
-import './modules/register-serviceworker'
+// Main Stylesheet
+import '../styles/main.scss'
 
-document.documentElement.classList.remove('no-js')
+// Common Modules
+import './common/navigation'
+import './common/signup'
+import './common/lazyload'
+import './common/themepicker'
+import './common/infinitescroll'
+import './common/preload'
+import './common/speedlify'
+import './common/register-serviceworker'
+
+// Dynamic Modules, Imported at Runtime
+if (document.querySelector('#webmentions')) {
+    import('./webmentions')
+}

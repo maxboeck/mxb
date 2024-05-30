@@ -1,15 +1,18 @@
-const fs = require('fs')
-const fetch = require('node-fetch')
-const unionBy = require('lodash/unionBy')
-const domain = require('./site.json').domain
+import fs from 'fs'
+import fetch from 'node-fetch'
+import unionBy from 'lodash/unionBy.js'
+import settings from './site.js'
 
 // Load .env variables with dotenv
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
 // Define Cache Location and API Endpoint
-const CACHE_DIR = 'cache'
+const CACHE_DIR = '.cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
+const { domain } = settings
 
 async function fetchWebmentions(since, perPage = 100000) {
     if (!domain) {
@@ -79,7 +82,7 @@ function readFromCache() {
     }
 }
 
-module.exports = async function () {
+export default async function () {
     const cache = readFromCache()
 
     if (cache.children.length) {
@@ -89,7 +92,7 @@ module.exports = async function () {
     }
 
     // Only fetch new mentions in production
-    if (process.env.ELEVENTY_ENV === 'production') {
+    if (IS_PRODUCTION) {
         const feed = await fetchWebmentions(cache.lastFetched)
         if (feed) {
             const webmentions = {

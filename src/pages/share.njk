@@ -11,7 +11,10 @@ permalink: share/index.html
 
         <title>Share on MXB</title>
         <link rel="stylesheet" href="{{ '/assets/styles/themes.css' | url }}">
-        <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+        
+        {% if not build.dev %}
+            {% viteLinkStylesheetTags %}
+        {% endif %}
 
         <meta name="ROBOTS" content="noindex,nofollow">
         <meta name="robots" content="noindex">
@@ -19,17 +22,19 @@ permalink: share/index.html
     <body>
 
         <div class="container container--narrow">
-            <div id="sharer-root"></div>
+            <div id="sharer"></div>
             <!--
             <p>Bookmarklet: <a class="bookmarklet" href="javascript:(function(){var title = document.getElementsByTagName('title')[0].innerHTML;title = encodeURIComponent(title);var selection = '';if (window.getSelection) {selection = window.getSelection().toString();} else if (document.selection &amp;&amp; document.selection.type != 'Control') {selection = document.selection.createRange().text;}selection = encodeURIComponent(selection);new_window=window.open('{{ page.url | url | absoluteUrl(site.url) }}?title='+title+'&amp;body='+selection+'&amp;url='+encodeURIComponent(document.location.href),'Sharer','resizable,scrollbars,status=0,toolbar=0,menubar=0,titlebar=0,width=680,height=700,location=0');})();">Share on MXB</a></p>
             -->
         </div>
 
-        <script>
-        var assetUrls = {
-            avatar: '{{ author.avatar | url }}'
-        };
-        </script>
-        <script src="{{ '/assets/scripts/sharer.js' | url }}"></script>
+        <script>var assetUrls = {avatar: '{{ author.avatar | url }}'};</script>
+
+        {% if build.dev %}
+            <script type="module" src="http://localhost:5173/@vite/client"></script>
+            <script type="module" src="http://localhost:5173/src/assets/scripts/sharer/index.jsx"></script>
+        {% else %}
+            {% viteScriptTag 'src/assets/scripts/sharer/index.jsx' %}
+        {% endif %}
     </body>
 </html>

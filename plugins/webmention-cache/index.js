@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // Restore a directory cached in previous builds.
     // Does not do anything if:
     //  - the directory already exists locally

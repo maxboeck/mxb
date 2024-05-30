@@ -12,14 +12,11 @@ function infscroll() {
     const nextLink = document.querySelector(SELECTORS.nextLink)
 
     if (container && nextLink) {
-        const ifs = new InfiniteScroll(container, {
+        new InfiniteScroll(container, {
             path: SELECTORS.nextLink,
             append: SELECTORS.item,
             hideNav: SELECTORS.pagination
         })
-        if (process.env.ELEVENTY_ENV !== 'production') {
-            console.log('infinite scroll loaded', ifs)
-        }
     }
 }
 

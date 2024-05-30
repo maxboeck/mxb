@@ -1,7 +1,7 @@
 // Register Service Worker
 
 if ('serviceWorker' in navigator) {
-    if (process.env.ELEVENTY_ENV !== 'production') {
+    if (import.meta.env.DEV) {
         console.info('skipping service worker registration in development.')
     } else {
         window.addEventListener('load', () => {

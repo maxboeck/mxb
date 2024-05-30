@@ -1,8 +1,8 @@
-const { DateTime } = require('luxon')
-const sanitizeHTML = require('sanitize-html')
-const random = require('lodash/random')
+import { DateTime } from 'luxon'
+import sanitizeHTML from 'sanitize-html'
+import random from 'lodash/random.js'
 
-module.exports = {
+export default {
     readableDate: function (date, format) {
         // default to Europe/Vienna Timezone
         const dt = DateTime.fromJSDate(date, { zone: 'UTC+2' })
@@ -190,12 +190,5 @@ module.exports = {
 
     findById: function (array, id) {
         return array.find((i) => i.id === id)
-    },
-
-    setExt: function (path, ext) {
-        if (!ext) {
-            return path
-        }
-        return path.substr(0, path.lastIndexOf('.')) + `.${ext}`
     }
 }

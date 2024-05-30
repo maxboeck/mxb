@@ -1,6 +1,8 @@
-const htmlmin = require('html-minifier')
-const markdownIt = require('markdown-it')()
-const random = require('lodash/random')
+import htmlmin from 'html-minifier'
+import markdownIt from 'markdown-it'
+import random from 'lodash/random.js'
+
+const markdown = markdownIt()
 
 const minify = (content) =>
     htmlmin.minify(content, {
@@ -8,7 +10,7 @@ const minify = (content) =>
         collapseWhitespace: true
     })
 
-const Spinner = () => {
+export const Spinner = () => {
     const layer = (
         index
     ) => `<div class="spinner__layer spinner__layer--${index}">
@@ -34,9 +36,9 @@ const Spinner = () => {
     return minify(output)
 }
 
-const Icon = (iconName, useInline = false) => {
+export const Icon = (iconName, useInline = false) => {
     const spriteUrl = '/assets/icons/icons.sprite.svg'
-    const iconId = `#icon-${iconName}`
+    const iconId = `#svg-${iconName}`
     const href = useInline ? iconId : spriteUrl + iconId
 
     const output = `<svg class="icon icon--${iconName}" role="img" aria-hidden="true" width="24" height="24">
@@ -46,7 +48,7 @@ const Icon = (iconName, useInline = false) => {
     return minify(output)
 }
 
-const SignupForm = (source) => {
+export const SignupForm = (source) => {
     const MC = {
         url: 'https://dev.us18.list-manage.com/subscribe/post',
         user: '64781452976687d0f4f2ea370',
@@ -119,7 +121,7 @@ const SignupForm = (source) => {
     return minify(output)
 }
 
-const SignupSection = (title, text, source) => {
+export const SignupSection = (title, text, source) => {
     const form = SignupForm(source)
     const icon = Icon('check')
     const output = `
@@ -141,7 +143,7 @@ const SignupSection = (title, text, source) => {
     return minify(output)
 }
 
-const Callout = (content, type = 'info') => {
+export const Callout = (content, type = 'info') => {
     let icon
 
     switch (type) {
@@ -165,13 +167,13 @@ const Callout = (content, type = 'info') => {
 
     const output = `<div class="callout callout--${type}">
         <span class="callout__icon">${Icon(icon)}</span>
-        <div class="callout__content">${markdownIt.render(content)}</div>
+        <div class="callout__content">${markdown.render(content)}</div>
     </div>`
 
     return minify(output)
 }
 
-module.exports = {
+export default {
     Spinner,
     Icon,
     SignupSection,

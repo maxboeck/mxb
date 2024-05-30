@@ -1,17 +1,22 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
-const pluginRss = require('@11ty/eleventy-plugin-rss')
-const pluginNavigation = require('@11ty/eleventy-navigation')
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginPageAssets = require('eleventy-plugin-page-assets')
-const pluginShareHighlight = require('eleventy-plugin-share-highlight')
+import pluginRss from '@11ty/eleventy-plugin-rss'
+import pluginNavigation from '@11ty/eleventy-navigation'
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img'
 
-const filters = require('./utils/filters.js')
-const transforms = require('./utils/transforms.js')
-const shortcodes = require('./utils/shortcodes.js')
-const markdown = require('./utils/markdown.js')
+import pluginPageAssets from 'eleventy-plugin-page-assets'
+import pluginShareHighlight from 'eleventy-plugin-share-highlight'
+import pluginSVGSprite from 'eleventy-plugin-svg-sprite'
 
-const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
+import filters from './utils/filters.js'
+import transforms from './utils/transforms.js'
+import shortcodes from './utils/shortcodes.js'
+import markdown from './utils/markdown.js'
+import viteHelpers from './utils/vite.js'
+
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
     drafts: 'src/drafts/**/*.md',
@@ -19,7 +24,7 @@ const CONTENT_GLOBS = {
     media: '*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm'
 }
 
-module.exports = function (config) {
+export default function (config) {
     // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)
@@ -29,6 +34,21 @@ module.exports = function (config) {
         postsMatching: 'src/posts/*/*.md',
         assetsMatching: CONTENT_GLOBS.media,
         silent: true
+    })
+    config.addPlugin(pluginSVGSprite, {
+        path: './src/assets/icons',
+        outputFilepath: './dist/assets/icons/icons.sprite.svg'
+    })
+    config.addPlugin(pluginImageTransform, {
+        extensions: 'html',
+        formats: ['avif', 'auto'],
+        outputDir: './dist/assets/images/processed/',
+        urlPath: '/assets/images/processed/',
+        widths: ['auto'],
+        defaultAttributes: {
+            loading: 'lazy',
+            decoding: 'async'
+        }
     })
     config.addPlugin(pluginShareHighlight)
 
@@ -46,6 +66,14 @@ module.exports = function (config) {
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
+
+    // Vite Shortcodes
+    Object.keys(viteHelpers).forEach((shortcodeName) => {
+        config.addNunjucksAsyncShortcode(
+            shortcodeName,
+            viteHelpers[shortcodeName]
+        )
+    })
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
