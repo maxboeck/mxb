@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 
 export default class Icon extends Component {
     render({ name }) {
-        const href = `/assets/icons/icons.sprite.svg#icon-${name}`
+        const href = `/assets/icons/icons.sprite.svg#svg-${name}`
         return (
             <svg
                 className={`icon icon--${name}`}

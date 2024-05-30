@@ -46,6 +46,7 @@
         "dotenv": "^8.2.0",
         "eleventy-plugin-page-assets": "github:maxboeck/eleventy-plugin-page-assets",
         "eleventy-plugin-share-highlight": "^0.1.4",
+        "eleventy-plugin-svg-sprite": "^2.4.2",
         "encoding": "^0.1.13",
         "html-minifier": "^4.0.0",
         "markdown-it": "^14.1.0",

@@ -38,7 +38,7 @@ export const Spinner = () => {
 
 export const Icon = (iconName, useInline = false) => {
     const spriteUrl = '/assets/icons/icons.sprite.svg'
-    const iconId = `#icon-${iconName}`
+    const iconId = `#svg-${iconName}`
     const href = useInline ? iconId : spriteUrl + iconId
 
     const output = `<svg class="icon icon--${iconName}" role="img" aria-hidden="true" width="24" height="24">

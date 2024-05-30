@@ -8,6 +8,7 @@ import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/elev
 
 import pluginPageAssets from 'eleventy-plugin-page-assets'
 import pluginShareHighlight from 'eleventy-plugin-share-highlight'
+import pluginSVGSprite from 'eleventy-plugin-svg-sprite'
 
 import filters from './utils/filters.js'
 import transforms from './utils/transforms.js'
@@ -33,6 +34,10 @@ export default function (config) {
         postsMatching: 'src/posts/*/*.md',
         assetsMatching: CONTENT_GLOBS.media,
         silent: true
+    })
+    config.addPlugin(pluginSVGSprite, {
+        path: './src/assets/icons',
+        outputFilepath: './dist/assets/icons/icons.sprite.svg'
     })
     config.addPlugin(pluginImageTransform, {
         extensions: 'html',
