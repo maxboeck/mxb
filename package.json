@@ -59,5 +59,8 @@
         "svg-sprite": "^2.0.2",
         "vite": "^5.2.12",
         "workbox-cli": "^7.1.0"
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "4.6.1"
     }
 }
