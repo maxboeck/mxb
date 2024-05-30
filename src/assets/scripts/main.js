@@ -18,3 +18,6 @@ import './common/register-serviceworker'
 if (document.querySelector('#webmentions')) {
     import('./webmentions')
 }
+if (document.querySelector('#sharer')) {
+    import('./sharer')
+}
