@@ -9,12 +9,15 @@
     "type": "module",
     "scripts": {
         "start": "npm run dev",
-        "dev": "run-s clean eleventy:dev --print-label",
-        "build": "run-s clean eleventy:prod --print-label workbox",
-        "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
-        "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
-        "workbox": "workbox generateSW workbox.config.cjs",
+        "dev": "run-p dev:* --print-label",
+        "dev:vite": "vite",
+        "dev:eleventy": "cross-env ELEVENTY_ENV=development eleventy --serve",
+        "build": "run-s clean build:vite build:eleventy workbox clean:vite --print-label",
+        "build:vite": "vite build",
+        "build:eleventy": "cross-env ELEVENTY_ENV=production eleventy",
         "clean": "del-cli dist",
+        "clean:vite": "del-cli dist/.vite",
+        "workbox": "workbox generateSW workbox.config.cjs",
         "debug": "DEBUG=Eleventy* npm start"
     },
     "repository": {
@@ -50,5 +53,8 @@
         "sass": "^1.77.3",
         "svg-sprite": "^2.0.2",
         "workbox-cli": "^7.1.0"
+    },
+    "devDependencies": {
+        "vite": "^5.2.12"
     }
 }

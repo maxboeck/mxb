@@ -1,3 +1,6 @@
+import 'vite/modulepreload-polyfill'
+import '../styles/main.scss'
+
 import './common/navigation'
 import './common/signup'
 import './common/lazyload'
@@ -6,5 +9,3 @@ import './common/infinitescroll'
 import './common/preload'
 import './common/speedlify'
 import './common/register-serviceworker'
-
-document.documentElement.classList.remove('no-js')
