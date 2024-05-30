@@ -58,7 +58,7 @@ layout: base
             <a class="u-url" href="{{ page.url | url | absoluteUrl(site.url) }}">{{ title }}</a>
             <p class="h-card p-author">
                 <a class="p-name u-url" rel="author" href="{{ site.url }}">{{ author.name }}</a>
-                <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" />
+                <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" eleventy:ignore />
             </p>
         </div>
 

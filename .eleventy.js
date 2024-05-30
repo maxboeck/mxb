@@ -4,6 +4,8 @@ dotenv.config()
 import pluginRss from '@11ty/eleventy-plugin-rss'
 import pluginNavigation from '@11ty/eleventy-navigation'
 import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import { eleventyImageTransformPlugin as pluginImageTransform } from '@11ty/eleventy-img'
+
 import pluginPageAssets from 'eleventy-plugin-page-assets'
 import pluginShareHighlight from 'eleventy-plugin-share-highlight'
 
@@ -30,6 +32,17 @@ export default function (config) {
         postsMatching: 'src/posts/*/*.md',
         assetsMatching: CONTENT_GLOBS.media,
         silent: true
+    })
+    config.addPlugin(pluginImageTransform, {
+        extensions: 'html',
+        formats: ['avif', 'auto'],
+        outputDir: './dist/assets/images/processed/',
+        urlPath: '/assets/images/processed/',
+        widths: ['auto'],
+        defaultAttributes: {
+            loading: 'lazy',
+            decoding: 'async'
+        }
     })
     config.addPlugin(pluginShareHighlight)
 

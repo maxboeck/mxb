@@ -15,15 +15,16 @@
                         width="48"
                         height="48"
                         loading="lazy"
+                        eleventy:ignore
                     >
                 {% else %}
-                    <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.jpg' | url }}" alt="" width="48" height="48">
+                    <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.jpg' | url }}" alt="" width="48" height="48" eleventy:ignore>
                 {% endif %}
                 <strong class="p-name">{{ webmention.author.name }}</strong>
             </a>
         {% else %}
             <span class="webmention__author">
-                <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.svg' | url }}" alt="">
+                <img class="webmention__author__photo" src="{{ '/assets/images/avatar-default.svg' | url }}" alt="" eleventy:ignore>
                 <strong>Anonymous</strong>
             </span>
         {% endif %}

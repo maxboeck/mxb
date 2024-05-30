@@ -17,12 +17,11 @@ permalink: /about/
             <div class="about__header">
                 <div class="about__photo">
                     <img
-                        class="responsive-image js-responsive-image"
-                        src="{{ '/assets/images/max-boeck-800.jpg' | url }}"
-                        srcset="{{ '/assets/images/max-boeck-800.jpg' | url }} 800w, 
-                        {{ '/assets/images/max-boeck-1600.jpg' | url }} 1600w"
+                        class="responsive-image"
+                        src="{{ '/assets/images/max-boeck-1600.jpg' | url }}"
                         sizes="(min-width: 940px) 40vw, 100vw"
                         alt="Max Böck"
+                        eleventy:widths="800,1600"
                     />
                 </div>
                 <div class="about__intro lead">

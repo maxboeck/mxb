@@ -7,12 +7,7 @@
             <div class="featuredpost" style="{% if post.data.featuredImageColor and not build.naked %}background-color: {{ post.data.featuredImageColor }};{% endif %}">
                 {% if post.data.featuredImage %}
                     {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
-                    <picture>
-                        <source srcset="{{ imgsrc | setExt('avif') }}" type="image/avif">
-                        <source srcset="{{ imgsrc | setExt('webp') }}" type="image/webp">
-                        <source srcset="{{ imgsrc }}" type="image/jpeg">
-                        <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredpost__image" />
-                    </picture>
+                    <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredpost__image" />
                 {% endif %}
                 <div class="featuredpost__inner">
                     <a href="{{ post.url | url }}" class="featuredpost__link">
