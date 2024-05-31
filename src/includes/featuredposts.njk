@@ -7,7 +7,8 @@
             <div class="featuredpost" style="{% if post.data.featuredImageColor and not build.naked %}background-color: {{ post.data.featuredImageColor }};{% endif %}">
                 {% if post.data.featuredImage %}
                     {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
-                    <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredpost__image" />
+                    {% set eager = loop.index < 5 %}
+                    <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredpost__image" {% if eager %}loading="eager" decoding="auto"{% endif %} />
                 {% endif %}
                 <div class="featuredpost__inner">
                     <a href="{{ post.url | url }}" class="featuredpost__link">
