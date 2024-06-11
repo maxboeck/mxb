@@ -6,9 +6,18 @@
         <li class="featuredposts__item">
             <div class="featuredpost" style="{% if post.data.featuredImageColor and not build.naked %}background-color: {{ post.data.featuredImageColor }};{% endif %}">
                 {% if post.data.featuredImage %}
-                    {% set imgsrc %}/assets/images/featured/{{ post.data.featuredImage }}{% endset %}
+                    {% set imgsrc = "/assets/images/featured/" ~ post.data.featuredImage %}
                     {% set eager = loop.index < 5 %}
-                    <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredpost__image" {% if eager %}loading="eager" decoding="auto"{% endif %} />
+                    <img 
+                        src="{{ imgsrc }}" 
+                        sizes="(min-width:1270px) 264px, 95vw"
+                        width="500" 
+                        height="500" 
+                        class="featuredpost__image" 
+                        alt=""
+                        {% if eager %}loading="eager" decoding="auto"{% endif %}
+                        eleventy:widths="300,500"
+                    />
                 {% endif %}
                 <div class="featuredpost__inner">
                     <a href="{{ post.url | url }}" class="featuredpost__link">
