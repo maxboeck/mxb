@@ -22,6 +22,10 @@
             font-size: 1.25rem;
         }
     }
+    &__canonical {
+        margin: 1rem 0;
+        color: var(--color-text-offset);
+    }
     &__tags {
         font-family: Georgia, Times, serif;
         text-transform: uppercase;

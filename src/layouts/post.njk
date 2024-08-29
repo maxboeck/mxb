@@ -12,7 +12,6 @@ layout: base
     <header class="post__header">
         <h1 id="{{ title | slug }}-title" class="post__title p-name title" itemprop="headline">{{ title }}</h1>
         <div class="post__meta">
-
             <p {% if demo %}class="u-mr2"{% endif %}>
                 <time class="post__date dt-published" itemprop="datePublished" datetime="{{ page.date | dateToISO }}">{{ page.date | readableDate('dd LLL yyyy') }}</time>
                 {% if tags %}
@@ -28,8 +27,11 @@ layout: base
                 View Demo
             </a>
             {% endif %}
-
         </div>
+
+        {% if canonicalUrl and canonicalSource %}
+            <p class="post__canonical">originally published on: <a href="{{ canonicalUrl }}">{% icon "external" %} {{ canonicalSource }}</a></p>
+        {% endif %}
 
         {% if draft %}
         <div class="post__disclaimer">
