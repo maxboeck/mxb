@@ -21,7 +21,6 @@
 <meta property="og:description" content="{{ description or autoDescription or site.description }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:image" content="{%- if image -%}{{ absolutePageUrl }}{{ image }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
-<meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
 
 {# Posts and Notes Get additional meta tags #}
 {%- if isPost or isNote -%}
@@ -33,8 +32,6 @@
 <meta name="author" content="{{ author.name }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:locale" content="{{ site.locale }}">
-<meta name="twitter:site" content="@{{ author.social.twitter.name }}">
-<meta name="twitter:creator" content="@{{ author.social.twitter.name }}">
 <meta name="fediverse:creator" content="@mxbck@front-end.social" />
 
 <link rel="canonical" href="{{ canonicalUrl or absolutePageUrl }}">

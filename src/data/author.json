@@ -3,10 +3,6 @@
     "email": "hello@mxb.dev",
     "avatar": "/assets/images/avatar2.jpg",
     "social": {
-        "twitter": {
-            "name": "mxbck",
-            "url": "https://twitter.com/mxbck"
-        },
         "github": {
             "name": "maxboeck",
             "url": "https://github.com/maxboeck"
@@ -14,6 +10,10 @@
         "mastodon": {
             "name": "mxbck",
             "url": "https://front-end.social/@mxbck"
+        },
+        "bluesky": {
+            "name": "mxb.dev",
+            "url": "https://bsky.app/profile/mxb.dev"
         },
         "codepen": {
             "name": "mxbck",
